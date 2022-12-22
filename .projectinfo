@@ -1,0 +1,1 @@
+{"project":"adduser","type":"","version":" 3.118","hierarchy":"base","priority":"","maintainer":"","packager":"","builddeps":" po-debconf, debhelper (\u003e= 9),  gettext, po4a","homepage":"","git":"https://salsa.debian.org/debian/adduser.git"}

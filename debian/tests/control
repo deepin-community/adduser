@@ -1,0 +1,6 @@
+Test-Command: /usr/bin/prove -v debian/tests/f
+Depends: cron, perl
+Restrictions: needs-root
+
+Test-Command: cd testsuite/ && ./runsuite.sh
+Restrictions: allow-stderr breaks-testbed needs-root
