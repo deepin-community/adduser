@@ -3,7 +3,7 @@
 # expect:
 #  - a new user $USER
 #  - added to group nogroup
-#  - no home directory /home/$USER
+#  - no home directory /nonexistent
 
 use strict;
 use lib_test;
@@ -12,7 +12,7 @@ my $groupname = "nogroup";
 my $username = find_unused_name();
 my $cmd = "adduser --system --no-create-home $username";
 
-my $homedir = "/home/$username";
+my $homedir = "/nonexistent";
 
 if (!defined (getpwnam($username))) {
 	print "Testing $cmd... ";
@@ -25,6 +25,7 @@ if (!defined (getpwnam($username))) {
 
 	assert(check_user_exist ($username));
 	assert(check_group_exist($groupname));
+	assert(check_user_homedir_eq($username, $homedir));
 	assert(check_user_in_group($username,$groupname));
 	assert(check_homedir_not_exist($homedir));	
 	print "ok\n";

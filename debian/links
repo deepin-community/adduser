@@ -1,22 +1,3 @@
-# Those links are necessary due to #1006939
+usr/share/man/man8/adduser.local.8.gz usr/share/man/man8/deluser.local.8.gz
 usr/share/man/man8/adduser.8.gz usr/share/man/man8/addgroup.8.gz
 usr/share/man/man8/deluser.8.gz usr/share/man/man8/delgroup.8.gz
-# And this is #1006945
-usr/share/man/da/man8/adduser.8.gz usr/share/man/da/man8/addgroup.8.gz
-usr/share/man/da/man8/deluser.8.gz usr/share/man/da/man8/delgroup.8.gz
-usr/share/man/de/man8/adduser.8.gz usr/share/man/de/man8/addgroup.8.gz
-usr/share/man/de/man8/deluser.8.gz usr/share/man/de/man8/delgroup.8.gz
-#usr/share/man/es/man8/adduser.8.gz usr/share/man/es/man8/addgroup.8.gz
-usr/share/man/es/man8/deluser.8.gz usr/share/man/es/man8/delgroup.8.gz
-usr/share/man/fr/man8/adduser.8.gz usr/share/man/fr/man8/addgroup.8.gz
-usr/share/man/fr/man8/deluser.8.gz usr/share/man/fr/man8/delgroup.8.gz
-usr/share/man/it/man8/adduser.8.gz usr/share/man/it/man8/addgroup.8.gz
-usr/share/man/it/man8/deluser.8.gz usr/share/man/it/man8/delgroup.8.gz
-usr/share/man/pl/man8/adduser.8.gz usr/share/man/pl/man8/addgroup.8.gz
-usr/share/man/pl/man8/deluser.8.gz usr/share/man/pl/man8/delgroup.8.gz
-usr/share/man/pt/man8/adduser.8.gz usr/share/man/pt/man8/addgroup.8.gz
-usr/share/man/pt/man8/deluser.8.gz usr/share/man/pt/man8/delgroup.8.gz
-usr/share/man/ru/man8/adduser.8.gz usr/share/man/ru/man8/addgroup.8.gz
-usr/share/man/ru/man8/deluser.8.gz usr/share/man/ru/man8/delgroup.8.gz
-#usr/share/man/sv/man8/adduser.8.gz usr/share/man/sv/man8/addgroup.8.gz
-usr/share/man/sv/man8/deluser.8.gz usr/share/man/sv/man8/delgroup.8.gz

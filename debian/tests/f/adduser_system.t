@@ -28,9 +28,11 @@ for (100..999) {
 }
 
 assert_user_does_not_exist('foo');
-assert_path_does_not_exist('/home/foo');
+assert_path_does_not_exist('/nonexistent');
 
-assert_command_success('/usr/sbin/adduser', '--quiet', '--system', 'foo');
+assert_command_success('/usr/sbin/adduser', '--quiet',
+	'--system',
+       	'foo');
 assert_user_exists('foo');
 
 assert_user_has_uid('foo', $uid);
@@ -38,18 +40,37 @@ assert_user_has_uid('foo', $uid);
 assert_group_does_not_exist('foo');
 assert_primary_group_membership_exists('foo', 'nogroup');
 
-assert_user_has_home_directory('foo', '/home/foo');
-assert_path_exists('/home/foo');
-assert_path_is_a_directory('/home/foo');
-
-assert_path_has_mode('/home/foo', '0755');
-assert_path_has_ownership('/home/foo', 'foo:nogroup');
+assert_user_has_home_directory('foo', '/nonexistent');
+assert_path_does_not_exist('/nonexistent');
 
 assert_user_has_login_shell('foo', '/usr/sbin/nologin');
 
 assert_user_has_disabled_password('foo');
 
-assert_path_is_an_empty_directory('/home/foo');
-
 # Ref: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1004710
 assert_path_does_not_exist('/var/mail/foo');
+
+$uid++;
+assert_user_does_not_exist('foo2');
+assert_path_does_not_exist('/nonexistent');
+
+assert_command_success('/usr/sbin/adduser', '--quiet',
+	'--system',
+	'--shell', '/bin/sh',
+	'foo2');
+assert_user_exists('foo2');
+
+assert_user_has_uid('foo2', $uid);
+
+assert_group_does_not_exist('foo2');
+assert_primary_group_membership_exists('foo2', 'nogroup');
+
+assert_user_has_home_directory('foo2', '/nonexistent');
+assert_path_does_not_exist('/nonexistent');
+
+assert_user_has_login_shell('foo2', '/bin/sh');
+
+assert_user_has_disabled_password('foo2');
+
+# Ref: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1004710
+assert_path_does_not_exist('/var/mail/foo2');

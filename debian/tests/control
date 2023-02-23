@@ -3,4 +3,5 @@ Depends: cron, perl
 Restrictions: needs-root
 
 Test-Command: cd testsuite/ && ./runsuite.sh
+Depends: cron, perl
 Restrictions: allow-stderr breaks-testbed needs-root

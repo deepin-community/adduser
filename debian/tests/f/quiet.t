@@ -17,7 +17,7 @@ END {
 assert_user_does_not_exist('foo');
 assert_group_does_not_exist('foo');
 
-assert_command_success('/usr/sbin/adduser', '--quiet', '--disabled-login', '--gecos="x"', '--no-create-home', 'foo');
+assert_command_success('/usr/sbin/adduser', '--quiet', '--disabled-login', '--comment="x"', '--no-create-home', 'foo');
 
 assert_user_exists('foo');
 assert_group_exists('foo');
