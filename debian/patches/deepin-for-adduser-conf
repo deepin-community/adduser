@@ -1,0 +1,140 @@
+Description: add deepin conf
+ .
+ adduser (3.131-1deepin1) unstable; urgency=medium
+ .
+   * add deepin patch.
+Author: LiChengGang <lichenggang@uniontech.com>
+---
+Last-Update: 2023-02-23
+
+--- adduser-3.131.orig/adduser.conf
++++ adduser-3.131/adduser.conf
+@@ -7,35 +7,35 @@
+ 
+ # The login shell to be used for all new users.
+ # Default: DSHELL=/bin/bash
+-#DSHELL=/bin/bash
++DSHELL=/bin/bash
+ 
+ # The directory in which new home directories should  be  created.
+ # Default: DHOME=/home
+-# DHOME=/home
++DHOME=/home
+ 
+ # The directory from which skeletal user configuration files
+ # will be copied.
+ # Default: SKEL=/etc/skel
+-#SKEL=/etc/skel
++SKEL=/etc/skel
+ 
+ # Specify inclusive ranges of UIDs and GIDs from which UIDs and GIDs
+ # for system users, system groups, non-system users and non-system groups
+ # can be dynamically allocated.
+ # Default: FIRST_SYSTEM_UID=100, LAST_SYSTEM_UID=999
+-#FIRST_SYSTEM_UID=100
+-#LAST_SYSTEM_UID=999
++FIRST_SYSTEM_UID=100
++LAST_SYSTEM_UID=999
+ 
+ # Default: FIRST_SYSTEM_GID=100, LAST_SYSTEM_GID=999
+-#FIRST_SYSTEM_GID=100
+-#LAST_SYSTEM_GID=999
++FIRST_SYSTEM_GID=100
++LAST_SYSTEM_GID=999
+ 
+ # Default: FIRST_UID=1000, LAST_UID=59999
+-#FIRST_UID=1000
+-#LAST_UID=59999
++FIRST_UID=1000
++LAST_UID=59999
+ 
+ # Default: FIRST_GID=1000, LAST_GID=59999
+-#FIRST_GID=1000
+-#LAST_GID=59999
++FIRST_GID=1000
++LAST_GID=59999
+ 
+ # Specify a file or a directory containing UID and GID pool.
+ #UID_POOL=/etc/adduser-pool.conf
+@@ -46,23 +46,23 @@
+ # Specify whether each created non-system user will be
+ # given their own group to use.
+ # Default: USERGROUPS=yes
+-#USERGROUPS=yes
++USERGROUPS=yes
+ 
+ # Defines the groupname or GID of the group all newly-created
+ # non-system users are placed into.
+ # It is a configuration error to define both variables
+ # even if the values are consistent.
+ # Default: USERS_GID=undefined, USERS_GROUP=users
+-#USERS_GID=100
+-#USERS_GROUP=users
++USERS_GID=100
++USERS_GROUP=users
+ 
+ # The permissions mode for home directories of non-system users.
+ # Default: DIR_MODE=0700
+-#DIR_MODE=0700
++DIR_MODE=0700
+ 
+ # The permissions mode for home directories of system users.
+ # Default: SYS_DIR_MODE=0755
+-#SYS_DIR_MODE=0755
++SYS_DIR_MODE=0755
+ 
+ # If set to a nonempty value, new users will have quotas copied
+ # from that user with `edquota -p QUOTAUSER newuser'
+@@ -82,7 +82,7 @@
+ # When populating the newly created home directory of a non-system user,
+ # files in SKEL matching this regex are not copied.
+ # Default: SKEL_IGNORE_REGEX="\.(dpkg|ucf)-(old|new|dist|save)$"
+-#SKEL_IGNORE_REGEX="\.(dpkg|ucf)-(old|new|dist|save)$"
++SKEL_IGNORE_REGEX="\.(dpkg|ucf)-(old|new|dist|save)$"
+ 
+ # list of groups that new non-system users will be added to
+ # if ADD_EXTRA_GROUPS is non-zero or set on the command line.
+--- adduser-3.131.orig/deluser.conf
++++ adduser-3.131/deluser.conf
+@@ -7,24 +7,24 @@
+ 
+ # Remove home directory and mail spool when user is removed
+ # Default: REMOVE_HOME = 0
+-#REMOVE_HOME = 0
++REMOVE_HOME = 0
+ 
+ # Remove all files on the system owned by the user to be removed
+ # Default: REMOVE_ALL_FILES = 0
+-#REMOVE_ALL_FILES = 0
++REMOVE_ALL_FILES = 0
+ 
+ # Backup files before removing them. This options has only an effect if
+ # REMOVE_HOME or REMOVE_ALL_FILES is set.
+ # Default: BACKUP = 0
+-#BACKUP = 0
++BACKUP = 0
+ 
+ # Target directory for the backup file
+ # Default: BACKUP_TO = "."
+-#BACKUP_TO = "."
++BACKUP_TO = "."
+ 
+ # Select compression (from tar --auto-compress) for backups
+ # Default: BACKUP_SUFFIX = .gz
+-#BACKUP_SUFFIX = .gz
++BACKUP_SUFFIX = .gz
+ 
+ # Space-Separated list of regular expressions. Do not delete files
+ # matching any of these.
+@@ -33,9 +33,9 @@
+ 
+ # Only delete a group if there are no users belonging to this group.
+ # Default: ONLY_IF_EMPTY = 0
+-#ONLY_IF_EMPTY = 0
++ONLY_IF_EMPTY = 0
+ 
+ # Single regular expression which describes filesystems types which should
+ # be excluded when looking for files of a user to be deleted.
+ # Default: EXCLUDE_FSTYPES = "(proc|sysfs|usbfs|devpts|tmpfs|afs)"
+-#EXCLUDE_FSTYPES = "(proc|sysfs|usbfs|devpts|tmpfs|afs)"
++EXCLUDE_FSTYPES = "(proc|sysfs|usbfs|devpts|tmpfs|afs)"

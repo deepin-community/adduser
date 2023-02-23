@@ -1,3 +1,9 @@
+adduser (3.131-1deepin1) unstable; urgency=medium
+
+  * add deepin patch.
+
+ -- LiChengGang <lichenggang@uniontech.com>  Thu, 23 Feb 2023 14:53:51 +0800
+
 adduser (3.131) unstable; urgency=medium
 
   [ Marc Haber ]
