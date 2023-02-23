@@ -24,7 +24,7 @@ if (!defined (getpwnam($username))) {
 	}
 
 	assert(check_user_exist ($username, $want_uid));
-	assert(check_homedir_exist ($username));
+	assert(check_user_homedir_not_exist ($username));
 	assert(check_group_exist($groupname));
 	assert(check_user_in_group($username,$groupname));
 	print "ok\n";

@@ -27,7 +27,7 @@ if (!defined (getpwnam($username))) {
 	}
 
 	assert(check_user_exist ($username));
-	assert(check_homedir_exist ($username));
+	assert(check_user_homedir_not_exist ($username));
 	print "ok\n";
 }
   

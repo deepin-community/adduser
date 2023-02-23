@@ -1,204 +1,293 @@
-.\" Copyright 1997, 1998, 1999 Guy Maor.
-.\" Adduser and this manpage are copyright 1995 by Ted Hajek,
-.\" With much borrowing from the original adduser copyright 1994 by
-.\" Ian Murdock.
-.\" 
+.\" Copyright: 1994 Ian A. Murdock <imurdock@debian.org>
+.\"            1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
+.\"            1997-1999 Guy Maor
+.\"            2000-2003 Roland Bauerschmidt <rb@debian.org>
+.\"            2004-2022 Marc Haber <mh+debian-packages@zugschlus.de>
+.\"            2006-2009 Jörg Hoh <joerg@joerghoh.de>
+.\"            2011 Justin B Rye <jbr@edlug.org.uk>
+.\"            2016 Helge Kreutzmann <debian@helgefjell.de>
+.\"            2021-2022 Jason Franklin <jason@oneway.dev>
+.\"
 .\" This is free software; see the GNU General Public License version
 .\" 2 or later for copying conditions.  There is NO warranty.
 .TH DELUSER 8 "" "Debian GNU/Linux"
 .SH NAME
 deluser, delgroup \- remove a user or group from the system
 .SH SYNOPSIS
-.BR deluser " [options] [\-\-no-preserve-root] [\-\-remove-home] [\-\-remove-all-files] [\-\-backup] [\-\-backup-to DIR] user"
-.PP
-.BR deluser " \-\-group [options] group"
-.br
-.BR delgroup " [options] [\-\-only-if-empty] group"
-.PP
-.BR deluser " [options] user group"
+.SY deluser
+.OP \-\-backup
+.OP \-\-backup\-suffix str
+.OP \-\-backup\-to dir
+.OP \-\-conf file
+.OP \-\-debug
+.OP \-\-remove\-all\-files
+.OP \-\-remove\-home
+.OP \-\-quiet
+.OP \-\-verbose
+.B user
+.YS
+.SY deluser
+.OP \-\-system
+.OP \-\-backup
+.OP \-\-backup\-suffix str
+.OP \-\-backup\-to dir
+.OP \-\-conf file
+.OP \-\-debug
+.OP \-\-remove\-all\-files
+.OP \-\-remove\-home
+.OP \-\-quiet
+.OP \-\-verbose
+.B user
+.YS
+.SY deluser
+.B \-\-group
+.OP \-\-conf file
+.OP \-\-debug
+.OP \-\-only\-if\-empty
+.OP \-\-quiet
+.OP \-\-verbose
+.B group
+.SY delgroup
+.OP \-\-system
+.OP \-\-conf file
+.OP \-\-debug
+.OP \-\-only\-if\-empty
+.OP \-\-quiet
+.OP \-\-verbose
+.B group
+.YS
+.SY deluser
+.OP \-\-conf file
+.OP \-\-debug
+.OP \-\-quiet
+.OP \-\-verbose
+.B user
+.B group
+.YS
+.SY deluser
+.B \-\-help
+.YS
+.SY deluser
+.B \-\-version
+.YS
 .SH DESCRIPTION
-.PP
-.BR deluser " and " delgroup
-remove users and groups from the system according to command line options
+\fBdeluser\fP and \fBdelgroup\fP remove users and groups
+from the system according to command line options
 and configuration information in
-.IR /etc/deluser.conf 
-and
-.IR /etc/adduser.conf .
+\fI/etc/deluser.conf\fP and \fI/etc/adduser.conf\fP.
+.PP
 They are friendlier front ends to the
-.BR userdel " and " groupdel
-programs, removing the home directory as option or even all files on the system
-owned by the user to be removed, running a custom script, and other features.
-.BR deluser " and " delgroup
-can be run in one of three modes:
-.SS "Remove a normal user"
-If called with one non-option argument and without the
-.BR \-\-group " option, " deluser
-will remove a normal user.
+\fBuserdel\fP and \fBgroupdel\fP programs,
+removing the home directory as option
+or even all files on the system owned by the user to be removed,
+running a custom script,
+and other features.
+.PP
+For a full list and explanation of all options,
+see the OPTIONS section.
+.PP
+\fBdeluser\fP and \fBdelgroup\fP can be run in one of three modes:
 
+.SS "Remove a user"
+If called with one non-option argument and
+without the \fB\-\-group\fP option,
+\fBdeluser\fP will remove a non-system user.
+.PP
 By default,
-.B deluser
-will remove the user without removing the home directory, the mail spool  or
-any other files on the system owned by the user. Removing the home directory
-and mail spool can be achieved using the
-.B \-\-remove-home
-option. 
-
-The 
-.B \-\-remove-all-files
-option removes all files on the system owned by the user. Note that if
-you activate both options
-.B \-\-remove-home
-will have no effect because all files including the home directory and mail
-spool are already covered by the
-.B \-\-remove-all-files
-option.
-
-If you want to backup all files before deleting them you can activate the
-.B \-\-backup
-option which will create a file username.tar(.gz|.bz2) in the
-directory specified by the
-.B \-\-backup-to
-option (defaulting to the current working directory). Both the remove
-and backup options can also be activated for default in the configuration
-file /etc/deluser.conf. See
-.B deluser.conf(5)
-for details.
-
-If you want to remove the root account (uid 0), then use the 
-.B \-\-no-preserve-root
-parameter; this may prevent to remove the root user by accident.
-
-If the file
-.B /usr/local/sbin/deluser.local
-exists, it will be executed after the user account has been removed
-in order to do any local cleanup. The arguments passed to
-.B deluser.local
-are:
-.br
-username uid gid home-directory
+\fBdeluser\fP will remove the user
+without removing the home directory,
+the mail spool or
+any other files on the system owned by the user.
+Removing the home directory and mail spool
+can be achieved using the \fB\-\-remove\-home\fP option.
+.PP
+The  \fB\-\-remove\-all\-files\fP option
+removes all files on the system owned by the user.
+Note that if you activate both options
+\fB\-\-remove\-home\fP will have no additional effect
+because all files including
+the home directory and mail spool
+are already covered by the \fB\-\-remove\-all\-files\fP option.
+.PP
+If you want to backup all files before deleting them
+you can activate the \fB\-\-backup\fP option
+which will create a file \fIusername.tar(.gz|.bz2)\fP
+in the directory specified by the \fB\-\-backup\-to\fP option
+.PP
+By default,
+the backup archive is compressed with gzip.
+To change this,
+the \fB\-\-backup\-suffix\fP option can be set
+to any suffix supported by \fBtar \-\-auto\-compress\fP (e.g. .gz, .bz2, .xz).
+.PP
+\fBdeluser\fP will refuse to remove the root account.
+.PP
+If the \fB\-\-system\fP option is given on the command line, the
+delete operation is actually executed only if the user is a system user.
+This avoids accidentally deleting non-system users.
+Additionally,
+if the user does not exist,
+no error value is returned.
+Debian package maintainer scripts
+may use this flag
+to remove system users or groups
+while ignoring the case where the removal already occurred.
 
 .SS "Remove a group"
-If 
-.BR deluser " is called with the " \-\-group " option, or " delgroup
-is called, a group will be removed.
-
-Warning: The primary group of an existing user cannot be removed.
-
-If the option
-.B \-\-only-if-empty
-is given, the group won't be removed if it has any members left.
+If \fBdeluser\fP is called with the \fB\-\-group\fP  option,
+or \fBdelgroup\fP is called,
+a group will be removed.
+The primary group of an existing user cannot be removed.
+If the option \fB\-\-only\-if\-empty\fP is given,
+the group won't be removed if it has any members left.
+.PP
+The \fB\-\-system\fP option adds the same functionality as for users,
+respectively.
 
 .SS "Remove a user from a specific group"
 If called with two non-option arguments,
-.B deluser
-will remove a user from a specific group.
+\fBdeluser\fP will remove a user from a specific group.
+
 .SH OPTIONS
-.TP
-.BI \-c\  FILE\fR,\ \fP \-\-conf\fR=\fP FILE
-Use \fIFILE\fP instead of the default files \fI/etc/deluser.conf\fP and
-\fI/etc/adduser.conf\fP.
-.TP
-.B \-\-group
-Remove a group. This is the default action if the program is invoked
-as
-.IR delgroup .
-.TP
-.BR \-h ", " \-\-help
-Display brief instructions.
-.TP
-.BR \-q ", " \-\-quiet
-Suppress progress messages.
-.TP
-.B \-\-debug
-Be verbose, most useful if you want to nail down a problem.
-.TP
-.B \-\-system
-Only delete if the user or group is a system user or group. This avoids
-accidental deletion of non-system users and groups. In addition, if the user or
-group does not exist, return zero exit status. Debian package maintainer
-scripts may use this flag to remove system users or groups while ignoring the
-case where the removal already occurred.
-.TP
-.B \-\-only-if-empty 
-Only remove if no members are left.
+Different modes of \fBdeluser\fP allow different options.
+If no valid modes are listed for a option,
+it is accepted in all modes.
+.PP
+Short versions for certain options may exist for historical reasons.
+They are going to stay supported, but are removed from the documentation.
+Users are advised to migrate to the long version of options.
 .TP
 .B \-\-backup
-Backup all files contained in the userhome and the mailspool-file to a file named
-/$user.tar.bz2 or /$user.tar.gz.
+Backup all files contained in the userhome and the mailspool file
+to a file named \fIusername.tar.bz2\fP or \fIusername.tar.gz\fP.
+Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
 .TP
-.B \-\-backup-to
-Place the backup files not in / but in the directory specified by this parameter. This implicitly sets --backup also.
+.BR "\-\-backup\-suffix "str
+Select compression algorithm for a home directory backup.
+Can be set to any suffix recognized by \fBtar \-\-auto\-compress\fP.
+Defaults to \fI.gz\fP.
+Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
 .TP
-.B \-\-remove-home
-Remove the home directory of the user and its mailspool. If \-\-backup is specified,
+.BI "\-\-backup\-to "dir
+Place the backup files not in the current directory but in \fIdir\fP.
+This implicitly sets \fB\-\-backup\fP also.
+(defaulting to the current working directory).
+Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
+.TP
+.BR "\-\-conf \fIfile\fP"
+Use \fIfile\fP instead of the default files
+\fI/etc/deluser.conf\fP and \fI/etc/adduser.conf\fP.
+Multiple \-\-conf options may be given.
+.TP
+.BR \-\-debug
+Activate debugging code.
+.TP
+.B \-\-group
+Remove a group.
+This is the default action if the program is
+invoked as \fIdelgroup\fP.
+Valid Mode: \fBdeluser\fP.
+.TP
+.B \-\-help
+Display brief instructions.
+.TP
+.B \-\-only\-if\-empty
+Only remove if no members are left.
+Valid Modes: \fBdeluser --group\fP, \fBdelgroup\fP,
+.TP
+.B \-\-quiet
+Suppress informational messages, only show warnings and errors.
+.TP
+.B \-\-remove\-all\-files
+Remove all files from the system owned by this user.
+Note: \-\-remove\-home does not have an effect any more.
+If \fB\-\-backup\fP is specified,
 the files are deleted after having performed the backup.
+Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
 .TP
-.B \-\-remove-all-files
-Remove all files from the system owned by this user. Note: \-\-remove-home does
-not have an effect any more. If \-\-backup is specified, the files are deleted after
-having performed the backup.
+.B \-\-remove\-home
+Remove the home directory of the user and its mailspool.
+If \fB\-\-backup\fP is specified,
+the files are deleted after having performed the backup.
+Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
 .TP
-.BR \-v ", " \-\-version
+.B \-\-system
+Only delete if user/group is a system user/group.
+If the user does not exist, no error value is returned.
+Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
+.TP
+.B \-\-verbose
+Be more verbose.
+.TP
+.B \-\-version
 Display version and copyright information.
 .SH "RETURN VALUE"
 .TP
 .B 0
-The action was successfully executed.
+Success: The action was successfully executed.
 .TP
 .B 1
-The user to delete was not a system account. No action was performed.
+The user to delete was not a system account.
+No eaction was performed.
 .TP
 .B 2
-There is no such user. No action was performed.
+There is no such user.
+No action was performed.
 .TP
 .B 3
-There is no such group. No action was performed.
+There is no such group.
+No action was performed.
 .TP
 .B 4
-Internal error. No action was performed.
+Internal error.
+No action was performed.
 .TP
 .B 5
-The group to delete is not empty. No action was performed.
+The group to delete is not empty.
+No action was performed.
 .TP
 .B 6
-The user does not belong to the specified group. No action was performed.
+The user does not belong to the specified group.
+No action was performed.
 .TP
 .B 7
-You cannot remove a user from its primary group. No action was performed.
+You cannot remove a user from its primary group.
+No action was performed.
 .TP
 .B 8
-The required perl-package 'perl modules' is not installed. This package is required to perform the requested actions. No action was performed.
+The suggested package 'perl' is not installed.
+This package is required to perform the requested actions.
+No action was performed.
 .TP
 .B 9
-For removing the root account the parameter "--no-preserve-root" is required. No action was performed.
+The root account cannot be deleted. No action was performed.
+
+
+.SH SECURITY
+\fBdeluser\fP needs root privileges and offers,
+via the \fB\-\-conf\fP command line option
+to use different configuration files.
+Do not use \fBsudo\fP or similar tools to
+give partial privileges to \fBdeluser\fP
+with restricted command line parameters.
+This is easy to circumvent and might
+allow users to create arbitrary accounts.
+If you want this,
+consider writing your own wrapper script
+and giving privileges to execute that script.
 
 .SH FILES
 .IR /etc/deluser.conf
-Default configuration file for deluser and delgroup
+Default configuration file for \fBdeluser\fP and \fBdelgroup\fP
 .TP
 .IR /usr/local/sbin/deluser.local
-Optional custom add-ons.
+Optional custom add-ons, see
+.BR deluser.local (8)
+.
 
 .SH "SEE ALSO"
 .BR adduser (8),
 .BR deluser.conf (5),
+.BR deluser.local.conf (8),
 .BR groupdel (8),
-.BR userdel (8) 
-
-.SH COPYRIGHT
-Copyright (C) 2000 Roland Bauerschmidt. Modifications (C) 2004
-Marc Haber and Joerg Hoh.
-This manpage and the deluser program are based on adduser which is:
-.br
-Copyright (C) 1997, 1998, 1999 Guy Maor.
-.br
-Copyright (C) 1995 Ted Hajek, with a great deal borrowed from the original
-Debian 
-.B adduser
-.br
-Copyright (C) 1994 Ian Murdock.
-.B deluser
-is free software; see the GNU General Public Licence version 2 or
-later for copying conditions.  There is
-.I no
-warranty.
+.BR userdel (8)

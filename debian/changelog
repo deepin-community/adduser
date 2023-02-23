@@ -1,14 +1,252 @@
-adduser (3.121.1+deepin1+u001) unstable; urgency=medium
+adduser (3.131) unstable; urgency=medium
 
-  * update
+  [ Marc Haber ]
+  * Fix a bug: system user names are now allowed to begin with an
+    underscore. Thanks to Guillem Jover for spotting this.
+  * Updated Portuguese translation of program messages.
+    Thanks to Américo Monteiro (Closes: #1028147)
+  * Update on Portuguese translation of man page.
+    Thanks to Américo Monteiro (Closes: #1028103)
+  * New Dutch translation of man page.
+    Thanks to Frans Spiesschaert (Closes: #1028337)
+  * Update french program translation.
+    Thanks to Jean-Paul Guillonneau (Closes: #1029486)
 
- -- Deepin Packages Builder <packages@deepin.org>  Tue, 29 Nov 2022 05:53:17 -0500
+  [ Helge Kreutzmann ]
+  * Update german program translation.
+    Thanks to Helge Kreutzmann (Closes: #1029572)
+  * Update Dutch program translation.
+    Thanks to Frans Spiesschaert (Closes: #1028336)
+  * Update French translation of man page.
+    Thanks to Jean-Paul Guillonneau (Closes: #1029124)
 
-adduser (3.121.1+deepin1) unstable; urgency=medium
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 07 Feb 2023 12:08:36 +0100
 
-  * Non-maintainer upload.
+adduser (3.130) unstable; urgency=low
 
- -- LiChengGang <lichenggang@uniontech.com>  Wed, 03 Aug 2022 16:47:37 +0800
+  [ Marc Haber ]
+
+  * debian/NEWS: inform about planned deprecations
+  * Fully implement and test (first|last)(uid|gid).
+    (Closes: #579107, #344824)
+  * Implement usage of UID-Pool.
+    Thanks to Hilko Bengen and Christoph Biedl (Closes: #243929)
+  * More clearly document supplementary group behavior with USERGROUPS=yes.
+    This fixes an inconsistency between code, adduser.8 and
+    adduser.conf.5. adduser.conf.5. code and tests implement consensus
+    reached in summer 2022 in #678615. (Closes: #1025384)
+  * Re-work --disabled-(login|password) as discussed on -devel.
+    Thanks to Matthew Woodcraft and Sam Morris (Closes: #625758)
+  * Add quota to Suggests. Addresses part of #541728.
+    Thanks to Christoph Anton Mitterer
+  * Change --allow-badname to --allow-bad-names.
+    --allow-badname and --force-badname are deprecated but still supported.
+  * Deprecate --no-preserve-root.
+  * Deprecate --gecos, new option --comment
+  * Remove invalidate_nscd calls. (Closes: #1016913)
+  * Specialcase /nonexistent so that it never gets created
+  * Multiple --conf options are now allowed
+  * Sync options in manual pages, help, configuration file and code
+  * Be clearer in 'directory already exists' message. Addresses part of #541728.
+    Thanks to Christoph Anton Mitterer
+  * Manpage re-work
+    * Re-word, re-structure, many clarifications, remove ambiguities
+    * Sort options
+    * Give general options explanation
+    * Remove wrong information about sgid bits from adduser.8
+    * Fix typos and formatting errors in adduser.8.
+      Thanks to Jean-Paul Guillonneau
+    * Add test that fails if dangling manpage symlinks are there
+    * Semantic linebreaks, lint clean, formatting changes to deluser.conf.5
+    * Have po4a accept manpages that are > 95 % translated
+  * README:
+    * Actually install the file.
+      Thanks to Olaf van der Spek (Closes: #1020615)
+    * Fix typos. Thanks to Olaf van der Spek
+    * Mention no duplication policy from man pages.
+  * Move po4a to Build-Depends.
+    Thanks to Adam Borowski (Closes: #1021217)
+  * Standards-Version: 4.6.2 (no changes necessary)
+
+  [ Jason Franklin ]
+  * Use "#! /bin/sh" in the maintainer scripts. (Closes: #1023836)
+  * Remove symbolic links for man pages that do not exist. (Closes: #1016014)
+
+  [ Akbarkhon Variskhanov ]
+  * adduser.8: Fix formatting issues
+
+  [ Niels Thykier ]
+  * Make adduser build without (fake)root
+
+  [ Benjamin Drung ]
+  * adduser: Remove trailing newline.
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Sun, 25 Dec 2022 17:11:31 +0100
+
+adduser (3.129) unstable; urgency=medium
+
+  * improve parameter interpretation for adduser.
+    Thanks to Boris Kolpackov (Closes: #1018861)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Mon, 05 Sep 2022 21:57:58 +0200
+
+adduser (3.128) unstable; urgency=medium
+
+  [ Marc Haber ]
+  * increase timeouts, reduce number of tests for delgroup_perf.t
+    they have timed out in Debian infrastructure
+  * even the legacy test suite needs cron
+  * Write defaults explicitly in configuration file templates.
+    Thanks to Christoph Anton Mitterer (Closes: #1017888)
+  * skip most of the version checks in preinst
+    Thanks to Vincent Lefevre (Closes: #1017912)
+  * document that the --ingroup group must exist
+  * fix handling of explicitly set --uid and --gid.
+    Thanks to Samuel Thibault (Closes: #1017952)
+
+  [ Benjamin Drung ]
+  * Document parameter for checkname function
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 23 Aug 2022 21:40:01 +0200
+
+adduser (3.127) unstable; urgency=low
+
+  [ Jason Franklin ]
+  * Document the intent of the "--no-create-home" option. (Closes: #152195)
+
+  [ Marc Haber ]
+  * create home directory with primary group of the user (Closes: #1017694)
+  * update and extend README
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Sun, 21 Aug 2022 21:42:09 +0200
+
+adduser (3.126) experimental; urgency=medium
+
+  * more clear conffile handling in debian/preinst.
+    Thanks to Simon McVittie (Closes: #1016574)
+  * add postrm script cleaning up better after purge
+  * add a Debian README, move too long DIR_MODE explanation from
+    NEWS.Debian to README.
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 09 Aug 2022 15:19:57 +0200
+
+adduser (3.125) experimental; urgency=medium
+
+  [ Marc Haber ]
+  * remove debconf. (Closes: #57280, #398802)
+  * install (add|del)user.conf as examples.
+  * install adduser.conf as dpkg-conffile directly to /etc.
+    (Closes: #541620)
+  * remove postinst/postrm. (Closes: #1012492)
+
+  [ Jason Franklin ]
+  * Remove the unused "get_users_groups" subroutine. (Closes: #1015907)
+
+  [ Matt Barry ]
+  * Do not check for group being empty on 'delgroup'. (Closes: #682156)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 26 Jul 2022 09:57:52 +0200
+
+adduser (3.124) experimental; urgency=medium
+
+  * experimental upload
+  * implement new USERS_GROUP semantics
+    * adapt documentation
+    * implement testcases
+    * re-work adduser logic to support USERGROUPS mechanics.
+      This also kind of drive-by implements --firstgid and --lastgid
+      (Closes: #609114, #678615, #440801)
+    * rework adduser.conf
+  * improve test infrastructure
+    * implement new test for non membership in group
+    * implement new group_has_gid test
+    * implement new apply_config_hash function.
+  * fix bugs and docs in --add-extra-groups
+  * update debian/copyright
+  * Update of German program translation.
+    Thanks to Dr. Tobias Quathamer (Closes: #1015283)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Fri, 22 Jul 2022 21:50:45 +0200
+
+adduser (3.123) unstable; urgency=medium
+
+  [ Marc Haber ]
+  * flip default for DIR_MODE to 0700 again.
+    Thanks to Josh Triplett (Closes: #1014901)
+  * add debian.NEWS entry to document the DIR_MODE change
+  * remove superficial examples/adduser.local.conf.examples/adduser.conf
+
+  [ Matt Barry ]
+  * Check explicitly for <= 32 byte names. (Closes: #1014450)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Thu, 21 Jul 2022 08:10:13 +0200
+
+adduser (3.122) unstable; urgency=low
+
+  [ Marc Haber ]
+  * improve package description.
+  * Standards-Version: 4.6.1 (no changes necessary)
+  * clean out EXTRA_GROUPS to only contain users.
+    Thanks to Daniel Keast. (Closes: #849265)
+  * add SECURITY section to manual pages.
+  * add test for backups of home directory.
+  * improve and update lintian overrides.
+  * Formatting changes to manual pages.
+    Thanks to Markus Hiereth. (Closes: #874560)
+  * fix some typos in manual pages.
+  * set VERBOSE and DEBUG envvars in deluser as well. (Closes: #1006897)
+  * add documentation about adduser being a policy layer. (Closes: #1007785)
+  * try to clarify system account terminology (policy vs system).
+    (Closes: #1006975)
+  * Document that only adduser --system is idempotent. (Closes: #723572)
+  * error out for two-argument addgroup.
+    Thanks to Mike Dornberger. (Closes: #664869)
+  * make --add_extra_groups into --add-extra-groups. (Closes: #1014395)
+  * --force-badname is now --allow-badname. (Closes: #1014448)
+  * update turkish debconf translation.
+    Thanks to Atila KOÇ. (Closes: #908997)
+  * Update Russian debconf translation.
+    Thanks to Lev Lamberov. (Closes: #920739)
+  * Update Danish debconf translation (Closes: #923059)
+  * Update Italian debconf translation.
+    Thanks to Luca Monducci. (Closes: #969217)
+  * Update German man page translation.
+    Thanks to Helge Kreutzmann. (Closes: #977678)
+  * Update European Portuguese translation of man page.
+    Thanks to Américo Monteiro. (Closes: #925511)
+  * disable translated manpages, none left for the time being.
+  * deprecate planned directory service support.
+  * Add docs about adduser.local being the place to interact with DS,
+  * Some improvements to autopkgtests.
+
+  [ Matt Barry ]
+  * System account home dir defaults to /nonexistent. (Closes: #679746)
+  * do not accept all-numeric user names. (Closes: #891748)
+  * prompts need y/n/empty(default).
+  * Implement SYS_DIR_MODE. (Closes: #1008081, #202943, #398793)
+  * Implement SYS_NAME_REGEX. (Closes: #521883, #432562)
+  * Deprecate SETGID_HOME.
+    Add NEWS/TODO items. (Closes: #643559, #979385, #1008091, #643559)
+  * Fix ignored files for --remove-all-files.
+    (Closes: #1001863, #588872, #926262, #992163)
+  * Redefines the default NO_DEL_PATHS to avoid unnecessary
+    scanning.
+  * Change deluser_files test to use gzip.
+  * Fix deletion of sockets/pipes. (Closes: #685532)
+  * Simplify checkname sub.  (Closes: #1006941)
+  * Adds support for lock files. (Closes: #983405)
+  * Username validity testing framework.
+  * Add --allow-all-names to bypass --force-badname.
+    (Closes: #520037, #774046)
+  * use warnf instead of printf in some places. (Closes: #675804)
+  * Support tar --auto-compress for backups. (Closes: #896916)
+  * Many improvements to autopkgtests. (Closes: 239825)
+
+  [ Jason Franklin ]
+  * Allow for cloned-UID users in group member lists.
+    Thanks to Daniel Heimann. (Closes: #701110)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Wed, 13 Jul 2022 20:30:00 +0200
 
 adduser (3.121) unstable; urgency=medium
 

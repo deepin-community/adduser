@@ -3,8 +3,7 @@
 # expect:
 #  - a new system user $USER
 #  - added to group nogroup
-#  - home directory /home/$USER
-#  - removal of home directory works
+#  - home directory /nonexistent (not created)
 
 use strict;
 use lib_test;
@@ -22,7 +21,7 @@ if (!defined (getpwnam($username))) {
 	  exit $error;
 	}
 	assert(check_user_exist ($username));
-	assert(check_homedir_exist($username));	
+	assert(check_user_homedir_not_exist($username));	
 	assert(check_group_exist($groupname));
 	assert(check_user_in_group($username,$groupname));
 	print "ok\n";

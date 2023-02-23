@@ -13,7 +13,7 @@ use strict;
 use lib_test;
 
 my $username = find_unused_name(); 
-my $cmd = "adduser --gecos test --disabled-password --add_extra_groups $username";
+my $cmd = "adduser --comment test --disabled-password --add-extra-groups $username";
 
 my %config;
 
@@ -90,7 +90,7 @@ unless (!defined getgrnam($newgroup)) {
 }
 
 my $sysusername = find_unused_name(); 
-$cmd = "adduser --system --gecos test --disabled-password --add_extra_groups $sysusername";
+$cmd = "adduser --system --comment test --disabled-password --add-extra-groups $sysusername";
 
 if (!defined (getpwnam($sysusername))) {
 	print "Testing $cmd... ";
