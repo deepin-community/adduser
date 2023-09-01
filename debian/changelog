@@ -1,3 +1,9 @@
+adduser (3.131-1deepin2) unstable; urgency=medium
+
+  * revert "add deepin patch."
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Fri, 01 Sep 2023 16:06:42 +0800
+
 adduser (3.131-1deepin1) unstable; urgency=medium
 
   * add deepin patch.
