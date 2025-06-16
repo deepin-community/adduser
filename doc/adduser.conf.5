@@ -39,7 +39,7 @@ Defaults to \fI0\fP.
 .TP
 .B DIR_MODE
 The permissions mode for home directories of non-system users
-that are created by \fBadduser\fP.
+that are created by \fBadduser\fP(8).
 Defaults to \fI0700\fP.
 Note that there are potential configurations
 (such as /~user web services, or in-home mail delivery)
@@ -109,9 +109,9 @@ Defaults to \fIno\fP. This option is \fBdeprecated\fP and will be removed.
 .B NAME_REGEX
 Non-system user- and groupnames are checked against this regular expression.
 If the name doesn't match this regexp,
-user and group creation in \fBadduser\fR is refused
-unless \-\-allow\-bad\-names is set.
-With \-\-allow\-bad\-names set,
+user and group creation in \fBadduser\fR(8) is refused
+unless \fB\-\-allow\-bad\-names\fR is set.
+With \fB\-\-allow\-bad\-names\fR set,
 weaker checks are performed.
 Defaults to the most conservative \fI^[a\-z][\-a\-z0\-9_]*$\fP.
 See \fBSYS_NAME_REGXEX\fP and \fBValid names\fP,
@@ -129,7 +129,7 @@ then home directories for users with
 their own group (\fBUSERGROUPS\fP = yes)
 will have the set-group-ID bit set.
 Note that this feature is \fBdeprecated\fP and
-will be removed in a future version of \fBadduser\fP.
+will be removed in a future version of \fBadduser\fP(8).
 Please use \fBDIR_MODE\fP instead.
 Defaults to \fIno\fP.
 .TP
@@ -143,11 +143,11 @@ When populating the newly created home directory of a non-system user,
 files in SKEL matching this regex are not copied.
 Defaults to to
 \fI(.(dpkg|ucf)\-(old|new|dist)$)\fP,
-the regular expression matching files left over from unmerged config files
+the regular expression matching files left over from unmerged config files.
 .TP
 .B SYS_DIR_MODE
 The permissions mode for home directories of system users
-that are created by \fBadduser\fP.
+that are created by \fBadduser\fP(8).
 Defaults to \fI0755\fP.
 Note that changing the default permissions for system users
 may cause some packages to behave unreliably,
@@ -158,8 +158,8 @@ See also \fBDIR_MODE\fP.
 System user- and groupnames are checked against this regular expression.
 If the name doesn't match this regexp,
 system user and group creation in adduser is refused
-unless \-\-allow\-bad\-names is set.
-With \-\-allow\-bad\-names set,
+unless \fB\-\-allow\-bad\-names\fP is set.
+With \fB\-\-allow\-bad\-names\fP set,
 weaker checks are performed.
 Defaults to the most conservative \fI^[a\-z_][\-a\-z0\-9_]*$\fP.
 See \fBNAME_REGEX\fP, above, and \fBValid names\fP,
@@ -193,7 +193,7 @@ even if the values are consistent.
 .SH NOTES
 .SS VALID NAMES
 Historically,
-\fBadduser\fP and \fBaddgroup\fP enforced
+\fBadduser\fP(8) and \fBaddgroup\fP(8) enforced
 conformity to IEEE Std 1003.1-2001,
 which allows only the following characters to appear
 in group- and usernames:
@@ -210,7 +210,7 @@ the name must begin with a letter
 .PP
 The least restrictive policy,
 available by using the \fB\-\-allow-all-names\fP option,
-simply makes the same checks as \fBuseradd\fP:
+simply makes the same checks as \fBuseradd\fP(8):
 cannot start with a dash, plus sign, or tilde;
 and cannot contain a colon, comma, slash, or whitespace.
 .PP
@@ -239,7 +239,7 @@ The value is either a file or a directory.
 In the latter case all files named \fI*.conf\fP
 in that directory are considered.
 .PP
-The file format is similar to \fI/etc/passwd>\fP:
+The file format is similar to \fI/etc/passwd\fP:
 Text lines, fields separated by a colon.
 The values are
 username/groupname (mandatory),
@@ -252,7 +252,7 @@ It is possible to use the same file/directory for
 \fBUID_POOL\fP and \fBGID_POOL\fP.
 .PP
 If an account / group is created,
-\fBadduser\fP searches in all UID/GID pool files
+\fBadduser\fP(8) searches in all UID/GID pool files
 for a line matching the name
 of the newly created account and
 uses the data found there to initialize the new account

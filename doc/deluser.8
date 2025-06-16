@@ -83,7 +83,7 @@ or even all files on the system owned by the user to be removed,
 running a custom script,
 and other features.
 .PP
-For a full list and explanation of all options,
+For a full list and explanations of all options,
 see the OPTIONS section.
 .PP
 \fBdeluser\fP and \fBdelgroup\fP can be run in one of three modes:
@@ -112,10 +112,10 @@ are already covered by the \fB\-\-remove\-all\-files\fP option.
 If you want to backup all files before deleting them
 you can activate the \fB\-\-backup\fP option
 which will create a file \fIusername.tar(.gz|.bz2)\fP
-in the directory specified by the \fB\-\-backup\-to\fP option
+in the directory specified by the \fB\-\-backup\-to\fP option.
 .PP
 By default,
-the backup archive is compressed with gzip.
+the backup archive is compressed with \fBgzip\fP(1).
 To change this,
 the \fB\-\-backup\-suffix\fP option can be set
 to any suffix supported by \fBtar \-\-auto\-compress\fP (e.g. .gz, .bz2, .xz).
@@ -228,7 +228,7 @@ Success: The action was successfully executed.
 .TP
 .B 1
 The user to delete was not a system account.
-No eaction was performed.
+No action was performed.
 .TP
 .B 2
 There is no such user.
@@ -267,7 +267,7 @@ The root account cannot be deleted. No action was performed.
 \fBdeluser\fP needs root privileges and offers,
 via the \fB\-\-conf\fP command line option
 to use different configuration files.
-Do not use \fBsudo\fP or similar tools to
+Do not use \fBsudo\fP(8) or similar tools to
 give partial privileges to \fBdeluser\fP
 with restricted command line parameters.
 This is easy to circumvent and might
@@ -278,7 +278,7 @@ and giving privileges to execute that script.
 
 .SH FILES
 .IR /etc/deluser.conf
-Default configuration file for \fBdeluser\fP and \fBdelgroup\fP
+Default configuration file for \fBdeluser\fP(8) and \fBdelgroup\fP(8)
 .TP
 .IR /usr/local/sbin/deluser.local
 Optional custom add-ons, see

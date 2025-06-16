@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-02-07 12:17+0100\n"
+"POT-Creation-Date: 2023-05-25 19:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -319,7 +319,7 @@ msgstr ""
 
 #. type: Plain text
 #: ../adduser.8:132 ../deluser.8:88
-msgid "For a full list and explanation of all options, see the OPTIONS section."
+msgid "For a full list and explanations of all options, see the OPTIONS section."
 msgstr ""
 
 #. type: Plain text
@@ -375,7 +375,7 @@ msgstr ""
 #: ../adduser.8:172
 msgid ""
 "The interaction between B<USERS_GID>, B<USERS_GROUP>, and B<USERGROUPS> is "
-"explained in detail in B<adduser.conf (5).>"
+"explained in detail in B<adduser.conf>(5)."
 msgstr ""
 
 #. type: Plain text
@@ -386,7 +386,7 @@ msgid ""
 "respectively.  Also, users can be added to one or more supplemental groups "
 "defined as B<EXTRA_GROUPS> in the configuration file either by setting "
 "B<ADD_EXTRA_GROUPS> to 1 in the configuration file, or by passing "
-"B<--add-extra-groups> on the commandline."
+"B<--add-extra-groups> on the command line."
 msgstr ""
 
 #. type: Plain text
@@ -401,7 +401,7 @@ msgstr ""
 #: ../adduser.8:196
 msgid ""
 "UID, comment, home directory and shell might be pre-determined with the "
-"B<UID_POOL> and B<GID_POOL> option, documented in B<adduser.conf(5).>"
+"B<UID_POOL> and B<GID_POOL> option, documented in B<adduser.conf>(5)."
 msgstr ""
 
 #. type: SS
@@ -440,7 +440,7 @@ msgstr ""
 msgid ""
 "If no home directory is specified, the default home directory for a new "
 "system user is I<\\%/nonexistent>.  This directory should never exist on any "
-"Debian system, and B<\\%adduser> will never create it automatically."
+"Debian system, and B<adduser> will never create it automatically."
 msgstr ""
 
 #. type: Plain text
@@ -456,7 +456,7 @@ msgstr ""
 #: ../adduser.8:232
 msgid ""
 "Other options will behave as for the creation of a normal user.  The files "
-"referenced by UID_POOL and GID_POOL do also work."
+"referenced by B<UID_POOL> and B<GID_POOL> do also work."
 msgstr ""
 
 #. type: SS
@@ -561,8 +561,8 @@ msgstr ""
 #: ../adduser.8:286
 msgid ""
 "Allow any user- and groupname which is supported by the underlying "
-"B<useradd>, including names containing non-ASCII characters.  See VALID "
-"NAMES in B<adduser.conf>(5)  Valid Modes: B<adduser>, B<adduser --system>, "
+"B<useradd>(8), including names containing non-ASCII characters.  See VALID "
+"NAMES in B<adduser.conf>(5).  Valid Modes: B<adduser>, B<adduser --system>, "
 "B<addgroup>, B<addgroup --system>."
 msgstr ""
 
@@ -577,7 +577,7 @@ msgstr ""
 msgid ""
 "Disable B<NAME_REGEX> and B<SYS_NAME_REGEX> check of names.  Only a weaker "
 "check for validity of the name is applied.  See VALID NAMES in "
-"B<adduser.conf>(5)  Valid Modes: B<adduser>, B<adduser --system>, "
+"B<adduser.conf>(5).  Valid Modes: B<adduser>, B<adduser --system>, "
 "B<addgroup>, B<addgroup --system>."
 msgstr ""
 
@@ -592,16 +592,16 @@ msgstr ""
 msgid ""
 "Set the comment field for the new entry generated.  B<adduser> will not ask "
 "for the information if this option is given.  This field is also known under "
-"the name GECOS field and contains information that is used by the finger "
-"command.  This used to be the B<--gecos> option, which is deprecated and "
-"will be removed after Debian bookworm.  Valid Modes: B<adduser>, B<adduser "
-"--system>."
+"the name GECOS field and contains information that is used by the "
+"B<finger>(1) command.  This used to be the B<--gecos> option, which is "
+"deprecated and will be removed after Debian bookworm.  Valid Modes: "
+"B<adduser>, B<adduser --system>."
 msgstr ""
 
 #. type: TP
 #: ../adduser.8:303
 #, no-wrap
-msgid "B<--conf>I< FILE >"
+msgid "B<--conf>I< file >"
 msgstr ""
 
 #. type: Plain text
@@ -637,7 +637,7 @@ msgstr ""
 #. type: Plain text
 #: ../adduser.8:321
 msgid ""
-"Do not run B<passwd> to set a password.  In most situations, logins are "
+"Do not run B<passwd>(1) to set a password.  In most situations, logins are "
 "still possible though (for example using SSH keys or through PAM)  for "
 "reasons that are beyond B<adduser>'s scope.  B<--disabled-login> will "
 "additionally set the shell to I</usr/sbin/nologin>.  Valid Mode: B<adduser>."
@@ -905,11 +905,11 @@ msgstr ""
 #: ../adduser.8:473
 msgid ""
 "B<adduser> needs root privileges and offers, via the B<--conf> command line "
-"option to use different configuration files.  Do not use B<sudo> or similar "
-"tools to give partial privileges to B<adduser> with restricted command line "
-"parameters.  This is easy to circumvent and might allow users to create "
-"arbitrary accounts.  If you want this, consider writing your own wrapper "
-"script and giving privileges to execute that script."
+"option to use different configuration files.  Do not use B<sudo>(8) or "
+"similar tools to give partial privileges to B<adduser> with restricted "
+"command line parameters.  This is easy to circumvent and might allow users "
+"to create arbitrary accounts.  If you want this, consider writing your own "
+"wrapper script and giving privileges to execute that script."
 msgstr ""
 
 #. type: SH
@@ -926,7 +926,7 @@ msgstr ""
 
 #. type: Plain text
 #: ../adduser.8:478
-msgid "Default configuration file for B<adduser> and B<addgroup>"
+msgid "Default configuration file for B<adduser>(8) and B<addgroup>(8)"
 msgstr ""
 
 #. type: TP
@@ -959,7 +959,7 @@ msgid ""
 "distinguishment of I<dynamically allocated system users and groups> and "
 "I<dynamically allocated user accounts>, meaning in both cases special "
 "instances of I<system accounts>.  Care must be taken to not confuse this "
-"terminology.  Since B<adduser> and B<deluser> never address I<application "
+"terminology.  Since B<adduser> and B<deluser>(8) never address I<application "
 "accounts> and everything in this package concerns I<system accounts> here, "
 "the usage of the terms I<user account> and I<system account> is actually not "
 "ambiguous in the context of this package.  For clarity, this document uses "
@@ -1079,9 +1079,10 @@ msgstr ""
 #: ../adduser.conf.5:48
 msgid ""
 "The permissions mode for home directories of non-system users that are "
-"created by B<adduser>.  Defaults to I<0700>.  Note that there are potential "
-"configurations (such as /~user web services, or in-home mail delivery)  "
-"which will require changes to the default.  See also B<SYS_DIR_MODE>."
+"created by B<adduser>(8).  Defaults to I<0700>.  Note that there are "
+"potential configurations (such as /~user web services, or in-home mail "
+"delivery)  which will require changes to the default.  See also "
+"B<SYS_DIR_MODE>."
 msgstr ""
 
 #. type: TP
@@ -1255,8 +1256,8 @@ msgstr ""
 msgid ""
 "Non-system user- and groupnames are checked against this regular "
 "expression.  If the name doesn't match this regexp, user and group creation "
-"in B<adduser> is refused unless --allow-bad-names is set.  With "
-"--allow-bad-names set, weaker checks are performed.  Defaults to the most "
+"in B<adduser>(8) is refused unless B<--allow-bad-names> is set.  With "
+"B<--allow-bad-names> set, weaker checks are performed.  Defaults to the most "
 "conservative I<^[a-z][-a-z0-9_]*$>.  See B<SYS_NAME_REGXEX> and B<Valid "
 "names>, below, for more information."
 msgstr ""
@@ -1286,7 +1287,7 @@ msgid ""
 "If this is set to I<yes>, then home directories for users with their own "
 "group (B<USERGROUPS> = yes)  will have the set-group-ID bit set.  Note that "
 "this feature is B<deprecated> and will be removed in a future version of "
-"B<adduser>.  Please use B<DIR_MODE> instead.  Defaults to I<no>."
+"B<adduser>(8).  Please use B<DIR_MODE> instead.  Defaults to I<no>."
 msgstr ""
 
 #. type: TP
@@ -1314,7 +1315,7 @@ msgid ""
 "When populating the newly created home directory of a non-system user, files "
 "in SKEL matching this regex are not copied.  Defaults to to "
 "I<(.(dpkg|ucf)-(old|new|dist)$)>, the regular expression matching files left "
-"over from unmerged config files"
+"over from unmerged config files."
 msgstr ""
 
 #. type: TP
@@ -1327,7 +1328,7 @@ msgstr ""
 #: ../adduser.conf.5:156
 msgid ""
 "The permissions mode for home directories of system users that are created "
-"by B<adduser>.  Defaults to I<0755>.  Note that changing the default "
+"by B<adduser>(8).  Defaults to I<0755>.  Note that changing the default "
 "permissions for system users may cause some packages to behave unreliably, "
 "if the program relies on the default setting.  See also B<DIR_MODE>."
 msgstr ""
@@ -1343,10 +1344,10 @@ msgstr ""
 msgid ""
 "System user- and groupnames are checked against this regular expression.  If "
 "the name doesn't match this regexp, system user and group creation in "
-"adduser is refused unless --allow-bad-names is set.  With --allow-bad-names "
-"set, weaker checks are performed.  Defaults to the most conservative "
-"I<^[a-z_][-a-z0-9_]*$>.  See B<NAME_REGEX>, above, and B<Valid names>, "
-"below, for more information."
+"adduser is refused unless B<--allow-bad-names> is set.  With "
+"B<--allow-bad-names> set, weaker checks are performed.  Defaults to the most "
+"conservative I<^[a-z_][-a-z0-9_]*$>.  See B<NAME_REGEX>, above, and B<Valid "
+"names>, below, for more information."
 msgstr ""
 
 #. type: TP
@@ -1404,11 +1405,11 @@ msgstr ""
 #. type: Plain text
 #: ../adduser.conf.5:204
 msgid ""
-"Historically, B<adduser> and B<addgroup> enforced conformity to IEEE Std "
-"1003.1-2001, which allows only the following characters to appear in group- "
-"and usernames: letters, digits, underscores, periods, at signs (@) and "
-"dashes.  The name may not start with a dash or @.  The \"$\" sign is allowed "
-"at the end of usernames to allow typical Samba machine accounts."
+"Historically, B<adduser>(8) and B<addgroup>(8) enforced conformity to IEEE "
+"Std 1003.1-2001, which allows only the following characters to appear in "
+"group- and usernames: letters, digits, underscores, periods, at signs (@) "
+"and dashes.  The name may not start with a dash or @.  The \"$\" sign is "
+"allowed at the end of usernames to allow typical Samba machine accounts."
 msgstr ""
 
 #. type: Plain text
@@ -1423,7 +1424,7 @@ msgstr ""
 #: ../adduser.conf.5:216
 msgid ""
 "The least restrictive policy, available by using the B<--allow-all-names> "
-"option, simply makes the same checks as B<useradd>: cannot start with a "
+"option, simply makes the same checks as B<useradd>(8): cannot start with a "
 "dash, plus sign, or tilde; and cannot contain a colon, comma, slash, or "
 "whitespace."
 msgstr ""
@@ -1471,10 +1472,10 @@ msgstr ""
 #. type: Plain text
 #: ../adduser.conf.5:250
 msgid ""
-"The file format is similar to I</etc/passwdE<gt>>: Text lines, fields "
-"separated by a colon.  The values are username/groupname (mandatory), "
-"UID/GID (mandatory), comment field (optional, useful for user IDs only), "
-"home directory (ditto), shell (ditto)."
+"The file format is similar to I</etc/passwd>: Text lines, fields separated "
+"by a colon.  The values are username/groupname (mandatory), UID/GID "
+"(mandatory), comment field (optional, useful for user IDs only), home "
+"directory (ditto), shell (ditto)."
 msgstr ""
 
 #. type: Plain text
@@ -1487,7 +1488,7 @@ msgstr ""
 #. type: Plain text
 #: ../adduser.conf.5:261
 msgid ""
-"If an account / group is created, B<adduser> searches in all UID/GID pool "
+"If an account / group is created, B<adduser>(8) searches in all UID/GID pool "
 "files for a line matching the name of the newly created account and uses the "
 "data found there to initialize the new account instead of using the "
 "defaults.  Settings may be overridden from the command line."
@@ -1629,15 +1630,15 @@ msgstr ""
 msgid ""
 "If you want to backup all files before deleting them you can activate the "
 "B<--backup> option which will create a file I<username.tar(.gz|.bz2)> in the "
-"directory specified by the B<--backup-to> option"
+"directory specified by the B<--backup-to> option."
 msgstr ""
 
 #. type: Plain text
 #: ../deluser.8:122
 msgid ""
-"By default, the backup archive is compressed with gzip.  To change this, the "
-"B<--backup-suffix> option can be set to any suffix supported by B<tar "
-"--auto-compress> (e.g. .gz, .bz2, .xz)."
+"By default, the backup archive is compressed with B<gzip>(1).  To change "
+"this, the B<--backup-suffix> option can be set to any suffix supported by "
+"B<tar --auto-compress> (e.g. .gz, .bz2, .xz)."
 msgstr ""
 
 #. type: Plain text
@@ -1823,7 +1824,7 @@ msgstr ""
 
 #. type: Plain text
 #: ../deluser.8:232
-msgid "The user to delete was not a system account.  No eaction was performed."
+msgid "The user to delete was not a system account.  No action was performed."
 msgstr ""
 
 #. type: TP
@@ -1920,18 +1921,18 @@ msgstr ""
 #: ../deluser.8:278
 msgid ""
 "B<deluser> needs root privileges and offers, via the B<--conf> command line "
-"option to use different configuration files.  Do not use B<sudo> or similar "
-"tools to give partial privileges to B<deluser> with restricted command line "
-"parameters.  This is easy to circumvent and might allow users to create "
-"arbitrary accounts.  If you want this, consider writing your own wrapper "
-"script and giving privileges to execute that script."
+"option to use different configuration files.  Do not use B<sudo>(8) or "
+"similar tools to give partial privileges to B<deluser> with restricted "
+"command line parameters.  This is easy to circumvent and might allow users "
+"to create arbitrary accounts.  If you want this, consider writing your own "
+"wrapper script and giving privileges to execute that script."
 msgstr ""
 
 #. type: Plain text
 #: ../deluser.8:282
 msgid ""
-"I</etc/deluser.conf> Default configuration file for B<deluser> and "
-"B<delgroup>"
+"I</etc/deluser.conf> Default configuration file for B<deluser>(8) and "
+"B<delgroup>(8)"
 msgstr ""
 
 #. type: TP
@@ -1976,9 +1977,9 @@ msgstr ""
 #. type: Plain text
 #: ../deluser.conf.5:31
 msgid ""
-"B<deluser> and B<delgroup> also read I</etc/adduser.conf>, see "
-"B<adduser.conf;> settings in I<deluser.conf> may overwrite settings made in "
-"I<adduser.conf>."
+"B<deluser>(8) and B<delgroup>(8)  also read I</etc/adduser.conf>, see "
+"B<adduser.conf>(5); settings in I<deluser.conf> may overwrite settings made "
+"in I<adduser.conf>."
 msgstr ""
 
 #. type: TP
@@ -2049,7 +2050,7 @@ msgid ""
 "A list of regular expressions, space separated.  All files to be deleted in "
 "course of deleting the home directory or user-owned files elsewhere are "
 "checked against each of these regular expressions.  If a match is detected, "
-"the file is not deleted.  Default to a list of system directories, leaving "
+"the file is not deleted.  Defaults to a list of system directories, leaving "
 "only I</home>.  Therefore only files below I</home> belonging to that "
 "specific user are going to be deleted."
 msgstr ""

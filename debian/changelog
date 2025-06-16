@@ -1,14 +1,32 @@
-adduser (3.131-1deepin2) unstable; urgency=medium
+adduser (3.134) unstable; urgency=medium
 
-  * revert "add deepin patch."
+  * Revert "mark adduser as Protected:yes"
 
- -- Tianyu Chen <sweetyfish@deepin.org>  Fri, 01 Sep 2023 16:06:42 +0800
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Thu, 25 May 2023 17:54:35 +0200
 
-adduser (3.131-1deepin1) unstable; urgency=medium
+adduser (3.133) unstable; urgency=medium
 
-  * add deepin patch.
+  [ Johannes Schauer Marin Rodrigues ]
+  * mark adduser as Protected:yes. This is a temporary fix for #1035694
 
- -- LiChengGang <lichenggang@uniontech.com>  Thu, 23 Feb 2023 14:53:51 +0800
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 16 May 2023 23:27:12 +0200
+
+adduser (3.132) unstable; urgency=medium
+
+  * This is a translation/documentation only release
+
+  [ Marc Haber ]
+  * Update on Portuguese translation of man page.
+    Thanks to Américo Monteiro (Closes: #1028103)
+
+  [ Helge Kreutzmann ]
+  * Fix various trivial issues in man pages.
+    This partly addresses #1031081
+    Thanks to Helge Kreutzmann
+  * Update German translation of man page.
+    Thanks to Helge Kreutzmann (Closes: #1031079)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Wed, 08 Mar 2023 21:45:42 +0100
 
 adduser (3.131) unstable; urgency=medium
 

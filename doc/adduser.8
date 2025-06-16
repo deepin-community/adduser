@@ -127,7 +127,7 @@ and
 \fIdynamically allocated user accounts\fP
 that is documented in Debian Policy, Chapter 9.2.2.
 .PP
-For a full list and explanation of all options,
+For a full list and explanations of all options,
 see the OPTIONS section.
 .PP
 \fBadduser\fP and \fBaddgroup\fP can be run in one of five modes:
@@ -168,7 +168,7 @@ Finally, the GID can be set fully manually with the \fB\-\-gid\fP option.
 The interaction between
 \fBUSERS_GID\fP, \fBUSERS_GROUP\fP, and \fBUSERGROUPS\fP
 is explained in detail in
-.B adduser.conf (5).
+.BR adduser.conf (5).
 .PP
 Users' primary groups can also be overridden
 from the command line
@@ -181,7 +181,7 @@ to one or more supplemental groups
 defined as \fBEXTRA_GROUPS\fP in the configuration file
 either by setting \fBADD_EXTRA_GROUPS\fP to 1
 in the configuration file,
-or by passing \fB\-\-add\-extra\-groups\fP on the commandline.
+or by passing \fB\-\-add\-extra\-groups\fP on the command line.
 .PP
 \fBadduser\fP will copy files from \fI/etc/skel\fP
 into the home directory and
@@ -192,7 +192,7 @@ from the command line.
 UID, comment, home directory and shell
 might be pre-determined with the \fBUID_POOL\fP and \fBGID_POOL\fP option,
 documented in
-.BR adduser.conf(5).
+.BR adduser.conf (5).
 
 .SS "Add a system user"
 If called with one non-option argument and the \fB\-\-system\fP option,
@@ -219,7 +219,7 @@ If no home directory is specified,
 the default home directory for a new system user
 is \fI\%/nonexistent\fP.
 This directory should never exist on any Debian system,
-and \fB\%adduser\fP will never create it automatically.
+and \fBadduser\fP will never create it automatically.
 .PP
 Unless a shell is explicitly set with the \fB\-\-shell\fP option,
 the new system user will have the shell set to
@@ -228,7 +228,7 @@ the new system user will have the shell set to
 Skeletal configuration files are not copied.
 .PP
 Other options will behave as for the creation of a normal user.
-The files referenced by UID_POOL and GID_POOL do also work.
+The files referenced by \fBUID_POOL\fP and \fBGID_POOL\fP do also work.
 
 .SS "Add a group"
 If \fBadduser\fP is called with the \fB\-\-group\fP option and
@@ -278,9 +278,9 @@ Valid Modes: \fBadduser\fP, \fBadduser \-\-system\fP.
 .TP
 .B \-\-allow\-all\-names
 Allow any user- and groupname which is supported by the underlying
-\fBuseradd\fP, including names containing non-ASCII characters.
+\fBuseradd\fP(8), including names containing non-ASCII characters.
 See VALID NAMES in
-.BR adduser.conf (5)
+.BR adduser.conf (5).
 Valid Modes: \fBadduser\fP, \fBadduser \-\-system\fP,
 \fBaddgroup\fP, \fBaddgroup \-\-system\fP.
 .TP
@@ -288,7 +288,7 @@ Valid Modes: \fBadduser\fP, \fBadduser \-\-system\fP,
 Disable \fBNAME_REGEX\fP and \fBSYS_NAME_REGEX\fP check of names.
 Only a weaker check for validity of the name is applied.
 See VALID NAMES in
-.BR adduser.conf (5)
+.BR adduser.conf (5).
 Valid Modes: \fBadduser\fP, \fBadduser \-\-system\fP,
 \fBaddgroup\fP, \fBaddgroup \-\-system\fP.
 .TP
@@ -296,12 +296,12 @@ Valid Modes: \fBadduser\fP, \fBadduser \-\-system\fP,
 Set the comment field for the new entry generated.
 \fBadduser\fP will not ask for the information if this option is given.
 This field is also known under the name GECOS field
-and contains information that is used by the finger command.
+and contains information that is used by the \fBfinger\fR(1) command.
 This used to be the \fB\-\-gecos\fR option,
 which is deprecated and will be removed after Debian bookworm.
 Valid Modes: \fBadduser\fP, \fBadduser \-\-system\fP.
 .TP
-.BI \-\-conf " FILE "
+.BI \-\-conf " file "
 Use \fIfile\fP instead of \fI/etc/adduser.conf\fP.
 Multiple \fB\-\-conf\fR options can be given.
 .TP
@@ -311,7 +311,7 @@ Activate debugging code.
 .B \-\-disabled\-login
 .TQ
 .B \-\-disabled\-password
-Do not run \fBpasswd\fP to set a password.
+Do not run \fBpasswd\fP(1) to set a password.
 In most situations, logins are still possible though
 (for example using SSH keys or through PAM)
 for reasons that are beyond \fBadduser\fP's scope.
@@ -462,7 +462,7 @@ to make \fBadduser\fP more verbose.
 \fBadduser\fP needs root privileges and offers,
 via the \fB\-\-conf\fP command line option
 to use different configuration files.
-Do not use \fBsudo\fP or similar tools to
+Do not use \fBsudo\fP(8) or similar tools to
 give partial privileges to \fBadduser\fP
 with restricted command line parameters.
 This is easy to circumvent and might
@@ -474,7 +474,7 @@ and giving privileges to execute that script.
 .SH FILES
 .TP
 .I /etc/adduser.conf
-Default configuration file for \fBadduser\fP and \fBaddgroup\fP
+Default configuration file for \fBadduser\fP(8) and \fBaddgroup\fP(8)
 .TP
 .I /usr/local/sbin/adduser.local
 Optional custom add-ons, see
@@ -499,7 +499,7 @@ makes a distinguishment of
 \fIdynamically allocated user accounts\fP,
 meaning in both cases special instances of \fIsystem accounts\fP.
 Care must be taken to not confuse this terminology.
-Since \fBadduser\fP and \fBdeluser\fP never address
+Since \fBadduser\fP and \fBdeluser\fP(8) never address
 \fIapplication accounts\fP and
 everything in this package concerns \fIsystem accounts\fP here,
 the usage of the terms \fIuser account\fP and \fIsystem account\fP
