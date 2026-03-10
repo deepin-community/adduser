@@ -321,7 +321,13 @@ sub assert_user_has_login_shell {
 
 sub assert_user_has_uid {
     my ($user, $uid) = @_;
-    is(getpwnam($user), $uid, "user has uid: uid of $user is $uid");
+    if (getpwnam($user)) {
+        my @pwnam=getpwnam($user);
+        my $isuid=$pwnam[2];
+        is(getpwnam($user), $uid, "user has uid: uid of $user is $isuid (expected $uid)");
+    } else {
+        fail( "user has uid: user $user does not exist" );
+    }
 }
 
 sub assert_group_has_gid {

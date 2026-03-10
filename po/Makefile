@@ -12,7 +12,7 @@ LOCALEDIR = /usr/share/locale
 PO = $(wildcard *.po)
 LANG = $(basename $(PO))
 MO = $(addsuffix .mo,$(LANG))
-SOURCES = ../adduser ../deluser ../AdduserCommon.pm
+SOURCES = ../adduser ../deluser ../AdduserCommon.pm ../AdduserLogging.pm ../AdduserRetvalues.pm
 
 all: update $(MO)
 update: adduser.pot
@@ -22,7 +22,7 @@ update: adduser.pot
 	done;
 
 adduser.pot: $(SOURCES)
-	$(XGETTEXT) -c -L Perl -kgtx \
+	$(XGETTEXT) -c -L Perl -kgtx -kmtx \
 	--msgid-bugs-address=adduser@packages.debian.org \
 	-o $@ $(SOURCES)
 

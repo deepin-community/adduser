@@ -26,3 +26,5 @@ assert_command_failure_silent('/usr/bin/adduser', '--system', 'foo');
 assert_command_success('rmdir', '/run/adduser');
 
 close($lockfile);
+
+# vim: tabstop=4 shiftwidth=4 expandtab

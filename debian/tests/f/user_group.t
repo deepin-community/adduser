@@ -8,7 +8,7 @@ use warnings;
 
 use AdduserTestsCommon;
 
-my $quiet="--quiet";
+my @quiet=("--stdoutmsglevel=error", '--stderrmsglevel=error');
 
 # create custom user groups
 my $cusergroup="myusers";
@@ -33,7 +33,7 @@ my $test_name="test1";
 $confhash{"USERS_GROUP"}='users';
 $confhash{"USERS_GID"}='100';
 apply_config_hash(\%confhash);
-assert_command_failure_silent('/usr/sbin/adduser', $quiet, 
+assert_command_failure_silent('/usr/sbin/adduser', @quiet, 
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 
 my $homedir;
@@ -52,7 +52,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--home', "$homedir",
   '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -77,7 +77,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--home', "$homedir",
   '--uid', "$useruid",
   '--comment', '""', '--disabled-password', $test_name);
@@ -102,7 +102,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--home', "$homedir",
   '--comment', '""', '--disabled-password', $test_name);
@@ -126,7 +126,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--home', "$homedir",
   '--comment', '""', '--disabled-password', $test_name);
@@ -148,7 +148,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--home', "$homedir",
   '--comment', '""', '--disabled-password', $test_name);
@@ -172,7 +172,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--uid', "$useruid",
   '--home', "$homedir",
@@ -194,7 +194,7 @@ $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 $confhash{"EXTRA_GROUPS"}=join(' ', @extragroups);
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
 assert_group_exists($test_name);
@@ -218,7 +218,7 @@ $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 $confhash{"EXTRA_GROUPS"}=join(' ', @extragroups);
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_uid_exists($test_name,$useruid);
@@ -241,7 +241,7 @@ $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 $confhash{"EXTRA_GROUPS"}=join(' ', @extragroups);
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--add-extra-groups',
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -266,7 +266,7 @@ $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 $confhash{"EXTRA_GROUPS"}=join(' ', @extragroups);
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--add-extra-groups',
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -290,7 +290,7 @@ $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 $confhash{"EXTRA_GROUPS"}=join(' ', @extragroups);
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--add_extra_groups',
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -315,7 +315,7 @@ $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 $confhash{"EXTRA_GROUPS"}=join(' ', @extragroups);
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--add_extra_groups',
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -340,7 +340,7 @@ $confhash{"USERS_GID"}='';
 $confhash{"EXTRA_GROUPS"}=join(' ', @extragroups);
 $confhash{"ADD_EXTRA_GROUPS"}='1';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
 assert_group_exists($test_name);
@@ -365,7 +365,7 @@ $confhash{"USERS_GID"}='';
 $confhash{"EXTRA_GROUPS"}=join(' ', @extragroups);
 $confhash{"ADD_EXTRA_GROUPS"}='1';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_uid_exists($test_name,$useruid);
@@ -386,7 +386,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
 assert_group_exists($test_name);
@@ -406,7 +406,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_uid_exists($test_name,$useruid);
@@ -426,7 +426,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -444,7 +444,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -461,7 +461,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -479,7 +479,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -495,7 +495,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
 assert_group_exists($test_name);
@@ -515,7 +515,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_uid_exists($test_name,$useruid);
@@ -535,7 +535,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -553,7 +553,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -570,7 +570,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -588,7 +588,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -606,7 +606,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=-1;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--home', "$homedir",
   '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -632,7 +632,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=-1;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--home', "$homedir",
   '--uid', "$useruid",
   '--comment', '""', '--disabled-password', $test_name);
@@ -658,7 +658,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=-1;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--home', "$homedir",
   '--comment', '""', '--disabled-password', $test_name);
@@ -683,7 +683,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=-1;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--home', "$homedir",
   '--uid', "$useruid",
@@ -705,7 +705,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=-1;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -724,7 +724,7 @@ $confhash{"USERGROUPS"}='yes';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=-1;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -743,7 +743,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
   '--home', "$homedir",
   '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -767,7 +767,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
   '--home', "$homedir",
   '--uid', "$useruid",
   '--comment', '""', '--disabled-password', $test_name);
@@ -789,7 +789,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -808,7 +808,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -826,7 +826,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -845,7 +845,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}=$cusergroup;
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -862,7 +862,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
 assert_group_does_not_exist($test_name);
@@ -880,7 +880,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_uid_exists($test_name,$useruid);
@@ -898,7 +898,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -917,7 +917,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -935,7 +935,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -954,7 +954,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=$cusergid;
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -973,7 +973,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
   '--home', "$homedir",
   '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -997,7 +997,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
   '--home', "$homedir",
   '--uid', "$useruid",
   '--comment', '""', '--disabled-password', $test_name);
@@ -1019,7 +1019,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -1038,7 +1038,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--ingroup', $dusergroup,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -1056,7 +1056,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 assert_user_exists($test_name);
@@ -1075,7 +1075,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}='';
 apply_config_hash(\%confhash);
-assert_command_success('/usr/sbin/adduser', $quiet, 
+assert_command_success('/usr/sbin/adduser', @quiet, 
   '--gid', $dusergid,
   '--uid', "$useruid",
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
@@ -1093,7 +1093,7 @@ $confhash{"USERGROUPS"}='no';
 $confhash{"USERS_GROUP"}='';
 $confhash{"USERS_GID"}=-1;
 apply_config_hash(\%confhash);
-assert_command_failure_silent('/usr/sbin/adduser', $quiet, 
+assert_command_failure_silent('/usr/sbin/adduser', @quiet, 
   '--no-create-home', '--comment', '""', '--disabled-password', $test_name);
 
 ##+# TODO: write tests with loops
@@ -1104,7 +1104,7 @@ apply_config_hash(\%confhash);
 
 # system user, default, should be in nogroup
 $test_name="systest1";
-assert_command_success('/usr/sbin/adduser', $quiet, '--system', 
+assert_command_success('/usr/sbin/adduser', @quiet, '--system', 
   '--no-create-home', $test_name);
 assert_user_exists($test_name);
 assert_group_does_not_exist($test_name);
@@ -1115,7 +1115,7 @@ assert_supplementary_group_membership_does_not_exist($test_name, $cusergroup);
 # with explicit --uid
 $test_name="systest1-a";
 $sysuuid++;
-assert_command_success('/usr/sbin/adduser', $quiet, '--system', 
+assert_command_success('/usr/sbin/adduser', @quiet, '--system', 
   '--uid', "$sysuuid",
   '--no-create-home', $test_name);
 assert_user_uid_exists($test_name,$sysuuid);
@@ -1125,7 +1125,7 @@ assert_supplementary_group_membership_does_not_exist($test_name, $cusergroup);
 
 # system user, with --gid
 $test_name="systest2";
-assert_command_success('/usr/sbin/adduser', $quiet, '--system', 
+assert_command_success('/usr/sbin/adduser', @quiet, '--system', 
   '--no-create-home', '--gid', $cusergid, $test_name);
 assert_user_exists($test_name);
 assert_group_does_not_exist($test_name);
@@ -1136,7 +1136,7 @@ assert_supplementary_group_membership_does_not_exist($test_name, $cusergroup);
 # with explicit --uid
 $test_name="systest2-a";
 $sysuuid++;
-assert_command_success('/usr/sbin/adduser', $quiet, '--system', 
+assert_command_success('/usr/sbin/adduser', @quiet, '--system', 
   '--uid', "$sysuuid",
   '--no-create-home', '--gid', $cusergid, $test_name);
 assert_user_uid_exists($test_name,$sysuuid);
@@ -1146,7 +1146,7 @@ assert_supplementary_group_membership_does_not_exist($test_name, $cusergroup);
 
 # system user, with --ingroup
 $test_name="systest3";
-assert_command_success('/usr/sbin/adduser', $quiet, '--system', 
+assert_command_success('/usr/sbin/adduser', @quiet, '--system', 
   '--no-create-home', '--ingroup', $cusergroup, $test_name);
 assert_user_exists($test_name);
 assert_group_does_not_exist($test_name);
@@ -1158,7 +1158,7 @@ assert_supplementary_group_membership_does_not_exist($test_name, $cusergroup);
 # with explicit --uid
 $test_name="systest3-a";
 $sysuuid++;
-assert_command_success('/usr/sbin/adduser', $quiet, '--system', 
+assert_command_success('/usr/sbin/adduser', @quiet, '--system', 
   '--uid', "$sysuuid",
   '--no-create-home', '--ingroup', $cusergroup, $test_name);
 assert_user_uid_exists($test_name,$sysuuid);
@@ -1168,7 +1168,7 @@ assert_supplementary_group_membership_does_not_exist($test_name, $cusergroup);
 
 # system user, with --group
 $test_name="systest4";
-assert_command_success('/usr/sbin/adduser', $quiet, '--system', 
+assert_command_success('/usr/sbin/adduser', @quiet, '--system', 
   '--no-create-home', '--group', $test_name);
 assert_user_exists($test_name);
 assert_group_exists($test_name);
@@ -1181,7 +1181,7 @@ assert_supplementary_group_membership_does_not_exist($test_name, $cusergroup);
 # with explicit --uid
 $test_name="systest4-a";
 $sysuuid++;
-assert_command_success('/usr/sbin/adduser', $quiet, '--system', 
+assert_command_success('/usr/sbin/adduser', @quiet, '--system', 
   '--uid', "$sysuuid",
   '--no-create-home', '--group', $test_name);
 assert_user_uid_exists($test_name,$sysuuid);

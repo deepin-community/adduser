@@ -21,6 +21,7 @@ users and groups and dynamically allocated user accounts that is
 documented in Debian Policy, Chapter 9.2.2.
 
 
+
 Documentation
 -------------
 This document contains background information that you might find
@@ -33,11 +34,12 @@ Information that is in the manual pages is probably not going to be
 repeated in this README file.
 
 
+
 Usage in maintainer scripts
 ---------------------------
 The reference to create users and groups related to packages is
 Debian Policy, Chapter 9.2.2. adduser --system can help you to create a
-user in your postinst. 
+user in your postinst.
 
 The most important thing to know is that adduser --system is idempotent:
 If the desired user already exists with the important properties
@@ -55,19 +57,26 @@ regarding setting a password,  UID, group membership, shell, and home
 directory. Consider whether it should be possible to run processes or
 even log in as your user and configure it appropriately.
 
-We are currently (summer 2022) re-working adduser's logging subsystem
-with the ultimate goal of adduser becoming silent in the process of
-creating a system user unless the log level is raised by configuration
-or an error happens.
+Adduser's logging subsystem has been re-worked since the release of
+Debian 12. Adduser should now be silent especially in maintainer scripts
+if everthing regarding the new user is reasonably correct. If you want
+report of what adduser does, please consider changing the log levels in
+/etc/adduser.conf. You can set different log levels for the system log,
+for standard output and standard error.
 
 It might be advisable to not delete your users on purge of your package
 since there might still be files belonging to the user. Instead, lock
 your user, making it impossible to log in as the user, and unlock it in
 postinst when your package gets reinstalled.
 
-Sadly, currently (summer 2022, adduser 3.125) locking and unlocking
-accounts is not well supported yet. We are planning to improve this in
-time for the release of Debian bookworm.
+Locking and unlocking system accounts should be handled by adduser.
+Currently, it doesn't. See bug #1008082 for this discussion. The goal is
+to enable the local admin to choose whether purging a package should
+remove a system account or just lock it. For othogonality, there should
+also be a possibility to undo this operation within adduser. For a
+regular user account, the local admin is better served with calling
+usermod --lock and usermod --unlock to do this.
+
 
 
 Configuration files
@@ -82,6 +91,7 @@ Both configuration files are dpkg-conffiles and have full conffile
 support by dpkg on upgrades. Until Debian bullseye, /etc/adduser.conf
 was managed by the maintainer scripts and debconf; this has been removed
 in adduser 3.125 and the file was moved to being a dpkg-conffile.
+
 
 
 Debconf
@@ -104,12 +114,13 @@ tests, and to actually maintain it for the foreseeable future. Please
 get in touch with the adduser team if you're willing to help.
 
 
+
 Why not declarative?
 --------------------
 Adduser is intended to be used in maintainer scripts. While there are
 approaches in Debian to move more and more functionality away from
 maintainer scripts to a more declarative approach. The current form of
-adduser is used in many hundred packages.
+adduser is used in hundreds of packages.
 
 It is fine to use a more declarative approach to define system users in
 Debian packages. There is nothing that forces package maintainers to use
@@ -121,6 +132,7 @@ For the time being, adduser's paradigm is not going to change for
 compatibility's sake.
 
 
+
 Directory services and adduser
 ------------------------------
 We have been planning to convert adduser to a more modular approach,
@@ -128,10 +140,11 @@ allowing adduser to be used to create users in a directory service such
 as NIS, NIS+ and LDAP, for more than two decades. It is not realistic to
 expect this to happen any time soon.
 
-For the time being, adduser is officially deprecating any existing
-support to write to directory services. An arbitrary server in an
-organization that uses a directory service is unlikely to have enough
-privileges to write to a directory service anyway.
+For the time being, any support to have adduser write to directory
+services that might still exist in the code is official deprecated. An
+arbitrary server in an organization that uses a directory service is
+unlikely to have enough privileges to write to a directory service
+anyway.
 
 It might be possible, to add the desired support via an adduser.local
 hook. If you need more hooks to locally implement what you need, let us
@@ -144,31 +157,32 @@ tests, and to actually maintain it for the foreseeable future. Please
 get in touch with the adduser team if you're willing to help.
 
 
+
 Default for DIR_MODE
 --------------------
 DIR_MODE and SYS_DIR_MODE specify the file mode bits for a home
 directory created by adduser. This has been a controversial setting
 throughout most of adduser's life since the 1990s.
 
-Currently, DIR_MODE defaults to 0700, while SYS_DIR_MODE defaults to
-0755. The separation between DIR_MODE and SYS_DIR_MODE happened in
-adduser 3.122 because we got convinced that a normal user needs a
-different setting than a system user. This allowed us to tighten the
-file mode bits of a regular user's home directory to 0700 while keeping
-the more permissive setting for system users.
+Since Debian 12, DIR_MODE defaults to 0700, while SYS_DIR_MODE defaults
+to 0755. Since then, DIR_MODE and SYS_DIR_MODE are separated because we
+got convinced that a normal user needs a different setting than a system
+user. This allowed us to tighten the file mode bits of a regular user's
+home directory to 0700 while keeping the more permissive setting for
+system users.
 
 Historically, the separation was also implemented to finally solve
-#643559, which requested setting the setgid bit for the home directory of
-a non-system user by default, in order to ease setting access
+#643559, which requested setting the setgid bit for the home directory
+of a non-system user by default, in order to ease setting access
 permissions of shared workspaces in multi-user systems.  This default
-has oscillated back and forth in adduser multiple times since the
-1990s, because both ways to set this bit by default have advantages
-and disadvantages.  After a preliminary request for comment (see
+has oscillated back and forth in adduser multiple times since the 1990s,
+because both ways to set this bit by default have advantages and
+disadvantages.  After a preliminary request for comment (see
 https://lists.debian.org/debian-devel/2022/03/msg00098.html), the
-default value for DIR_MODE was changed to 2700 in adduser 3.122 (July
-2022).  Sadly, though the technical reasoning for NOT setting the bit
-did largely not survive the last two decades, some use cases that we
-were not fully aware of were adversely impacted by this change.
+default value for DIR_MODE was changed to 2700 in Debian 12.  Sadly,
+though the technical reasoning for NOT setting the bit did largely not
+survive the last two decades, some use cases that we were not fully
+aware of were adversely impacted by this change.
 
 Promptly, #1014901 was filed, requesting that DIR_MODE be changed to
 0700, effectively causing home directories of non-system users to be
@@ -199,12 +213,12 @@ to keep the support effort for other packages down. Users surprised by
 the behavior might file bugs against other packages, increasing the
 effort necessary to support those other packages.
 
-So, in adduser 3.123, DIR_MODE reached its final default setting of
-0700, flipping the default for the setgid bit one last time to the value
-we had for the majority of Debian's existence period. With this change,
+So, in Debian 12, DIR_MODE reached its final default setting of 0700,
+flipping the default for the setgid bit one last time to the value we
+had for the majority of Debian's existence period. With this change,
 Debian is re-joining ranks again with ALL other major Linux
-distributions, none of which setting the setgid bit on home directories to
-1 (research done in July 2022).
+distributions, none of which setting the setgid bit on home directories
+to 1 (research done in July 2022).
 
 This primarily affects the one user that can be created in the Installer
 before there is any possibility to configure adduser. Those users will
@@ -219,6 +233,15 @@ in line with most other major distributions, the adduser team considers
 the matter to be settled; any further discussion should come prepared
 with rationale, support, convincing use cases and a significant public
 discussion period.
+
+
+
+Security
+--------
+We habe beem working on adduser being able to run with the -T switch
+set. This has made it impossible to test for strange unicode characters.
+If you know how to write a perl regexp that includes possibly all
+printable unicode characters, please file a bug and help us.
 
 
 

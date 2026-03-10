@@ -1,14 +1,148 @@
-adduser (3.131-1deepin2) unstable; urgency=medium
+adduser (3.138) experimental; urgency=medium
 
-  * revert "add deepin patch."
+  * experimental upload because of so many changes.
+  * adduser und deluser can now run with -T, and actually do it.
+    Unfortunately, we had to disable some tests to allow this.
+    Thanks to Christoph Berg (Closes: #214546)
+  * apply patch to allow reserve_{uid|gid}_pool.
+    Thanks to Yair Yarom (Closes: #1067845)
+  + only call logger --id $$ if SYS_ADMIN capability is present. This
+    is related to #1086233. Thanks to Paul Gevers, Peter Colberg,
+     Simon McVittie, and Chris Hofstaedtler. (Closes: #1074567)
+  * Fix wrongly parenthesized signal handler message.
+    Thanks to Tasos Sahanidis <tasos@tasossah.com>
+  * add documentation about how to lock and unlock accounts
+  * adapt adduser to more strict user name checking now enforced by
+    useradd. This unfortunately meant to disable some more of our tests.
+  * give --badname to useradd to allow creation of the user
+  * tweak valid_username tests for new useradd
+    * disable \ user name test
+    * disable worst user name test
+  * lots of more comments, more debugging, more consistency inside
+    the package and between adduser and deluser.
+  * put lots of log_info messaes into lower priorities
+  * stdoutmsglevel is now warn. This allows adduser --system to be completey
+    silent without having to check whether we run from a maintainer script.
+  * log level settings now have priority over the deprecated verbose.
+  * Standards-Version: 4.7.0 (no changes necessary)
 
- -- Tianyu Chen <sweetyfish@deepin.org>  Fri, 01 Sep 2023 16:06:42 +0800
+  * Manual pages:
+    * Work by Helge Kreutzmann:
+      * Fix various trivial issues in man pages.
+        Addresses: #1031081
+      * bulk change: fix wrong capitalization of "modes"
+      * bulk change: fix wrong interpunction in "modes" lines
+      * stylistic changes to adduser.8 man page.
+      * fix inconsistency GID/ID.
+      * use "digits" instead of "numbers"
+      * re-word security warning about deluser via sudo.
+    * Work by Bjarni Ingi Gislason <bjarnii@simnet.is>:
+      * fix some formatting and text issues in manpages.
+        (Closes: #1037057)
+      * add blank lines between .YS and .SY.
+      * add missing .YS
+      * add missing whitespace after quotes
+      * fix wrong usage of .BR and .IR, move to .B and .I.
+      * fix semantic linebreaks for deprecated options.
+      * fix missing comma.
+    * mention users-and-groups.html in adduser.8.
+      Thanks to Karl O. Pinc (Closes: #1051356)
+    * various clarifications, re-wording, adaption to
+      behavior change and new features.
+    * avoid Debian codename in adduser.8 manpage
+  * Translations:
+    * update portuguese program translation.
+      Thanks to Américo Monteiro (Closes: #1051644)
+    * Update Portuguese translation of manual pages.
+      Thanks to Américo Monteiro (Closes: #1056144, #1040441)
+    * Update Catalan translation. Thanks to Carles Pina i Estany.
+    * Update dutch program translation.
+      Thanks to Frans Spiesschaert (Closes: #1041279)
+    * update durch manual package translation.
+      Thanks to Frans Spiesschaert (Closes: #1041877)
+    * new translation for French manual page.
+      Thanks to Jean-Paul Guillonneau (Closes: #1083293)
+    * Add new romanian translation for program and man pages.
+      Thanks to Remus-Gabriel Chelu (Closes: #1082102)
+    * Update German translation of man page
+      Thanks to Helge Kreutzmann
 
-adduser (3.131-1deepin1) unstable; urgency=medium
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Fri, 01 Nov 2024 19:19:54 +0100
 
-  * add deepin patch.
+adduser (3.137) unstable; urgency=medium
 
- -- LiChengGang <lichenggang@uniontech.com>  Thu, 23 Feb 2023 14:53:51 +0800
+  * get along without perl-modules. Closes: #1039709
+  * Update Simplified Chinese translation.
+    Thanks to Boyuan Yang
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 27 Jun 2023 21:22:23 +0200
+
+adduser (3.136) unstable; urgency=medium
+
+  * do better cleaning of VERSION
+  * cut off cversion after first non-digit
+  * declare modules with hardcoded version number
+  * avoid VERSION, use DVERSION instead
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 27 Jun 2023 20:48:01 +0200
+
+adduser (3.135) experimental; urgency=medium
+
+  [ Marc Haber ]
+  * logging
+    * Add AdduserLogging.pm with new logging code
+    * Adapt other code to use new logging code
+    * remove obsolete old logging code
+  * exit codes
+    * Add AdduserRetvalues for unified exit codes
+    * Adapt other code the use unified exit codes
+  * documentation improvements
+  * general code changes
+    * Make AdduserCommon.pm a proper module
+    * use perl 5.32.0
+    * use strict, use warnings, everywhere.
+    * various code changes for better readability
+    * get rid of bareword file handles
+  * make code perlcritic clean
+    * string form of eval
+    * use three argument open, use variable filehandle
+    * use oct()
+
+  [ Mateus Rodrigues de Morais ]
+  * Fix failing autopkgtests by smartly incrementing test uids and gids
+  * Change test uids to comply with SYS_UID_MAX
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Sat, 24 Jun 2023 15:22:08 +0200
+
+adduser (3.134) unstable; urgency=medium
+
+  * Revert "mark adduser as Protected:yes"
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Thu, 25 May 2023 17:54:35 +0200
+
+adduser (3.133) unstable; urgency=medium
+
+  [ Johannes Schauer Marin Rodrigues ]
+  * mark adduser as Protected:yes. This is a temporary fix for #1035694
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 16 May 2023 23:27:12 +0200
+
+adduser (3.132) unstable; urgency=medium
+
+  * This is a translation/documentation only release
+
+  [ Marc Haber ]
+  * Update on Portuguese translation of man page.
+    Thanks to Américo Monteiro (Closes: #1028103)
+
+  [ Helge Kreutzmann ]
+  * Fix various trivial issues in man pages.
+    This partly addresses #1031081
+    Thanks to Helge Kreutzmann
+  * Update German translation of man page.
+    Thanks to Helge Kreutzmann (Closes: #1031079)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Wed, 08 Mar 2023 21:45:42 +0100
 
 adduser (3.131) unstable; urgency=medium
 

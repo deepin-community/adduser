@@ -1,439 +1,395 @@
-# adduser.pot for the program strings
-# For copyright information, see debian/copyright and
-# the adduser/deluser source code.
+# Romanian translation of adduser.
+# Mesajele în limba română pentru pachetul „adduser”.
+# Copyright © 2024 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the adduser package.
 #
-# Pablo <parodper@gmail.com>, 2022
+# Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>, sep-2024.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.131\n"
+"Project-Id-Version: adduser 3.137\n"
 "Report-Msgid-Bugs-To: adduser@packages.debian.org\n"
-"POT-Creation-Date: 2023-06-09 12:08+0200\n"
-"PO-Revision-Date: 2022-12-28 16:36+0100\n"
-"Last-Translator: Pablo <parodper@gmail.com>\n"
-"Language-Team: Galician <debian-l10n-galician@lists.debian.org>\n"
-"Language: gl\n"
+"POT-Creation-Date: 2023-06-09 12:25+0200\n"
+"PO-Revision-Date: 2024-09-15 09:51+0200\n"
+"Last-Translator: Remus-Gabriel Chelu <remusgabriel.chelu@disroot.org>\n"
+"Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.3\n"
 
 #: ../adduser:190
 msgid "Only root may add a user or group to the system."
-msgstr "Só o superusuario pode engadir un usuario ou grupo ao sistema."
+msgstr "Numai root poate adăuga un utilizator sau un grup la sistem."
 
 #: ../adduser:227 ../deluser:176
 msgid "Only one or two names allowed."
-msgstr "Só se poden usar un ou dous nomes."
+msgstr "Doar unu sau două nume sunt permise."
 
 #: ../adduser:234
 msgid "Specify only one name in this mode."
-msgstr "Especifique só un nome neste modo."
+msgstr "Specifică un singur nume în acest mod."
 
 #: ../adduser:238
 msgid "addgroup with two arguments is an unspecified operation."
-msgstr "chamar a addgroup con dous parámetros non fai nada."
+msgstr "«addgroup» cu două argumente este o operație nespecificată."
 
 #: ../adduser:263
 msgid "The --group, --ingroup, and --gid options are mutually exclusive."
-msgstr "As opcións --group, --ingroup, e --gid son exclusivas entre sí."
+msgstr "Opțiunile „--group”, „--ingroup” și „--gid” se exclud reciproc."
 
 #: ../adduser:269
 msgid "The home dir must be an absolute path."
-msgstr "O cartafol persoal debe ser unha ruta absoluta."
+msgstr "Directorul personal „home” trebuie să fie o rută absolută."
 
 #: ../adduser:275
-#, fuzzy, perl-format
-#| msgid "Warning: The home dir %s you specified already exists."
+#, perl-format
 msgid "The home dir %s you specified already exists.\n"
-msgstr "Aviso: O cartafol persoal indicado %s xa existe."
+msgstr "Directorul personal „home” %s pe care l-ați specificat există deja.\n"
 
 #: ../adduser:278
-#, fuzzy, perl-format
-#| msgid "Warning: The home dir %s you specified can't be accessed: %s"
+#, perl-format
 msgid "The home dir %s you specified can't be accessed: %s\n"
-msgstr "Aviso: O cartafol persoal indicado %s non é accesible: %s"
+msgstr ""
+"Directorul de personal „home” %s pe care l-ați specificat nu poate fi "
+"accesat: %s\n"
 
 #: ../adduser:347
 #, perl-format
 msgid "The group `%s' already exists as a system group. Exiting."
-msgstr "O grupo «%s» xa existe e é un grupo do sistema. Saíndo."
+msgstr "Grupul „%s” există deja ca grup de sistem. Se iese."
 
 #: ../adduser:352
 #, perl-format
 msgid "The group `%s' already exists and is not a system group. Exiting."
-msgstr "O grupo «%s» xa existe e non é un grupo do sistema. Saíndo."
+msgstr "Grupul „%s” există deja și nu este un grup de sistem. Se iese."
 
 #: ../adduser:357
 #, perl-format
 msgid "The group `%s' already exists, but has a different GID. Exiting."
-msgstr "O grupo «%s» xa existe, pero cun GID diferente. Saíndo."
+msgstr "Grupul „%s” există deja, dar are un GID diferit. Se iese."
 
 #: ../adduser:362 ../adduser:399
 #, perl-format
 msgid "The GID `%s' is already in use."
-msgstr "O GID «%s» xa está ocupado."
+msgstr "GID-ul „%s” este deja utilizat."
 
 #: ../adduser:373
-#, fuzzy, perl-format
-#| msgid ""
-#| "No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID).\n"
+#, perl-format
 msgid "No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID)."
 msgstr ""
-"Non quedan GID dispoñibles no rango %d-%d (FIRST_SYS_GID - LAST_SYS_GID).\n"
+"Nu este disponibil niciun GID în intervalul %d-%d (FIRST_SYS_GID - "
+"LAST_SYS_GID)."
 
 #: ../adduser:375 ../adduser:418
 #, perl-format
 msgid "The group `%s' was not created."
-msgstr "Non se creou o grupo «%s»."
+msgstr "Grupul „%s” nu a fost creat."
 
 #: ../adduser:381 ../adduser:423
 #, perl-format
 msgid "Adding group `%s' (GID %d) ..."
-msgstr "Engadindo grupo «%s» (GID %d) ..."
+msgstr "Se adaugă grupul „%s” (GID %d) ..."
 
 #: ../adduser:395 ../adduser:1081
 #, perl-format
 msgid "The group `%s' already exists."
-msgstr "O grupo «%s» xa existe."
+msgstr "Grupul „%s” există deja."
 
 #: ../adduser:416
 #, perl-format
 msgid "No GID is available in the range %d-%d (FIRST_GID - LAST_GID)."
-msgstr "Non quedan GID dispoñibles no rango %d-%d (FIRST_GID - LAST_GID)."
+msgstr ""
+"Nu este disponibil niciun GID în intervalul %d-%d (FIRST_GID - LAST_GID)."
 
 #: ../adduser:437 ../deluser:266
 #, perl-format
 msgid "The user `%s' does not exist."
-msgstr "O usuario «%s» non existe."
+msgstr "Utilizatorul „%s” nu există."
 
 #: ../adduser:441 ../adduser:857 ../adduser:1091 ../deluser:408 ../deluser:411
 #, perl-format
 msgid "The group `%s' does not exist."
-msgstr "O grupo «%s» non existe."
+msgstr "Grupul „%s” nu există."
 
 #: ../adduser:446 ../adduser:861
 #, perl-format
 msgid "The user `%s' is already a member of `%s'."
-msgstr "O usuario «%s» xa pertence ao grupo «%s»."
+msgstr "Utilizatorul „%s” este deja membru al grupului „%s”."
 
 #: ../adduser:450 ../adduser:867
 #, perl-format
 msgid "Adding user `%s' to group `%s' ..."
-msgstr "Engadindo usuario «%s» ao grupo «%s» ..."
+msgstr "Se adăugă utilizatorul „%s” la grupul „%s” ..."
 
 #: ../adduser:469
-#, fuzzy, perl-format
-#| msgid "The system user `%s' already exists. Exiting."
+#, perl-format
 msgid "The system user `%s' already exists. Exiting.\n"
-msgstr "O usuario do sistema «%s» xa existe. Saíndo."
+msgstr "Utilizatorul de sistem „%s” există deja. Se iese.\n"
 
 #: ../adduser:472
 #, perl-format
 msgid "The user `%s' already exists, but is not a system user. Exiting."
-msgstr "O usuario «%s» xa existe, pero non é un usuario do sistema. Saíndo."
+msgstr ""
+"Utilizatorul „%s” există deja, dar nu este un utilizator de sistem. Se iese."
 
 #: ../adduser:476
 #, perl-format
 msgid "The user `%s' already exists with a different UID. Exiting."
-msgstr "O usuario «%s» xa existe, pero cun UID diferente. Saíndo."
+msgstr "Utilizatorul „%s” există deja cu un UID diferit. Se iese."
 
 #: ../adduser:490
-#, fuzzy, perl-format
-#| msgid ""
-#| "No UID/GID pair is available in the range %d-%d (FIRST_SYS_UID - "
-#| "LAST_SYS_UID).\n"
+#, perl-format
 msgid ""
 "No UID/GID pair is available in the range %d-%d (FIRST_SYS_UID - "
 "LAST_SYS_UID)."
 msgstr ""
-"Non quedan pares UID/GID dispoñibles no rango %d-%d (FIRST_SYS_UID - "
-"LAST_SYS_UID).\n"
+"Nu este disponibilă nicio pereche UID/GID în intervalul %d-%d (FIRST_SYS_UID "
+"- LAST_SYS_UID)."
 
 #: ../adduser:493 ../adduser:509 ../adduser:591 ../adduser:705 ../adduser:711
 #, perl-format
 msgid "The user `%s' was not created."
-msgstr "Non se creou o usuario «%s»."
+msgstr "Utilizatorul „%s” nu a fost creat."
 
 #: ../adduser:506
-#, fuzzy, perl-format
-#| msgid ""
-#| "No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID).\n"
+#, perl-format
 msgid "No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID)."
 msgstr ""
-"Non quedan UID dispoñibles no rango %d-%d (FIRST_SYS_UID - LAST_SYS_UID).\n"
+"Nu este disponibil niciun UID în intervalul %d-%d (FIRST_SYS_UID - "
+"LAST_SYS_UID)."
 
 #: ../adduser:517 ../adduser:529
 msgid "Internal error"
-msgstr "Fallo interno"
+msgstr "Eroare internă"
 
 #: ../adduser:533
 #, perl-format
 msgid "Adding system user `%s' (UID %d) ..."
-msgstr "Engadindo usuario do sistema «%s» (UID %d) ..."
+msgstr "Se adaugă utilizatorul de sistem „%s” (UID %d) ..."
 
 #: ../adduser:537
 #, perl-format
 msgid "Adding new group `%s' (GID %d) ..."
-msgstr "Engadindo novo grupo «%s» (GID %d) ..."
+msgstr "Se adaugă noul grup „%s” (GID %d) ..."
 
 #: ../adduser:543
 #, perl-format
 msgid "Adding new user `%s' (UID %d) with group `%s' ..."
-msgstr "Engadindo novo usuario «%s» (UID %d) co grupo «%s» ..."
+msgstr "Se adaugă noul utilizator „%s” (UID %d) cu grupul „%s” ..."
 
 #: ../adduser:590
-#, fuzzy
-#| msgid ""
-#| "USERS_GID and USERS_GROUP both given in configuration. This is an error.\n"
 msgid ""
 "USERS_GID and USERS_GROUP both given in configuration. This is an error."
 msgstr ""
-"Especificáronse USERS_GID e USERS_GROUP na configuración. Isto é un erro.\n"
+"USERS_GID și USERS_GROUP sunt specificate amândouă în configurare. Aceasta "
+"este o eroare."
 
 #: ../adduser:681
 #, perl-format
 msgid "Adding user `%s' ..."
-msgstr "Engadindo usuario «%s» ..."
+msgstr "Se adăugă utilizatorul „%s” ..."
 
 #: ../adduser:704
-#, fuzzy, perl-format
-#| msgid ""
-#| "No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+#, perl-format
 msgid "No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID)."
 msgstr ""
-"Non quedan pares UID/GID dispoñibles no rango %d-%d (FIRST_UID - LAST_UID).\n"
+"Nu este disponibilă nicio pereche UID/GID în intervalul %d-%d (FIRST_UID - "
+"LAST_UID)."
 
 #: ../adduser:710
-#, fuzzy
-#| msgid ""
-#| "USERGROUPS=no, USER_GID=-1 and USERS_GROUP empty. A user needs a primary "
-#| "group!\n"
 msgid ""
 "USERGROUPS=no, USER_GID=-1 and USERS_GROUP empty. A user needs a primary "
 "group!"
 msgstr ""
-"USERGROUPS=no, USER_GID=-1 e USERS_GROUP está baleiro. Todos os usuarios "
-"precisan ter un grupo primario.\n"
+"USERGROUPS=no, USER_GID=-1 și USERS_GROUP gol. Un utilizator are nevoie de "
+"un grup primar!"
 
 #: ../adduser:750
 msgid "Internal error interpreting parameter combination"
-msgstr ""
-"Ocorreu un fallo interno ao interpretar a combinación especificada de "
-"parámetros"
+msgstr "Eroare internă la interpretarea combinației de parametri"
 
 #: ../adduser:760
 #, perl-format
 msgid "Adding new group `%s' (%d) ..."
-msgstr "Engadindo novo grupo «%s» (%d) ..."
+msgstr "Se adaugă noul grup „%s” (%d) ..."
 
 #: ../adduser:763
 #, perl-format
 msgid "Adding new group `%s' (new group ID) ..."
-msgstr "Engadindo novo grupo «%s» (novo ID do grupo) ..."
+msgstr "Se adaugă noul grup „%s” (noul ID al grupului) ..."
 
 #: ../adduser:766
 #, perl-format
 msgid "new group '%s' created with GID %d"
-msgstr ""
+msgstr "grup nou „%s” creat cu GID %d"
 
 #: ../adduser:773
 #, perl-format
 msgid "Adding new user `%s' (%d) with group `%s (%d)' ..."
-msgstr "Engadindo novo usuario «%s» (%d) con grupo «%s (%d)» ..."
+msgstr "Se adaugă noul utilizator „%s” (%d) cu grupul „%s (%d)” ..."
 
 #. hm, error, should we break now?
 #: ../adduser:802
 msgid "Permission denied"
-msgstr "Permiso denegado"
+msgstr "Permisiune refuzată"
 
 #: ../adduser:803
 msgid "invalid combination of options"
-msgstr "combinación inválida de parámetros"
+msgstr "combinație nevalidă de opțiuni"
 
 #: ../adduser:804
 msgid "unexpected failure, nothing done"
-msgstr "fallo inesperado, non se realizou ningunha operación"
+msgstr "eșec neașteptat, nimic de făcut"
 
 #: ../adduser:805
 msgid "unexpected failure, passwd file missing"
-msgstr "fallo inesperado, non se atopou o ficheiro passwd"
+msgstr "eșec neașteptat, lipsește fișierul passwd"
 
 #: ../adduser:806
 msgid "passwd file busy, try again"
-msgstr "o ficheiro passwd está ocupado, inténteo de novo"
+msgstr "fișier passwd ocupat, încercați din nou"
 
 #: ../adduser:807
 msgid "invalid argument to option"
-msgstr "parámetro invalido para esa opción"
+msgstr "argument nevalid pentru opțiune"
 
 #: ../adduser:813
 msgid "Try again? [y/N] "
-msgstr "Intentar de novo? [s/N] "
+msgstr "Încercați din nou? [d/N ] "
 
 #: ../adduser:839
 msgid "Is the information correct? [Y/n] "
-msgstr "Esta información é correcta? [S/n] "
+msgstr "Informațiile sunt corecte? [D/n ] "
 
 #: ../adduser:853
 #, perl-format
 msgid "Adding new user `%s' to supplemental / extra groups `%s' ..."
-msgstr "Engadindo usuario «%s» aos grupos extra / suplementarios «%s» ..."
+msgstr ""
+"Se adaugă noul utilizator „%s” la grupurile suplimentare / extra „%s” ..."
 
 #: ../adduser:877
 #, perl-format
 msgid "Setting quota for user `%s' to values of user `%s' ..."
 msgstr ""
-"Establecendo a cota do usuario «%s» segundo os valores do usuario «%s» ..."
+"Se stabilește cota pentru utilizatorul „%s” la valorile utilizatorului "
+"„%s” ..."
 
 #: ../adduser:915
 #, perl-format
 msgid "Not creating `%s'."
-msgstr "Non se creou «%s»."
+msgstr "Nu se creează „%s”."
 
 #: ../adduser:917
 #, perl-format
 msgid "Not creating home directory `%s'."
-msgstr "Non se creo o cartafol persoal «%s»."
+msgstr "Nu se creează directorul personal „%s”."
 
 #: ../adduser:919
 #, perl-format
 msgid "The home directory `%s' already exists.  Not touching this directory."
-msgstr "O cartafol persoal «%s» xa existe.  Ignorándoo."
+msgstr "Directorul personal „%s” există deja.  Nu se atinge acest director."
 
 #: ../adduser:925
-#, fuzzy, perl-format
-#| msgid ""
-#| "Warning: The home directory `%s' does not belong to the user you are "
-#| "currently creating.\n"
+#, perl-format
 msgid ""
 "Warning: The home directory `%s' does not belong to the user you are "
 "currently creating."
 msgstr ""
-"Aviso: O cartafol persoal «%s» non pertence ao usuario que está a piques de "
-"crear.\n"
+"Atenție: Directorul personal „%s” nu aparține utilizatorului pe care îl "
+"creați în prezent."
 
 #: ../adduser:928
 #, perl-format
 msgid "Creating home directory `%s' ..."
-msgstr "Creando cartafol persoal «%s» ..."
+msgstr "Se creează directorul personal „%s” ..."
 
 #: ../adduser:931
 #, perl-format
 msgid "Couldn't create home directory `%s': %s."
-msgstr "Non se puido crear o cartafol persoal «%s»: %s."
+msgstr "Nu s-a putut crea directorul personal „%s”: %s."
 
 #: ../adduser:945
 #, perl-format
 msgid "Copying files from `%s' ..."
-msgstr "Copiando ficheiros dende «%s» ..."
+msgstr "Se copiază fișierele din „%s” ..."
 
 #: ../adduser:948
 #, perl-format
 msgid "fork for `find' failed: %s"
-msgstr "non se puido chamar a «find»: %s"
+msgstr "bifurcarea pentru «find» a eșuat: %s"
 
 #: ../adduser:1065
 #, perl-format
 msgid "The user `%s' already exists, and is not a system user."
-msgstr "O usuario «%s» xa existe, e non é un usuario do sistema."
+msgstr "Utilizatorul „%s” există deja și nu este un utilizator de sistem."
 
 #: ../adduser:1068
 #, perl-format
 msgid "The user `%s' already exists."
-msgstr "O usuario «%s» xa existe."
+msgstr "Utilizatorul „%s” există."
 
 #: ../adduser:1073
 #, perl-format
 msgid "The UID %d is already in use."
-msgstr "O UID %d xa está ocupado."
+msgstr "UID-ul %d este deja utilizat."
 
 #: ../adduser:1085
 #, perl-format
 msgid "The GID %d is already in use."
-msgstr "O GID %d xa está ocupado."
+msgstr "GID-ul %d este deja utilizat."
 
 #: ../adduser:1095
 #, perl-format
 msgid "The GID %d does not exist."
-msgstr "O GID %d non existe."
+msgstr "GID-ul %d nu există."
 
 #: ../adduser:1162
-#, fuzzy, perl-format
-#| msgid ""
-#| "Cannot deal with %s.\n"
-#| "It is not a dir, file, or symlink.\n"
+#, perl-format
 msgid "%s/%s is neither a dir, file, nor a symlink."
 msgstr ""
-"Non se puido tratar con %s.\n"
-"Non é un cartafol, nin un ficheiro nin unha ligazón simbólica.\n"
+"%s/%s nu este nici un director, nici un fișier, nici o legătură simbolică."
 
 #. this check cannot be turned off
 #: ../adduser:1196
-#, fuzzy
-#| msgid ""
-#| "To avoid ambiguity with numerical UIDs, usernames which\n"
-#| "            consist of only digits are not allowed.\n"
 msgid ""
 "To avoid ambiguity with numerical UIDs, usernames which\n"
 "            consist of only digits are not allowed."
 msgstr ""
-"Non se permiten usar nomes de usuarios que só conteñan\n"
-"            díxitos, para poder evitar ambigüidades con respecto\n"
-"            a UID numéricos.\n"
+"Pentru a evita ambiguitatea cu UID-uri numerice, numele de utilizator care\n"
+"            sunt formate numai din cifre nu sunt permise."
 
 #. this check cannot be turned off
 #: ../adduser:1203
-#, fuzzy
-#| msgid ""
-#| "Usernames must be no more than 32 bytes in length;\n"
-#| "            note that if you are using Unicode characters, the character\n"
-#| "            limit will be less than 32.\n"
 msgid ""
 "Usernames must be no more than 32 bytes in length;\n"
 "            note that if you are using Unicode characters, the character\n"
 "            limit will be less than 32."
 msgstr ""
-"Os nomes de usuario non poden pasar dos 32 octetos;\n"
-"            teña en mente que, con Unicode, non todos os\n"
-"            caracteres se corresponden cun octeto.\n"
+"Numele de utilizator nu trebuie să aibă o lungime mai mare de 32 de octeți;\n"
+"            rețineți că, dacă utilizați caractere Unicode, limita de "
+"caractere\n"
+"            va fi mai mică de 32."
 
 #. this check cannot be turned off
 #: ../adduser:1211
-#, fuzzy
-#| msgid ""
-#| "To avoid problems, the username must not start with a\n"
-#| "            dash, plus sign, or tilde, and it must not contain any of "
-#| "the\n"
-#| "            following: colon, comma, slash, or any whitespace characters\n"
-#| "            including spaces, tabs, and newlines.\n"
 msgid ""
 "To avoid problems, the username must not start with a\n"
 "            dash, plus sign, or tilde, and it must not contain any of the\n"
 "            following: colon, comma, slash, or any whitespace characters\n"
 "            including spaces, tabs, and newlines."
 msgstr ""
-"Para evitar problemas os nomes de usuario non poden\n"
-"            empezar cun guión, símbolo máis ou til; e non pode conter\n"
-"            ningún dos seguintes caracteres: dous puntos, coma, barra "
-"inclinada\n"
-"            ou calquera espazo en branco, xa for espacios, tabulacións ou "
-"saltos de liña.\n"
+"Pentru a evita problemele, numele de utilizator nu trebuie să înceapă cu o\n"
+"            liniuță de unire, semnul plus sau tilde și nu trebuie să "
+"conțină \n"
+"            niciunul dintre următoarele: două puncte, virgulă, bară oblică "
+"sau \n"
+"            orice caracter de spațiu alb inclusiv spațiile, tabulatoarele "
+"și\n"
+"            liniile noi."
 
 #: ../adduser:1221
-#, fuzzy
-#| msgid ""
-#| "To avoid problems, the username should consist only of\n"
-#| "            letters, digits, underscores, periods, at signs and dashes, "
-#| "and\n"
-#| "            not start with a dash (as defined by IEEE Std 1003.1-2001). "
-#| "For\n"
-#| "            compatibility with Samba machine accounts, $ is also "
-#| "supported\n"
-#| "            at the end of the username.  (Use the `--allow-all-names' "
-#| "option\n"
-#| "            to bypass this restriction.)\n"
 msgid ""
 "To avoid problems, the username should consist only of\n"
 "            letters, digits, underscores, periods, at signs and dashes, and\n"
@@ -443,65 +399,59 @@ msgid ""
 "option\n"
 "            to bypass this restriction.)"
 msgstr ""
-"Para evitar problemas os nomes de usuario só deberán consistir\n"
-"            de letras, díxitos, barras baixas, puntos, arrobas e guións, e "
-"non\n"
-"            empezar por guións (segundo se indica na norma IEEE Std "
+"Pentru a evita problemele, numele de utilizator trebuie\n"
+"            să fie format numai din litere, cifre, caractere de subliniere,\n"
+"            puncte, semne de @ și liniuțe de unire, și să nu înceapă cu o\n"
+"            liniuță de unire (astfel cum este definit de IEEE Std "
 "1003.1-2001).\n"
-"            Se permite usar un $ ao final do nome de usuario, por "
-"compatibilidade\n"
-"            con contas en máquinas con Samba.  (Para saltarse estas "
-"restriccións\n"
-"            use a opción «--allow-all-names»)\n"
+"            Pentru compatibilitate cu conturile mașinilor Samba, $ este de\n"
+"            asemenea acceptat la sfârșitul numelui de utilizator. Utilizați\n"
+"            opțiunea „--allow-all-names” pentru a ocoli această restricție."
 
 #: ../adduser:1231
 msgid "Allowing use of questionable username."
-msgstr "Permitirase o uso de nomes de usuario posiblemente perniciosos."
+msgstr "Se permite utilizarea unui nume de utilizator chestionabil."
 
 #: ../adduser:1233
-#, fuzzy, perl-format
-#| msgid ""
-#| "Please enter a username matching the regular expression\n"
-#| "            configured via the %s configuration variable.  Use the\n"
-#| "            `--allow-bad-names' option to relax this check or "
-#| "reconfigure\n"
-#| "            %s in configuration.\n"
+#, perl-format
 msgid ""
 "Please enter a username matching the regular expression\n"
 "            configured via the %s configuration variable.  Use the\n"
 "            `--allow-bad-names' option to relax this check or reconfigure\n"
 "            %s in configuration."
 msgstr ""
-"Introduza un nome de usuario que coincida coa expresión\n"
-"            regular configurada mediante a opción %s.  Use a opción\n"
-"            «--allow-bad-names» para liberalizar esta comprobación,\n"
-"            ou cambie o parámetro %s na configuración.\n"
+"Vă rugăm să introduceți un nume de utilizator care să corespundă expresiei "
+"regulate\n"
+"            configurată prin intermediul variabilei de configurare %s.  "
+"Utilizați opțiunea\n"
+"            „--allow-bad-names” pentru a relaxa această verificare sau "
+"reconfigurați\n"
+"            %s în configurare."
 
 #: ../adduser:1254
-#, fuzzy, perl-format
-#| msgid "Selecting UID from range %d to %d ..."
+#, perl-format
 msgid "Selecting UID from range %d to %d ...\n"
-msgstr "Escollendo UID do rango %d a %d ..."
+msgstr "Se selectează UID-ul din intervalul %d până la %d ...\n"
 
 #: ../adduser:1277
 #, perl-format
 msgid "Selecting GID from range %d to %d ..."
-msgstr "Escollendo GID do rango %d a %d ..."
+msgstr "Se selectează GID-ul din intervalul %d până la %d ..."
 
 #: ../adduser:1301
 #, perl-format
 msgid "Selecting UID/GID from range %d to %d ..."
-msgstr "Escollendo UID/GID do rango %d a %d ..."
+msgstr "Se selectează UID/GID-ul din intervalul %d până la %d ..."
 
 #: ../adduser:1342
 #, perl-format
 msgid "Removing directory `%s' ..."
-msgstr "Eliminando directorio «%s» ..."
+msgstr "Se elimină directorul „%s” ..."
 
 #: ../adduser:1346 ../deluser:393
 #, perl-format
 msgid "Removing user `%s' ..."
-msgstr "Eliminando usuario «%s» ..."
+msgstr "Se elimină utilizatorul „%s” ..."
 
 #. groupdel will error out if there are users left that
 #. have $group as primary group. We are not checking this
@@ -509,14 +459,14 @@ msgstr "Eliminando usuario «%s» ..."
 #: ../adduser:1350 ../deluser:435
 #, perl-format
 msgid "Removing group `%s' ..."
-msgstr "Eliminando grupo «%s» ..."
+msgstr "Se elimină grupul „%s” ..."
 
 #. Translators: the variable %s is INT, QUIT, or HUP.
 #. Please do not insert a space character between SIG and %s.
 #: ../adduser:1360
 #, perl-format
 msgid "Caught a SIG%s."
-msgstr "Atrapada sinal SIG%s."
+msgstr "S-a capturat un SIG%s."
 
 #: ../adduser:1366
 #, perl-format
@@ -524,7 +474,7 @@ msgid ""
 "adduser version %s\n"
 "\n"
 msgstr ""
-"adduser versión %s\n"
+"adduser versiunea %s\n"
 "\n"
 
 #: ../adduser:1367
@@ -535,10 +485,10 @@ msgid ""
 "/usr/share/doc/adduser/copyright.\n"
 "\n"
 msgstr ""
-"Engade un usuario, ou grupo, ao sistema.\n"
+"Adaugă un utilizator sau un grup la sistem.\n"
 "\n"
-"Para máis información legal consulte\n"
-"/usr/share/doc/adduser/copyright.\n"
+"Pentru informații detaliate privind drepturile de autor,\n"
+"consultați „/usr/share/doc/adduser/copyright”.\n"
 "\n"
 
 #: ../adduser:1373 ../deluser:495
@@ -553,16 +503,17 @@ msgid ""
 "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n"
 "General Public License, /usr/share/common-licenses/GPL, for more details.\n"
 msgstr ""
-"Este programa é libre; pódese redistribuír e/ou modificar segundo\n"
-"os termos da Licencia Xeral Pública de GNU, publicada pola \n"
-"Free Software Foundation, na súa versión 2 ou (se prefire) a calquera\n"
-"versión posterior.\n"
+"Acest program este software liber; îl puteți redistribui și/sau modifica\n"
+"în conformitate cu termenii Licenței Publice Generale GNU publicată de\n"
+"Free Software Foundation; fie versiunea 2 a Licenței, fie (la alegerea "
+"dvs.)\n"
+"orice versiune ulterioară.\n"
 "\n"
-"Este programa distribúese co obxectivo de resultar de utilidade, pero\n"
-"SEN NINGUNHA GARANTÍA, nin sequera coa garantía implícita de\n"
-"SER AXEITADO PARA NINGÚN MERCADO ou OBXECTIVO INDIVIDUAL.  Consulte\n"
-"a Licencia Xeral Pública de GNU, /usr/share/common-licenses/GPL, para máis "
-"información.\n"
+"Acest program este distribuit în speranța că va fi util, dar\n"
+"FĂRĂ NICI O GARANȚIE; fără nici măcar garanția implicită de\n"
+"COMERCIALIZARE sau ADECVARE PENTRU UN ANUMIT SCOP. Consultați\n"
+"Licența publică generală GNU, /usr/share/common-licenses/GPL,\n"
+"pentru mai multe detalii.\n"
 
 #: ../adduser:1387
 msgid ""
@@ -603,84 +554,79 @@ msgid ""
 "   Add an existing user to an existing group\n"
 msgstr ""
 "adduser [--uid id] [--firstuid id] [--lastuid id]\n"
-"        [--gid id] [--firstgid id] [--lastgid id] [--ingroup grupo]\n"
+"        [--gid id] [--firstgid id] [--lastgid id] [--ingroup group]\n"
 "        [--add-extra-groups] [--shell shell]\n"
-"        [--comment comment] [--home directorio] [--no-create-home]\n"
+"        [--comment comentariu] [--home director] [--no-create-home]\n"
 "        [--allow-all-names] [--allow-bad-names]\n"
 "        [--disabled-password] [--disabled-login]\n"
-"        [--conf ficheiro] [--quiet] [--verbose] [--debug]\n"
-"        usuario\n"
-"    Engadir un usuario normal\n"
+"        [--conf fișier] [--quiet] [--verbose] [--debug]\n"
+"        utilizatorr\n"
+"    Adaugă un utilizator normal\n"
 "\n"
 "adduser --system\n"
-"        [--uid id] [--group] [--ingroup grupo] [--gid id]\n"
-"        [--shell shell] [--comment comment] [--home directorio] [--no-create-"
-"home]\n"
-"        [--conf ficheiro] [--quiet] [--verbose] [--debug]\n"
-"        usuario\n"
-"   Engadir un usuario do sistema\n"
+"        [--uid id] [--group] [--ingroup group] [--gid id]\n"
+"        [--shell shell] [--comment comentariu] [--home director] [--no-"
+"create-home]\n"
+"        [--conf fișier] [--quiet] [--verbose] [--debug]\n"
+"        utilizator\n"
+"   Adaugă un utilizator de sistem\n"
 "\n"
 "adduser --group\n"
 "        [--gid ID] [--firstgid id] [--lastgid id]\n"
-"        [--conf ficheiro] [--quiet] [--verbose] [--debug]\n"
-"        grupo\n"
+"        [--conf fișier] [--quiet] [--verbose] [--debug]\n"
+"        grup\n"
 "addgroup\n"
 "        [--gid ID] [--firstgid id] [--lastgid id]\n"
-"        [--conf ficheiro] [--quiet] [--verbose] [--debug]\n"
-"        grupo\n"
-"   Engadir un grupo de usuario\n"
+"        [--conf fișier] [--quiet] [--verbose] [--debug]\n"
+"        grup\n"
+"   Adaugă un grup normal de utilizatori\n"
 "\n"
 "addgroup --system\n"
 "        [--gid id]\n"
-"        [--conf ficheiro] [--quiet] [--verbose] [--debug]\n"
-"        grupo\n"
-"   Engadir un grupo do sistema\n"
+"        [--conf file] [--quiet] [--verbose] [--debug]\n"
+"        grup\n"
+"   Adaugă un grup de utilizatori de sistem\n"
 "\n"
-"adduser USUARIO GRUPO\n"
-"   Engadir un usuario existente a un grupo existente\n"
+"adduser UTILIZATOR GRUP\n"
+"   Adaugă un utilizator existent la un grup existent\n"
 
 #: ../deluser:125
 msgid "Only root may remove a user or group from the system."
-msgstr "Só o superusuario pode eliminar un usuario ou grupo do sistema."
+msgstr "Numai root poate elimina un utilizator sau un grup din sistem."
 
 #: ../deluser:158
 msgid "No options allowed after names."
-msgstr "Non se permiten parámetros tras os nomes."
+msgstr "Nu sunt permise opțiuni după nume."
 
 #: ../deluser:167
 msgid "Enter a group name to remove: "
-msgstr "Introduza o nome do grupo a eliminar: "
+msgstr "Introduceți un nume de grup pentru eliminare: "
 
 #: ../deluser:169
 msgid "Enter a user name to remove: "
-msgstr "Introduza o nome do usuario a eliminar: "
+msgstr "Introduceți un nume de utilizator pentru eliminare: "
 
 #: ../deluser:212
-#, fuzzy
-#| msgid ""
-#| "In order to use the --remove-home, --remove-all-files, and --backup "
-#| "features,\n"
-#| "you need to install the `perl' package. To accomplish that, run\n"
-#| "apt-get install perl.\n"
 msgid ""
 "In order to use the --remove-home, --remove-all-files, and --backup "
 "features, you need to install the `perl' package. To accomplish that, run "
 "apt-get install perl."
 msgstr ""
-"Para poder usar os parámetros -remove-home, --remove-all-files, e --backup "
-"features,\n"
-"precisa ter instalado o paquete «perl». Para iso execute\n"
-"apt-get install perl.\n"
+"Pentru a utiliza funcțiile apelate de opțiunile „--remove-home”, „--remove-"
+"all-files” și „--backup”, trebuie să instalați pachetul „perl”. Pentru a "
+"realiza acest lucru, rulați «apt-get install perl»."
 
 #: ../deluser:256
 #, perl-format
 msgid "The user `%s' is not a system user. Exiting."
-msgstr "O usuario «%s» non é un usuario do sistema. Saíndo."
+msgstr "Utilizatorul „%s” nu este un utilizator de sistem. Se iese."
 
 #: ../deluser:260
 #, perl-format
 msgid "The user `%s' does not exist, but --system was given. Exiting."
-msgstr "O usuario «%s» non existe, pero pasouse a opción --system. Saíndo"
+msgstr ""
+"Utilizatorul „%s” nu există, dar a fost specificată opțiunea „--system”. Se "
+"iese."
 
 #: ../deluser:272
 msgid ""
@@ -689,112 +635,110 @@ msgid ""
 "want this, call deluser with parameter --no-preserve-root. Stopping now "
 "without having performed any action"
 msgstr ""
+"AVERTISMENT: Sunteți pe punctul de a șterge contul root (uid 0). De obicei, "
+"acest lucru nu este niciodată necesar, deoarece poate face întregul sistem "
+"inutilizabil. Dacă doriți cu adevărat acest lucru, apelați «deluser» cu "
+"opțiunea „--no-preserve-root”. Se încetează acum fără să se fi efectuat "
+"nicio acțiune"
 
 #: ../deluser:283
 msgid "Looking for files to backup/remove ..."
-msgstr "Buscando ficheiros que arquivar/eliminar ..."
+msgstr "Se caută fișiere pentru copie de rezervă/eliminare ..."
 
 #: ../deluser:288
 #, perl-format
 msgid "failed to open /proc/mounts: %s"
-msgstr "non se puido abrir  /proc/mounts: %s"
+msgstr "nu s-a reușit să se deschidă „/proc/mounts”: %s"
 
 #: ../deluser:301
 #, perl-format
 msgid "failed to close /proc/mounts: %s"
-msgstr "non se puido pechar /proc/mounts: %s"
+msgstr "nu s-a reușit să se închidă „/proc/mounts”: %s"
 
 #: ../deluser:326
 #, perl-format
 msgid "Not backing up/removing `%s', it is a mount point."
 msgstr ""
-"«%s» é un punto de montaxe, non se lle fixo unha copia de seguridade nin se "
-"eliminou."
+"Nu se va efectua copia de rezervă/eliminarea lui „%s”, acesta este un punct "
+"de montare."
 
 #: ../deluser:333
 #, perl-format
 msgid "Not backing up/removing `%s', it matches %s."
-msgstr ""
-"«%s» coincide con %s, non se lle fixo unha copia de seguridade nin se "
-"eliminou."
+msgstr "Nu se va efectua copia de rezervă/eliminarea lui „%s”, coincide cu %s."
 
 #: ../deluser:347
 #, perl-format
 msgid "Cannot handle special file %s"
-msgstr "Non se pode xestionar o ficheiro especial %s"
+msgstr "Nu se poate gestiona fișierul special %s"
 
 #: ../deluser:355
 #, perl-format
 msgid "Backing up files to be removed to %s ..."
 msgstr ""
-"Facendo unha copia de seguridade en %s dos ficheiros que se van eliminar ..."
+"Se efectuează copia de rezervă a fișierelor care urmează să fie eliminate în "
+"%s ..."
 
 #: ../deluser:374
 msgid "Removing files ..."
-msgstr "Eliminando ficheiros ..."
+msgstr "Se elimină fișierele ..."
 
 #: ../deluser:383
 msgid "Removing crontab ..."
-msgstr "Eliminando crontab ..."
+msgstr "Se elimină crontab ..."
 
 #: ../deluser:389
-#, fuzzy, perl-format
-#| msgid ""
-#| "`%s' not executed. Skipping crontab removal. Package `cron' required.\n"
+#, perl-format
 msgid "`%s' not executed. Skipping crontab removal. Package `cron' required."
 msgstr ""
-"«%s» non se executou. Saltando a eliminación do crontab. Precísase do "
-"paquete «cron».\n"
+"«%s» nu a fost executat. Se omite eliminarea crontab. Pachetul „cron” este "
+"necesar."
 
 #: ../deluser:418
 #, perl-format
 msgid "getgrnam `%s' failed. This shouldn't happen."
-msgstr "getgrnam «%s» fallou. Isto non debería pasar."
+msgstr "getgrnam „%s” a eșuat. Acest lucru nu ar trebui să se întâmple."
 
 #: ../deluser:424
 #, perl-format
 msgid "The group `%s' is not a system group. Exiting."
-msgstr "O grupo «%s» non é un grupo do sistema. Saíndo."
+msgstr "Grupul „%s” nu este un grup de sistem. Se iese."
 
 #: ../deluser:428
 #, perl-format
 msgid "The group `%s' is not empty!"
-msgstr "O grupo «%s» non está baleiro!"
+msgstr "Grupul „%s” nu este gol!"
 
 #: ../deluser:447
-#, fuzzy, perl-format
-#| msgid "The user `%s' does not exist."
+#, perl-format
 msgid "The user `%s' does not exist.\n"
-msgstr "O usuario «%s» non existe."
+msgstr "Utilizatorul „%s” nu există.\n"
 
 #: ../deluser:451
-#, fuzzy, perl-format
-#| msgid "The group `%s' does not exist."
+#, perl-format
 msgid "The group `%s' does not exist.\n"
-msgstr "O grupo «%s» non existe."
+msgstr "Grupul „%s” nu există.\n"
 
 #: ../deluser:455
 msgid "You may not remove the user from their primary group."
-msgstr "Non se pode quitar un usuario do seu grupo primario."
+msgstr "Nu puteți elimina utilizatorul din grupul său primar."
 
 #: ../deluser:473
 #, perl-format
 msgid "The user `%s' is not a member of group `%s'."
-msgstr "O usuario «%s» non pertence ao grupo «%s»."
+msgstr "Utilizatorul „%s” nu este membru al grupului „%s”."
 
 #: ../deluser:477
 #, perl-format
 msgid "Removing user `%s' from group `%s' ..."
-msgstr "Quitando o usuario «%s» do grupo «%s» ..."
+msgstr "Se elimină utilizatorul „%s” din grupul „%s” ..."
 
 #: ../deluser:488
 #, perl-format
 msgid ""
 "deluser version %s\n"
 "\n"
-msgstr ""
-"deluser versión %s\n"
-"\n"
+msgstr "deluser versiunea %s\n"
 
 #: ../deluser:489
 msgid ""
@@ -804,10 +748,10 @@ msgid ""
 "/usr/share/doc/adduser/copyright.\n"
 "\n"
 msgstr ""
-"Elimina usuarios e grupos do sistema.\n"
+"Elimină utilizatorii și grupurile din sistem.\n"
 "\n"
-"Para máis información legal consulte\n"
-"/usr/share/doc/adduser/copyright.\n"
+"Pentru informații detaliate privind drepturile de autor,\n"
+"consultați „/usr/share/doc/adduser/copyright”.\n"
 "\n"
 
 #: ../deluser:509
@@ -828,164 +772,137 @@ msgid ""
 "  remove the user from a group\n"
 msgstr ""
 "deluser [--system] [--remove-home] [--remove-all-files] [--backup]\n"
-"        [--backup-to directorio] [--backup-suffix texto] [--conf ficheiro]\n"
-"        [--quiet] [--verbose] [--debug] usuario\n"
+"        [--backup-to director] [--backup-suffix șir] [--conf fișier]\n"
+"        [--quiet] [--verbose] [--debug] utilizator\n"
 "\n"
-"  Elimina un usuario normal do sistema\n"
+"  elimină un utilizator normal din sistem\n"
 "\n"
-"deluser --group [--system] [--only-if-empty] [--conf ficheiro] [--quiet]\n"
-"        [--verbose] [--debug] grupo\n"
-"delgroup [--system] [--only-if-empty] [--conf ficheiro] [--quiet]\n"
-"         [--verbose] [--debug] grupo\n"
-"  Elimina un grupo do sistema\n"
+"deluser --group [--system] [--only-if-empty] [--conf fișier] [--quiet]\n"
+"        [--verbose] [--debug] grup\n"
+"delgroup [--system] [--only-if-empty] [--conf fișier] [--quiet]\n"
+"         [--verbose] [--debug] grup\n"
+"  elimină un grup din sistem\n"
 "\n"
-"deluser [--conf ficheiro] [--quiet] [--verbose] [--debug] usuario grupo\n"
-"  Quita o usuario do grupo\n"
+"deluser [--conf fișier] [--quiet] [--verbose] [--debug] utilizator grup\n"
+"  relimină utilizatorul dintr-un grup\n"
 
 #. compressor recognized, not available
 #: ../deluser:547 ../deluser:557
 #, perl-format
 msgid "Backup suffix %s unavailable, using gzip."
 msgstr ""
-"O sufixo %s non está dispoñible para facer copias de seguridade, usarase "
-"gzip."
+"Sufixul de la copia de rezervă %s nu este disponibil, se utilizează gzip."
 
 #: ../AdduserCommon.pm:77
 #, perl-format
 msgid "`%s' does not exist. Using defaults."
-msgstr "«%s» non existe. Usando valores predeterminados."
+msgstr "„%s” nu există. Se utilizează valorile implicite."
 
 #: ../AdduserCommon.pm:83
 #, perl-format
 msgid "cannot open configuration file %s: `%s'\n"
-msgstr ""
+msgstr "nu se poate deschide fișierul de configurare %s: „%s”\n"
 
 #: ../AdduserCommon.pm:91 ../AdduserCommon.pm:155 ../AdduserCommon.pm:168
 #, perl-format
 msgid "Couldn't parse `%s', line %d."
-msgstr "Non se puido interpretar «%s», liña %d."
+msgstr "Nu s-a putut analiza „%s”, linia %d."
 
 #: ../AdduserCommon.pm:96
 #, perl-format
 msgid "Unknown variable `%s' at `%s', line %d."
-msgstr "Variable descoñecida «%s» en «%s», liña %d."
+msgstr "Variabilă necunoscută „%s” în „%s”, linia %d."
 
 #: ../AdduserCommon.pm:122
 #, perl-format
 msgid "Cannot read directory `%s'"
-msgstr "Non se puido ler o cartafol «%s»"
+msgstr "Nu se poate citi directorul „%s”"
 
 #: ../AdduserCommon.pm:137
 #, perl-format
 msgid "`%s' does not exist."
-msgstr "«%s» non existe."
+msgstr "„%s” nu există."
 
 #: ../AdduserCommon.pm:142
-#, fuzzy, perl-format
-#| msgid "Cannot handle special file %s"
+#, perl-format
 msgid "Cannot open pool file %s: `%s'"
-msgstr "Non se pode xestionar o ficheiro especial %s"
+msgstr "Nu se poate deschide fișierul bază de date „pool” %s: „%s”"
 
 #: ../AdduserCommon.pm:175
 #, perl-format
 msgid "Illegal pool type `%s' reading `%s'."
-msgstr "Tipo de \"pool\" ilegal «%s» ao ler «%s»."
+msgstr "Tip de bază de date „pool” ilegal „%s” la citirea „%s”."
 
 #: ../AdduserCommon.pm:179
 #, perl-format
 msgid "Duplicate name `%s' at `%s', line %d."
-msgstr "Nome duplicado «%s» en «%s», liña %d."
+msgstr "Nume duplicat „%s” în „%s”, linia %d."
 
 #: ../AdduserCommon.pm:183
 #, perl-format
 msgid "Duplicate ID `%s' at `%s', line %d."
-msgstr "ID duplicado «%s» en «%s», liña %d."
+msgstr "ID duplicat „%s” în „%s”, linia %d."
 
 #: ../AdduserCommon.pm:213
 #, perl-format
 msgid "`%s' returned error code %d. Exiting."
-msgstr "«%s» devolveu o código de fallo %d. Saíndo."
+msgstr "„%s” a returnat codul de eroare %d. Se iese."
 
 #: ../AdduserCommon.pm:216
 #, perl-format
 msgid "`%s' exited from signal %d. Exiting."
-msgstr "«%s» saíu por mor do sinal %d. Saíndo."
+msgstr "„%s” a ieșit cu semnalul %d. Se iese."
 
 #: ../AdduserCommon.pm:227
 #, perl-format
 msgid "`%s' failed to execute. %s. Continuing."
-msgstr "«%s» non se puido executar. %s. Continuando."
+msgstr "Execuția comenzii „%s” a eșuat. %s. Se continuă."
 
 #: ../AdduserCommon.pm:229
 #, perl-format
 msgid "`%s' killed by signal %d. Continuing."
-msgstr "«%s» foi parado polo sinal %d. Continuando."
+msgstr "„%s” a fost omorât de semnalul %d. Se continuă."
 
 #: ../AdduserCommon.pm:231
 #, perl-format
 msgid "`%s' failed with status %d. Continuing."
-msgstr "«%s» fallou co código %d. Continuando."
+msgstr "„%s” a eșuat cu starea %d. Se continuă."
 
 #: ../AdduserCommon.pm:270
 #, perl-format
 msgid "Could not find program named `%s' in $PATH."
-msgstr "Non se puido atopar o programa «%s» no $PATH."
+msgstr "Nu s-a putut găsi programul numit „%s” în $PATH."
 
 #: ../AdduserCommon.pm:343
 #, perl-format
 msgid "could not open lock file %s!"
-msgstr ""
+msgstr "nu s-a putut deschide fișierul de blocare %s!"
 
 #: ../AdduserCommon.pm:349
 msgid "Could not obtain exclusive lock, please try again shortly!"
-msgstr "Non se puido bloquear o recurso, inténteo de novo máis tarde!"
+msgstr ""
+"Nu s-a putut obține o blocare exclusivă, încercați din nou în cel mai scurt "
+"timp!"
 
 #: ../AdduserCommon.pm:352
 msgid "Waiting for lock to become available..."
-msgstr "Esperando para bloquear o recurso..."
+msgstr "Se așteaptă ca blocarea să devină disponibilă..."
 
 #: ../AdduserCommon.pm:359
 #, perl-format
 msgid "could not seek - %s!"
-msgstr ""
+msgstr "nu s-a putut căuta - %s!"
 
 #: ../AdduserCommon.pm:368
 msgid "could not find lock file!"
-msgstr ""
+msgstr "nu s-a putut găsi fișierul de blocare!"
 
 #: ../AdduserCommon.pm:373
 #, perl-format
 msgid "could not unlock file %s: %s"
-msgstr ""
+msgstr "nu s-a putut debloca fișierul %s: %s"
 
 #: ../AdduserCommon.pm:378
 #, perl-format
 msgid "could not close lock file %s: %s"
-msgstr ""
-
-#~ msgid "Done."
-#~ msgstr "Feito."
-
-#, perl-format
-#~ msgid "Stopped: %s"
-#~ msgstr "Parouse: %s"
-
-#~ msgid "WARNING: You are just about to delete the root account (uid 0)"
-#~ msgstr "AVISO: Está a piques de eliminar a conta de superusuario (uid 0)"
-
-#~ msgid ""
-#~ "Usually this is never required as it may render the whole system unusable"
-#~ msgstr "Isto non debería pasar, e facelo pode romper o sistema."
-
-#~ msgid ""
-#~ "If you really want this, call deluser with parameter --no-preserve-root"
-#~ msgstr ""
-#~ "Se está seguro de que quere continuar, chame a deluser co parámetro --no-"
-#~ "preserve-root"
-
-#~ msgid "Stopping now without having performed any action"
-#~ msgstr "Parando sen realizar ningunha opción"
-
-#, perl-format
-#~ msgid "%s: %s"
-#~ msgstr "%s: %s"
+msgstr "nu s-a putut închide fișierul de blocare %s: %s"

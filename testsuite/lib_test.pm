@@ -9,8 +9,10 @@ use Debian::AdduserCommon;
 my %add_config;
 my %del_config;
 
-preseed_config(("/etc/adduser.conf"),\%add_config);
-preseed_config(("/etc/deluser.conf"),\%del_config);
+my @adduserconf=("/etc/adduser.conf");
+my @deluserconf=("/etc/deluser.conf");
+preseed_config(\@adduserconf,\%add_config);
+preseed_config(\@deluserconf,\%del_config);
 
 my $user_prefix = "addusertest";
 

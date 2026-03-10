@@ -24,8 +24,12 @@ deluser, delgroup \- remove a user or group from the system
 .OP \-\-remove\-home
 .OP \-\-quiet
 .OP \-\-verbose
+.OP \-\-stdoutmsglevel prio
+.OP \-\-stderrmsglevel prio
+.OP \-\-logmsglevel prio
 .B user
 .YS
+
 .SY deluser
 .OP \-\-system
 .OP \-\-backup
@@ -37,8 +41,12 @@ deluser, delgroup \- remove a user or group from the system
 .OP \-\-remove\-home
 .OP \-\-quiet
 .OP \-\-verbose
+.OP \-\-stdoutmsglevel prio
+.OP \-\-stderrmsglevel prio
+.OP \-\-logmsglevel prio
 .B user
 .YS
+
 .SY deluser
 .B \-\-group
 .OP \-\-conf file
@@ -46,7 +54,12 @@ deluser, delgroup \- remove a user or group from the system
 .OP \-\-only\-if\-empty
 .OP \-\-quiet
 .OP \-\-verbose
+.OP \-\-stdoutmsglevel prio
+.OP \-\-stderrmsglevel prio
+.OP \-\-logmsglevel prio
 .B group
+.YS
+
 .SY delgroup
 .OP \-\-system
 .OP \-\-conf file
@@ -54,16 +67,24 @@ deluser, delgroup \- remove a user or group from the system
 .OP \-\-only\-if\-empty
 .OP \-\-quiet
 .OP \-\-verbose
+.OP \-\-stdoutmsglevel prio
+.OP \-\-stderrmsglevel prio
+.OP \-\-logmsglevel prio
 .B group
 .YS
+
 .SY deluser
 .OP \-\-conf file
 .OP \-\-debug
 .OP \-\-quiet
 .OP \-\-verbose
+.OP \-\-stdoutmsglevel prio
+.OP \-\-stderrmsglevel prio
+.OP \-\-logmsglevel prio
 .B user
 .B group
 .YS
+
 .SY deluser
 .B \-\-help
 .YS
@@ -83,7 +104,7 @@ or even all files on the system owned by the user to be removed,
 running a custom script,
 and other features.
 .PP
-For a full list and explanation of all options,
+For a full list and explanations of all options,
 see the OPTIONS section.
 .PP
 \fBdeluser\fP and \fBdelgroup\fP can be run in one of three modes:
@@ -112,13 +133,13 @@ are already covered by the \fB\-\-remove\-all\-files\fP option.
 If you want to backup all files before deleting them
 you can activate the \fB\-\-backup\fP option
 which will create a file \fIusername.tar(.gz|.bz2)\fP
-in the directory specified by the \fB\-\-backup\-to\fP option
+in the directory specified by the \fB\-\-backup\-to\fP option.
 .PP
 By default,
-the backup archive is compressed with gzip.
+the backup archive is compressed with \fBgzip\fP(1).
 To change this,
 the \fB\-\-backup\-suffix\fP option can be set
-to any suffix supported by \fBtar \-\-auto\-compress\fP (e.g. .gz, .bz2, .xz).
+to any suffix supported by \fBtar \-\-auto\-compress\fP (e.g., .gz, .bz2, .xz).
 .PP
 \fBdeluser\fP will refuse to remove the root account.
 .PP
@@ -160,127 +181,116 @@ Users are advised to migrate to the long version of options.
 .B \-\-backup
 Backup all files contained in the userhome and the mailspool file
 to a file named \fIusername.tar.bz2\fP or \fIusername.tar.gz\fP.
-Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
+Valid modes: \fBdeluser\fP, \fBdeluser \-\-system\fP.
 .TP
 .BR "\-\-backup\-suffix "str
 Select compression algorithm for a home directory backup.
 Can be set to any suffix recognized by \fBtar \-\-auto\-compress\fP.
 Defaults to \fI.gz\fP.
-Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
+Valid modes: \fBdeluser\fP, \fBdeluser \-\-system\fP.
 .TP
 .BI "\-\-backup\-to "dir
 Place the backup files not in the current directory but in \fIdir\fP.
 This implicitly sets \fB\-\-backup\fP also.
-(defaulting to the current working directory).
-Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
+Defaults to the current working directory.
+Valid modes: \fBdeluser\fP, \fBdeluser \-\-system\fP.
 .TP
 .BR "\-\-conf \fIfile\fP"
 Use \fIfile\fP instead of the default files
 \fI/etc/deluser.conf\fP and \fI/etc/adduser.conf\fP.
 Multiple \-\-conf options may be given.
 .TP
-.BR \-\-debug
-Activate debugging code.
+.B \-\-debug
+Synonymous to \-\-stdoutmsglevel=debug.
+Deprecated.
 .TP
 .B \-\-group
 Remove a group.
 This is the default action if the program is
 invoked as \fIdelgroup\fP.
-Valid Mode: \fBdeluser\fP.
+Valid mode: \fBdeluser\fP.
 .TP
 .B \-\-help
 Display brief instructions.
 .TP
 .B \-\-only\-if\-empty
 Only remove if no members are left.
-Valid Modes: \fBdeluser --group\fP, \fBdelgroup\fP,
+Valid modes: \fBdeluser \-\-group\fP, \fBdelgroup\fP.
 .TP
 .B \-\-quiet
-Suppress informational messages, only show warnings and errors.
+Synonymous to \-\-stdoutmsglevel=warn.
+Deprecated.
 .TP
 .B \-\-remove\-all\-files
 Remove all files from the system owned by this user.
 Note: \-\-remove\-home does not have an effect any more.
 If \fB\-\-backup\fP is specified,
 the files are deleted after having performed the backup.
-Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
+Valid modes: \fBdeluser\fP, \fBdeluser \-\-system\fP.
 .TP
 .B \-\-remove\-home
 Remove the home directory of the user and its mailspool.
 If \fB\-\-backup\fP is specified,
 the files are deleted after having performed the backup.
-Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
+Valid modes: \fBdeluser\fP, \fBdeluser \-\-system\fP.
 .TP
 .B \-\-system
 Only delete if user/group is a system user/group.
 If the user does not exist, no error value is returned.
-Valid Modes: \fBdeluser\fP, \fBdeluser \-\-system\fP,
+Valid modes: \fBdeluser\fP, \fBdeluser \-\-system\fP.
 .TP
 .B \-\-verbose
-Be more verbose.
+Synonymous to \-\-stdoutmsglevel=info.
+Deprecated.
+.TP
+.BI \-\-stdoutmsglevel  " prio "
+.TQ
+.BI \-\-stderrmsglevel  " prio "
+.TQ
+.BI \-\-logmsglevel  " prio "
+Minimum priority for messages logged to syslog/journal and the console,
+respectively.
+Values are
+\fItrace\fP, \fIdebug\fP, \fIinfo\fP, \fIwarn\fP, \fIerr\fP, and \fIfatal\fP.
+Messages with the priority set here or higher get printed to the
+respective medium.
+Messages printed to stderr are not repeated on stdout.
+That allows the local admin to control \fBadduser\fP's chattiness
+on the console and in the log independently, keeping probably confusing
+information to itself while still leaving helpful information in the log.
 .TP
 .B \-\-version
 Display version and copyright information.
-.SH "RETURN VALUE"
-.TP
-.B 0
-Success: The action was successfully executed.
-.TP
-.B 1
-The user to delete was not a system account.
-No eaction was performed.
-.TP
-.B 2
-There is no such user.
-No action was performed.
-.TP
-.B 3
-There is no such group.
-No action was performed.
-.TP
-.B 4
-Internal error.
-No action was performed.
-.TP
-.B 5
-The group to delete is not empty.
-No action was performed.
-.TP
-.B 6
-The user does not belong to the specified group.
-No action was performed.
-.TP
-.B 7
-You cannot remove a user from its primary group.
-No action was performed.
-.TP
-.B 8
-The suggested package 'perl' is not installed.
-This package is required to perform the requested actions.
-No action was performed.
-.TP
-.B 9
-The root account cannot be deleted. No action was performed.
 
+.SH LOGGING↲
+
+\fBdeluser\fR uses extensive and configurable logging to tailor its verbosity
+to the needs and wishes of the system administrator.
+
+This works similar to \fBadduser\fR. See adduser(8) for all the details.
+
+.SH EXIT VALUES
+
+The exit values documented in adduser(8) also apply for \fBdeluser\fP.
 
 .SH SECURITY
 \fBdeluser\fP needs root privileges and offers,
 via the \fB\-\-conf\fP command line option
 to use different configuration files.
-Do not use \fBsudo\fP or similar tools to
+Do not use \fBsudo\fP(8) or similar tools to
 give partial privileges to \fBdeluser\fP
 with restricted command line parameters.
 This is easy to circumvent and might
-allow users to create arbitrary accounts.
+allow users to obtain privileges they are not supposed to have.
 If you want this,
 consider writing your own wrapper script
 and giving privileges to execute that script.
 
 .SH FILES
-.IR /etc/deluser.conf
-Default configuration file for \fBdeluser\fP and \fBdelgroup\fP
+.I /etc/deluser.conf
+Default configuration file for \fBdeluser\fP(8) and \fBdelgroup\fP(8)
 .TP
-.IR /usr/local/sbin/deluser.local
+.I /usr/local/sbin/deluser.local
 Optional custom add-ons, see
 .BR deluser.local (8)
 .

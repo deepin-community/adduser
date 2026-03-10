@@ -8,7 +8,7 @@ use warnings;
 
 use AdduserTestsCommon;
 
-my $quiet='--quiet';
+my @quiet=('--stdoutmsglevel=error', '--stderrmsglevel=error');
 my $gidcount;
 my $uidcount;
 
@@ -35,22 +35,22 @@ sub cleanup {
     my $prefix=$_[0] || '';
     foreach $userbase( @unames ) {
         $user=$prefix.$userbase;
-        system("/usr/sbin/deluser $quiet --remove-home $user 2>/dev/null");
+        system("/usr/sbin/deluser @quiet --remove-home $user 2>/dev/null");
         assert_user_does_not_exist($user);
     }
-    system("/usr/sbin/deluser $quiet --remove-home $prefix$unamex 2>/dev/null");
+    system("/usr/sbin/deluser @quiet --remove-home $prefix$unamex 2>/dev/null");
     assert_user_does_not_exist($prefix.$unamex);
-    system("/usr/sbin/deluser $quiet --remove-home $prefix$funame 2>/dev/null");
+    system("/usr/sbin/deluser @quiet --remove-home $prefix$funame 2>/dev/null");
     assert_user_does_not_exist($prefix.$funame);
     $uidcount=0;
     foreach $groupbase( @gnames ) {
         $group=$prefix.$groupbase;
-        system("/usr/sbin/delgroup $quiet $group 2>/dev/null");
+        system("/usr/sbin/delgroup @quiet $group 2>/dev/null");
         assert_group_does_not_exist($group);
     }
-    system("/usr/sbin/delgroup $quiet $prefix$gnamex 2>/dev/null");
+    system("/usr/sbin/delgroup @quiet $prefix$gnamex 2>/dev/null");
     assert_group_does_not_exist($prefix.$gnamex);
-    system("/usr/sbin/delgroup $quiet $prefix$fgname 2>/dev/null");
+    system("/usr/sbin/delgroup @quiet $prefix$fgname 2>/dev/null");
     assert_user_does_not_exist($prefix.$fgname);
     $gidcount=0;
 }
@@ -66,7 +66,7 @@ apply_config_hash(\%confhash);
 
 foreach $groupbase( @gnames ) {
     $group = $prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet, $group);
+    assert_command_success('/usr/sbin/addgroup', @quiet, $group);
     assert_group_exists($group);
     if ($gidcount==0) {
         $gidcount=((getgrnam($group))[2]);
@@ -74,7 +74,7 @@ foreach $groupbase( @gnames ) {
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--gid', $fgid,
     $prefix.$fgname);
 assert_group_exists($prefix.$fgname);
@@ -82,7 +82,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user = $prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
         $user);
@@ -94,7 +94,7 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--uid', $fuid,
     $prefix.$funame);
@@ -105,7 +105,7 @@ cleanup($prefix);
 $prefix='u1a2';
 foreach $userbase( @unames ) {
     $user = $prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--comment', '""', '--disabled-password', '--no-create-home',
         $user);
     assert_user_exists($user);
@@ -135,7 +135,7 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
        '--firstgid', $firstgid1,
        $group);
     assert_group_exists($group);
@@ -143,7 +143,7 @@ foreach $groupbase( @gnames ) {
     $gidcount++;
 }
 assert_group_does_not_exist($prefix.$fgname);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--firstgid', $firstgid1,
     '--gid', $fgid,
     $prefix.$fgname);
@@ -152,7 +152,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
         '--firstuid', $firstuid1, 
@@ -162,7 +162,7 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, 
     '--uid', $fuid,
@@ -177,7 +177,7 @@ $fuid = 3750;
 $uidcount=$firstuid1;
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--comment', '""', '--disabled-password', '--no-create-home',
         '--firstuid', $firstuid1,
         $user);
@@ -206,12 +206,12 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet, $group);
+    assert_command_success('/usr/sbin/addgroup', @quiet, $group);
     assert_group_exists($group);
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--gid', $fgid,
     $prefix.$fgname);
 assert_group_exists($prefix.$fgname);
@@ -219,7 +219,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
         $user);
@@ -228,7 +228,7 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--uid', $fuid,
     $prefix.$funame);
@@ -242,7 +242,7 @@ $fuid = 3750;
 $uidcount=$firstuid1;
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--comment', '""', '--disabled-password', '--no-create-home',
         $user);
     assert_user_exists($user);
@@ -265,14 +265,14 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
       '--firstgid', $firstgid1,
       $group);
     assert_group_exists($group);
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--firstgid', $firstgid1,
     '--gid', $fgid,
     $prefix.$fgname);
@@ -281,7 +281,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
         '--firstuid', $firstuid1, 
@@ -291,7 +291,7 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, 
     '--uid', $fuid,
@@ -306,7 +306,7 @@ $fuid = 3750;
 $uidcount=$firstuid1;
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--comment', '""', '--disabled-password', '--no-create-home',
         '--firstuid', $firstuid1,
         $user);
@@ -332,15 +332,17 @@ apply_config_hash(\%confhash);
 
 foreach $groupbase( @gnames ) {
     $group = $prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet, '--system', $group);
+    assert_command_success('/usr/sbin/addgroup', @quiet, '--system', $group);
     assert_group_exists($group);
     if ($gidcount==0) {
         $gidcount=((getgrnam($group))[2]);
     }
     assert_group_has_gid($group, $gidcount);
-    $gidcount++;
+    while (defined(getgrgid($gidcount))) {
+        $gidcount++;
+    }
 }
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--system',
     '--gid', $fgid,
     $prefix.$fgname);
@@ -349,7 +351,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user = $prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
@@ -360,9 +362,11 @@ foreach $userbase( @unames ) {
     }
     assert_primary_group_membership_exists($user, $prefix.$gnames[0]);
     assert_user_has_uid($user, $uidcount);
-    $uidcount++;
+    while (defined(getpwuid($uidcount))) {
+        $uidcount++;
+    }
 }
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--system',
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--uid', $fuid,
@@ -374,7 +378,7 @@ cleanup($prefix);
 $prefix='s1a2';
 foreach $userbase( @unames ) {
     $user = $prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--comment', '""', '--disabled-password', '--no-create-home',
         $user);
@@ -384,7 +388,9 @@ foreach $userbase( @unames ) {
     }
     assert_primary_group_membership_exists($user, 'nogroup');
     assert_user_has_uid($user, $uidcount);
-    $uidcount++;
+    while (defined(getpwuid($uidcount))) {
+        $uidcount++;
+    }
 }
 cleanup($prefix);
 
@@ -399,7 +405,7 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
        '--system',
        '--firstgid', $firstgid1,
        $group);
@@ -408,7 +414,7 @@ foreach $groupbase( @gnames ) {
     $gidcount++;
 }
 assert_group_does_not_exist($prefix.$fgname);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--system',
     '--firstgid', $firstgid1,
     '--gid', $fgid,
@@ -418,7 +424,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
@@ -429,7 +435,7 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--system',
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, 
@@ -445,7 +451,7 @@ $fuid = 250;
 $uidcount=$firstuid1;
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--comment', '""', '--disabled-password', '--no-create-home',
         '--firstuid', $firstuid1,
@@ -473,12 +479,12 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', '--system', $quiet, $group);
+    assert_command_success('/usr/sbin/addgroup', '--system', @quiet, $group);
     assert_group_exists($group);
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--system',
     '--gid', $fgid,
     $prefix.$fgname);
@@ -487,7 +493,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
@@ -497,7 +503,7 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--system',
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--uid', $fuid,
@@ -512,7 +518,7 @@ $fuid = 970;
 $uidcount=$firstuid1;
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--comment', '""', '--disabled-password', '--no-create-home',
         $user);
@@ -534,7 +540,7 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
       '--system',
       '--firstgid', $firstgid1,
       $group);
@@ -542,7 +548,7 @@ foreach $groupbase( @gnames ) {
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--system',
     '--firstgid', $firstgid1,
     '--gid', $fgid,
@@ -552,7 +558,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
@@ -563,7 +569,7 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--system',
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, 
@@ -579,7 +585,7 @@ $fuid = 830;
 $uidcount=$firstuid1;
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--comment', '""', '--disabled-password', '--no-create-home',
         '--firstuid', $firstuid1,
@@ -611,18 +617,18 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
         '--firstgid', $firstgid1, '--lastgid', $lastgid1,
        $group);
     assert_group_exists($group);
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_failure_silent('/usr/sbin/addgroup', $quiet,
+assert_command_failure_silent('/usr/sbin/addgroup', @quiet,
         '--firstgid', $firstgid1, '--lastgid', $lastgid1,
        $prefix.$gnamex);
 assert_group_does_not_exist($prefix.$gnamex);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--firstgid', $firstgid1, '--lastgid', $lastgid1,
     '--gid', $fgid,
     $prefix.$fgname);
@@ -631,7 +637,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
         '--firstuid', $firstuid1, '--lastuid', $lastuid1,
@@ -641,13 +647,13 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_failure_silent('/usr/sbin/adduser', $quiet,
+assert_command_failure_silent('/usr/sbin/adduser', @quiet,
     '--ingroup', $prefix.$gnames[0],
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, '--lastuid', $lastuid1,
     $prefix.$unamex);
 assert_user_does_not_exist($prefix.$unamex);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, '--lastuid', $lastuid1,
     '--uid', $fuid,
@@ -675,16 +681,16 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
        $group);
     assert_group_exists($group);
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_failure_silent('/usr/sbin/addgroup', $quiet,
+assert_command_failure_silent('/usr/sbin/addgroup', @quiet,
        $prefix.$gnamex);
 assert_group_does_not_exist($prefix.$gnamex);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--gid', $fgid,
     $prefix.$fgname);
 assert_group_exists($prefix.$fgname);
@@ -692,7 +698,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
         $user);
@@ -701,12 +707,12 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_failure_silent('/usr/sbin/adduser', $quiet,
+assert_command_failure_silent('/usr/sbin/adduser', @quiet,
     '--ingroup', $prefix.$gnames[0],
     '--comment', '""', '--disabled-password', '--no-create-home',
     $prefix.$unamex);
 assert_user_does_not_exist($unamex);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--uid', $fuid,
     $prefix.$funame);
@@ -727,18 +733,18 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
         '--firstgid', $firstgid1, '--lastgid', $lastgid1,
        $group);
     assert_group_exists($group);
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_failure_silent('/usr/sbin/addgroup', $quiet,
+assert_command_failure_silent('/usr/sbin/addgroup', @quiet,
         '--firstgid', $firstgid1, '--lastgid', $lastgid1,
        $prefix.$gnamex);
 assert_group_does_not_exist($prefix.$gnamex);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--firstgid', $firstgid1, '--lastgid', $lastgid1,
     '--gid', $fgid,
     $prefix.$fgname);
@@ -747,7 +753,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
         '--firstuid', $firstuid1, '--lastuid', $lastuid1,
@@ -757,13 +763,13 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_failure_silent('/usr/sbin/adduser', $quiet,
+assert_command_failure_silent('/usr/sbin/adduser', @quiet,
     '--ingroup', $prefix.$gnames[0],
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, '--lastuid', $lastuid1,
     $prefix.$unamex);
 assert_user_does_not_exist($prefix.$unamex);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, '--lastuid', $lastuid1,
     '--uid', $fuid,
@@ -789,7 +795,7 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
         '--system',
         '--firstgid', $firstgid1, '--lastgid', $lastgid1,
        $group);
@@ -797,12 +803,12 @@ foreach $groupbase( @gnames ) {
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_failure_silent('/usr/sbin/addgroup', $quiet,
+assert_command_failure_silent('/usr/sbin/addgroup', @quiet,
         '--system',
         '--firstgid', $firstgid1, '--lastgid', $lastgid1,
        $prefix.$gnamex);
 assert_group_does_not_exist($prefix.$gnamex);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--system',
     '--firstgid', $firstgid1, '--lastgid', $lastgid1,
     '--gid', $fgid,
@@ -812,7 +818,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
@@ -823,14 +829,14 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_failure_silent('/usr/sbin/adduser', $quiet,
+assert_command_failure_silent('/usr/sbin/adduser', @quiet,
     '--system',
     '--ingroup', $prefix.$gnames[0],
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, '--lastuid', $lastuid1,
     $prefix.$unamex);
 assert_user_does_not_exist($prefix.$unamex);
-assert_command_success_silent('/usr/sbin/adduser', $quiet,
+assert_command_success_silent('/usr/sbin/adduser', @quiet,
     '--system',
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, '--lastuid', $lastuid1,
@@ -859,18 +865,18 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
        '--system',
        $group);
     assert_group_exists($group);
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_failure_silent('/usr/sbin/addgroup', $quiet,
+assert_command_failure_silent('/usr/sbin/addgroup', @quiet,
        '--system',
        $prefix.$gnamex);
 assert_group_does_not_exist($prefix.$gnamex);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--system',
     '--gid', $fgid,
     $prefix.$fgname);
@@ -879,7 +885,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
@@ -889,13 +895,13 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_failure_silent('/usr/sbin/adduser', $quiet,
+assert_command_failure_silent('/usr/sbin/adduser', @quiet,
     '--system',
     '--ingroup', $prefix.$gnames[0],
     '--comment', '""', '--disabled-password', '--no-create-home',
     $prefix.$unamex);
 assert_user_does_not_exist($unamex);
-assert_command_success_silent('/usr/sbin/adduser', $quiet,
+assert_command_success_silent('/usr/sbin/adduser', @quiet,
     '--system',
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--uid', $fuid,
@@ -907,8 +913,8 @@ cleanup($prefix);
 # test group S4L: ranges requested by config, overriden by command line
 
 $prefix='s4l';
-$firstuid1=420;
-$lastuid1=423;
+$firstuid1=320;
+$lastuid1=323;
 $firstgid1=520;
 $lastgid1=523;
 $fuid = 720;
@@ -917,7 +923,7 @@ $gidcount=$firstgid1;
 $uidcount=$firstuid1;
 foreach $groupbase( @gnames ) {
     $group=$prefix.$groupbase;
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
         '--system',
         '--firstgid', $firstgid1, '--lastgid', $lastgid1,
        $group);
@@ -925,12 +931,12 @@ foreach $groupbase( @gnames ) {
     assert_group_has_gid($group, $gidcount);
     $gidcount++;
 }
-assert_command_failure_silent('/usr/sbin/addgroup', $quiet,
+assert_command_failure_silent('/usr/sbin/addgroup', @quiet,
         '--system',
         '--firstgid', $firstgid1, '--lastgid', $lastgid1,
        $prefix.$gnamex);
 assert_group_does_not_exist($prefix.$gnamex);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--system',
     '--firstgid', $firstgid1, '--lastgid', $lastgid1,
     '--gid', $fgid,
@@ -940,7 +946,7 @@ assert_group_has_gid($prefix.$fgname, $fgid);
 
 foreach $userbase( @unames ) {
     $user=$prefix.$userbase;
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
         '--system',
         '--ingroup', $prefix.$gnames[0],
         '--comment', '""', '--disabled-password', '--no-create-home',
@@ -951,14 +957,14 @@ foreach $userbase( @unames ) {
     assert_user_has_uid($user, $uidcount);
     $uidcount++;
 }
-assert_command_failure_silent('/usr/sbin/adduser', $quiet,
+assert_command_failure_silent('/usr/sbin/adduser', @quiet,
     '--system',
     '--ingroup', $prefix.$gnames[0],
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, '--lastuid', $lastuid1,
     $prefix.$unamex);
 assert_user_does_not_exist($prefix.$unamex);
-assert_command_success_silent('/usr/sbin/adduser', $quiet,
+assert_command_success_silent('/usr/sbin/adduser', @quiet,
     '--system',
     '--comment', '""', '--disabled-password', '--no-create-home',
     '--firstuid', $firstuid1, '--lastuid', $lastuid1,

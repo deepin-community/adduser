@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: adduser 3.115\n"
 "Report-Msgid-Bugs-To: adduser@packages.debian.org\n"
-"POT-Creation-Date: 2022-12-28 08:34+0100\n"
+"POT-Creation-Date: 2023-06-09 12:08+0200\n"
 "PO-Revision-Date: 2016-06-17 18:25+0200\n"
 "Last-Translator: Luca Monducci <luca.mo@tiscali.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
@@ -16,370 +16,382 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. everyone can issue "--help" and "--version", but only root can go on
-#: ../adduser:161
-msgid "Only root may add a user or group to the system.\n"
-msgstr "Solo l'utente root può aggiungere un utente o un gruppo al sistema.\n"
+#: ../adduser:190
+msgid "Only root may add a user or group to the system."
+msgstr "Solo l'utente root può aggiungere un utente o un gruppo al sistema."
 
-#: ../adduser:191 ../deluser:145
-msgid "Only one or two names allowed.\n"
-msgstr "Sono consentiti solo uno o due nomi.\n"
+#: ../adduser:227 ../deluser:176
+msgid "Only one or two names allowed."
+msgstr "Sono consentiti solo uno o due nomi."
 
-#: ../adduser:197
-msgid "Specify only one name in this mode.\n"
-msgstr "In questa modalità è possibile specificare solo un nome.\n"
+#: ../adduser:234
+msgid "Specify only one name in this mode."
+msgstr "In questa modalità è possibile specificare solo un nome."
 
-#: ../adduser:200
-msgid "addgroup with two arguments is an unspecified operation.\n"
+#: ../adduser:238
+msgid "addgroup with two arguments is an unspecified operation."
 msgstr ""
 
-#: ../adduser:224
-msgid "The --group, --ingroup, and --gid options are mutually exclusive.\n"
-msgstr "Le opzioni --group, --ingroup e --gid sono mutuamente esclusive.\n"
+#: ../adduser:263
+msgid "The --group, --ingroup, and --gid options are mutually exclusive."
+msgstr "Le opzioni --group, --ingroup e --gid sono mutuamente esclusive."
 
-#: ../adduser:229
-msgid "The home dir must be an absolute path.\n"
-msgstr "La directory home deve essere un percorso assoluto.\n"
+#: ../adduser:269
+msgid "The home dir must be an absolute path."
+msgstr "La directory home deve essere un percorso assoluto."
 
-#: ../adduser:233
+#: ../adduser:275
+#, fuzzy, perl-format
+#| msgid "Warning: The home dir %s you specified already exists."
+msgid "The home dir %s you specified already exists.\n"
+msgstr "Attenzione: la directory home %s indicata già esiste."
+
+#: ../adduser:278
+#, fuzzy, perl-format
+#| msgid "Warning: The home dir %s you specified can't be accessed: %s"
+msgid "The home dir %s you specified can't be accessed: %s\n"
+msgstr "Attenzione: impossibile accedere alla directory home %s indicata: %s"
+
+#: ../adduser:347
 #, perl-format
-msgid "Warning: The home dir %s you specified already exists.\n"
-msgstr "Attenzione: la directory home %s indicata già esiste.\n"
+msgid "The group `%s' already exists as a system group. Exiting."
+msgstr "Il gruppo «%s» già esiste come gruppo di sistema. Uscita."
 
-#: ../adduser:235
+#: ../adduser:352
 #, perl-format
-msgid "Warning: The home dir %s you specified can't be accessed: %s\n"
-msgstr "Attenzione: impossibile accedere alla directory home %s indicata: %s\n"
+msgid "The group `%s' already exists and is not a system group. Exiting."
+msgstr "Il gruppo «%s» già esiste e non è un gruppo di sistema. Uscita."
 
-#: ../adduser:305
+#: ../adduser:357
 #, perl-format
-msgid "The group `%s' already exists as a system group. Exiting.\n"
-msgstr "Il gruppo «%s» già esiste come gruppo di sistema. Uscita.\n"
+msgid "The group `%s' already exists, but has a different GID. Exiting."
+msgstr "Il gruppo «%s» già esiste con un GID diverso. Uscita."
 
-#: ../adduser:310
+#: ../adduser:362 ../adduser:399
 #, perl-format
-msgid "The group `%s' already exists and is not a system group. Exiting.\n"
-msgstr "Il gruppo «%s» già esiste e non è un gruppo di sistema. Uscita.\n"
+msgid "The GID `%s' is already in use."
+msgstr "Il GID «%s» è già utilizzato."
 
-#: ../adduser:315
-#, perl-format
-msgid "The group `%s' already exists, but has a different GID. Exiting.\n"
-msgstr "Il gruppo «%s» già esiste con un GID diverso. Uscita.\n"
-
-#: ../adduser:320 ../adduser:354
-#, perl-format
-msgid "The GID `%s' is already in use.\n"
-msgstr "Il GID «%s» è già utilizzato.\n"
-
-#: ../adduser:330
-#, perl-format
-msgid ""
-"No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID).\n"
+#: ../adduser:373
+#, fuzzy, perl-format
+#| msgid ""
+#| "No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID).\n"
+msgid "No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID)."
 msgstr ""
 "Nessun GID è disponibile nell'intervallo %d-%d (FIRST_SYS_GID - "
 "LAST_SYS_GID).\n"
 
-#: ../adduser:331 ../adduser:372
+#: ../adduser:375 ../adduser:418
 #, perl-format
-msgid "The group `%s' was not created.\n"
-msgstr "Il gruppo «%s» non è stato creato.\n"
+msgid "The group `%s' was not created."
+msgstr "Il gruppo «%s» non è stato creato."
 
-#: ../adduser:336 ../adduser:376
+#: ../adduser:381 ../adduser:423
 #, perl-format
-msgid "Adding group `%s' (GID %d) ...\n"
-msgstr "Aggiunta del gruppo «%s» (GID %d) ...\n"
+msgid "Adding group `%s' (GID %d) ..."
+msgstr "Aggiunta del gruppo «%s» (GID %d) ..."
 
-#: ../adduser:340 ../adduser:380 ../adduser:404 ../deluser:366 ../deluser:400
-#: ../deluser:440
-msgid "Done.\n"
-msgstr "Fatto.\n"
-
-#: ../adduser:351 ../adduser:991
+#: ../adduser:395 ../adduser:1081
 #, perl-format
-msgid "The group `%s' already exists.\n"
-msgstr "Il gruppo «%s» già esiste.\n"
+msgid "The group `%s' already exists."
+msgstr "Il gruppo «%s» già esiste."
 
-#: ../adduser:371
+#: ../adduser:416
 #, perl-format
-msgid "No GID is available in the range %d-%d (FIRST_GID - LAST_GID).\n"
+msgid "No GID is available in the range %d-%d (FIRST_GID - LAST_GID)."
 msgstr ""
-"Nessun GID è disponibile nell'intervallo %d-%d (FIRST_GID - LAST_GID).\n"
+"Nessun GID è disponibile nell'intervallo %d-%d (FIRST_GID - LAST_GID)."
 
-#: ../adduser:390 ../deluser:235 ../deluser:408
+#: ../adduser:437 ../deluser:266
 #, perl-format
-msgid "The user `%s' does not exist.\n"
-msgstr "L'utente «%s» non esiste.\n"
+msgid "The user `%s' does not exist."
+msgstr "L'utente «%s» non esiste."
 
-#: ../adduser:391 ../adduser:784 ../adduser:997 ../deluser:373 ../deluser:411
+#: ../adduser:441 ../adduser:857 ../adduser:1091 ../deluser:408 ../deluser:411
 #, perl-format
-msgid "The group `%s' does not exist.\n"
-msgstr "Il gruppo «%s» non esiste.\n"
+msgid "The group `%s' does not exist."
+msgstr "Il gruppo «%s» non esiste."
 
-#: ../adduser:394 ../adduser:788
+#: ../adduser:446 ../adduser:861
 #, perl-format
-msgid "The user `%s' is already a member of `%s'.\n"
-msgstr "L'utente «%s» fa già parte del gruppo «%s».\n"
+msgid "The user `%s' is already a member of `%s'."
+msgstr "L'utente «%s» fa già parte del gruppo «%s»."
 
-#: ../adduser:398 ../adduser:794
+#: ../adduser:450 ../adduser:867
 #, perl-format
-msgid "Adding user `%s' to group `%s' ...\n"
-msgstr "Aggiunta dell'utente «%s» al gruppo «%s» ...\n"
+msgid "Adding user `%s' to group `%s' ..."
+msgstr "Aggiunta dell'utente «%s» al gruppo «%s» ..."
 
-#: ../adduser:418
-#, perl-format
-msgid "The system user `%s' already exists. Exiting.\n"
-msgstr "L'utente di sistema «%s» già esiste. Uscita.\n"
-
-#: ../adduser:421
+#: ../adduser:469
 #, fuzzy, perl-format
-#| msgid "The user `%s' already exists as a system user. Exiting.\n"
-msgid "The user `%s' already exists, but is not a system user. Exiting.\n"
-msgstr "L'utente «%s» già esiste come utente di sistema. Uscita.\n"
+#| msgid "The system user `%s' already exists. Exiting."
+msgid "The system user `%s' already exists. Exiting.\n"
+msgstr "L'utente di sistema «%s» già esiste. Uscita."
 
-#: ../adduser:425
-#, perl-format
-msgid "The user `%s' already exists with a different UID. Exiting.\n"
-msgstr "L'utente «%s» già esiste con un UID diverso. Uscita.\n"
+#: ../adduser:472
+#, fuzzy, perl-format
+#| msgid "The user `%s' already exists as a system user. Exiting."
+msgid "The user `%s' already exists, but is not a system user. Exiting."
+msgstr "L'utente «%s» già esiste come utente di sistema. Uscita."
 
-#: ../adduser:439
+#: ../adduser:476
 #, perl-format
+msgid "The user `%s' already exists with a different UID. Exiting."
+msgstr "L'utente «%s» già esiste con un UID diverso. Uscita."
+
+#: ../adduser:490
+#, fuzzy, perl-format
+#| msgid ""
+#| "No UID/GID pair is available in the range %d-%d (FIRST_SYS_UID - "
+#| "LAST_SYS_UID).\n"
 msgid ""
 "No UID/GID pair is available in the range %d-%d (FIRST_SYS_UID - "
-"LAST_SYS_UID).\n"
+"LAST_SYS_UID)."
 msgstr ""
 "Nessuna coppia UID/GID è disponibile nell'intervallo %d-%d (FIRST_SYS_UID - "
 "LAST_SYS_UID).\n"
 
-#: ../adduser:440 ../adduser:453 ../adduser:523 ../adduser:635 ../adduser:640
+#: ../adduser:493 ../adduser:509 ../adduser:591 ../adduser:705 ../adduser:711
 #, perl-format
-msgid "The user `%s' was not created.\n"
-msgstr "L'utente «%s» non è stato creato.\n"
+msgid "The user `%s' was not created."
+msgstr "L'utente «%s» non è stato creato."
 
-#: ../adduser:452
-#, perl-format
-msgid ""
-"No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID).\n"
+#: ../adduser:506
+#, fuzzy, perl-format
+#| msgid ""
+#| "No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID).\n"
+msgid "No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID)."
 msgstr ""
 "Nessun UID è disponibile nell'intervallo %d-%d (FIRST_SYS_UID - "
 "LAST_SYS_UID).\n"
 
-#: ../adduser:457 ../adduser:463
+#: ../adduser:517 ../adduser:529
 #, fuzzy
 #| msgid "Internal error"
-msgid "Internal error\n"
+msgid "Internal error"
 msgstr "Errore interno"
 
-#: ../adduser:465
+#: ../adduser:533
 #, perl-format
-msgid "Adding system user `%s' (UID %d) ...\n"
-msgstr "Aggiunta dell'utente di sistema «%s» (UID %d) ...\n"
+msgid "Adding system user `%s' (UID %d) ..."
+msgstr "Aggiunta dell'utente di sistema «%s» (UID %d) ..."
 
-#: ../adduser:469
+#: ../adduser:537
 #, perl-format
-msgid "Adding new group `%s' (GID %d) ...\n"
-msgstr "Aggiunta del nuovo gruppo «%s» (GID %d) ...\n"
+msgid "Adding new group `%s' (GID %d) ..."
+msgstr "Aggiunta del nuovo gruppo «%s» (GID %d) ..."
 
-#: ../adduser:475
+#: ../adduser:543
 #, perl-format
-msgid "Adding new user `%s' (UID %d) with group `%s' ...\n"
-msgstr "Aggiunta del nuovo utente «%s» (UID %d) con gruppo «%s» ...\n"
+msgid "Adding new user `%s' (UID %d) with group `%s' ..."
+msgstr "Aggiunta del nuovo utente «%s» (UID %d) con gruppo «%s» ..."
 
-#: ../adduser:522
+#: ../adduser:590
 msgid ""
-"USERS_GID and USERS_GROUP both given in configuration. This is an error.\n"
+"USERS_GID and USERS_GROUP both given in configuration. This is an error."
 msgstr ""
 
-#: ../adduser:611
+#: ../adduser:681
 #, perl-format
-msgid "Adding user `%s' ...\n"
-msgstr "Aggiunta dell'utente «%s» ...\n"
+msgid "Adding user `%s' ..."
+msgstr "Aggiunta dell'utente «%s» ..."
 
-#: ../adduser:634
-#, perl-format
-msgid ""
-"No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+#: ../adduser:704
+#, fuzzy, perl-format
+#| msgid ""
+#| "No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+msgid "No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID)."
 msgstr ""
 "Nessuna coppia UID/GID è disponibile nell'intervallo %d-%d (FIRST_UID - "
 "LAST_UID).\n"
 
-#: ../adduser:639
+#: ../adduser:710
 msgid ""
 "USERGROUPS=no, USER_GID=-1 and USERS_GROUP empty. A user needs a primary "
-"group!\n"
+"group!"
 msgstr ""
 
-#: ../adduser:678
-msgid "Internal error interpreting parameter combination\n"
+#: ../adduser:750
+msgid "Internal error interpreting parameter combination"
 msgstr ""
 
-#: ../adduser:687
+#: ../adduser:760
 #, perl-format
-msgid "Adding new group `%s' (%d) ...\n"
-msgstr "Aggiunta del nuovo gruppo «%s» (%d) ...\n"
+msgid "Adding new group `%s' (%d) ..."
+msgstr "Aggiunta del nuovo gruppo «%s» (%d) ..."
 
-#: ../adduser:690
+#: ../adduser:763
 #, fuzzy, perl-format
-#| msgid "Adding new group `%s' (GID %d) ...\n"
-msgid "Adding new group `%s' (new group ID) ...\n"
-msgstr "Aggiunta del nuovo gruppo «%s» (GID %d) ...\n"
+#| msgid "Adding new group `%s' (GID %d) ..."
+msgid "Adding new group `%s' (new group ID) ..."
+msgstr "Aggiunta del nuovo gruppo «%s» (GID %d) ..."
 
-#: ../adduser:700
+#: ../adduser:766
+#, perl-format
+msgid "new group '%s' created with GID %d"
+msgstr ""
+
+#: ../adduser:773
 #, fuzzy, perl-format
-#| msgid "Adding new user `%s' (%d) with group `%s' ...\n"
-msgid "Adding new user `%s' (%d) with group `%s (%d)' ...\n"
-msgstr "Aggiunta del nuovo utente «%s» (%d) con gruppo «%s» ...\n"
+#| msgid "Adding new user `%s' (%d) with group `%s' ..."
+msgid "Adding new user `%s' (%d) with group `%s (%d)' ..."
+msgstr "Aggiunta del nuovo utente «%s» (%d) con gruppo «%s» ..."
 
 #. hm, error, should we break now?
-#: ../adduser:728
-msgid "Permission denied\n"
-msgstr "Permesso negato\n"
+#: ../adduser:802
+msgid "Permission denied"
+msgstr "Permesso negato"
 
-#: ../adduser:729
-msgid "invalid combination of options\n"
-msgstr "combinazione di opzioni non valida\n"
+#: ../adduser:803
+msgid "invalid combination of options"
+msgstr "combinazione di opzioni non valida"
 
-#: ../adduser:730
-msgid "unexpected failure, nothing done\n"
-msgstr "errore inaspettato, nessuna modifica apportata\n"
+#: ../adduser:804
+msgid "unexpected failure, nothing done"
+msgstr "errore inaspettato, nessuna modifica apportata"
 
-#: ../adduser:731
-msgid "unexpected failure, passwd file missing\n"
-msgstr "errore inaspettato, manca il file passwd\n"
+#: ../adduser:805
+msgid "unexpected failure, passwd file missing"
+msgstr "errore inaspettato, manca il file passwd"
 
-#: ../adduser:732
-msgid "passwd file busy, try again\n"
-msgstr "il file passwd è occupato, riprovare\n"
+#: ../adduser:806
+msgid "passwd file busy, try again"
+msgstr "il file passwd è occupato, riprovare"
 
-#: ../adduser:733
-msgid "invalid argument to option\n"
-msgstr "argomento dell'opzione non valido\n"
+#: ../adduser:807
+msgid "invalid argument to option"
+msgstr "argomento dell'opzione non valido"
 
-#: ../adduser:739
+#: ../adduser:813
 msgid "Try again? [y/N] "
 msgstr "Riprovare? [s/N] "
 
-#: ../adduser:765
+#: ../adduser:839
 msgid "Is the information correct? [Y/n] "
 msgstr "Le informazioni sono corrette? [S/n] "
 
-#: ../adduser:779
+#: ../adduser:853
 #, fuzzy, perl-format
-#| msgid "Adding new user `%s' to extra groups ...\n"
-msgid "Adding new user `%s' to supplemental / extra groups `%s' ...\n"
-msgstr "Aggiunta del nuovo utente «%s» ai gruppi extra ...\n"
+#| msgid "Adding new user `%s' to extra groups ..."
+msgid "Adding new user `%s' to supplemental / extra groups `%s' ..."
+msgstr "Aggiunta del nuovo utente «%s» ai gruppi extra ..."
 
-#: ../adduser:805
+#: ../adduser:877
 #, perl-format
-msgid "Setting quota for user `%s' to values of user `%s' ...\n"
+msgid "Setting quota for user `%s' to values of user `%s' ..."
 msgstr ""
 "Impostazione della quota per l'utente «%s» con la configurazione dell'utente "
-"«%s» ...\n"
+"«%s» ..."
 
-#: ../adduser:843
+#: ../adduser:915
 #, fuzzy, perl-format
-#| msgid "Not creating home directory `%s'.\n"
-msgid "Not creating `%s'.\n"
-msgstr "La directory home «%s» non è stata creata.\n"
+#| msgid "Not creating home directory `%s'."
+msgid "Not creating `%s'."
+msgstr "La directory home «%s» non è stata creata."
 
-#: ../adduser:846
+#: ../adduser:917
 #, perl-format
-msgid "Not creating home directory `%s'.\n"
-msgstr "La directory home «%s» non è stata creata.\n"
+msgid "Not creating home directory `%s'."
+msgstr "La directory home «%s» non è stata creata."
 
-#: ../adduser:849
+#: ../adduser:919
 #, fuzzy, perl-format
-#| msgid "The home directory `%s' already exists.  Not copying from `%s'.\n"
-msgid "The home directory `%s' already exists.  Not touching this directory.\n"
-msgstr "La directory home «%s» già esiste. Copia da «%s» non effettuata.\n"
+#| msgid "The home directory `%s' already exists.  Not copying from `%s'."
+msgid "The home directory `%s' already exists.  Not touching this directory."
+msgstr "La directory home «%s» già esiste. Copia da «%s» non effettuata."
 
-#: ../adduser:855
-#, perl-format
+#: ../adduser:925
+#, fuzzy, perl-format
+#| msgid ""
+#| "Warning: The home directory `%s' does not belong to the user you are "
+#| "currently creating.\n"
 msgid ""
 "Warning: The home directory `%s' does not belong to the user you are "
-"currently creating.\n"
+"currently creating."
 msgstr ""
 "Attenzione: la directory home «%s» non appartiene all'utente che si sta "
 "creando.\n"
 
-#: ../adduser:859
+#: ../adduser:928
 #, perl-format
-msgid "Creating home directory `%s' ...\n"
-msgstr "Creazione della directory home «%s» ...\n"
+msgid "Creating home directory `%s' ..."
+msgstr "Creazione della directory home «%s» ..."
 
-#: ../adduser:861
+#: ../adduser:931
 #, perl-format
-msgid "Couldn't create home directory `%s': %s.\n"
-msgstr "Impossibile creare la directory home «%s»: %s.\n"
+msgid "Couldn't create home directory `%s': %s."
+msgstr "Impossibile creare la directory home «%s»: %s."
 
-#: ../adduser:869
+#: ../adduser:945
 #, perl-format
-msgid "Copying files from `%s' ...\n"
-msgstr "Copia dei file da «%s» ...\n"
+msgid "Copying files from `%s' ..."
+msgstr "Copia dei file da «%s» ..."
 
-#: ../adduser:871
+#: ../adduser:948
 #, perl-format
-msgid "fork for `find' failed: %s\n"
-msgstr "fallito il fork di «find»: %s\n"
+msgid "fork for `find' failed: %s"
+msgstr "fallito il fork di «find»: %s"
 
-#: ../adduser:980
+#: ../adduser:1065
 #, perl-format
-msgid "The user `%s' already exists, and is not a system user.\n"
-msgstr "L'utente «%s» già esiste e non è un utente di sistema.\n"
+msgid "The user `%s' already exists, and is not a system user."
+msgstr "L'utente «%s» già esiste e non è un utente di sistema."
 
-#: ../adduser:982
+#: ../adduser:1068
 #, perl-format
-msgid "The user `%s' already exists.\n"
-msgstr "L'utente «%s» già esiste.\n"
+msgid "The user `%s' already exists."
+msgstr "L'utente «%s» già esiste."
 
-#: ../adduser:985
+#: ../adduser:1073
 #, perl-format
-msgid "The UID %d is already in use.\n"
-msgstr "Lo UID %d è già utilizzato.\n"
+msgid "The UID %d is already in use."
+msgstr "Lo UID %d è già utilizzato."
 
-#: ../adduser:993
+#: ../adduser:1085
 #, perl-format
-msgid "The GID %d is already in use.\n"
-msgstr "Il GID %d è già utilizzato.\n"
+msgid "The GID %d is already in use."
+msgstr "Il GID %d è già utilizzato."
 
-#: ../adduser:999
+#: ../adduser:1095
 #, perl-format
-msgid "The GID %d does not exist.\n"
-msgstr "Il GID %d non esiste.\n"
+msgid "The GID %d does not exist."
+msgstr "Il GID %d non esiste."
 
-#: ../adduser:1043
-#, perl-format
-msgid ""
-"Cannot deal with %s.\n"
-"It is not a dir, file, or symlink.\n"
+#: ../adduser:1162
+#, fuzzy, perl-format
+#| msgid ""
+#| "Cannot deal with %s.\n"
+#| "It is not a dir, file, or symlink.\n"
+msgid "%s/%s is neither a dir, file, nor a symlink."
 msgstr ""
 "Impossibile gestire %s.\n"
 "Non è una directory, né un file né un collegamento simbolico.\n"
 
 #. this check cannot be turned off
-#: ../adduser:1069
+#: ../adduser:1196
 msgid ""
 "To avoid ambiguity with numerical UIDs, usernames which\n"
-"            consist of only digits are not allowed.\n"
+"            consist of only digits are not allowed."
 msgstr ""
 
 #. this check cannot be turned off
-#: ../adduser:1076
+#: ../adduser:1203
 msgid ""
 "Usernames must be no more than 32 bytes in length;\n"
 "            note that if you are using Unicode characters, the character\n"
-"            limit will be less than 32.\n"
+"            limit will be less than 32."
 msgstr ""
 
 #. this check cannot be turned off
-#: ../adduser:1084
+#: ../adduser:1211
 msgid ""
 "To avoid problems, the username must not start with a\n"
 "            dash, plus sign, or tilde, and it must not contain any of the\n"
 "            following: colon, comma, slash, or any whitespace characters\n"
-"            including spaces, tabs, and newlines.\n"
+"            including spaces, tabs, and newlines."
 msgstr ""
 
-#: ../adduser:1094
+#: ../adduser:1221
 #, fuzzy
 #| msgid ""
 #| "%s: To avoid problems, the username should consist only of\n"
@@ -395,7 +407,7 @@ msgid ""
 "            compatibility with Samba machine accounts, $ is also supported\n"
 "            at the end of the username.  (Use the `--allow-all-names' "
 "option\n"
-"            to bypass this restriction.)\n"
+"            to bypass this restriction.)"
 msgstr ""
 "%s: per evitare problemi il nome utente dovrebbe essere composto\n"
 "solo da lettere, cifre, sottolineature (_), punti (.), chioccioline (@) e\n"
@@ -404,11 +416,11 @@ msgstr ""
 "Samba è supportato l'uso del carattere dollaro ($) come carattere finale\n"
 "del nome utente.\n"
 
-#: ../adduser:1104
-msgid "Allowing use of questionable username.\n"
-msgstr "Consentito l'uso di nomi utente discutibili.\n"
+#: ../adduser:1231
+msgid "Allowing use of questionable username."
+msgstr "Consentito l'uso di nomi utente discutibili."
 
-#: ../adduser:1106
+#: ../adduser:1233
 #, fuzzy, perl-format
 #| msgid ""
 #| "%s: Please enter a username matching the regular expression configured\n"
@@ -418,59 +430,55 @@ msgid ""
 "Please enter a username matching the regular expression\n"
 "            configured via the %s configuration variable.  Use the\n"
 "            `--allow-bad-names' option to relax this check or reconfigure\n"
-"            %s in configuration.\n"
+"            %s in configuration."
 msgstr ""
 "%s: inserire un nome utente che soddisfi l'espressione regolare configurata\n"
 "tramite la variabile NAME_REGEX. Per evitare questo controllo, utilizzare\n"
 "l'opzione «--force-badname» oppure riconfigurare NAME_REGEX.\n"
 
-#: ../adduser:1127
-#, perl-format
-msgid "Selecting UID from range %d to %d ...\n"
-msgstr "Scelta dell'UID nell'intervallo da %d a %d ...\n"
-
-#: ../adduser:1150
-#, perl-format
-msgid "Selecting GID from range %d to %d ...\n"
-msgstr "Scelta del GID nell'intervallo da %d a %d ...\n"
-
-#: ../adduser:1174
+#: ../adduser:1254
 #, fuzzy, perl-format
-#| msgid "Selecting UID from range %d to %d ...\n"
-msgid "Selecting UID/GID from range %d to %d ...\n"
-msgstr "Scelta dell'UID nell'intervallo da %d a %d ...\n"
+#| msgid "Selecting UID from range %d to %d ..."
+msgid "Selecting UID from range %d to %d ...\n"
+msgstr "Scelta dell'UID nell'intervallo da %d a %d ..."
 
-#: ../adduser:1215
+#: ../adduser:1277
 #, perl-format
-msgid "Stopped: %s\n"
-msgstr "Fermato: %s\n"
+msgid "Selecting GID from range %d to %d ..."
+msgstr "Scelta del GID nell'intervallo da %d a %d ..."
 
-#: ../adduser:1217
-#, perl-format
-msgid "Removing directory `%s' ...\n"
-msgstr "Cancellazione della directory «%s» ...\n"
+#: ../adduser:1301
+#, fuzzy, perl-format
+#| msgid "Selecting UID from range %d to %d ..."
+msgid "Selecting UID/GID from range %d to %d ..."
+msgstr "Scelta dell'UID nell'intervallo da %d a %d ..."
 
-#: ../adduser:1221 ../deluser:358
+#: ../adduser:1342
 #, perl-format
-msgid "Removing user `%s' ...\n"
-msgstr "Rimozione dell'utente «%s» ...\n"
+msgid "Removing directory `%s' ..."
+msgstr "Cancellazione della directory «%s» ..."
+
+#: ../adduser:1346 ../deluser:393
+#, perl-format
+msgid "Removing user `%s' ..."
+msgstr "Rimozione dell'utente «%s» ..."
 
 #. groupdel will error out if there are users left that
 #. have $group as primary group. We are not checking this
 #. ourself since this would mean enumerating all users.
-#: ../adduser:1225 ../deluser:395
+#: ../adduser:1350 ../deluser:435
 #, perl-format
-msgid "Removing group `%s' ...\n"
-msgstr "Rimozione del gruppo «%s» ...\n"
+msgid "Removing group `%s' ..."
+msgstr "Rimozione del gruppo «%s» ..."
 
 #. Translators: the variable %s is INT, QUIT, or HUP.
 #. Please do not insert a space character between SIG and %s.
-#: ../adduser:1235
+#: ../adduser:1360
 #, perl-format
-msgid "Caught a SIG%s.\n"
-msgstr "Ricevuto SIG%s.\n"
+msgid "Caught a SIG%s."
+msgstr "Ricevuto SIG%s."
 
-#: ../adduser:1240
+#: ../adduser:1366
 #, perl-format
 msgid ""
 "adduser version %s\n"
@@ -479,7 +487,7 @@ msgstr ""
 "adduser versione %s\n"
 "\n"
 
-#: ../adduser:1241
+#: ../adduser:1367
 msgid ""
 "Adds a user or group to the system.\n"
 "\n"
@@ -488,7 +496,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../adduser:1247 ../deluser:460
+#: ../adduser:1373 ../deluser:495
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -511,7 +519,7 @@ msgstr ""
 "la\n"
 "GNU General Public License (/usr/share/common-licenses/GPL).\n"
 
-#: ../adduser:1261
+#: ../adduser:1387
 msgid ""
 "adduser [--uid id] [--firstuid id] [--lastuid id]\n"
 "        [--gid id] [--firstgid id] [--lastgid id] [--ingroup group]\n"
@@ -550,150 +558,152 @@ msgid ""
 "   Add an existing user to an existing group\n"
 msgstr ""
 
-#. everyone can issue "--help" and "--version", but only root can go on
-#: ../deluser:107
-msgid "Only root may remove a user or group from the system.\n"
-msgstr "Solo root può rimuovere un utente o un gruppo dal sistema.\n"
+#: ../deluser:125
+msgid "Only root may remove a user or group from the system."
+msgstr "Solo root può rimuovere un utente o un gruppo dal sistema."
 
-#: ../deluser:128
-msgid "No options allowed after names.\n"
-msgstr "Dopo i nomi non è possibile specificare delle opzioni.\n"
+#: ../deluser:158
+msgid "No options allowed after names."
+msgstr "Dopo i nomi non è possibile specificare delle opzioni."
 
-#: ../deluser:136
+#: ../deluser:167
 msgid "Enter a group name to remove: "
 msgstr "Nome del gruppo da rimuovere: "
 
-#: ../deluser:138
+#: ../deluser:169
 msgid "Enter a user name to remove: "
 msgstr "Nome dell'utente da rimuovere: "
 
-#: ../deluser:180
+#: ../deluser:212
+#, fuzzy
+#| msgid ""
+#| "In order to use the --remove-home, --remove-all-files, and --backup "
+#| "features,\n"
+#| "you need to install the `perl' package. To accomplish that, run\n"
+#| "apt-get install perl.\n"
 msgid ""
 "In order to use the --remove-home, --remove-all-files, and --backup "
-"features,\n"
-"you need to install the `perl' package. To accomplish that, run\n"
-"apt-get install perl.\n"
+"features, you need to install the `perl' package. To accomplish that, run "
+"apt-get install perl."
 msgstr ""
 "Per permettere l'uso delle funzionalità --remove-home, --remove-all-files\n"
 "e --backup è necessario installare il pacchetto «perl», per farlo,\n"
 "eseguire apt-get install perl.\n"
 
-#: ../deluser:225
+#: ../deluser:256
 #, perl-format
-msgid "The user `%s' is not a system user. Exiting.\n"
-msgstr "L'utente «%s» non è un utente di sistema. Uscita.\n"
+msgid "The user `%s' is not a system user. Exiting."
+msgstr "L'utente «%s» non è un utente di sistema. Uscita."
 
-#: ../deluser:229
+#: ../deluser:260
 #, perl-format
-msgid "The user `%s' does not exist, but --system was given. Exiting.\n"
-msgstr "L'utente «%s» non esiste, però è stato passato --system. Uscita.\n"
+msgid "The user `%s' does not exist, but --system was given. Exiting."
+msgstr "L'utente «%s» non esiste, però è stato passato --system. Uscita."
 
-#: ../deluser:240
-msgid "WARNING: You are just about to delete the root account (uid 0)\n"
-msgstr "ATTENZIONE: si sta per rimuovere l'account root (uid 0)\n"
-
-#: ../deluser:241
+#: ../deluser:272
 msgid ""
-"Usually this is never required as it may render the whole system unusable\n"
-msgstr ""
-"Solitamente questo non è mai necessario poiché potrebbe rendere l'intero "
-"sistema inutilizzabile\n"
-
-#: ../deluser:242
-#, fuzzy
-#| msgid "If you really want this, call deluser with parameter --force\n"
-msgid ""
-"If you really want this, call deluser with parameter --no-preserve-root\n"
-msgstr "Per farlo realmente, richiamare deluser con il parametro --force\n"
-
-#: ../deluser:243
-msgid "Stopping now without having performed any action\n"
-msgstr "Uscita senza aver effettuato alcuna operazione\n"
-
-#: ../deluser:254
-msgid "Looking for files to backup/remove ...\n"
-msgstr "Ricerca dei file di cui fare il backup e da cancellare ...\n"
-
-#: ../deluser:258
-#, perl-format
-msgid "failed to open /proc/mounts: %s\n"
+"WARNING: You are just about to delete the root account (uid 0). Usually this "
+"is never required as it may render the whole system unusable. If you really "
+"want this, call deluser with parameter --no-preserve-root. Stopping now "
+"without having performed any action"
 msgstr ""
 
-#: ../deluser:268
+#: ../deluser:283
+msgid "Looking for files to backup/remove ..."
+msgstr "Ricerca dei file di cui fare il backup e da cancellare ..."
+
+#: ../deluser:288
+#, perl-format
+msgid "failed to open /proc/mounts: %s"
+msgstr ""
+
+#: ../deluser:301
 #, fuzzy, perl-format
-#| msgid "can't close mount pipe: %s\n"
-msgid "failed to close /proc/mounts: %s\n"
-msgstr "impossibile chiudere la pipe per mount: %s\n"
+#| msgid "can't close mount pipe: %s"
+msgid "failed to close /proc/mounts: %s"
+msgstr "impossibile chiudere la pipe per mount: %s"
 
-#: ../deluser:291
+#: ../deluser:326
 #, perl-format
-msgid "Not backing up/removing `%s', it is a mount point.\n"
+msgid "Not backing up/removing `%s', it is a mount point."
 msgstr ""
 "Il backup o la rimozione di «%s» non è stata effettuata, poiché è un punto "
-"di mount.\n"
+"di mount."
 
-#: ../deluser:298
+#: ../deluser:333
 #, perl-format
-msgid "Not backing up/removing `%s', it matches %s.\n"
+msgid "Not backing up/removing `%s', it matches %s."
 msgstr ""
 "Il backup o la rimozione di «%s» non è stata effettuata, poiché verifica "
-"%s.\n"
+"%s."
 
-#: ../deluser:312
+#: ../deluser:347
 #, perl-format
-msgid "Cannot handle special file %s\n"
-msgstr "Impossibile gestire il file speciale %s\n"
+msgid "Cannot handle special file %s"
+msgstr "Impossibile gestire il file speciale %s"
 
-#: ../deluser:320
+#: ../deluser:355
 #, perl-format
-msgid "Backing up files to be removed to %s ...\n"
-msgstr "Backup dei file da cancellare in %s ...\n"
+msgid "Backing up files to be removed to %s ..."
+msgstr "Backup dei file da cancellare in %s ..."
 
-#: ../deluser:339
-msgid "Removing files ...\n"
-msgstr "Cancellazione dei file ...\n"
+#: ../deluser:374
+msgid "Removing files ..."
+msgstr "Cancellazione dei file ..."
 
-#: ../deluser:348
-msgid "Removing crontab ...\n"
-msgstr "Rimozione di crontab ...\n"
-
-#: ../deluser:354
-#, perl-format
-msgid "`%s' not executed. Skipping crontab removal. Package `cron' required.\n"
-msgstr ""
-
-#: ../deluser:380
-#, perl-format
-msgid "getgrnam `%s' failed. This shouldn't happen.\n"
-msgstr "getgrnam «%s» non riuscito. Non dovrebbe accadere.\n"
-
-#: ../deluser:385
-#, perl-format
-msgid "The group `%s' is not a system group. Exiting.\n"
-msgstr "Il gruppo «%s» non è un gruppo di sistema. Uscita.\n"
+#: ../deluser:383
+msgid "Removing crontab ..."
+msgstr "Rimozione di crontab ..."
 
 #: ../deluser:389
 #, perl-format
-msgid "The group `%s' is not empty!\n"
-msgstr "Il gruppo «%s» non è vuoto.\n"
+msgid "`%s' not executed. Skipping crontab removal. Package `cron' required."
+msgstr ""
 
-#: ../deluser:414
-msgid "You may not remove the user from their primary group.\n"
+#: ../deluser:418
+#, perl-format
+msgid "getgrnam `%s' failed. This shouldn't happen."
+msgstr "getgrnam «%s» non riuscito. Non dovrebbe accadere."
+
+#: ../deluser:424
+#, perl-format
+msgid "The group `%s' is not a system group. Exiting."
+msgstr "Il gruppo «%s» non è un gruppo di sistema. Uscita."
+
+#: ../deluser:428
+#, perl-format
+msgid "The group `%s' is not empty!"
+msgstr "Il gruppo «%s» non è vuoto."
+
+#: ../deluser:447
+#, fuzzy, perl-format
+#| msgid "The user `%s' does not exist."
+msgid "The user `%s' does not exist.\n"
+msgstr "L'utente «%s» non esiste."
+
+#: ../deluser:451
+#, fuzzy, perl-format
+#| msgid "The group `%s' does not exist."
+msgid "The group `%s' does not exist.\n"
+msgstr "Il gruppo «%s» non esiste."
+
+#: ../deluser:455
+msgid "You may not remove the user from their primary group."
 msgstr ""
 "Potrebbe non essere possibile rimuovere l'utente dal proprio gruppo "
-"primario.\n"
+"primario."
 
-#: ../deluser:431
+#: ../deluser:473
 #, perl-format
-msgid "The user `%s' is not a member of group `%s'.\n"
-msgstr "L'utente «%s» non fa parte del gruppo «%s».\n"
+msgid "The user `%s' is not a member of group `%s'."
+msgstr "L'utente «%s» non fa parte del gruppo «%s»."
 
-#: ../deluser:434
+#: ../deluser:477
 #, perl-format
-msgid "Removing user `%s' from group `%s' ...\n"
-msgstr "Rimozione dell'utente «%s» dal gruppo «%s» ...\n"
+msgid "Removing user `%s' from group `%s' ..."
+msgstr "Rimozione dell'utente «%s» dal gruppo «%s» ..."
 
-#: ../deluser:453
+#: ../deluser:488
 #, perl-format
 msgid ""
 "deluser version %s\n"
@@ -702,7 +712,7 @@ msgstr ""
 "deluser versione %s\n"
 "\n"
 
-#: ../deluser:454
+#: ../deluser:489
 msgid ""
 "Removes users and groups from the system.\n"
 "\n"
@@ -711,7 +721,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../deluser:474
+#: ../deluser:509
 msgid ""
 "deluser [--system] [--remove-home] [--remove-all-files] [--backup]\n"
 "        [--backup-to dir] [--backup-suffix str] [--conf file]\n"
@@ -730,101 +740,164 @@ msgid ""
 msgstr ""
 
 #. compressor recognized, not available
-#: ../deluser:512 ../deluser:522
+#: ../deluser:547 ../deluser:557
 #, perl-format
-msgid "Backup suffix %s unavailable, using gzip.\n"
+msgid "Backup suffix %s unavailable, using gzip."
 msgstr ""
 
-#: ../AdduserCommon.pm:46 ../AdduserCommon.pm:52
+#: ../AdduserCommon.pm:77
 #, perl-format
-msgid "%s: %s"
-msgstr "%s: %s"
+msgid "`%s' does not exist. Using defaults."
+msgstr "«%s» non esiste. Verranno usati i valori predefiniti."
 
-#: ../AdduserCommon.pm:71
+#: ../AdduserCommon.pm:83
 #, perl-format
-msgid "`%s' does not exist. Using defaults.\n"
-msgstr "«%s» non esiste. Verranno usati i valori predefiniti.\n"
+msgid "cannot open configuration file %s: `%s'\n"
+msgstr ""
 
-#: ../AdduserCommon.pm:81 ../AdduserCommon.pm:136 ../AdduserCommon.pm:149
+#: ../AdduserCommon.pm:91 ../AdduserCommon.pm:155 ../AdduserCommon.pm:168
 #, perl-format
-msgid "Couldn't parse `%s', line %d.\n"
-msgstr "Impossibile analizzare «%s», riga %d.\n"
+msgid "Couldn't parse `%s', line %d."
+msgstr "Impossibile analizzare «%s», riga %d."
 
-#: ../AdduserCommon.pm:86
+#: ../AdduserCommon.pm:96
 #, perl-format
-msgid "Unknown variable `%s' at `%s', line %d.\n"
-msgstr "Variabile «%s» sconosciuta in «%s», riga %d.\n"
+msgid "Unknown variable `%s' at `%s', line %d."
+msgstr "Variabile «%s» sconosciuta in «%s», riga %d."
 
-#: ../AdduserCommon.pm:111
+#: ../AdduserCommon.pm:122
 #, fuzzy, perl-format
-#| msgid "Not creating home directory `%s'.\n"
+#| msgid "Not creating home directory `%s'."
 msgid "Cannot read directory `%s'"
-msgstr "La directory home «%s» non è stata creata.\n"
+msgstr "La directory home «%s» non è stata creata."
 
-#: ../AdduserCommon.pm:124
+#: ../AdduserCommon.pm:137
 #, fuzzy, perl-format
-#| msgid "The user `%s' does not exist.\n"
-msgid "`%s' does not exist.\n"
-msgstr "L'utente «%s» non esiste.\n"
+#| msgid "The user `%s' does not exist."
+msgid "`%s' does not exist."
+msgstr "L'utente «%s» non esiste."
 
-#: ../AdduserCommon.pm:156
+#: ../AdduserCommon.pm:142
+#, fuzzy, perl-format
+#| msgid "Cannot handle special file %s"
+msgid "Cannot open pool file %s: `%s'"
+msgstr "Impossibile gestire il file speciale %s"
+
+#: ../AdduserCommon.pm:175
 #, perl-format
-msgid "Illegal pool type `%s' reading `%s'.\n"
+msgid "Illegal pool type `%s' reading `%s'."
 msgstr ""
 
-#: ../AdduserCommon.pm:159
+#: ../AdduserCommon.pm:179
 #, fuzzy, perl-format
-#| msgid "Unknown variable `%s' at `%s', line %d.\n"
-msgid "Duplicate name `%s' at `%s', line %d.\n"
-msgstr "Variabile «%s» sconosciuta in «%s», riga %d.\n"
+#| msgid "Unknown variable `%s' at `%s', line %d."
+msgid "Duplicate name `%s' at `%s', line %d."
+msgstr "Variabile «%s» sconosciuta in «%s», riga %d."
 
-#: ../AdduserCommon.pm:162
+#: ../AdduserCommon.pm:183
 #, fuzzy, perl-format
-#| msgid "Unknown variable `%s' at `%s', line %d.\n"
-msgid "Duplicate ID `%s' at `%s', line %d.\n"
-msgstr "Variabile «%s» sconosciuta in «%s», riga %d.\n"
+#| msgid "Unknown variable `%s' at `%s', line %d."
+msgid "Duplicate ID `%s' at `%s', line %d."
+msgstr "Variabile «%s» sconosciuta in «%s», riga %d."
 
-#: ../AdduserCommon.pm:212
+#: ../AdduserCommon.pm:213
 #, perl-format
-msgid "`%s' returned error code %d. Exiting.\n"
-msgstr "«%s» ha restituito l'errore con codice %d. Uscita.\n"
+msgid "`%s' returned error code %d. Exiting."
+msgstr "«%s» ha restituito l'errore con codice %d. Uscita."
 
-#: ../AdduserCommon.pm:214
+#: ../AdduserCommon.pm:216
 #, perl-format
-msgid "`%s' exited from signal %d. Exiting.\n"
-msgstr "«%s» uscito a causa del segnale %d. Uscita.\n"
+msgid "`%s' exited from signal %d. Exiting."
+msgstr "«%s» uscito a causa del segnale %d. Uscita."
 
 #: ../AdduserCommon.pm:227
 #, perl-format
-msgid "`%s' failed to execute. %s. Continuing.\n"
+msgid "`%s' failed to execute. %s. Continuing."
 msgstr ""
 
 #: ../AdduserCommon.pm:229
 #, fuzzy, perl-format
-#| msgid "`%s' exited from signal %d. Exiting.\n"
-msgid "`%s' killed by signal %d. Continuing.\n"
-msgstr "«%s» uscito a causa del segnale %d. Uscita.\n"
+#| msgid "`%s' exited from signal %d. Exiting."
+msgid "`%s' killed by signal %d. Continuing."
+msgstr "«%s» uscito a causa del segnale %d. Uscita."
 
 #: ../AdduserCommon.pm:231
 #, perl-format
-msgid "`%s' failed with status %d. Continuing.\n"
+msgid "`%s' failed with status %d. Continuing."
 msgstr ""
 
-#: ../AdduserCommon.pm:269
+#: ../AdduserCommon.pm:270
 #, perl-format
-msgid "Could not find program named `%s' in $PATH.\n"
-msgstr "Nessun programma con nome «%s» in $PATH.\n"
+msgid "Could not find program named `%s' in $PATH."
+msgstr "Nessun programma con nome «%s» in $PATH."
 
-#: ../AdduserCommon.pm:341
+#: ../AdduserCommon.pm:343
+#, perl-format
+msgid "could not open lock file %s!"
+msgstr ""
+
+#: ../AdduserCommon.pm:349
 msgid "Could not obtain exclusive lock, please try again shortly!"
 msgstr ""
 
-#: ../AdduserCommon.pm:343
-msgid "Waiting for lock to become available...\n"
+#: ../AdduserCommon.pm:352
+msgid "Waiting for lock to become available..."
 msgstr ""
 
+#: ../AdduserCommon.pm:359
+#, fuzzy, perl-format
+#| msgid "Couldn't create %s: %s."
+msgid "could not seek - %s!"
+msgstr "Impossibile creare %s: %s."
+
+#: ../AdduserCommon.pm:368
+msgid "could not find lock file!"
+msgstr ""
+
+#: ../AdduserCommon.pm:373
+#, fuzzy, perl-format
+#| msgid "Couldn't create %s: %s."
+msgid "could not unlock file %s: %s"
+msgstr "Impossibile creare %s: %s."
+
+#: ../AdduserCommon.pm:378
+#, fuzzy, perl-format
+#| msgid "Couldn't create %s: %s."
+msgid "could not close lock file %s: %s"
+msgstr "Impossibile creare %s: %s."
+
+#~ msgid "Done."
+#~ msgstr "Fatto."
+
 #, perl-format
-#~ msgid "No UID is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+#~ msgid "Stopped: %s"
+#~ msgstr "Fermato: %s"
+
+#~ msgid "WARNING: You are just about to delete the root account (uid 0)"
+#~ msgstr "ATTENZIONE: si sta per rimuovere l'account root (uid 0)"
+
+#~ msgid ""
+#~ "Usually this is never required as it may render the whole system "
+#~ "unusable\n"
+#~ msgstr ""
+#~ "Solitamente questo non è mai necessario poiché potrebbe rendere l'intero "
+#~ "sistema inutilizzabile\n"
+
+#, fuzzy
+#~| msgid "If you really want this, call deluser with parameter --force"
+#~ msgid ""
+#~ "If you really want this, call deluser with parameter --no-preserve-root\n"
+#~ msgstr "Per farlo realmente, richiamare deluser con il parametro --force"
+
+#~ msgid "Stopping now without having performed any action"
+#~ msgstr "Uscita senza aver effettuato alcuna operazione"
+
+#, perl-format
+#~ msgid "%s: %s"
+#~ msgstr "%s: %s"
+
+#, perl-format
+#~ msgid "No UID is available in the range %d-%d (FIRST_UID - LAST_UID)."
 #~ msgstr ""
 #~ "Nessun UID è disponibile nell'intervallo %d-%d (FIRST_UID - LAST_UID).\n"
 
@@ -951,19 +1024,19 @@ msgstr ""
 #~ "\n"
 
 #, perl-format
-#~ msgid "fork for `mount' to parse mount points failed: %s\n"
-#~ msgstr "fork di «mount» per analizzare i punti di mount non riuscito: %s\n"
+#~ msgid "fork for `mount' to parse mount points failed: %s"
+#~ msgstr "fork di «mount» per analizzare i punti di mount non riuscito: %s"
 
 #, perl-format
-#~ msgid "pipe of command `mount' could not be closed: %s\n"
-#~ msgstr "pipe sul comando «mount» non può essere chiusa: %s\n"
+#~ msgid "pipe of command `mount' could not be closed: %s"
+#~ msgstr "pipe sul comando «mount» non può essere chiusa: %s"
 
 #, perl-format
-#~ msgid "`%s' still has `%s' as their primary group!\n"
-#~ msgstr "L'utente «%s» ha ancora «%s» come gruppo primario.\n"
+#~ msgid "`%s' still has `%s' as their primary group!"
+#~ msgstr "L'utente «%s» ha ancora «%s» come gruppo primario."
 
-#~ msgid "Removes users and groups from the system.\n"
-#~ msgstr "Rimuove utenti e gruppi dal sistema.\n"
+#~ msgid "Removes users and groups from the system."
+#~ msgstr "Rimuove utenti e gruppi dal sistema."
 
 #~ msgid ""
 #~ "Copyright (C) 2000 Roland Bauerschmidt <roland@copyleft.de>\n"
@@ -1079,35 +1152,32 @@ msgstr ""
 #~ "\n"
 
 #, perl-format
-#~ msgid "The user `%s' already exists. Exiting.\n"
-#~ msgstr "L'utente «%s» già esiste. Uscita.\n"
+#~ msgid "The user `%s' already exists. Exiting."
+#~ msgstr "L'utente «%s» già esiste. Uscita."
 
-#~ msgid "Warning: The home dir you specified does not exist.\n"
-#~ msgstr "Attenzione: la directory home indicata non esiste.\n"
+#~ msgid "Warning: The home dir you specified does not exist."
+#~ msgstr "Attenzione: la directory home indicata non esiste."
 
-#~ msgid "The group `%s' already exists and is not a system group.\n"
-#~ msgstr "Il gruppo «%s» già esiste e non è un gruppo di sistema.\n"
+#~ msgid "The group `%s' already exists and is not a system group."
+#~ msgstr "Il gruppo «%s» già esiste e non è un gruppo di sistema."
 
-#~ msgid "Adding group `%s' (GID %s) ...\n"
-#~ msgstr "Aggiunta del gruppo «%s» (GID %s)...\n"
+#~ msgid "Adding group `%s' (GID %s) ..."
+#~ msgstr "Aggiunta del gruppo «%s» (GID %s)..."
 
-#~ msgid "Couldn't create %s: %s.\n"
-#~ msgstr "Impossibile creare %s: %s.\n"
+#~ msgid "Setting quota from `%s'."
+#~ msgstr "Impostazione della quota da «%s»."
 
-#~ msgid "Setting quota from `%s'.\n"
-#~ msgstr "Impostazione della quota da «%s».\n"
+#~ msgid "Selecting uid from range %s to %s."
+#~ msgstr "Scelta del UID nell'intervallo da %s a %s."
 
-#~ msgid "Selecting uid from range %s to %s.\n"
-#~ msgstr "Scelta del UID nell'intervallo da %s a %s.\n"
+#~ msgid "Removing user `%s'."
+#~ msgstr "Rimozione dell'utente «%s»."
 
-#~ msgid "Removing user `%s'.\n"
-#~ msgstr "Rimozione dell'utente «%s».\n"
+#~ msgid "Removing group `%s'."
+#~ msgstr "Rimozione del gruppo «%s»."
 
-#~ msgid "Removing group `%s'.\n"
-#~ msgstr "Rimozione del gruppo «%s».\n"
-
-#~ msgid "done.\n"
-#~ msgstr "fatto.\n"
+#~ msgid "done."
+#~ msgstr "fatto."
 
 #~ msgid "removing user and groups from the system. Version:"
 #~ msgstr "rimuove utenti e gruppi dal sistema. Versione:"

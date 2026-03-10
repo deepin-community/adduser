@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: adduser 3.114\n"
 "Report-Msgid-Bugs-To: adduser@packages.debian.org\n"
-"POT-Creation-Date: 2022-12-28 08:34+0100\n"
+"POT-Creation-Date: 2023-06-09 12:08+0200\n"
 "PO-Revision-Date: 2016-06-17 19:08+0200\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <debian-l10n-vietnamese@lists.debian.org>\n"
@@ -19,371 +19,377 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Gtranslator 2.91.7\n"
 
-#. everyone can issue "--help" and "--version", but only root can go on
-#: ../adduser:161
-msgid "Only root may add a user or group to the system.\n"
-msgstr ""
-"Chỉ siêu quản trị có quyền thêm vào hệ thống một người dùng hay nhóm.\n"
+#: ../adduser:190
+msgid "Only root may add a user or group to the system."
+msgstr "Chỉ siêu quản trị có quyền thêm vào hệ thống một người dùng hay nhóm."
 
-#: ../adduser:191 ../deluser:145
-msgid "Only one or two names allowed.\n"
-msgstr "Chỉ cho phép một hay hai tên thôi.\n"
+#: ../adduser:227 ../deluser:176
+msgid "Only one or two names allowed."
+msgstr "Chỉ cho phép một hay hai tên thôi."
 
-#: ../adduser:197
-msgid "Specify only one name in this mode.\n"
-msgstr "Trong chế độ này thì chỉ đưa ra một tên.\n"
+#: ../adduser:234
+msgid "Specify only one name in this mode."
+msgstr "Trong chế độ này thì chỉ đưa ra một tên."
 
-#: ../adduser:200
-msgid "addgroup with two arguments is an unspecified operation.\n"
+#: ../adduser:238
+msgid "addgroup with two arguments is an unspecified operation."
 msgstr ""
 
-#: ../adduser:224
-msgid "The --group, --ingroup, and --gid options are mutually exclusive.\n"
-msgstr "Ba tùy chọn “--group”, “--ingroup” và “--gid options” xung đột nhau.\n"
+#: ../adduser:263
+msgid "The --group, --ingroup, and --gid options are mutually exclusive."
+msgstr "Ba tùy chọn “--group”, “--ingroup” và “--gid options” xung đột nhau."
 
-#: ../adduser:229
-msgid "The home dir must be an absolute path.\n"
-msgstr "Thư mục chính phải là một đường dẫn tuyệt đối.\n"
+#: ../adduser:269
+msgid "The home dir must be an absolute path."
+msgstr "Thư mục chính phải là một đường dẫn tuyệt đối."
 
-#: ../adduser:233
-#, perl-format
-msgid "Warning: The home dir %s you specified already exists.\n"
-msgstr "Cảnh báo: bạn đã ghi rõ một thư mục chính %s đã có.\n"
+#: ../adduser:275
+#, fuzzy, perl-format
+#| msgid "Warning: The home dir %s you specified already exists."
+msgid "The home dir %s you specified already exists.\n"
+msgstr "Cảnh báo: bạn đã ghi rõ một thư mục chính %s đã có."
 
-#: ../adduser:235
-#, perl-format
-msgid "Warning: The home dir %s you specified can't be accessed: %s\n"
+#: ../adduser:278
+#, fuzzy, perl-format
+#| msgid "Warning: The home dir %s you specified can't be accessed: %s"
+msgid "The home dir %s you specified can't be accessed: %s\n"
 msgstr ""
-"Cảnh báo: bạn đã ghi rõ một thư mục chính %s không cho truy cập được: %s\n"
+"Cảnh báo: bạn đã ghi rõ một thư mục chính %s không cho truy cập được: %s"
 
-#: ../adduser:305
+#: ../adduser:347
 #, perl-format
-msgid "The group `%s' already exists as a system group. Exiting.\n"
-msgstr "Nhóm “%s” đã có như là một nhóm ở mức hệ thống nên thoát.\n"
+msgid "The group `%s' already exists as a system group. Exiting."
+msgstr "Nhóm “%s” đã có như là một nhóm ở mức hệ thống nên thoát."
 
-#: ../adduser:310
+#: ../adduser:352
 #, perl-format
-msgid "The group `%s' already exists and is not a system group. Exiting.\n"
-msgstr "Nhóm “%s” đã có và không phải là một nhóm ở mức hệ thống nên thoát.\n"
+msgid "The group `%s' already exists and is not a system group. Exiting."
+msgstr "Nhóm “%s” đã có và không phải là một nhóm ở mức hệ thống nên thoát."
 
-#: ../adduser:315
+#: ../adduser:357
 #, perl-format
-msgid "The group `%s' already exists, but has a different GID. Exiting.\n"
-msgstr "Nhóm “%s” đã có với một GID khác nên thoát.\n"
+msgid "The group `%s' already exists, but has a different GID. Exiting."
+msgstr "Nhóm “%s” đã có với một GID khác nên thoát."
 
-#: ../adduser:320 ../adduser:354
+#: ../adduser:362 ../adduser:399
 #, perl-format
-msgid "The GID `%s' is already in use.\n"
-msgstr "GID “%s” đang được dùng.\n"
+msgid "The GID `%s' is already in use."
+msgstr "GID “%s” đang được dùng."
 
-#: ../adduser:330
-#, perl-format
-msgid ""
-"No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID).\n"
+#: ../adduser:373
+#, fuzzy, perl-format
+#| msgid ""
+#| "No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID).\n"
+msgid "No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID)."
 msgstr ""
 "Không có GID nào sẵn sàng trong phạm vi %d-%d (FIRST_SYS_GID - "
 "LAST_SYS_GID).\n"
 
-#: ../adduser:331 ../adduser:372
+#: ../adduser:375 ../adduser:418
 #, perl-format
-msgid "The group `%s' was not created.\n"
-msgstr "Chưa tạo nhóm “%s”.\n"
+msgid "The group `%s' was not created."
+msgstr "Chưa tạo nhóm “%s”."
 
-#: ../adduser:336 ../adduser:376
+#: ../adduser:381 ../adduser:423
 #, perl-format
-msgid "Adding group `%s' (GID %d) ...\n"
-msgstr "Đang thêm nhóm “%s” (GID %d) …\n"
+msgid "Adding group `%s' (GID %d) ..."
+msgstr "Đang thêm nhóm “%s” (GID %d) …"
 
-#: ../adduser:340 ../adduser:380 ../adduser:404 ../deluser:366 ../deluser:400
-#: ../deluser:440
-msgid "Done.\n"
-msgstr "Hoàn tất.\n"
-
-#: ../adduser:351 ../adduser:991
+#: ../adduser:395 ../adduser:1081
 #, perl-format
-msgid "The group `%s' already exists.\n"
-msgstr "Nhóm “%s” đã có.\n"
+msgid "The group `%s' already exists."
+msgstr "Nhóm “%s” đã có."
 
-#: ../adduser:371
+#: ../adduser:416
 #, perl-format
-msgid "No GID is available in the range %d-%d (FIRST_GID - LAST_GID).\n"
-msgstr ""
-"Không có GID nào sẵn sàng trong phạm vi %d-%d (FIRST_GID - LAST_GID).\n"
+msgid "No GID is available in the range %d-%d (FIRST_GID - LAST_GID)."
+msgstr "Không có GID nào sẵn sàng trong phạm vi %d-%d (FIRST_GID - LAST_GID)."
 
-#: ../adduser:390 ../deluser:235 ../deluser:408
+#: ../adduser:437 ../deluser:266
 #, perl-format
-msgid "The user `%s' does not exist.\n"
-msgstr "Người dùng “%s” không tồn tại.\n"
+msgid "The user `%s' does not exist."
+msgstr "Người dùng “%s” không tồn tại."
 
-#: ../adduser:391 ../adduser:784 ../adduser:997 ../deluser:373 ../deluser:411
+#: ../adduser:441 ../adduser:857 ../adduser:1091 ../deluser:408 ../deluser:411
 #, perl-format
-msgid "The group `%s' does not exist.\n"
-msgstr "Nhóm “%s” không tồn tại.\n"
+msgid "The group `%s' does not exist."
+msgstr "Nhóm “%s” không tồn tại."
 
-#: ../adduser:394 ../adduser:788
+#: ../adduser:446 ../adduser:861
 #, perl-format
-msgid "The user `%s' is already a member of `%s'.\n"
-msgstr "Người dùng “%s” đã thuộc về “%s”.\n"
+msgid "The user `%s' is already a member of `%s'."
+msgstr "Người dùng “%s” đã thuộc về “%s”."
 
-#: ../adduser:398 ../adduser:794
+#: ../adduser:450 ../adduser:867
 #, perl-format
-msgid "Adding user `%s' to group `%s' ...\n"
-msgstr "Đang thêm người dung “%s” vào nhóm “%s” …\n"
+msgid "Adding user `%s' to group `%s' ..."
+msgstr "Đang thêm người dung “%s” vào nhóm “%s” …"
 
-#: ../adduser:418
-#, perl-format
-msgid "The system user `%s' already exists. Exiting.\n"
-msgstr "Người dùng ở mức hệ thống “%s” đã có nên thoát.\n"
-
-#: ../adduser:421
+#: ../adduser:469
 #, fuzzy, perl-format
-#| msgid "The user `%s' already exists, and is not a system user.\n"
-msgid "The user `%s' already exists, but is not a system user. Exiting.\n"
+#| msgid "The system user `%s' already exists. Exiting."
+msgid "The system user `%s' already exists. Exiting.\n"
+msgstr "Người dùng ở mức hệ thống “%s” đã có nên thoát."
+
+#: ../adduser:472
+#, fuzzy, perl-format
+#| msgid "The user `%s' already exists, and is not a system user."
+msgid "The user `%s' already exists, but is not a system user. Exiting."
 msgstr ""
 "Người dùng “%s” đã có và không phải là một người dùng ở mức hệ thống.\n"
 
-#: ../adduser:425
+#: ../adduser:476
 #, perl-format
-msgid "The user `%s' already exists with a different UID. Exiting.\n"
-msgstr "Người dùng “%s” đã có với một UID khác nên thoát.\n"
+msgid "The user `%s' already exists with a different UID. Exiting."
+msgstr "Người dùng “%s” đã có với một UID khác nên thoát."
 
-#: ../adduser:439
-#, perl-format
+#: ../adduser:490
+#, fuzzy, perl-format
+#| msgid ""
+#| "No UID/GID pair is available in the range %d-%d (FIRST_SYS_UID - "
+#| "LAST_SYS_UID).\n"
 msgid ""
 "No UID/GID pair is available in the range %d-%d (FIRST_SYS_UID - "
-"LAST_SYS_UID).\n"
+"LAST_SYS_UID)."
 msgstr ""
 "Không có cặp UID/GID nào sẵn sàng trong phạm vi %d-%d (FIRST_SYS_UID - "
 "LAST_SYS_UID).\n"
 
-#: ../adduser:440 ../adduser:453 ../adduser:523 ../adduser:635 ../adduser:640
+#: ../adduser:493 ../adduser:509 ../adduser:591 ../adduser:705 ../adduser:711
 #, perl-format
-msgid "The user `%s' was not created.\n"
-msgstr "Chưa tạo người dùng “%s”.\n"
+msgid "The user `%s' was not created."
+msgstr "Chưa tạo người dùng “%s”."
 
-#: ../adduser:452
-#, perl-format
-msgid ""
-"No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID).\n"
+#: ../adduser:506
+#, fuzzy, perl-format
+#| msgid ""
+#| "No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID).\n"
+msgid "No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID)."
 msgstr ""
 "Không có UID nào sẵn sàng trong phạm vi %d-%d (FIRST_SYS_UID - "
 "LAST_SYS_UID).\n"
 
-#: ../adduser:457 ../adduser:463
+#: ../adduser:517 ../adduser:529
 #, fuzzy
 #| msgid "Internal error"
-msgid "Internal error\n"
+msgid "Internal error"
 msgstr "Lỗi nội bộ"
 
-#: ../adduser:465
+#: ../adduser:533
 #, perl-format
-msgid "Adding system user `%s' (UID %d) ...\n"
-msgstr "Đang thêm người dùng ở mức hệ thống “%s” (UID %d) …\n"
+msgid "Adding system user `%s' (UID %d) ..."
+msgstr "Đang thêm người dùng ở mức hệ thống “%s” (UID %d) …"
 
-#: ../adduser:469
+#: ../adduser:537
 #, perl-format
-msgid "Adding new group `%s' (GID %d) ...\n"
-msgstr "Đang thêm nhóm mới “%s” (GID %d) …\n"
+msgid "Adding new group `%s' (GID %d) ..."
+msgstr "Đang thêm nhóm mới “%s” (GID %d) …"
 
-#: ../adduser:475
+#: ../adduser:543
 #, perl-format
-msgid "Adding new user `%s' (UID %d) with group `%s' ...\n"
-msgstr "Đang thêm người dùng mới “%s” (UID %d) với nhóm “%s” …\n"
+msgid "Adding new user `%s' (UID %d) with group `%s' ..."
+msgstr "Đang thêm người dùng mới “%s” (UID %d) với nhóm “%s” …"
 
-#: ../adduser:522
+#: ../adduser:590
 msgid ""
-"USERS_GID and USERS_GROUP both given in configuration. This is an error.\n"
+"USERS_GID and USERS_GROUP both given in configuration. This is an error."
 msgstr ""
 
-#: ../adduser:611
+#: ../adduser:681
 #, perl-format
-msgid "Adding user `%s' ...\n"
-msgstr "Đang thêm người dùng “%s” …\n"
+msgid "Adding user `%s' ..."
+msgstr "Đang thêm người dùng “%s” …"
 
-#: ../adduser:634
-#, perl-format
-msgid ""
-"No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+#: ../adduser:704
+#, fuzzy, perl-format
+#| msgid ""
+#| "No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+msgid "No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID)."
 msgstr ""
 "Không có cặp UID/GID nào sẵn sàng trong phạm vi %d-%d (FIRST_UID - "
 "LAST_UID).\n"
 
-#: ../adduser:639
+#: ../adduser:710
 msgid ""
 "USERGROUPS=no, USER_GID=-1 and USERS_GROUP empty. A user needs a primary "
-"group!\n"
+"group!"
 msgstr ""
 
-#: ../adduser:678
-msgid "Internal error interpreting parameter combination\n"
+#: ../adduser:750
+msgid "Internal error interpreting parameter combination"
 msgstr ""
 
-#: ../adduser:687
+#: ../adduser:760
 #, perl-format
-msgid "Adding new group `%s' (%d) ...\n"
-msgstr "Đang thêm nhóm mới “%s” (%d) …\n"
+msgid "Adding new group `%s' (%d) ..."
+msgstr "Đang thêm nhóm mới “%s” (%d) …"
 
-#: ../adduser:690
+#: ../adduser:763
 #, fuzzy, perl-format
-#| msgid "Adding new group `%s' (GID %d) ...\n"
-msgid "Adding new group `%s' (new group ID) ...\n"
-msgstr "Đang thêm nhóm mới “%s” (GID %d) …\n"
+#| msgid "Adding new group `%s' (GID %d) ..."
+msgid "Adding new group `%s' (new group ID) ..."
+msgstr "Đang thêm nhóm mới “%s” (GID %d) …"
 
-#: ../adduser:700
+#: ../adduser:766
+#, perl-format
+msgid "new group '%s' created with GID %d"
+msgstr ""
+
+#: ../adduser:773
 #, fuzzy, perl-format
-#| msgid "Adding new user `%s' (%d) with group `%s' ...\n"
-msgid "Adding new user `%s' (%d) with group `%s (%d)' ...\n"
-msgstr "Đang thêm người dung mới “%s” (%d) với nhóm “%s” …\n"
+#| msgid "Adding new user `%s' (%d) with group `%s' ..."
+msgid "Adding new user `%s' (%d) with group `%s (%d)' ..."
+msgstr "Đang thêm người dung mới “%s” (%d) với nhóm “%s” …"
 
 #. hm, error, should we break now?
-#: ../adduser:728
-msgid "Permission denied\n"
-msgstr "Không đủ quyền\n"
+#: ../adduser:802
+msgid "Permission denied"
+msgstr "Không đủ quyền"
 
-#: ../adduser:729
-msgid "invalid combination of options\n"
-msgstr "sai kết hợp các tùy chọn\n"
+#: ../adduser:803
+msgid "invalid combination of options"
+msgstr "sai kết hợp các tùy chọn"
 
-#: ../adduser:730
-msgid "unexpected failure, nothing done\n"
-msgstr "bị lỗi bất thường mà không làm gì\n"
+#: ../adduser:804
+msgid "unexpected failure, nothing done"
+msgstr "bị lỗi bất thường mà không làm gì"
 
-#: ../adduser:731
-msgid "unexpected failure, passwd file missing\n"
-msgstr "bị lỗi bất thường, tập tin mật khẩu passwd còn thiếu\n"
+#: ../adduser:805
+msgid "unexpected failure, passwd file missing"
+msgstr "bị lỗi bất thường, tập tin mật khẩu passwd còn thiếu"
 
-#: ../adduser:732
-msgid "passwd file busy, try again\n"
-msgstr "Tập tin mật khẩu passwd đang bận, hãy thử lại\n"
+#: ../adduser:806
+msgid "passwd file busy, try again"
+msgstr "Tập tin mật khẩu passwd đang bận, hãy thử lại"
 
-#: ../adduser:733
-msgid "invalid argument to option\n"
-msgstr "sai lập đối số tới tùy chọn\n"
+#: ../adduser:807
+msgid "invalid argument to option"
+msgstr "sai lập đối số tới tùy chọn"
 
-#: ../adduser:739
+#: ../adduser:813
 msgid "Try again? [y/N] "
 msgstr "Thử lại ? [c/K]"
 
-#: ../adduser:765
+#: ../adduser:839
 msgid "Is the information correct? [Y/n] "
 msgstr "Thông tin này có đúng chưa? [c/K]"
 
-#: ../adduser:779
+#: ../adduser:853
 #, fuzzy, perl-format
-#| msgid "Adding new user `%s' to extra groups ...\n"
-msgid "Adding new user `%s' to supplemental / extra groups `%s' ...\n"
-msgstr "Đang thêm người dung mới “%s” vào các nhóm bổ sung …\n"
+#| msgid "Adding new user `%s' to extra groups ..."
+msgid "Adding new user `%s' to supplemental / extra groups `%s' ..."
+msgstr "Đang thêm người dung mới “%s” vào các nhóm bổ sung …"
 
-#: ../adduser:805
+#: ../adduser:877
 #, perl-format
-msgid "Setting quota for user `%s' to values of user `%s' ...\n"
+msgid "Setting quota for user `%s' to values of user `%s' ..."
 msgstr ""
-"Đang lập hạn ngạch của người dùng “%s” thành giá trị của người dùng “%s” …\n"
+"Đang lập hạn ngạch của người dùng “%s” thành giá trị của người dùng “%s” …"
 
-#: ../adduser:843
+#: ../adduser:915
 #, fuzzy, perl-format
-#| msgid "Not creating home directory `%s'.\n"
-msgid "Not creating `%s'.\n"
-msgstr "Không tạo thư mục chính “%s”.\n"
+#| msgid "Not creating home directory `%s'."
+msgid "Not creating `%s'."
+msgstr "Không tạo thư mục chính “%s”."
 
-#: ../adduser:846
+#: ../adduser:917
 #, perl-format
-msgid "Not creating home directory `%s'.\n"
-msgstr "Không tạo thư mục chính “%s”.\n"
+msgid "Not creating home directory `%s'."
+msgstr "Không tạo thư mục chính “%s”."
 
-#: ../adduser:849
+#: ../adduser:919
 #, fuzzy, perl-format
-#| msgid "The home directory `%s' already exists.  Not copying from `%s'.\n"
-msgid "The home directory `%s' already exists.  Not touching this directory.\n"
-msgstr "Thư mục chính “%s” đã có nên không sao chép từ “%s”.\n"
+#| msgid "The home directory `%s' already exists.  Not copying from `%s'."
+msgid "The home directory `%s' already exists.  Not touching this directory."
+msgstr "Thư mục chính “%s” đã có nên không sao chép từ “%s”."
 
-#: ../adduser:855
+#: ../adduser:925
 #, perl-format
 msgid ""
 "Warning: The home directory `%s' does not belong to the user you are "
-"currently creating.\n"
-msgstr "Cảnh báo: thư mục chính “%s” không thuộc về người dùng bạn đang tạo.\n"
+"currently creating."
+msgstr "Cảnh báo: thư mục chính “%s” không thuộc về người dùng bạn đang tạo."
 
-#: ../adduser:859
+#: ../adduser:928
 #, perl-format
-msgid "Creating home directory `%s' ...\n"
-msgstr "Đang tạo thư mục chính “%s” …\n"
+msgid "Creating home directory `%s' ..."
+msgstr "Đang tạo thư mục chính “%s” …"
 
-#: ../adduser:861
+#: ../adduser:931
 #, perl-format
-msgid "Couldn't create home directory `%s': %s.\n"
-msgstr "Không thể tạo thư mục chính “%s”: %s.\n"
+msgid "Couldn't create home directory `%s': %s."
+msgstr "Không thể tạo thư mục chính “%s”: %s."
 
-#: ../adduser:869
+#: ../adduser:945
 #, perl-format
-msgid "Copying files from `%s' ...\n"
-msgstr "Đang sao chép các tập tin từ “%s” …\n"
+msgid "Copying files from `%s' ..."
+msgstr "Đang sao chép các tập tin từ “%s” …"
 
-#: ../adduser:871
+#: ../adduser:948
 #, perl-format
-msgid "fork for `find' failed: %s\n"
-msgstr "gặp lỗi khi phân nhánh tiến trình “find”: %s\n"
+msgid "fork for `find' failed: %s"
+msgstr "gặp lỗi khi phân nhánh tiến trình “find”: %s"
 
-#: ../adduser:980
+#: ../adduser:1065
 #, perl-format
-msgid "The user `%s' already exists, and is not a system user.\n"
-msgstr ""
-"Người dùng “%s” đã có và không phải là một người dùng ở mức hệ thống.\n"
+msgid "The user `%s' already exists, and is not a system user."
+msgstr "Người dùng “%s” đã có và không phải là một người dùng ở mức hệ thống."
 
-#: ../adduser:982
+#: ../adduser:1068
 #, perl-format
-msgid "The user `%s' already exists.\n"
-msgstr "Người dùng “%s” đã có.\n"
+msgid "The user `%s' already exists."
+msgstr "Người dùng “%s” đã có."
 
-#: ../adduser:985
+#: ../adduser:1073
 #, perl-format
-msgid "The UID %d is already in use.\n"
-msgstr "UID %d đang được dùng.\n"
+msgid "The UID %d is already in use."
+msgstr "UID %d đang được dùng."
 
-#: ../adduser:993
+#: ../adduser:1085
 #, perl-format
-msgid "The GID %d is already in use.\n"
-msgstr "GID %d đang được dùng.\n"
+msgid "The GID %d is already in use."
+msgstr "GID %d đang được dùng."
 
-#: ../adduser:999
+#: ../adduser:1095
 #, perl-format
-msgid "The GID %d does not exist.\n"
-msgstr "GID %d không tồn tại.\n"
+msgid "The GID %d does not exist."
+msgstr "GID %d không tồn tại."
 
-#: ../adduser:1043
-#, perl-format
-msgid ""
-"Cannot deal with %s.\n"
-"It is not a dir, file, or symlink.\n"
+#: ../adduser:1162
+#, fuzzy, perl-format
+#| msgid ""
+#| "Cannot deal with %s.\n"
+#| "It is not a dir, file, or symlink.\n"
+msgid "%s/%s is neither a dir, file, nor a symlink."
 msgstr ""
 "Không thể xử lý %s.\n"
 "Nó không phải là một thư mục, tập tin hoặc liên kết tượng trưng.\n"
 
 #. this check cannot be turned off
-#: ../adduser:1069
+#: ../adduser:1196
 msgid ""
 "To avoid ambiguity with numerical UIDs, usernames which\n"
-"            consist of only digits are not allowed.\n"
+"            consist of only digits are not allowed."
 msgstr ""
 
 #. this check cannot be turned off
-#: ../adduser:1076
+#: ../adduser:1203
 msgid ""
 "Usernames must be no more than 32 bytes in length;\n"
 "            note that if you are using Unicode characters, the character\n"
-"            limit will be less than 32.\n"
+"            limit will be less than 32."
 msgstr ""
 
 #. this check cannot be turned off
-#: ../adduser:1084
+#: ../adduser:1211
 msgid ""
 "To avoid problems, the username must not start with a\n"
 "            dash, plus sign, or tilde, and it must not contain any of the\n"
 "            following: colon, comma, slash, or any whitespace characters\n"
-"            including spaces, tabs, and newlines.\n"
+"            including spaces, tabs, and newlines."
 msgstr ""
 
-#: ../adduser:1094
+#: ../adduser:1221
 #, fuzzy
 #| msgid ""
 #| "%s: To avoid problems, the username should consist only of\n"
@@ -399,7 +405,7 @@ msgid ""
 "            compatibility with Samba machine accounts, $ is also supported\n"
 "            at the end of the username.  (Use the `--allow-all-names' "
 "option\n"
-"            to bypass this restriction.)\n"
+"            to bypass this restriction.)"
 msgstr ""
 "%s: Để tránh vấn đề thì tên người dùng nên chứa chỉ\n"
 "chữ cái, chữ số, dấu gạch dưới, dấu chấm, dấu và (@), dấu gạch nối,\n"
@@ -408,11 +414,11 @@ msgstr ""
 "Để tương thích với tài khoản máy kiểu Samba\n"
 "thì cũng hỗ trợ có dấu đô-la ($) kết thúc tên người dùng.\n"
 
-#: ../adduser:1104
-msgid "Allowing use of questionable username.\n"
-msgstr "Đang cho phép sử dụng một tên người dùng đáng ngờ.\n"
+#: ../adduser:1231
+msgid "Allowing use of questionable username."
+msgstr "Đang cho phép sử dụng một tên người dùng đáng ngờ."
 
-#: ../adduser:1106
+#: ../adduser:1233
 #, fuzzy, perl-format
 #| msgid ""
 #| "%s: Please enter a username matching the regular expression configured\n"
@@ -422,60 +428,56 @@ msgid ""
 "Please enter a username matching the regular expression\n"
 "            configured via the %s configuration variable.  Use the\n"
 "            `--allow-bad-names' option to relax this check or reconfigure\n"
-"            %s in configuration.\n"
+"            %s in configuration."
 msgstr ""
 "%s: Hãy gõ một tên người dùng tương ứng với biểu thức chính quy\n"
 "được lập bằng biến cấu hình NAME_REGEX.\n"
 "Dùng tùy chọn “--force-badname” để tránh sự kiểm tra này\n"
 "hoặc để cấu hình lại NAME_REGEX.\n"
 
-#: ../adduser:1127
-#, perl-format
-msgid "Selecting UID from range %d to %d ...\n"
-msgstr "Đang lựa chọn UID trong phạm vi %d đến %d …\n"
-
-#: ../adduser:1150
-#, perl-format
-msgid "Selecting GID from range %d to %d ...\n"
-msgstr "Đang lựa chọn GID trong phạm vi %d đến %d …\n"
-
-#: ../adduser:1174
+#: ../adduser:1254
 #, fuzzy, perl-format
-#| msgid "Selecting UID from range %d to %d ...\n"
-msgid "Selecting UID/GID from range %d to %d ...\n"
-msgstr "Đang lựa chọn UID trong phạm vi %d đến %d …\n"
+#| msgid "Selecting UID from range %d to %d ..."
+msgid "Selecting UID from range %d to %d ...\n"
+msgstr "Đang lựa chọn UID trong phạm vi %d đến %d …"
 
-#: ../adduser:1215
+#: ../adduser:1277
 #, perl-format
-msgid "Stopped: %s\n"
-msgstr "Bị dừng: %s\n"
+msgid "Selecting GID from range %d to %d ..."
+msgstr "Đang lựa chọn GID trong phạm vi %d đến %d …"
 
-#: ../adduser:1217
-#, perl-format
-msgid "Removing directory `%s' ...\n"
-msgstr "Đang gỡ bỏ thư mục “%s” …\n"
+#: ../adduser:1301
+#, fuzzy, perl-format
+#| msgid "Selecting UID from range %d to %d ..."
+msgid "Selecting UID/GID from range %d to %d ..."
+msgstr "Đang lựa chọn UID trong phạm vi %d đến %d …"
 
-#: ../adduser:1221 ../deluser:358
+#: ../adduser:1342
 #, perl-format
-msgid "Removing user `%s' ...\n"
-msgstr "Đang gỡ bỏ người dùng “%s” …\n"
+msgid "Removing directory `%s' ..."
+msgstr "Đang gỡ bỏ thư mục “%s” …"
+
+#: ../adduser:1346 ../deluser:393
+#, perl-format
+msgid "Removing user `%s' ..."
+msgstr "Đang gỡ bỏ người dùng “%s” …"
 
 #. groupdel will error out if there are users left that
 #. have $group as primary group. We are not checking this
 #. ourself since this would mean enumerating all users.
-#: ../adduser:1225 ../deluser:395
+#: ../adduser:1350 ../deluser:435
 #, perl-format
-msgid "Removing group `%s' ...\n"
-msgstr "Đang gỡ bỏ nhóm “%s” …\n"
+msgid "Removing group `%s' ..."
+msgstr "Đang gỡ bỏ nhóm “%s” …"
 
 #. Translators: the variable %s is INT, QUIT, or HUP.
 #. Please do not insert a space character between SIG and %s.
-#: ../adduser:1235
+#: ../adduser:1360
 #, perl-format
-msgid "Caught a SIG%s.\n"
-msgstr "Nhận được một tín hiệu SIG%s.\n"
+msgid "Caught a SIG%s."
+msgstr "Nhận được một tín hiệu SIG%s."
 
-#: ../adduser:1240
+#: ../adduser:1366
 #, perl-format
 msgid ""
 "adduser version %s\n"
@@ -484,7 +486,7 @@ msgstr ""
 "adduser phiên bản %s\n"
 "\n"
 
-#: ../adduser:1241
+#: ../adduser:1367
 msgid ""
 "Adds a user or group to the system.\n"
 "\n"
@@ -493,7 +495,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../adduser:1247 ../deluser:460
+#: ../adduser:1373 ../deluser:495
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -516,7 +518,7 @@ msgstr ""
 "Xem Giấy Phép Công Cộng GNU (/usr/share/common-licenses/GPL)\n"
 "để biết thêm chi tiết.\n"
 
-#: ../adduser:1261
+#: ../adduser:1387
 msgid ""
 "adduser [--uid id] [--firstuid id] [--lastuid id]\n"
 "        [--gid id] [--firstgid id] [--lastgid id] [--ingroup group]\n"
@@ -555,147 +557,147 @@ msgid ""
 "   Add an existing user to an existing group\n"
 msgstr ""
 
-#. everyone can issue "--help" and "--version", but only root can go on
-#: ../deluser:107
-msgid "Only root may remove a user or group from the system.\n"
+#: ../deluser:125
+msgid "Only root may remove a user or group from the system."
 msgstr ""
-"Chỉ siêu quản trị có quyền gỡ bỏ khỏi hệ thống một người dùng hay nhóm.\n"
+"Chỉ siêu quản trị có quyền gỡ bỏ khỏi hệ thống một người dùng hay nhóm."
 
-#: ../deluser:128
-msgid "No options allowed after names.\n"
-msgstr "Không cho phép tùy chọn đẳng sau tên.\n"
+#: ../deluser:158
+msgid "No options allowed after names."
+msgstr "Không cho phép tùy chọn đẳng sau tên."
 
-#: ../deluser:136
+#: ../deluser:167
 msgid "Enter a group name to remove: "
 msgstr "Nhập tên nhóm cần gỡ bỏ: "
 
-#: ../deluser:138
+#: ../deluser:169
 msgid "Enter a user name to remove: "
 msgstr "Nhập tên người dùng cần gỡ bỏ: "
 
-#: ../deluser:180
+#: ../deluser:212
+#, fuzzy
+#| msgid ""
+#| "In order to use the --remove-home, --remove-all-files, and --backup "
+#| "features,\n"
+#| "you need to install the `perl' package. To accomplish that, run\n"
+#| "apt-get install perl.\n"
 msgid ""
 "In order to use the --remove-home, --remove-all-files, and --backup "
-"features,\n"
-"you need to install the `perl' package. To accomplish that, run\n"
-"apt-get install perl.\n"
+"features, you need to install the `perl' package. To accomplish that, run "
+"apt-get install perl."
 msgstr ""
 "Để sử dụng các tính năng “--remove-home”, “--remove-all-files”\n"
 "và “--backup features” thì bạn cần phải cài đặt gói “perl”.\n"
 "Để làm như thế, chạy câu lệnh:\n"
 "apt-get install perl\n"
 
-#: ../deluser:225
+#: ../deluser:256
 #, perl-format
-msgid "The user `%s' is not a system user. Exiting.\n"
-msgstr ""
-"Người dùng “%s” không phải là một người dùng ở mức hệ thống nên thoát.\n"
+msgid "The user `%s' is not a system user. Exiting."
+msgstr "Người dùng “%s” không phải là một người dùng ở mức hệ thống nên thoát."
 
-#: ../deluser:229
+#: ../deluser:260
 #, perl-format
-msgid "The user `%s' does not exist, but --system was given. Exiting.\n"
-msgstr "Người dùng “%s” không tồn tại mà đưa ra “--system” nên thoát.\n"
+msgid "The user `%s' does not exist, but --system was given. Exiting."
+msgstr "Người dùng “%s” không tồn tại mà đưa ra “--system” nên thoát."
 
-#: ../deluser:240
-msgid "WARNING: You are just about to delete the root account (uid 0)\n"
-msgstr "CẢNH BÁO: bạn sắp xóa bỏ tài khoản siêu quản trị (UID 0)\n"
-
-#: ../deluser:241
+#: ../deluser:272
 msgid ""
-"Usually this is never required as it may render the whole system unusable\n"
-msgstr ""
-"Rất ít yêu cầu hành vi này vì nó có thể gây ra toàn bộ hệ thống là vô ích.\n"
-
-#: ../deluser:242
-#, fuzzy
-#| msgid "If you really want this, call deluser with parameter --force\n"
-msgid ""
-"If you really want this, call deluser with parameter --no-preserve-root\n"
-msgstr ""
-"Nếu bạn thực sự muốn làm hành vi này, gọi deluser với tham số “--force” (ép "
-"buộc)\n"
-
-#: ../deluser:243
-msgid "Stopping now without having performed any action\n"
-msgstr "Đang dừng lại ngay bây giờ mà chưa làm gì\n"
-
-#: ../deluser:254
-msgid "Looking for files to backup/remove ...\n"
-msgstr "Đang tìm tập tin cần sao lưu hoặc gỡ bỏ …\n"
-
-#: ../deluser:258
-#, perl-format
-msgid "failed to open /proc/mounts: %s\n"
+"WARNING: You are just about to delete the root account (uid 0). Usually this "
+"is never required as it may render the whole system unusable. If you really "
+"want this, call deluser with parameter --no-preserve-root. Stopping now "
+"without having performed any action"
 msgstr ""
 
-#: ../deluser:268
+#: ../deluser:283
+msgid "Looking for files to backup/remove ..."
+msgstr "Đang tìm tập tin cần sao lưu hoặc gỡ bỏ …"
+
+#: ../deluser:288
 #, perl-format
-msgid "failed to close /proc/mounts: %s\n"
+msgid "failed to open /proc/mounts: %s"
 msgstr ""
 
-#: ../deluser:291
+#: ../deluser:301
 #, perl-format
-msgid "Not backing up/removing `%s', it is a mount point.\n"
-msgstr "Không sao lưu hoặc gỡ bỏ “%s” vì nó là một điểm gắn kết.\n"
-
-#: ../deluser:298
-#, perl-format
-msgid "Not backing up/removing `%s', it matches %s.\n"
-msgstr "Không sao lưu hoặc gỡ bỏ “%s” vì nó tương ứng với %s.\n"
-
-#: ../deluser:312
-#, perl-format
-msgid "Cannot handle special file %s\n"
-msgstr "Không quản lý được tập tin đặc biệt %s\n"
-
-#: ../deluser:320
-#, perl-format
-msgid "Backing up files to be removed to %s ...\n"
-msgstr "Đang sao lưu vào %s các tập tin cần gỡ bỏ …\n"
-
-#: ../deluser:339
-msgid "Removing files ...\n"
-msgstr "Đang gỡ bỏ các tập tin …\n"
-
-#: ../deluser:348
-msgid "Removing crontab ...\n"
-msgstr "Đang gỡ bỏ bảng định kỳ crontab …\n"
-
-#: ../deluser:354
-#, perl-format
-msgid "`%s' not executed. Skipping crontab removal. Package `cron' required.\n"
+msgid "failed to close /proc/mounts: %s"
 msgstr ""
 
-#: ../deluser:380
+#: ../deluser:326
 #, perl-format
-msgid "getgrnam `%s' failed. This shouldn't happen.\n"
-msgstr "getgrnam “%s” bị lỗi. Trường hợp này không nên xảy ra.\n"
+msgid "Not backing up/removing `%s', it is a mount point."
+msgstr "Không sao lưu hoặc gỡ bỏ “%s” vì nó là một điểm gắn kết."
 
-#: ../deluser:385
+#: ../deluser:333
 #, perl-format
-msgid "The group `%s' is not a system group. Exiting.\n"
-msgstr "Nhóm “%s” không phải là một nhóm ở mức hệ thống nên thoát.\n"
+msgid "Not backing up/removing `%s', it matches %s."
+msgstr "Không sao lưu hoặc gỡ bỏ “%s” vì nó tương ứng với %s."
+
+#: ../deluser:347
+#, perl-format
+msgid "Cannot handle special file %s"
+msgstr "Không quản lý được tập tin đặc biệt %s"
+
+#: ../deluser:355
+#, perl-format
+msgid "Backing up files to be removed to %s ..."
+msgstr "Đang sao lưu vào %s các tập tin cần gỡ bỏ …"
+
+#: ../deluser:374
+msgid "Removing files ..."
+msgstr "Đang gỡ bỏ các tập tin …"
+
+#: ../deluser:383
+msgid "Removing crontab ..."
+msgstr "Đang gỡ bỏ bảng định kỳ crontab …"
 
 #: ../deluser:389
 #, perl-format
-msgid "The group `%s' is not empty!\n"
-msgstr "Nhóm “%s” không trống!\n"
+msgid "`%s' not executed. Skipping crontab removal. Package `cron' required."
+msgstr ""
 
-#: ../deluser:414
-msgid "You may not remove the user from their primary group.\n"
-msgstr "Không cho phép gỡ bỏ người dùng khỏi nhóm chính của họ.\n"
-
-#: ../deluser:431
+#: ../deluser:418
 #, perl-format
-msgid "The user `%s' is not a member of group `%s'.\n"
-msgstr "Người dùng “%s” không thuộc về nhóm “%s”.\n"
+msgid "getgrnam `%s' failed. This shouldn't happen."
+msgstr "getgrnam “%s” bị lỗi. Trường hợp này không nên xảy ra."
 
-#: ../deluser:434
+#: ../deluser:424
 #, perl-format
-msgid "Removing user `%s' from group `%s' ...\n"
-msgstr "Đang gỡ bỏ người dùng %s khỏi nhóm “%s” …\n"
+msgid "The group `%s' is not a system group. Exiting."
+msgstr "Nhóm “%s” không phải là một nhóm ở mức hệ thống nên thoát."
 
-#: ../deluser:453
+#: ../deluser:428
+#, perl-format
+msgid "The group `%s' is not empty!"
+msgstr "Nhóm “%s” không trống!"
+
+#: ../deluser:447
+#, fuzzy, perl-format
+#| msgid "The user `%s' does not exist."
+msgid "The user `%s' does not exist.\n"
+msgstr "Người dùng “%s” không tồn tại."
+
+#: ../deluser:451
+#, fuzzy, perl-format
+#| msgid "The group `%s' does not exist."
+msgid "The group `%s' does not exist.\n"
+msgstr "Nhóm “%s” không tồn tại."
+
+#: ../deluser:455
+msgid "You may not remove the user from their primary group."
+msgstr "Không cho phép gỡ bỏ người dùng khỏi nhóm chính của họ."
+
+#: ../deluser:473
+#, perl-format
+msgid "The user `%s' is not a member of group `%s'."
+msgstr "Người dùng “%s” không thuộc về nhóm “%s”."
+
+#: ../deluser:477
+#, perl-format
+msgid "Removing user `%s' from group `%s' ..."
+msgstr "Đang gỡ bỏ người dùng %s khỏi nhóm “%s” …"
+
+#: ../deluser:488
 #, perl-format
 msgid ""
 "deluser version %s\n"
@@ -704,7 +706,7 @@ msgstr ""
 "deluser phiên bản %s\n"
 "\n"
 
-#: ../deluser:454
+#: ../deluser:489
 msgid ""
 "Removes users and groups from the system.\n"
 "\n"
@@ -713,7 +715,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../deluser:474
+#: ../deluser:509
 msgid ""
 "deluser [--system] [--remove-home] [--remove-all-files] [--backup]\n"
 "        [--backup-to dir] [--backup-suffix str] [--conf file]\n"
@@ -732,101 +734,163 @@ msgid ""
 msgstr ""
 
 #. compressor recognized, not available
-#: ../deluser:512 ../deluser:522
+#: ../deluser:547 ../deluser:557
 #, perl-format
-msgid "Backup suffix %s unavailable, using gzip.\n"
+msgid "Backup suffix %s unavailable, using gzip."
 msgstr ""
 
-#: ../AdduserCommon.pm:46 ../AdduserCommon.pm:52
+#: ../AdduserCommon.pm:77
 #, perl-format
-msgid "%s: %s"
-msgstr "%s: %s"
+msgid "`%s' does not exist. Using defaults."
+msgstr "“%s” không tồn tại nên dùng giá trị mặc định."
 
-#: ../AdduserCommon.pm:71
+#: ../AdduserCommon.pm:83
 #, perl-format
-msgid "`%s' does not exist. Using defaults.\n"
-msgstr "“%s” không tồn tại nên dùng giá trị mặc định.\n"
+msgid "cannot open configuration file %s: `%s'\n"
+msgstr ""
 
-#: ../AdduserCommon.pm:81 ../AdduserCommon.pm:136 ../AdduserCommon.pm:149
+#: ../AdduserCommon.pm:91 ../AdduserCommon.pm:155 ../AdduserCommon.pm:168
 #, perl-format
-msgid "Couldn't parse `%s', line %d.\n"
-msgstr "Không thể phân tích cú pháp của “%s”, dòng %d.\n"
+msgid "Couldn't parse `%s', line %d."
+msgstr "Không thể phân tích cú pháp của “%s”, dòng %d."
 
-#: ../AdduserCommon.pm:86
+#: ../AdduserCommon.pm:96
 #, perl-format
-msgid "Unknown variable `%s' at `%s', line %d.\n"
-msgstr "Không rõ biến “%s” tại “%s”, dòng %d.\n"
+msgid "Unknown variable `%s' at `%s', line %d."
+msgstr "Không rõ biến “%s” tại “%s”, dòng %d."
 
-#: ../AdduserCommon.pm:111
+#: ../AdduserCommon.pm:122
 #, fuzzy, perl-format
-#| msgid "Not creating home directory `%s'.\n"
+#| msgid "Not creating home directory `%s'."
 msgid "Cannot read directory `%s'"
-msgstr "Không tạo thư mục chính “%s”.\n"
+msgstr "Không tạo thư mục chính “%s”."
 
-#: ../AdduserCommon.pm:124
+#: ../AdduserCommon.pm:137
 #, fuzzy, perl-format
-#| msgid "The user `%s' does not exist.\n"
-msgid "`%s' does not exist.\n"
-msgstr "Người dùng “%s” không tồn tại.\n"
+#| msgid "The user `%s' does not exist."
+msgid "`%s' does not exist."
+msgstr "Người dùng “%s” không tồn tại."
 
-#: ../AdduserCommon.pm:156
+#: ../AdduserCommon.pm:142
+#, fuzzy, perl-format
+#| msgid "Cannot handle special file %s"
+msgid "Cannot open pool file %s: `%s'"
+msgstr "Không quản lý được tập tin đặc biệt %s"
+
+#: ../AdduserCommon.pm:175
 #, perl-format
-msgid "Illegal pool type `%s' reading `%s'.\n"
+msgid "Illegal pool type `%s' reading `%s'."
 msgstr ""
 
-#: ../AdduserCommon.pm:159
+#: ../AdduserCommon.pm:179
 #, fuzzy, perl-format
-#| msgid "Unknown variable `%s' at `%s', line %d.\n"
-msgid "Duplicate name `%s' at `%s', line %d.\n"
-msgstr "Không rõ biến “%s” tại “%s”, dòng %d.\n"
+#| msgid "Unknown variable `%s' at `%s', line %d."
+msgid "Duplicate name `%s' at `%s', line %d."
+msgstr "Không rõ biến “%s” tại “%s”, dòng %d."
 
-#: ../AdduserCommon.pm:162
+#: ../AdduserCommon.pm:183
 #, fuzzy, perl-format
-#| msgid "Unknown variable `%s' at `%s', line %d.\n"
-msgid "Duplicate ID `%s' at `%s', line %d.\n"
-msgstr "Không rõ biến “%s” tại “%s”, dòng %d.\n"
+#| msgid "Unknown variable `%s' at `%s', line %d."
+msgid "Duplicate ID `%s' at `%s', line %d."
+msgstr "Không rõ biến “%s” tại “%s”, dòng %d."
 
-#: ../AdduserCommon.pm:212
+#: ../AdduserCommon.pm:213
 #, perl-format
-msgid "`%s' returned error code %d. Exiting.\n"
-msgstr "“%s” trả lại mã lỗi %d nên thoát.\n"
+msgid "`%s' returned error code %d. Exiting."
+msgstr "“%s” trả lại mã lỗi %d nên thoát."
 
-#: ../AdduserCommon.pm:214
+#: ../AdduserCommon.pm:216
 #, perl-format
-msgid "`%s' exited from signal %d. Exiting.\n"
-msgstr "“%s” bị chấm dứt do tín hiệu %d nên thoát.\n"
+msgid "`%s' exited from signal %d. Exiting."
+msgstr "“%s” bị chấm dứt do tín hiệu %d nên thoát."
 
 #: ../AdduserCommon.pm:227
 #, perl-format
-msgid "`%s' failed to execute. %s. Continuing.\n"
+msgid "`%s' failed to execute. %s. Continuing."
 msgstr ""
 
 #: ../AdduserCommon.pm:229
 #, fuzzy, perl-format
-#| msgid "`%s' exited from signal %d. Exiting.\n"
-msgid "`%s' killed by signal %d. Continuing.\n"
-msgstr "“%s” bị chấm dứt do tín hiệu %d nên thoát.\n"
+#| msgid "`%s' exited from signal %d. Exiting."
+msgid "`%s' killed by signal %d. Continuing."
+msgstr "“%s” bị chấm dứt do tín hiệu %d nên thoát."
 
 #: ../AdduserCommon.pm:231
 #, perl-format
-msgid "`%s' failed with status %d. Continuing.\n"
+msgid "`%s' failed with status %d. Continuing."
 msgstr ""
 
-#: ../AdduserCommon.pm:269
+#: ../AdduserCommon.pm:270
 #, perl-format
-msgid "Could not find program named `%s' in $PATH.\n"
-msgstr "Không tìm thấy chương trình “%s” trên đường dẫn mặc định $PATH.\n"
+msgid "Could not find program named `%s' in $PATH."
+msgstr "Không tìm thấy chương trình “%s” trên đường dẫn mặc định $PATH."
 
-#: ../AdduserCommon.pm:341
+#: ../AdduserCommon.pm:343
+#, perl-format
+msgid "could not open lock file %s!"
+msgstr ""
+
+#: ../AdduserCommon.pm:349
 msgid "Could not obtain exclusive lock, please try again shortly!"
 msgstr ""
 
-#: ../AdduserCommon.pm:343
-msgid "Waiting for lock to become available...\n"
+#: ../AdduserCommon.pm:352
+msgid "Waiting for lock to become available..."
 msgstr ""
 
+#: ../AdduserCommon.pm:359
 #, perl-format
-#~ msgid "No UID is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+msgid "could not seek - %s!"
+msgstr ""
+
+#: ../AdduserCommon.pm:368
+msgid "could not find lock file!"
+msgstr ""
+
+#: ../AdduserCommon.pm:373
+#, perl-format
+msgid "could not unlock file %s: %s"
+msgstr ""
+
+#: ../AdduserCommon.pm:378
+#, perl-format
+msgid "could not close lock file %s: %s"
+msgstr ""
+
+#~ msgid "Done."
+#~ msgstr "Hoàn tất."
+
+#, perl-format
+#~ msgid "Stopped: %s"
+#~ msgstr "Bị dừng: %s"
+
+#~ msgid "WARNING: You are just about to delete the root account (uid 0)"
+#~ msgstr "CẢNH BÁO: bạn sắp xóa bỏ tài khoản siêu quản trị (UID 0)"
+
+#~ msgid ""
+#~ "Usually this is never required as it may render the whole system "
+#~ "unusable\n"
+#~ msgstr ""
+#~ "Rất ít yêu cầu hành vi này vì nó có thể gây ra toàn bộ hệ thống là vô "
+#~ "ích.\n"
+
+#, fuzzy
+#~| msgid "If you really want this, call deluser with parameter --force"
+#~ msgid ""
+#~ "If you really want this, call deluser with parameter --no-preserve-root\n"
+#~ msgstr ""
+#~ "Nếu bạn thực sự muốn làm hành vi này, gọi deluser với tham số “--"
+#~ "force” (ép buộc)\n"
+
+#~ msgid "Stopping now without having performed any action"
+#~ msgstr "Đang dừng lại ngay bây giờ mà chưa làm gì"
+
+#, perl-format
+#~ msgid "%s: %s"
+#~ msgstr "%s: %s"
+
+#, perl-format
+#~ msgid "No UID is available in the range %d-%d (FIRST_UID - LAST_UID)."
 #~ msgstr ""
 #~ "Không có UID nào sẵn sàng trong phạm vi %d-%d (FIRST_UID - LAST_UID).\n"
 
@@ -955,19 +1019,19 @@ msgstr ""
 #~ "\n"
 
 #, perl-format
-#~ msgid "fork for `mount' to parse mount points failed: %s\n"
-#~ msgstr "lỗi phân nhánh “mount” để phân tích điểm gắn kết: %s\n"
+#~ msgid "fork for `mount' to parse mount points failed: %s"
+#~ msgstr "lỗi phân nhánh “mount” để phân tích điểm gắn kết: %s"
 
 #, perl-format
-#~ msgid "pipe of command `mount' could not be closed: %s\n"
-#~ msgstr "không thể đóng ống dẫn của lệnh “mount”: %s\n"
+#~ msgid "pipe of command `mount' could not be closed: %s"
+#~ msgstr "không thể đóng ống dẫn của lệnh “mount”: %s"
 
 #, perl-format
-#~ msgid "`%s' still has `%s' as their primary group!\n"
-#~ msgstr "“%s” vẫn còn có “%s” là nhóm chính!\n"
+#~ msgid "`%s' still has `%s' as their primary group!"
+#~ msgstr "“%s” vẫn còn có “%s” là nhóm chính!"
 
-#~ msgid "Removes users and groups from the system.\n"
-#~ msgstr "Gỡ bỏ khỏi hệ thống các người dùng và nhóm.\n"
+#~ msgid "Removes users and groups from the system."
+#~ msgstr "Gỡ bỏ khỏi hệ thống các người dùng và nhóm."
 
 #~ msgid ""
 #~ "Copyright (C) 2000 Roland Bauerschmidt <roland@copyleft.de>\n"
@@ -1086,5 +1150,5 @@ msgstr ""
 #~ "\n"
 
 #, perl-format
-#~ msgid "The user `%s' already exists. Exiting.\n"
-#~ msgstr "Người dùng “%s” đã có nên thoát.\n"
+#~ msgid "The user `%s' already exists. Exiting."
+#~ msgstr "Người dùng “%s” đã có nên thoát."

@@ -8,7 +8,7 @@ use warnings;
 
 use AdduserTestsCommon;
 
-my $quiet="--quiet";
+my @quiet=("--stdoutmsglevel=error", '--stderrmsglevel=error');
 
 # single pool file
 my $uidpoolfile="/etc/adduser-uidpool.conf";
@@ -40,6 +40,18 @@ my @uidlist = (
     'shell' => '/bin/sh',
    }
 );
+my $firstuid = (sort map {$_->{id}} @uidlist)[0];
+
+my @uidreserved = (
+   {
+    'name' => 'uidreserved1',
+    'id' => $firstuid,
+    'comment' => 'uidreserved1 pool account',
+    'home' => '/home/uidreserved1',
+    'ahome' => '/home/auidreserved1',
+    'shell' => '/bin/sh',
+   }
+);
 
 my @gidlist = (
     {
@@ -50,34 +62,43 @@ my @gidlist = (
      id => 32202,
     }
 );
+my $firstgid = (sort map {$_->{id}} @gidlist)[0];
+my @gidreserved = (
+   {
+    name => 'gidreserved1',
+    id => $firstgid,
+   }
+);
 
 # test creating user/group without uidpool set
 
 foreach my $group( @gidlist ) {
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
       '--comment', '""', '--disabled-password', $group->{name});
     assert_group_exists($group->{name});
     assert_gid_does_not_exist($group->{id});
 }
 
 foreach my $user( @uidlist ) {
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--comment', '""', '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_uid_does_not_exist($user->{id});
 }
 
 sub cleanup {
-    foreach my $user( @uidlist ) {
-        system("/usr/sbin/deluser $quiet --remove-home $user->{name} 2>/dev/null");
+    foreach my $user( @uidlist, @uidreserved ) {
+        system("/usr/sbin/deluser @quiet --remove-home $user->{name} 2>/dev/null");
         assert_user_does_not_exist($user->{name});
     }
-    foreach my $group( @gidlist ) {
-        system("/usr/sbin/delgroup $quiet $group->{name} 2>/dev/null");
+    foreach my $group( @gidlist, @gidreserved ) {
+        system("/usr/sbin/delgroup @quiet $group->{name} 2>/dev/null");
         assert_group_does_not_exist($group->{name});
     }
 }
 cleanup();
+
+
 
 # create test pool files
 my $fh;
@@ -100,13 +121,13 @@ apply_config_hash(\%confhash);
 # test creating user/group with uidpool set
 
 foreach my $group( @gidlist ) {
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
       $group->{name});
     assert_group_exists($group->{name});
     assert_group_has_gid($group->{name}, $group->{id});
     cleanup();
 
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
       '--gid', $agid, $group->{name});
     assert_group_exists($group->{name});
     assert_group_has_gid($group->{name}, $agid);
@@ -114,7 +135,7 @@ foreach my $group( @gidlist ) {
 }
 
 foreach my $user( @uidlist ) {
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $user->{id});
@@ -123,7 +144,7 @@ foreach my $user( @uidlist ) {
     assert_user_has_login_shell($user->{name}, $user->{shell});
     cleanup();
 
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--uid', $auid, '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $auid);
@@ -132,7 +153,7 @@ foreach my $user( @uidlist ) {
     assert_user_has_login_shell($user->{name}, $user->{shell});
     cleanup();
 
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--comment', $acomment, '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $user->{id});
@@ -141,7 +162,7 @@ foreach my $user( @uidlist ) {
     assert_user_has_login_shell($user->{name}, $user->{shell});
     cleanup();
 
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--home', $user->{ahome}, '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $user->{id});
@@ -150,13 +171,157 @@ foreach my $user( @uidlist ) {
     assert_user_has_login_shell($user->{name}, $user->{shell});
     cleanup();
 
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--shell', $ashell, '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $user->{id});
     assert_user_has_comment($user->{name}, $user->{comment});
     assert_user_has_home_directory($user->{name}, $user->{home});
     assert_user_has_login_shell($user->{name}, $ashell);
+    cleanup();
+}
+
+%confhash=();
+$confhash{"UID_POOL"}="$uidpoolfile";
+$confhash{"GID_POOL"}="$gidpoolfile";
+$confhash{"FIRST_UID"}="$firstuid";
+$confhash{"FIRST_GID"}="$firstgid";
+$confhash{"RESERVE_UID_POOL"}="no";
+$confhash{"RESERVE_GID_POOL"}="no";
+apply_config_hash(\%confhash);
+
+# test not reserved uid in pool
+
+foreach my $group( @gidreserved ) {
+    assert_command_success('/usr/sbin/addgroup', @quiet,
+      $group->{name});
+    assert_group_exists($group->{name});
+    assert_group_has_gid($group->{name}, $group->{id});
+    cleanup();
+
+    assert_command_success('/usr/sbin/addgroup', @quiet,
+      '--gid', $agid, $group->{name});
+    assert_group_exists($group->{name});
+    assert_group_has_gid($group->{name}, $agid);
+    cleanup();
+}
+
+foreach my $user( @uidreserved ) {
+    assert_command_success('/usr/sbin/adduser', @quiet,
+      '--comment', '""', '--disabled-password', $user->{name});
+    assert_user_exists($user->{name});
+    assert_user_has_uid($user->{name}, $user->{id});
+    cleanup();
+}
+
+%confhash=();
+$confhash{"UID_POOL"}="$uidpoolfile";
+$confhash{"GID_POOL"}="$gidpoolfile";
+$confhash{"FIRST_UID"}="$firstuid";
+$confhash{"FIRST_GID"}="$firstgid";
+$confhash{"RESERVE_UID_POOL"}="yes";
+$confhash{"RESERVE_GID_POOL"}="yes";
+apply_config_hash(\%confhash);
+
+# test reserved uid in pool
+
+foreach my $group( @gidreserved ) {
+    assert_command_success('/usr/sbin/addgroup', @quiet,
+      $group->{name});
+    assert_group_exists($group->{name});
+    assert_gid_does_not_exist($group->{id});
+    cleanup();
+
+    assert_command_success('/usr/sbin/addgroup', @quiet,
+      '--gid', $group->{id}, $group->{name});
+    assert_group_exists($group->{name});
+    assert_group_has_gid($group->{name}, $group->{id});
+    cleanup();
+}
+
+foreach my $user( @uidreserved ) {
+    assert_command_success('/usr/sbin/adduser', @quiet,
+      '--comment', '""', '--disabled-password', $user->{name});
+    assert_user_exists($user->{name});
+    assert_uid_does_not_exist($user->{id});
+    cleanup();
+
+    assert_command_success('/usr/sbin/adduser', @quiet,
+      '--uid', $user->{id}, '--comment', '""', '--disabled-password', $user->{name});
+    assert_user_exists($user->{name});
+    assert_user_has_uid($user->{name}, $user->{id});
+    cleanup();
+}
+
+%confhash=();
+$confhash{"UID_POOL"}="$uidpoolfile";
+$confhash{"GID_POOL"}="$gidpoolfile";
+$confhash{"FIRST_UID"}="$firstuid";
+$confhash{"FIRST_GID"}="$firstgid";
+$confhash{"RESERVE_UID_POOL"}="no";
+$confhash{"RESERVE_GID_POOL"}="no";
+apply_config_hash(\%confhash);
+
+# test not reserved uid in pool
+
+foreach my $group( @gidreserved ) {
+    assert_command_success('/usr/sbin/addgroup', @quiet,
+      $group->{name});
+    assert_group_exists($group->{name});
+    assert_group_has_gid($group->{name}, $group->{id});
+    cleanup();
+
+    assert_command_success('/usr/sbin/addgroup', @quiet,
+      '--gid', $agid, $group->{name});
+    assert_group_exists($group->{name});
+    assert_group_has_gid($group->{name}, $agid);
+    cleanup();
+}
+
+foreach my $user( @uidreserved ) {
+    assert_command_success('/usr/sbin/adduser', @quiet,
+      '--comment', '""', '--disabled-password', $user->{name});
+    assert_user_exists($user->{name});
+    assert_user_has_uid($user->{name}, $user->{id});
+    cleanup();
+}
+
+%confhash=();
+$confhash{"UID_POOL"}="$uidpoolfile";
+$confhash{"GID_POOL"}="$gidpoolfile";
+$confhash{"FIRST_UID"}="$firstuid";
+$confhash{"FIRST_GID"}="$firstgid";
+$confhash{"RESERVE_UID_POOL"}="yes";
+$confhash{"RESERVE_GID_POOL"}="yes";
+apply_config_hash(\%confhash);
+
+# test reserved uid in pool
+
+foreach my $group( @gidreserved ) {
+    assert_command_success('/usr/sbin/addgroup', @quiet,
+      $group->{name});
+    assert_group_exists($group->{name});
+    assert_gid_does_not_exist($group->{id});
+    cleanup();
+
+    assert_command_success('/usr/sbin/addgroup', @quiet,
+      '--gid', $group->{id}, $group->{name});
+    assert_group_exists($group->{name});
+    assert_group_has_gid($group->{name}, $group->{id});
+    cleanup();
+}
+
+foreach my $user( @uidreserved ) {
+    assert_command_success('/usr/sbin/adduser', @quiet,
+      '--comment', '""', '--disabled-password', $user->{name});
+    assert_user_exists($user->{name});
+    assert_uid_does_not_exist($user->{id});
+    cleanup();
+
+    assert_command_success('/usr/sbin/adduser', @quiet,
+      '--uid', $user->{id}, '--comment', '""', '--disabled-password', $user->{name});
+    assert_user_exists($user->{name});
+    assert_user_has_uid($user->{name}, $user->{id});
     cleanup();
 }
 
@@ -189,13 +354,13 @@ apply_config_hash(\%confhash);
 # test creating user/group with uidpool set
 
 foreach my $group( @gidlist ) {
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
       $group->{name});
     assert_group_exists($group->{name});
     assert_group_has_gid($group->{name}, $group->{id});
     cleanup();
 
-    assert_command_success('/usr/sbin/addgroup', $quiet,
+    assert_command_success('/usr/sbin/addgroup', @quiet,
       '--gid', $agid, $group->{name});
     assert_group_exists($group->{name});
     assert_group_has_gid($group->{name}, $agid);
@@ -203,7 +368,7 @@ foreach my $group( @gidlist ) {
 }
 
 foreach my $user( @uidlist ) {
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $user->{id});
@@ -212,7 +377,7 @@ foreach my $user( @uidlist ) {
     assert_user_has_login_shell($user->{name}, $user->{shell});
     cleanup();
 
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--uid', $auid, '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $auid);
@@ -221,7 +386,7 @@ foreach my $user( @uidlist ) {
     assert_user_has_login_shell($user->{name}, $user->{shell});
     cleanup();
 
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--comment', $acomment, '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $user->{id});
@@ -230,7 +395,7 @@ foreach my $user( @uidlist ) {
     assert_user_has_login_shell($user->{name}, $user->{shell});
     cleanup();
 
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--home', $user->{ahome}, '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $user->{id});
@@ -239,7 +404,7 @@ foreach my $user( @uidlist ) {
     assert_user_has_login_shell($user->{name}, $user->{shell});
     cleanup();
 
-    assert_command_success('/usr/sbin/adduser', $quiet,
+    assert_command_success('/usr/sbin/adduser', @quiet,
       '--shell', $ashell, '--disabled-password', $user->{name});
     assert_user_exists($user->{name});
     assert_user_has_uid($user->{name}, $user->{id});

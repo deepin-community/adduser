@@ -22,9 +22,10 @@ assert_user_does_not_exist($user);
 assert_path_does_not_exist($home);
 apply_config();
 assert_command_success('/usr/sbin/adduser',
-  '--disabled-password','--system',
-  '--home', $home,
-  '--quiet', $user);
+    '--stdoutmsglevel=error', '--stderrmsglevel=error',
+    '--disabled-password','--system',
+    '--home', $home,
+    $user);
 assert_user_exists($user);
 assert_path_exists($home);
 assert_path_has_mode($home, $mode);
@@ -36,12 +37,13 @@ foreach (@modes) {
 
   assert_user_does_not_exist($user);
   assert_path_does_not_exist($home);
-  
+
   apply_config('SYS_DIR_MODE', $mode);
   assert_command_success('/usr/sbin/adduser',
+    '--stdoutmsglevel=error', '--stderrmsglevel=error',
     '--disabled-password','--system',
     '--home', $home,
-    '--quiet', $user);
+    $user);
 
   assert_user_exists($user);
   assert_path_exists($home);
@@ -60,3 +62,5 @@ sub mode_is_valid {
 
   return defined($mode) && ($mode =~ /[0-7]{3}/ || $mode =~ /[0-7]{4}/);
 }
+
+# vim: tabstop=4 shiftwidth=4 expandtab
