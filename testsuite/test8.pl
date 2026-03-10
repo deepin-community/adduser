@@ -17,7 +17,8 @@ my $cmd = "adduser --comment test --disabled-password --add-extra-groups $userna
 
 my %config;
 
-preseed_config(("/etc/adduser.conf"),\%config);
+my @adduserconf=("/etc/adduser.conf");
+preseed_config(\@adduserconf,\%config);
 
 if (!defined (getpwnam($username))) {
 	print "Testing $cmd... ";

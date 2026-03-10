@@ -15,10 +15,12 @@ END {
     remove_tree('/home/bob');
 }
 
-assert_command_success('/usr/sbin/useradd', '-d', '/home/bob', '-m', 'bob;>/hacked');
+assert_command_success('/usr/sbin/useradd', '--badname', '-d', '/home/bob', '-m', 'bob;>/hacked');
 
 assert_path_does_not_exist('/hacked');
 
 `/usr/sbin/deluser 'bob;>/hacked' >/dev/null 2>&1`;
 
 assert_path_does_not_exist('/hacked');
+
+# vim: tabstop=4 shiftwidth=4 expandtab

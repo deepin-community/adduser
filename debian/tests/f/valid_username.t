@@ -29,6 +29,7 @@ use constant FBAD => 16;
 use constant ABAD => 32;
 
 my %pat = (
+    # these need to be in sync with the defaults in AdduserCommon.pm
     # Traditional Debian username patterns
     deb     => qr{^[a-z][a-z0-9_-]*\$?$},
     deb_sys => qr{^[a-z_][a-z0-9_-]*\$?$},
@@ -36,8 +37,9 @@ my %pat = (
     min     => qr{^[^-+~:,\s/][^:,\s/]*$},
     # Don't check anything!
     all     => qr{^.+$},
+    # this needs to be in sync with sanitize_name in adduser
     # Debian minimum (adduser v3.122) IEEE Std 1003.1-2001
-    ieee    => qr{^[A-Za-z0-9_.][-\@_.A-Za-z0-9]*\$?$},
+    ieee    => qr{^[_.A-Za-z0-9][-\@_.A-Za-z0-9]*\$?$},
     caps    => qr{^[A-Za-z0-9_.]+$}
 );
 
@@ -65,22 +67,24 @@ test_name('_', PASS,
             $pat{min}, PASS);
 # this test is to see what backslash does
 # unfortunately unpredictable
-test_name("\}", FAIL, FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL,
+test_name("\}a", FAIL, FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL,
             $pat{min}, PASS);
-test_name("\\}", FAIL, FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL,
-            $pat{min}, PASS);
+test_name("\\}b", FAIL, FAIL|BAD, FAIL|ABAD, FAIL|FBAD, FAIL|ALL,
+            $pat{min}, FAIL);
 # windows conventions
 test_name('machine$', PASS,
             $pat{ieee}, PASS);
-test_name('DOMAIN\user', FAIL, FAIL|BAD, FAIL|FBAD, FAIL|ABAD, PASS|ALL,
-            $pat{min}, PASS);
+# useradd doesnt accept \ at this time, #1074306
+#test_name('DOMAIN\user', FAIL, FAIL|BAD, FAIL|FBAD, FAIL|ABAD, PASS|ALL,
+#         $pat{min}, PASS);
 test_name('user@email.example.com', FAIL, PASS|BAD, PASS|FBAD, PASS|ABAD, PASS|ALL,
             $pat{min}, PASS);
 
 # test alternate escaping
 test_name("'duke'", FAIL, FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL);
 # the worst username possible
-test_name("'c4\$h\\M0n3y\"'==>@", FAIL, FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL);
+# useradd doesn't accept that any more, #1086225
+#test_name("'c4\$h\\M0n3y\"'==>@", FAIL, FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL);
 
 # should always fail any regex
 my @fails = ('12345', 'root:root', 'test space', "test\nwhite\tspace",
@@ -94,12 +98,14 @@ test_name("test/slash", FAIL,
             $pat{min}, FAIL, FAIL|BAD, FAIL|ABAD, FAIL|FBAD, FAIL|ALL);
 
 # some stranger choices
-test_name("ÿar",        FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL, $pat{min}, PASS);
 test_name('*',          FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL, $pat{min}, PASS);
 test_name('3>6',  FAIL, FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL, $pat{min}, PASS);
 test_name('.com', FAIL, PASS|BAD, PASS|ABAD, PASS|FBAD, PASS|ALL, $pat{min}, PASS);
 test_name('user%',      FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL, $pat{min}, PASS);
-test_name('˄ʙɄȘ˳',      FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL, $pat{min}, PASS);
+# comment those because I don't know how to include unicode characters
+# in a perl regexp. If you know how to do this, please file a bug.
+# test_name("ÿar",        FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL, $pat{min}, PASS);
+# test_name('˄ʙɄȘ˳',      FAIL|BAD, FAIL|ABAD, FAIL|FBAD, PASS|ALL, $pat{min}, PASS);
 
 # system users with leading underscores
 test_name('_foo', PASS);
@@ -139,8 +145,10 @@ sub test_name {
     $homedir_esc = qq{${quot}/home/${username_esc}${quot}};
     $username_esc = qq{${quot}${username_esc}${quot}};
 
-    my @cmd = ('/usr/sbin/adduser', '--quiet',
-        '--ingroup', 'nogroup', '--system',
+    my @cmd = ('/usr/sbin/adduser',
+        '--stdoutmsglevel=error', '--stderrmsglevel=error',
+        '--ingroup', 'nogroup',
+        '--system',
         '--disabled-password');
 
     do {
@@ -173,12 +181,16 @@ sub test_name {
                 assert_user_exists($username);
                 assert_path_exists($homedir);
                 assert_command_success_silent('/usr/sbin/deluser',
-                    '--quiet', '--remove-home', $username_esc);
+                    '--stdoutmsglevel=error', '--stderrmsglevel=error',
+                    '--remove-home',
+                    $username_esc);
             } else {
                 assert_command_failure_silent(@cmd, @cmdargs, $username_esc);
                 assert_user_does_not_exist($username);
                 assert_command_failure_silent('/usr/sbin/deluser',
-                    '--quiet', '--remove-home', $username_esc);
+                    '--stdoutmsglevel=error', '--stderrmsglevel=error',
+                    '--remove-home',
+                    $username_esc);
             }
             $mode = (@_ && $_[0] =~ /^\d+$/ ) ? shift : undef;
         } while ($mode);
@@ -186,3 +198,5 @@ sub test_name {
         $regex = shift || undef;
     } while (@_ || $regex);
 }
+
+# vim: tabstop=4 shiftwidth=4 expandtab

@@ -22,14 +22,23 @@ sub test_suffix {
     my ($archive, $file_list);
 
     assert_user_does_not_exist('foo');
-    assert_command_success('/usr/sbin/adduser', '--quiet', '--system', '--home', '/home/foo', 'foo');
+    assert_command_success('/usr/sbin/adduser',
+	    '--stdoutmsglevel=error', '--stderrmsglevel=error',
+	    '--system',
+	    '--home', '/home/foo',
+	    'foo');
     assert_user_exists('foo');
 
     open (FH, '>', '/home/foo/test.txt');
     print FH 'created by adduser/backups.t';
     close (FH);
 
-    assert_command_success_silent('/usr/sbin/deluser', '--quiet', '--remove-home', '--backup-to', '/tmp', '--backup-suffix', $suffix, 'foo');
+    assert_command_success_silent('/usr/sbin/deluser',
+	    '--stdoutmsglevel=error', '--stderrmsglevel=error',
+	    '--remove-home',
+	    '--backup-to', '/tmp',
+	    '--backup-suffix', $suffix,
+	    'foo');
     assert_user_does_not_exist('foo');
 
     $archive = '/tmp/foo.tar.'.((&which($program, 1)) ? $suffix : 'gz');
@@ -40,6 +49,8 @@ sub test_suffix {
     $file_list = `tar tf $archive 2>/dev/null`;
     ok($? == 0, "archive $archive ($suffix) listing successful");
     ok($file_list =~ qr{home/foo/test.txt}, 'archive contents are correct');
-    
+
     unlink($archive);
 }
+
+# vim: tabstop=4 shiftwidth=4 expandtab

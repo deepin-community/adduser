@@ -1,19 +1,20 @@
 # Translation of adduser's manpage to European Portuguese
 # Copyright (C) 2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the adduser package.
 #
 # Américo Monteiro <a_monteiro@gmx.com>, 2010 - 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: adduser 3.130\n"
-"POT-Creation-Date: 2023-02-07 12:17+0100\n"
-"PO-Revision-Date: 2023-01-06 23:30+0000\n"
+"Project-Id-Version: adduser 3.137\n"
+"POT-Creation-Date: 2024-11-02 21:26+0100\n"
+"PO-Revision-Date: 2023-09-10 22:40+0100\n"
 "Last-Translator: Américo Monteiro <a_monteiro@gmx.com>\n"
 "Language-Team: Portuguese <>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 # type: TH
@@ -52,8 +53,8 @@ msgstr "SINOPSE"
 
 # type: TH
 #. type: SY
-#: ../adduser.8:20 ../adduser.8:43 ../adduser.8:59 ../adduser.8:88
-#: ../adduser.8:96 ../adduser.8:99
+#: ../adduser.8:20 ../adduser.8:46 ../adduser.8:65 ../adduser.8:103
+#: ../adduser.8:114 ../adduser.8:117
 #, no-wrap
 msgid "adduser"
 msgstr "adduser"
@@ -79,39 +80,39 @@ msgid "--allow-bad-names"
 msgstr "--allow-bad-names"
 
 #. type: OP
-#: ../adduser.8:24 ../adduser.8:45
+#: ../adduser.8:24 ../adduser.8:48
 #, no-wrap
 msgid "--comment"
 msgstr "--comment"
 
 #. type: OP
-#: ../adduser.8:24 ../adduser.8:45
+#: ../adduser.8:24 ../adduser.8:48
 #, no-wrap
 msgid "comment"
 msgstr "comentário"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:25 ../adduser.8:46 ../adduser.8:61 ../adduser.8:71
-#: ../adduser.8:83 ../adduser.8:89 ../deluser.8:21 ../deluser.8:34
-#: ../deluser.8:44 ../deluser.8:52 ../deluser.8:60
+#: ../adduser.8:25 ../adduser.8:49 ../adduser.8:67 ../adduser.8:80
+#: ../adduser.8:95 ../adduser.8:104 ../deluser.8:21 ../deluser.8:38
+#: ../deluser.8:52 ../deluser.8:65 ../deluser.8:77
 #, no-wrap
 msgid "--conf"
 msgstr "--conf"
 
 #. type: OP
-#: ../adduser.8:25 ../adduser.8:46 ../adduser.8:61 ../adduser.8:71
-#: ../adduser.8:83 ../adduser.8:89 ../deluser.8:21 ../deluser.8:34
-#: ../deluser.8:44 ../deluser.8:52 ../deluser.8:60
+#: ../adduser.8:25 ../adduser.8:49 ../adduser.8:67 ../adduser.8:80
+#: ../adduser.8:95 ../adduser.8:104 ../deluser.8:21 ../deluser.8:38
+#: ../deluser.8:52 ../deluser.8:65 ../deluser.8:77
 #, no-wrap
 msgid "file"
 msgstr "ficheiro"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:26 ../adduser.8:47 ../adduser.8:62 ../adduser.8:72
-#: ../adduser.8:90 ../deluser.8:22 ../deluser.8:35 ../deluser.8:45
-#: ../deluser.8:53 ../deluser.8:61
+#: ../adduser.8:26 ../adduser.8:50 ../adduser.8:68 ../adduser.8:81
+#: ../adduser.8:105 ../deluser.8:22 ../deluser.8:39 ../deluser.8:53
+#: ../deluser.8:66 ../deluser.8:78
 #, no-wrap
 msgid "--debug"
 msgstr "--debug"
@@ -132,16 +133,16 @@ msgstr "--disabled-password"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:29 ../adduser.8:63 ../adduser.8:73
+#: ../adduser.8:29 ../adduser.8:69 ../adduser.8:82
 #, no-wrap
 msgid "--firstgid"
 msgstr "--firstgid"
 
 #. type: OP
 #: ../adduser.8:29 ../adduser.8:30 ../adduser.8:31 ../adduser.8:34
-#: ../adduser.8:35 ../adduser.8:39 ../adduser.8:48 ../adduser.8:54
-#: ../adduser.8:63 ../adduser.8:65 ../adduser.8:73 ../adduser.8:75
-#: ../adduser.8:82
+#: ../adduser.8:35 ../adduser.8:39 ../adduser.8:51 ../adduser.8:57
+#: ../adduser.8:69 ../adduser.8:71 ../adduser.8:82 ../adduser.8:84
+#: ../adduser.8:94
 #, no-wrap
 msgid "id"
 msgstr "id"
@@ -155,42 +156,42 @@ msgstr "--firstuid"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:31 ../adduser.8:48 ../adduser.8:64 ../adduser.8:74
-#: ../adduser.8:82
+#: ../adduser.8:31 ../adduser.8:51 ../adduser.8:70 ../adduser.8:83
+#: ../adduser.8:94
 #, no-wrap
 msgid "--gid"
 msgstr "--gid"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:32 ../adduser.8:50
+#: ../adduser.8:32 ../adduser.8:53
 #, no-wrap
 msgid "--home"
 msgstr "--home"
 
 #. type: OP
-#: ../adduser.8:32 ../adduser.8:50 ../deluser.8:20 ../deluser.8:33
+#: ../adduser.8:32 ../adduser.8:53 ../deluser.8:20 ../deluser.8:37
 #, no-wrap
 msgid "dir"
 msgstr "directório"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:33 ../adduser.8:51
+#: ../adduser.8:33 ../adduser.8:54
 #, no-wrap
 msgid "--ingroup"
 msgstr "--ingroup"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:33 ../adduser.8:51
+#: ../adduser.8:33 ../adduser.8:54
 #, no-wrap
 msgid "group"
 msgstr "group"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:34 ../adduser.8:65 ../adduser.8:75
+#: ../adduser.8:34 ../adduser.8:71 ../adduser.8:84
 #, no-wrap
 msgid "--lastgid"
 msgstr "--lastgid"
@@ -204,123 +205,161 @@ msgstr "--lastuid"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:36 ../adduser.8:52
+#: ../adduser.8:36 ../adduser.8:55
 #, no-wrap
 msgid "--no-create-home"
 msgstr "--no-create-home"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:37 ../adduser.8:53
+#: ../adduser.8:37 ../adduser.8:56
 #, no-wrap
 msgid "--shell"
 msgstr "--shell"
 
 #. type: OP
-#: ../adduser.8:37 ../adduser.8:53
+#: ../adduser.8:37 ../adduser.8:56
 #, no-wrap
 msgid "shell"
 msgstr "shell"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:38 ../adduser.8:55 ../adduser.8:66 ../adduser.8:76
-#: ../adduser.8:84 ../adduser.8:91 ../deluser.8:25 ../deluser.8:38
-#: ../deluser.8:47 ../deluser.8:55 ../deluser.8:62
+#: ../adduser.8:38 ../adduser.8:58 ../adduser.8:72 ../adduser.8:85
+#: ../adduser.8:96 ../adduser.8:106 ../deluser.8:25 ../deluser.8:42
+#: ../deluser.8:55 ../deluser.8:68 ../deluser.8:79
 #, no-wrap
 msgid "--quiet"
 msgstr "--quiet"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:39 ../adduser.8:54
+#: ../adduser.8:39 ../adduser.8:57
 #, no-wrap
 msgid "--uid"
 msgstr "--uid"
 
 #. type: OP
-#: ../adduser.8:40 ../adduser.8:56 ../adduser.8:67 ../adduser.8:77
-#: ../adduser.8:85 ../adduser.8:92 ../deluser.8:26 ../deluser.8:39
-#: ../deluser.8:48 ../deluser.8:56 ../deluser.8:63
+#: ../adduser.8:40 ../adduser.8:59 ../adduser.8:73 ../adduser.8:86
+#: ../adduser.8:97 ../adduser.8:107 ../deluser.8:26 ../deluser.8:43
+#: ../deluser.8:56 ../deluser.8:69 ../deluser.8:80
 #, no-wrap
 msgid "--verbose"
 msgstr "--verbose"
 
+#. type: OP
+#: ../adduser.8:41 ../adduser.8:60 ../adduser.8:74 ../adduser.8:87
+#: ../adduser.8:98 ../adduser.8:108 ../deluser.8:27 ../deluser.8:44
+#: ../deluser.8:57 ../deluser.8:70 ../deluser.8:81
+#, no-wrap
+msgid "--stdoutmsglevel"
+msgstr "--stdoutmsglevel"
+
+#. type: OP
+#: ../adduser.8:41 ../adduser.8:42 ../adduser.8:43 ../adduser.8:60
+#: ../adduser.8:61 ../adduser.8:62 ../adduser.8:74 ../adduser.8:75
+#: ../adduser.8:76 ../adduser.8:87 ../adduser.8:88 ../adduser.8:89
+#: ../adduser.8:98 ../adduser.8:99 ../adduser.8:100 ../adduser.8:108
+#: ../adduser.8:109 ../adduser.8:110 ../deluser.8:27 ../deluser.8:28
+#: ../deluser.8:29 ../deluser.8:44 ../deluser.8:45 ../deluser.8:46
+#: ../deluser.8:57 ../deluser.8:58 ../deluser.8:59 ../deluser.8:70
+#: ../deluser.8:71 ../deluser.8:72 ../deluser.8:81 ../deluser.8:82
+#: ../deluser.8:83
+#, no-wrap
+msgid "prio"
+msgstr "prio"
+
+#. type: OP
+#: ../adduser.8:42 ../adduser.8:61 ../adduser.8:75 ../adduser.8:88
+#: ../adduser.8:99 ../adduser.8:109 ../deluser.8:28 ../deluser.8:45
+#: ../deluser.8:58 ../deluser.8:71 ../deluser.8:82
+#, no-wrap
+msgid "--stderrmsglevel"
+msgstr "--stderrmsglevel"
+
+#. type: OP
+#: ../adduser.8:43 ../adduser.8:62 ../adduser.8:76 ../adduser.8:89
+#: ../adduser.8:100 ../adduser.8:110 ../deluser.8:29 ../deluser.8:46
+#: ../deluser.8:59 ../deluser.8:72 ../deluser.8:83
+#, no-wrap
+msgid "--logmsglevel"
+msgstr "--logmsglevel"
+
 #. type: Plain text
-#: ../adduser.8:42 ../adduser.8:58 ../deluser.8:28 ../deluser.8:41
+#: ../adduser.8:45 ../adduser.8:64 ../deluser.8:31 ../deluser.8:48
 msgid "B<user>"
 msgstr "B<user>"
 
 # type: TP
 #. type: TP
-#: ../adduser.8:45 ../adduser.8:82 ../adduser.8:415 ../deluser.8:213
+#: ../adduser.8:48 ../adduser.8:94 ../adduser.8:435 ../deluser.8:236
 #, no-wrap
 msgid "B<--system>"
 msgstr "B<--system>"
 
 # type: TP
 #. type: OP
-#: ../adduser.8:49
+#: ../adduser.8:52
 #, no-wrap
 msgid "--group"
 msgstr "--group"
 
 # type: TP
 #. type: TP
-#: ../adduser.8:61 ../adduser.8:358 ../deluser.8:44 ../deluser.8:184
+#: ../adduser.8:67 ../adduser.8:377 ../deluser.8:52 ../deluser.8:206
 #, no-wrap
 msgid "B<--group>"
 msgstr "B<--group>"
 
 #. type: OP
-#: ../adduser.8:64 ../adduser.8:74
+#: ../adduser.8:70 ../adduser.8:83
 #, no-wrap
 msgid "ID"
 msgstr "ID"
 
 # type: TP
 #. type: Plain text
-#: ../adduser.8:69 ../adduser.8:79 ../adduser.8:87 ../deluser.8:50
-#: ../deluser.8:58
+#: ../adduser.8:78 ../adduser.8:91 ../adduser.8:102 ../deluser.8:61
+#: ../deluser.8:74
 msgid "B<group>"
 msgstr "B<group>"
 
 #. type: SY
-#: ../adduser.8:70 ../adduser.8:80
+#: ../adduser.8:79 ../adduser.8:92
 #, no-wrap
 msgid "addgroup"
 msgstr "addgroup"
 
 # type: SS
 #. type: Plain text
-#: ../adduser.8:95 ../deluser.8:66
+#: ../adduser.8:113 ../deluser.8:86
 msgid "B<user> B<group>"
 msgstr "B<user> B<group>"
 
 # type: TP
 #. type: TP
-#: ../adduser.8:98 ../adduser.8:370 ../deluser.8:69 ../deluser.8:190
+#: ../adduser.8:116 ../adduser.8:389 ../deluser.8:90 ../deluser.8:212
 #, no-wrap
 msgid "B<--help>"
 msgstr "B<--help>"
 
 # type: TP
 #. type: TP
-#: ../adduser.8:101 ../deluser.8:72 ../deluser.8:221
+#: ../adduser.8:119 ../deluser.8:93 ../deluser.8:261
 #, no-wrap
 msgid "B<--version>"
 msgstr "B<--version>"
 
 # type: SH
 #. type: SH
-#: ../adduser.8:102 ../adduser.conf.5:19 ../deluser.8:73 ../deluser.conf.5:16
+#: ../adduser.8:120 ../adduser.conf.5:19 ../deluser.8:94 ../deluser.conf.5:16
 #, no-wrap
 msgid "DESCRIPTION"
 msgstr "DESCRIÇÃO"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:112
+#: ../adduser.8:130
 msgid ""
 "B<adduser> and B<addgroup> add users and groups to the system according to "
 "command line options and configuration information in I</etc/adduser.conf>.  "
@@ -338,7 +377,7 @@ msgstr ""
 "personalizado, e outras funcionalidades."
 
 #. type: Plain text
-#: ../adduser.8:123
+#: ../adduser.8:141
 msgid ""
 "B<adduser> and B<addgroup> are intended as a policy layer, making it easier "
 "for package maintainers and local administrators to create local system "
@@ -357,7 +396,7 @@ msgstr ""
 "condicionais, supressões de erros ou outras geringonças."
 
 #. type: Plain text
-#: ../adduser.8:129
+#: ../adduser.8:147
 msgid ""
 "B<adduser> honors the distinction between I<dynamically allocated system "
 "users and groups> and I<dynamically allocated user accounts> that is "
@@ -368,28 +407,28 @@ msgstr ""
 "está documentada na Política Debian, Capítulo 9.2.2."
 
 #. type: Plain text
-#: ../adduser.8:132 ../deluser.8:88
+#: ../adduser.8:150 ../deluser.8:109
 msgid ""
-"For a full list and explanation of all options, see the OPTIONS section."
+"For a full list and explanations of all options, see the OPTIONS section."
 msgstr ""
 "Para uma lista completa e explicação de todas as opções, veja a secção "
 "OPÇÕES."
 
 #. type: Plain text
-#: ../adduser.8:134
+#: ../adduser.8:152
 msgid "B<adduser> and B<addgroup> can be run in one of five modes:"
 msgstr "B<adduser> e B<addgroup> podem ser executados em um de cinco modos:"
 
 # type: SS
 #. type: SS
-#: ../adduser.8:134
+#: ../adduser.8:152
 #, no-wrap
 msgid "Add a normal user"
 msgstr "Adicionar um utilizador normal"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:142
+#: ../adduser.8:160
 msgid ""
 "If called with one non-option argument and without the B<--system> or B<--"
 "group> options, B<adduser> will add a normal user, that means a "
@@ -403,7 +442,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:150
+#: ../adduser.8:168
 msgid ""
 "B<adduser> will choose the first available UID from the range specified by "
 "B<FIRST_UID> and B<LAST_UID> in the configuration file.  The range may be "
@@ -416,7 +455,7 @@ msgstr ""
 "Finalmente, o UID pode definido total manualmente com a opção B<--uid>."
 
 #. type: Plain text
-#: ../adduser.8:158
+#: ../adduser.8:176
 msgid ""
 "By default, each user is given a corresponding group with the same name.  "
 "This is commonly called I<Usergroups> and allows group writable directories "
@@ -432,7 +471,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:167
+#: ../adduser.8:185
 msgid ""
 "For a usergroup, B<adduser> will choose the first available GID from the "
 "range specified by B<FIRST_GID> and B<LAST_GID> in the configuration file.  "
@@ -447,23 +486,30 @@ msgstr ""
 "B<--gid>."
 
 #. type: Plain text
-#: ../adduser.8:172
+#: ../adduser.8:190
 msgid ""
 "The interaction between B<USERS_GID>, B<USERS_GROUP>, and B<USERGROUPS> is "
-"explained in detail in B<adduser.conf (5).>"
+"explained in detail in B<adduser.conf>(5)."
 msgstr ""
 "A interação entre B<USERS_GID>, B<USERS_GROUP>, e B<USERGROUPS> está "
-"explicada em detalhe em B<adduser.conf (5).>"
+"explicada em detalhe em B<adduser.conf>(5)."
 
 #. type: Plain text
-#: ../adduser.8:185
+#: ../adduser.8:203
+#, fuzzy
+#| msgid ""
+#| "Users' primary groups can also be overridden from the command line with "
+#| "the B<--gid> or B<--ingroup> options to set the group by id or name, "
+#| "respectively.  Also, users can be added to one or more supplemental "
+#| "groups defined as B<EXTRA_GROUPS> in the configuration file either by "
+#| "setting B<ADD_EXTRA_GROUPS> to 1 in the configuration file, or by passing "
+#| "B<--add-extra-groups> on the command line."
 msgid ""
-"Users' primary groups can also be overridden from the command line with the "
-"B<--gid> or B<--ingroup> options to set the group by id or name, "
+"The new user's primary groups can also be overridden from the command line "
+"with the B<--gid> or B<--ingroup> options to set the group by id or name, "
 "respectively.  Also, users can be added to one or more supplemental groups "
-"defined as B<EXTRA_GROUPS> in the configuration file either by setting "
-"B<ADD_EXTRA_GROUPS> to 1 in the configuration file, or by passing B<--add-"
-"extra-groups> on the commandline."
+"defined as B<EXTRA_GROUPS> either by setting B<ADD_EXTRA_GROUPS> to 1 in the "
+"configuration file, or by passing B<--add-extra-groups> on the command line."
 msgstr ""
 "Os grupos primários do utilizador também podem ser sobrepostos a partir da "
 "linha de comandos com as opções B<--gid> ou B<--ingroup> para definir o "
@@ -474,7 +520,7 @@ msgstr ""
 "comandos."
 
 #. type: Plain text
-#: ../adduser.8:191
+#: ../adduser.8:209
 msgid ""
 "B<adduser> will copy files from I</etc/skel> into the home directory and "
 "prompt for the comment field and a password if those functions have not been "
@@ -485,24 +531,24 @@ msgstr ""
 "desligadas / sobrepostas a partir da linha de comandos."
 
 #. type: Plain text
-#: ../adduser.8:196
+#: ../adduser.8:214
 msgid ""
 "UID, comment, home directory and shell might be pre-determined with the "
-"B<UID_POOL> and B<GID_POOL> option, documented in B<adduser.conf(5).>"
+"B<UID_POOL> and B<GID_POOL> option, documented in B<adduser.conf>(5)."
 msgstr ""
 "UID, comentário, directório home e shell podem ser pre-determinados com a "
-"opção B<UID_POOL> e B<GID_POOL>, documentada em B<adduser.conf(5).>"
+"opção B<UID_POOL> e B<GID_POOL>, documentada em B<adduser.conf>(5)."
 
 # type: SS
 #. type: SS
-#: ../adduser.8:197
+#: ../adduser.8:215
 #, no-wrap
 msgid "Add a system user"
 msgstr "Adicionar um utilizador de sistema"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:204
+#: ../adduser.8:222
 msgid ""
 "If called with one non-option argument and the B<--system> option, "
 "B<adduser> will add a I<dynamically allocated system user,> often "
@@ -515,7 +561,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:210
+#: ../adduser.8:228
 msgid ""
 "B<adduser> will choose the first available UID from the range specified by "
 "B<FIRST_SYSTEM_UID> and B<LAST_SYSTEM_UID> in the configuration file.  This "
@@ -527,7 +573,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:217
+#: ../adduser.8:235
 msgid ""
 "By default, system users are placed in the B<nogroup> group.  To place the "
 "new system user in an already existing group, use the B<--gid> or B<--"
@@ -540,20 +586,20 @@ msgstr ""
 "um grupo de nome idêntico ainda não existir, este é criado com o mesmo ID."
 
 #. type: Plain text
-#: ../adduser.8:223
+#: ../adduser.8:241
 msgid ""
 "If no home directory is specified, the default home directory for a new "
 "system user is I<\\%/nonexistent>.  This directory should never exist on any "
-"Debian system, and B<\\%adduser> will never create it automatically."
+"Debian system, and B<adduser> will never create it automatically."
 msgstr ""
 "Se não for especificado um directório home, o directório home predefinido "
 "para um novo utilizador é I<\\%/nonexistent>.  Este directório nunca deverá "
-"existir em nenhum sistema Debian, e o B<\\%adduser> nunca irá cria-lo "
+"existir em nenhum sistema Debian, e o B<adduser> nunca irá cria-lo "
 "automaticamente."
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:229
+#: ../adduser.8:247
 msgid ""
 "Unless a shell is explicitly set with the B<--shell> option, the new system "
 "user will have the shell set to I</usr/sbin/nologin>.  B<adduser --system> "
@@ -566,25 +612,29 @@ msgstr ""
 "conta. Os ficheiros de configuração esqueleto não são copiados."
 
 #. type: Plain text
-#: ../adduser.8:232
+#: ../adduser.8:250
+#, fuzzy
+#| msgid ""
+#| "Other options will behave as for the creation of a normal user.  The "
+#| "files referenced by B<UID_POOL> and B<GID_POOL> do also work."
 msgid ""
 "Other options will behave as for the creation of a normal user.  The files "
-"referenced by UID_POOL and GID_POOL do also work."
+"referenced by B<UID_POOL> and B<GID_POOL> are also honored."
 msgstr ""
 "As outras opções irão comportar-se como para a criação de um utilizador "
-"normal. Os ficheiros referenciados por UID_POOL e GID_POOL irão também "
+"normal. Os ficheiros referenciados por B<UID_POOL> e B<GID_POOL> irão também "
 "funcionar."
 
 # type: SS
 #. type: SS
-#: ../adduser.8:233
+#: ../adduser.8:251
 #, no-wrap
 msgid "Add a group"
 msgstr "Adiciona um grupo"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:238
+#: ../adduser.8:256
 msgid ""
 "If B<adduser> is called with the B<--group> option and without the B<--"
 "system> option, or B<addgroup> is called respectively, a user group will be "
@@ -595,7 +645,7 @@ msgstr ""
 "grupo de utilizadores."
 
 #. type: Plain text
-#: ../adduser.8:245
+#: ../adduser.8:263
 msgid ""
 "A I<dynamically allocated system group,> often abbreviated as I<system "
 "group> in the context of the B<adduser> package, will be created if "
@@ -607,7 +657,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:252
+#: ../adduser.8:270
 msgid ""
 "A GID will be chosen from the respective range specified for GIDs in the "
 "configuration file (B<FIRST_GID>, B<LAST_GID>, B<FIRST_SYSTEM_GID>, "
@@ -621,7 +671,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:256
+#: ../adduser.8:274
 msgid ""
 "For non-system groups, the range specified in the configuration file may be "
 "overridden with the B<--firstgid> and B<--lastgid> options."
@@ -631,20 +681,20 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:258
+#: ../adduser.8:276
 msgid "The group is created with no members."
 msgstr "O grupo é criado sem nenhum membro."
 
 # type: SS
 #. type: SS
-#: ../adduser.8:259
+#: ../adduser.8:277
 #, no-wrap
 msgid "Add an existing user to an existing group"
 msgstr "Adicionar um utilizador existente a um grupo existente"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:262
+#: ../adduser.8:280
 msgid ""
 "If called with two non-option arguments, B<adduser> will add an existing "
 "user to an existing group."
@@ -654,13 +704,13 @@ msgstr ""
 
 # type: SH
 #. type: SH
-#: ../adduser.8:263 ../deluser.8:151
+#: ../adduser.8:281 ../deluser.8:172
 #, no-wrap
 msgid "OPTIONS"
 msgstr "OPÇÕES"
 
 #. type: Plain text
-#: ../adduser.8:267
+#: ../adduser.8:285
 msgid ""
 "Different modes of B<adduser> allow different options.  If no valid modes "
 "are listed for a option, it is accepted in all modes."
@@ -669,7 +719,7 @@ msgstr ""
 "válido estiver listado para uma opção, ela é aceite em todos os modos."
 
 #. type: Plain text
-#: ../adduser.8:271 ../deluser.8:159
+#: ../adduser.8:289 ../deluser.8:180
 msgid ""
 "Short versions for certain options may exist for historical reasons.  They "
 "are going to stay supported, but are removed from the documentation.  Users "
@@ -681,17 +731,23 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.8:271
+#: ../adduser.8:289
 #, no-wrap
 msgid "B<--add-extra-groups>"
 msgstr "B<--add-extra-groups>"
 
 #. type: Plain text
-#: ../adduser.8:278
+#: ../adduser.8:296
+#, fuzzy
+#| msgid ""
+#| "Add new user to extra groups defined in the configuration files' "
+#| "B<EXTRA_GROUPS> setting.  The old spelling B<--add_extra_groups> is "
+#| "deprecated and will be supported in Debian bookworm only.  Valid Modes: "
+#| "B<adduser>, B<adduser --system>."
 msgid ""
 "Add new user to extra groups defined in the configuration files' "
 "B<EXTRA_GROUPS> setting.  The old spelling B<--add_extra_groups> is "
-"deprecated and will be supported in Debian bookworm only.  Valid Modes: "
+"deprecated and will be supported in Debian bookworm only.  Valid modes: "
 "B<adduser>, B<adduser --system>."
 msgstr ""
 "Adiciona novo utilizador aos grupos extra definidos na definição "
@@ -701,180 +757,205 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.8:278
+#: ../adduser.8:296
 #, no-wrap
 msgid "B<--allow-all-names>"
 msgstr "B<--allow-all-names>"
 
 #. type: Plain text
-#: ../adduser.8:286
+#: ../adduser.8:304
+#, fuzzy
+#| msgid ""
+#| "Allow any user- and groupname which is supported by the underlying "
+#| "B<useradd>(8), including names containing non-ASCII characters.  See "
+#| "VALID NAMES in B<adduser.conf>(5).  Valid Modes: B<adduser>, B<adduser --"
+#| "system>, B<addgroup>, B<addgroup --system>."
 msgid ""
 "Allow any user- and groupname which is supported by the underlying "
-"B<useradd>, including names containing non-ASCII characters.  See VALID "
-"NAMES in B<adduser.conf>(5)  Valid Modes: B<adduser>, B<adduser --system>, "
+"B<useradd>(8), including names containing non-ASCII characters.  See VALID "
+"NAMES in B<adduser.conf>(5).  Valid modes: B<adduser>, B<adduser --system>, "
 "B<addgroup>, B<addgroup --system>."
 msgstr ""
 "Permite qualquer nome de utilizador e grupo que seja suportado pelo "
-"B<useradd> subjacente, incluindo nome que contenham caracteres não-ASCII. "
-"Veja NOMES VÁLIDOS em B<adduser.conf>(5)  Modos Válidos: B<adduser>, "
+"B<useradd>(8) subjacente, incluindo nome que contenham caracteres não-ASCII. "
+"Veja NOMES VÁLIDOS em B<adduser.conf>(5).  Modos Válidos: B<adduser>, "
 "B<adduser --system>, B<addgroup>, B<addgroup --system>."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:286
+#: ../adduser.8:304
 #, no-wrap
 msgid "B<--allow-bad-names>"
 msgstr "B<--allow-bad-names>"
 
 #. type: Plain text
-#: ../adduser.8:294
+#: ../adduser.8:312
+#, fuzzy
+#| msgid ""
+#| "Disable B<NAME_REGEX> and B<SYS_NAME_REGEX> check of names.  Only a "
+#| "weaker check for validity of the name is applied.  See VALID NAMES in "
+#| "B<adduser.conf>(5).  Valid Modes: B<adduser>, B<adduser --system>, "
+#| "B<addgroup>, B<addgroup --system>."
 msgid ""
 "Disable B<NAME_REGEX> and B<SYS_NAME_REGEX> check of names.  Only a weaker "
 "check for validity of the name is applied.  See VALID NAMES in B<adduser."
-"conf>(5)  Valid Modes: B<adduser>, B<adduser --system>, B<addgroup>, "
+"conf>(5).  Valid modes: B<adduser>, B<adduser --system>, B<addgroup>, "
 "B<addgroup --system>."
 msgstr ""
 "Desativa as verificações B<NAME_REGEX> e B<SYS_NAME_REGEX> de nomes. Apenas "
 "é aplicada uma verificação mais fraca para validade do nome. Veja NOMES "
-"VÁLIDOS em B<adduser.conf>(5)  Modos Válidos: B<adduser>, B<adduser --"
+"VÁLIDOS em B<adduser.conf>(5).  Modos Válidos: B<adduser>, B<adduser --"
 "system>, B<addgroup>, B<addgroup --system>."
 
 #. type: TP
-#: ../adduser.8:294
-#, no-wrap
-msgid "B<--comment>I< comment >"
+#: ../adduser.8:312
+#, fuzzy, no-wrap
+#| msgid "B<--comment>I< comment >"
+msgid "B<--comment>I< comment>"
 msgstr "B<--comment>I< comentário >"
 
 #. type: Plain text
-#: ../adduser.8:303
+#: ../adduser.8:321
 #, fuzzy
 #| msgid ""
 #| "Set the comment field for the new entry generated.  B<adduser> will not "
 #| "ask for the information if this option is given.  This field is also "
 #| "known under the name GECOS field and contains information that is used by "
-#| "the finger command.  This used to be the --gecos option, which is "
-#| "deprecated and will be removed after Debian bookworm.  Valid Modes: "
+#| "the B<finger>(1) command.  This used to be the B<--gecos> option, which "
+#| "is deprecated and will be removed after Debian bookworm.  Valid Modes: "
 #| "B<adduser>, B<adduser --system>."
 msgid ""
 "Set the comment field for the new entry generated.  B<adduser> will not ask "
 "for the information if this option is given.  This field is also known under "
-"the name GECOS field and contains information that is used by the finger "
-"command.  This used to be the B<--gecos> option, which is deprecated and "
-"will be removed after Debian bookworm.  Valid Modes: B<adduser>, B<adduser --"
-"system>."
+"the name GECOS field and contains information that is used by the "
+"B<finger>(1) command.  This used to be the B<--gecos> option, which is "
+"deprecated and will be removed after Debian bookworm.  Valid modes: "
+"B<adduser>, B<adduser --system>."
 msgstr ""
 "Define o campo de comentário para a nova entrada gerada. O B<adduser> não "
 "irá pedir a informação se esta opção for dada. Este campo é também conhecido "
-"sob o nome campo GECOS e contém informação que é usada pelo comando finger. "
-"Isto já foi a opção --gecos, a qual está descontinuada e será removida após "
-"o Debian bookworm.  Modos Válidos: B<adduser>, B<adduser --system>."
+"sob o nome campo GECOS e contém informação que é usada pelo comando "
+"B<finger>(1). Isto já foi a opção B<--gecos>, a qual está descontinuada e "
+"será removida após o Debian bookworm.  Modos Válidos: B<adduser>, B<adduser "
+"--system>."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:303
-#, no-wrap
-msgid "B<--conf>I< FILE >"
-msgstr "B<--conf>I< FICHEIRO >"
+#: ../adduser.8:321
+#, fuzzy, no-wrap
+#| msgid "B<--conf>I< file >"
+msgid "B<--conf>I< file>"
+msgstr "B<--conf>I< ficheiro >"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:307
-#, fuzzy
-#| msgid ""
-#| "Use I<file> instead of I</etc/adduser.conf>.  Multiple --conf options can "
-#| "be given."
+#: ../adduser.8:325
 msgid ""
 "Use I<file> instead of I</etc/adduser.conf>.  Multiple B<--conf> options can "
 "be given."
 msgstr ""
-"Usa I<ficheiro> em vez de I</etc/adduser.conf>.  Várias opções --conf podem "
-"ser dadas."
+"Usa I<ficheiro> em vez de I</etc/adduser.conf>.  Várias opções B<--conf> "
+"podem ser dadas."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:307 ../deluser.8:181
+#: ../adduser.8:325 ../deluser.8:202
 #, no-wrap
 msgid "B<--debug>"
 msgstr "B<--debug>"
 
 #. type: Plain text
-#: ../adduser.8:310 ../deluser.8:184
-msgid "Activate debugging code."
-msgstr "Activa código de depuração."
+#: ../adduser.8:329 ../deluser.8:206
+#, fuzzy
+#| msgid "Synonymous to --stdoutmsglevel=debug. Deprecated."
+msgid "Synonymous to --stdoutmsglevel=debug.  Deprecated."
+msgstr "Sinónimo para --stdoutmsglevel=debug. Descontinuado."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:310
+#: ../adduser.8:329
 #, no-wrap
 msgid "B<--disabled-login>"
 msgstr "B<--disabled-login>"
 
 # type: TP
 #. type: TQ
-#: ../adduser.8:312
-#, fuzzy, no-wrap
-#| msgid "--disabled-password"
+#: ../adduser.8:331
+#, no-wrap
 msgid "B<--disabled-password>"
-msgstr "--disabled-password"
+msgstr "B<--disabled-password>"
 
 #. type: Plain text
-#: ../adduser.8:321
+#: ../adduser.8:340
 #, fuzzy
 #| msgid ""
-#| "B<--disabled-password> Do not run B<passwd> to set a password.  In most "
-#| "situations, logins are still possible though (for example using SSH keys "
-#| "or through PAM)  for reasons that are beyond B<adduse>'s scope.  --"
-#| "disabled-login will additional set the shell to I</usr/sbin/nologin/fP.  "
-#| "Valid Mode: >B<adduser>I<.>"
+#| "Do not run B<passwd>(1) to set a password.  In most situations, logins "
+#| "are still possible though (for example using SSH keys or through PAM)  "
+#| "for reasons that are beyond B<adduser>'s scope.  B<--disabled-login> will "
+#| "additionally set the shell to I</usr/sbin/nologin>.  Valid Mode: "
+#| "B<adduser>."
 msgid ""
-"Do not run B<passwd> to set a password.  In most situations, logins are "
+"Do not run B<passwd>(1) to set a password.  In most situations, logins are "
 "still possible though (for example using SSH keys or through PAM)  for "
 "reasons that are beyond B<adduser>'s scope.  B<--disabled-login> will "
-"additionally set the shell to I</usr/sbin/nologin>.  Valid Mode: B<adduser>."
+"additionally set the shell to I</usr/sbin/nologin>.  Valid mode: B<adduser>."
 msgstr ""
-"B<--disabled-password> Não corre o B<passwd> para definir uma palavra-passe. "
-"Na maioria das situações, os logins são ainda possíveis (por exemplo usando "
-"chaves SSH ou através do PAM)  por razões que ultrapassam o escopo do "
-"B<adduser>.  --disabled-login irá adicionalmente definir a shell para I</usr/"
-"sbin/nologin/fP.  Modo Válido: >B<adduser>I<.>"
+"Não corre o B<passwd>(1) para definir uma palavra-passe. Na maioria das "
+"situações, os logins são ainda possíveis (por exemplo usando chaves SSH ou "
+"através do PAM)  por razões que ultrapassam o escopo do B<adduser>.  B<--"
+"disabled-login> irá adicionalmente definir a shell para I</usr/sbin/"
+"nologin>.  Modo Válido: B<adduser>."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:321
-#, no-wrap
-msgid "B<--firstuid>I< ID >"
+#: ../adduser.8:340
+#, fuzzy, no-wrap
+#| msgid "B<--firstuid>I< ID >"
+msgid "B<--firstuid>I< ID>"
 msgstr "B<--firstuid>I< ID >"
 
 # type: TP
 #. type: TP
-#: ../adduser.8:323 ../adduser.8:389
-#, no-wrap
-msgid "B<--lastuid>I< ID >"
+#: ../adduser.8:342 ../adduser.8:408
+#, fuzzy, no-wrap
+#| msgid "B<--lastuid>I< ID >"
+msgid "B<--lastuid>I< ID>"
 msgstr "B<--lastuid>I< ID >"
 
 # type: TP
 #. type: TQ
-#: ../adduser.8:325
-#, no-wrap
-msgid "B<--firstgid>I< ID >"
+#: ../adduser.8:344
+#, fuzzy, no-wrap
+#| msgid "B<--firstgid>I< ID >"
+msgid "B<--firstgid>I< ID>"
 msgstr "B<--firstgid>I< ID >"
 
 # type: TP
 #. type: TQ
-#: ../adduser.8:327 ../adduser.8:391
-#, no-wrap
-msgid "B<--lastgid>I< ID >"
+#: ../adduser.8:346 ../adduser.8:410
+#, fuzzy, no-wrap
+#| msgid "B<--lastgid>I< ID >"
+msgid "B<--lastgid>I< ID>"
 msgstr "B<--lastgid>I< ID >"
 
 #. type: Plain text
-#: ../adduser.8:342
+#: ../adduser.8:361
+#, fuzzy
+#| msgid ""
+#| "Override the first UID / last UID / first GID / last GID in the range "
+#| "that the uid is chosen from (B<FIRST_UID>, B<LAST_UID>, B<FIRST_GID> and "
+#| "B<LAST_GID>, B<FIRST_SYSTEM_UID>, B<LAST_SYSTEM_UID>, B<FIRST_SYSTEM_GID> "
+#| "and B<LAST_SYSTEM_GID> in the configuration file).  If a group is created "
+#| "as a usergroup, B<--firstgid> and B<--lastgid> are ignored.  The group "
+#| "gets the same ID as the user.  Valid Modes: B<adduser>, B<adduser --"
+#| "system>, for B<--firstgid> and B<--lastgid> also B<addgroup>."
 msgid ""
 "Override the first UID / last UID / first GID / last GID in the range that "
 "the uid is chosen from (B<FIRST_UID>, B<LAST_UID>, B<FIRST_GID> and "
 "B<LAST_GID>, B<FIRST_SYSTEM_UID>, B<LAST_SYSTEM_UID>, B<FIRST_SYSTEM_GID> "
 "and B<LAST_SYSTEM_GID> in the configuration file).  If a group is created as "
 "a usergroup, B<--firstgid> and B<--lastgid> are ignored.  The group gets the "
-"same ID as the user.  Valid Modes: B<adduser>, B<adduser --system>, for B<--"
+"same ID as the user.  Valid modes: B<adduser>, B<adduser --system>, for B<--"
 "firstgid> and B<--lastgid> also B<addgroup>."
 msgstr ""
 "Sobrepõe o primeiro UID / último UID / primeiro GID / último GID no alcance "
@@ -888,44 +969,52 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.8:342
+#: ../adduser.8:361
 #, no-wrap
 msgid "B<--force-badname>"
 msgstr "B<--force-badname>"
 
 # type: TP
 #. type: TQ
-#: ../adduser.8:344
+#: ../adduser.8:363
 #, no-wrap
 msgid "B<--allow-badname>"
 msgstr "B<--allow-badname>"
 
 #. type: Plain text
-#: ../adduser.8:349
+#: ../adduser.8:368
 #, fuzzy
 #| msgid ""
-#| "These are the deprecated forms of --allow-bad-names. It will be removed "
-#| "during the release cycle of the Debian release after I<bookworm>."
+#| "These are the deprecated forms of B<--allow-bad-names>.  It will be "
+#| "removed during the release cycle of the Debian release after I<bookworm>."
 msgid ""
-"These are the deprecated forms of B<--allow-bad-names>.  It will be removed "
-"during the release cycle of the Debian release after I<bookworm>."
+"These are the deprecated forms of B<--allow-bad-names>.  They will be "
+"removed during the release cycle of Debian 13."
 msgstr ""
-"estes são os formatos descontinuados de --allow-bad-names. Serão removidos "
-"durante o ciclo de lançamento do lançamento Debian após I<bookworm>."
+"estes são os formatos descontinuados de B<--allow-bad-names>. Serão "
+"removidos durante o ciclo de lançamento do lançamento Debian após "
+"I<bookworm>."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:349
-#, no-wrap
-msgid "B<--gid>I< ID >"
+#: ../adduser.8:368
+#, fuzzy, no-wrap
+#| msgid "B<--gid>I< ID >"
+msgid "B<--gid>I< GID>"
 msgstr "B<--gid>I< ID >"
 
 #. type: Plain text
-#: ../adduser.8:358
+#: ../adduser.8:377
+#, fuzzy
+#| msgid ""
+#| "When creating a group, this option sets the group ID number of the new "
+#| "group to I<GID>.  When creating a user, this option sets the primary "
+#| "group ID number of the new user to I<GID>.  Valid Modes: B<adduser>, "
+#| "B<adduser --system>, B<addgroup>, B<addgroup --system>."
 msgid ""
 "When creating a group, this option sets the group ID number of the new group "
 "to I<GID>.  When creating a user, this option sets the primary group ID "
-"number of the new user to I<GID>.  Valid Modes: B<adduser>, B<adduser --"
+"number of the new user to I<GID>.  Valid modes: B<adduser>, B<adduser --"
 "system>, B<addgroup>, B<addgroup --system>."
 msgstr ""
 "Quando se cria um grupo, esta opção define o número ID de grupo do novo "
@@ -935,13 +1024,21 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:370
+#: ../adduser.8:389
+#, fuzzy
+#| msgid ""
+#| "Using this option in B<adduser --system> indicates that the new user "
+#| "should get an identically named group as its primary group.  If that "
+#| "identically named group is not already present, it is created.  If not "
+#| "combined with B<--system>, a group with the given name is created.  The "
+#| "latter is the default action if the program is invoked as B<addgroup>.  "
+#| "Valid Modes: B<adduser --system>, B<addgroup>, B<addgroup --system>."
 msgid ""
 "Using this option in B<adduser --system> indicates that the new user should "
 "get an identically named group as its primary group.  If that identically "
 "named group is not already present, it is created.  If not combined with B<--"
 "system>, a group with the given name is created.  The latter is the default "
-"action if the program is invoked as B<addgroup>.  Valid Modes: B<adduser --"
+"action if the program is invoked as B<addgroup>.  Valid modes: B<adduser --"
 "system>, B<addgroup>, B<addgroup --system>."
 msgstr ""
 "Usar esta opção em B<adduser --system> indica que o novo utilizador deve "
@@ -953,24 +1050,31 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:373 ../deluser.8:193
+#: ../adduser.8:392 ../deluser.8:215
 msgid "Display brief instructions."
 msgstr "Mostra instruções breves."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:373
-#, no-wrap
-msgid "B<--home>I< dir >"
+#: ../adduser.8:392
+#, fuzzy, no-wrap
+#| msgid "B<--home>I< dir >"
+msgid "B<--home>I< dir>"
 msgstr "B<--home>I< dir >"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:380
+#: ../adduser.8:399
+#, fuzzy
+#| msgid ""
+#| "Use I<dir> as the user's home directory, rather than the default "
+#| "specified by the configuration file (or I</nonexistent> if B<adduser --"
+#| "system> is used).  If the directory does not exist, it is created.  Valid "
+#| "Modes: B<adduser>, B<adduser --system>."
 msgid ""
 "Use I<dir> as the user's home directory, rather than the default specified "
 "by the configuration file (or I</nonexistent> if B<adduser --system> is "
-"used).  If the directory does not exist, it is created.  Valid Modes: "
+"used).  If the directory does not exist, it is created.  Valid modes: "
 "B<adduser>, B<adduser --system>."
 msgstr ""
 "Usa I<dir> como o directório home do utilizador, em vez da predefinição "
@@ -980,18 +1084,26 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.8:380
-#, no-wrap
-msgid "B<--ingroup>I< GROUP >"
+#: ../adduser.8:399
+#, fuzzy, no-wrap
+#| msgid "B<--ingroup>I< GROUP >"
+msgid "B<--ingroup>I< GROUP>"
 msgstr "B<--ingroup>I< GRUPO >"
 
 #. type: Plain text
-#: ../adduser.8:389
+#: ../adduser.8:408
+#, fuzzy
+#| msgid ""
+#| "When creating a user, this option sets the primary group ID number of the "
+#| "new user to the GID of the named group.  Unlike with the B<--gid> option, "
+#| "the group is specified here by name rather than by numeric ID number.  "
+#| "The group must already exist.  Valid Modes: B<adduser>, B<adduser --"
+#| "system>."
 msgid ""
 "When creating a user, this option sets the primary group ID number of the "
 "new user to the GID of the named group.  Unlike with the B<--gid> option, "
 "the group is specified here by name rather than by numeric ID number.  The "
-"group must already exist.  Valid Modes: B<adduser>, B<adduser --system>."
+"group must already exist.  Valid modes: B<adduser>, B<adduser --system>."
 msgstr ""
 "Quando se cria um utilizador, esta opção define o número ID do grupo "
 "primário do novo utilizador para o GID do grupo nomeado. Ao contrário da "
@@ -1000,26 +1112,35 @@ msgstr ""
 "--system>."
 
 #. type: Plain text
-#: ../adduser.8:395
+#: ../adduser.8:414
 msgid "Override the last UID / last GID.  See B<--firstuid>."
 msgstr "Sobrepõe o último UID / último GID.  Veja B<--firstuid>."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:395
+#: ../adduser.8:414
 #, no-wrap
 msgid "B<--no-create-home>"
 msgstr "B<--no-create-home>"
 
 #. type: Plain text
-#: ../adduser.8:406
+#: ../adduser.8:425
+#, fuzzy
+#| msgid ""
+#| "Do not create a home directory for the new user.  Note that the pathname "
+#| "for the new user's home directory will still be entered in the "
+#| "appropriate field in the I<\\%/etc/passwd> file.  The use of this option "
+#| "does not imply that this field should be empty.  Rather, it indicates to "
+#| "B<\\%adduser> that some other mechanism will be responsible for "
+#| "initializing the new user's home directory.  Valid Modes: B<adduser>, "
+#| "B<adduser --system>."
 msgid ""
 "Do not create a home directory for the new user.  Note that the pathname for "
 "the new user's home directory will still be entered in the appropriate field "
 "in the I<\\%/etc/passwd> file.  The use of this option does not imply that "
 "this field should be empty.  Rather, it indicates to B<\\%adduser> that some "
 "other mechanism will be responsible for initializing the new user's home "
-"directory.  Valid Modes: B<adduser>, B<adduser --system>."
+"directory.  Valid modes: B<adduser>, B<adduser --system>."
 msgstr ""
 "Não cria o directório home para o novo utilizador. Note que o nome de "
 "caminho para o directório home do novo utilizador irá ainda ser inserido no "
@@ -1031,31 +1152,38 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.8:406 ../deluser.8:197
+#: ../adduser.8:425 ../deluser.8:219
 #, no-wrap
 msgid "B<--quiet>"
 msgstr "B<--quiet>"
 
-# type: Plain text
 #. type: Plain text
-#: ../adduser.8:409 ../deluser.8:200
-msgid "Suppress informational messages, only show warnings and errors."
-msgstr "Suprime mensagens informativas, apenas mostra avisos e erros."
+#: ../adduser.8:429 ../deluser.8:223
+#, fuzzy
+#| msgid "Synonymous to --stdoutmsglevel=warn. Deprecated."
+msgid "Synonymous to --stdoutmsglevel=warn.  Deprecated."
+msgstr "Sinónimo para --stdoutmsglevel=warn. Descontinuado."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:409
-#, no-wrap
-msgid "B<--shell>I< shell >"
+#: ../adduser.8:429
+#, fuzzy, no-wrap
+#| msgid "B<--shell>I< shell >"
+msgid "B<--shell>I< shell>"
 msgstr "B<--shell>I< shell >"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:415
+#: ../adduser.8:435
+#, fuzzy
+#| msgid ""
+#| "Use I<shell> as the user's login shell, rather than the default specified "
+#| "by the configuration file (or I</usr/sbin/nologin> if B<adduser --system> "
+#| "is used).  Valid Modes: B<adduser>, B<adduser --system>."
 msgid ""
 "Use I<shell> as the user's login shell, rather than the default specified by "
 "the configuration file (or I</usr/sbin/nologin> if B<adduser --system> is "
-"used).  Valid Modes: B<adduser>, B<adduser --system>."
+"used).  Valid modes: B<adduser>, B<adduser --system>."
 msgstr ""
 "Usa I<shell> como a shell de login do utilizador, em vez da predefinição "
 "especificada pelo ficheiro de configuração (ou I</usr/sbin/nologin> se "
@@ -1063,12 +1191,18 @@ msgstr ""
 "system>."
 
 #. type: Plain text
-#: ../adduser.8:424
+#: ../adduser.8:444
+#, fuzzy
+#| msgid ""
+#| "Nomally, B<adduser> creates I<dynamically allocated user accounts and "
+#| "groups> as defined in Debian Policy, Chapter 9.2.2.  With this option, "
+#| "B<adduser> creates a I<dynamically allocated system user and group> and "
+#| "changes its mode respectively.  Valid Modes: B<adduser>, B<addgroup>."
 msgid ""
-"Nomally, B<adduser> creates I<dynamically allocated user accounts and "
+"Normally, B<adduser> creates I<dynamically allocated user accounts and "
 "groups> as defined in Debian Policy, Chapter 9.2.2.  With this option, "
 "B<adduser> creates a I<dynamically allocated system user and group> and "
-"changes its mode respectively.  Valid Modes: B<adduser>, B<addgroup>."
+"changes its mode respectively.  Valid modes: B<adduser>, B<addgroup>."
 msgstr ""
 "Normalmente, o B<adduser> cria I<contas de utilizador e grupos alocados "
 "dinamicamente> como definido em Política Debian, Capítulo 9.2.2.  Com esta "
@@ -1078,17 +1212,22 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.8:424
-#, no-wrap
-msgid "B<--uid>I< ID >"
+#: ../adduser.8:444
+#, fuzzy, no-wrap
+#| msgid "B<--uid>I< ID >"
+msgid "B<--uid>I< ID>"
 msgstr "B<--uid>I< ID >"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:429
+#: ../adduser.8:449
+#, fuzzy
+#| msgid ""
+#| "Force the new userid to be the given number.  B<adduser> will fail if the "
+#| "userid is already taken.  Valid Modes: B<adduser>, B<adduser --system>."
 msgid ""
 "Force the new userid to be the given number.  B<adduser> will fail if the "
-"userid is already taken.  Valid Modes: B<adduser>, B<adduser --system>."
+"userid is already taken.  Valid modes: B<adduser>, B<adduser --system>."
 msgstr ""
 "Força o novo id de utilizador a ser o número fornecido. O B<adduser> irá "
 "falhar se o id de utilizador já estiver atribuído. Modos Válidos: "
@@ -1096,80 +1235,527 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.8:429 ../deluser.8:218
+#: ../adduser.8:449 ../deluser.8:241
 #, no-wrap
 msgid "B<--verbose>"
 msgstr "B<--verbose>"
 
 #. type: Plain text
-#: ../adduser.8:432 ../deluser.8:221
-msgid "Be more verbose."
-msgstr "Fica mais detalhado."
+#: ../adduser.8:453 ../deluser.8:245
+#, fuzzy
+#| msgid "Synonymous to --stdoutmsglevel=info. Deprecated."
+msgid "Synonymous to --stdoutmsglevel=info.  Deprecated."
+msgstr "Sinónimo para --stdoutmsglevel=info. Descontinuado."
 
 # type: TP
 #. type: TP
-#: ../adduser.8:432
+#: ../adduser.8:453
+#, fuzzy, no-wrap
+#| msgid "B<--stdoutmsglevel>I< prio >"
+msgid "B<--stdoutmsglevel>I< prio>"
+msgstr "B<--stdoutmsglevel>I< prio >"
+
+#. type: TQ
+#: ../adduser.8:455
+#, fuzzy, no-wrap
+#| msgid "B<--stderrmsglevel>I< prio >"
+msgid "B<--stderrmsglevel>I< prio>"
+msgstr "B<--stderrmsglevel>I< prio >"
+
+# type: TP
+#. type: TQ
+#: ../adduser.8:457
+#, fuzzy, no-wrap
+#| msgid "B<--logmsglevel>I< prio >"
+msgid "B<--logmsglevel>I< prio>"
+msgstr "B<--logmsglevel>I< prio >"
+
+#. type: Plain text
+#: ../adduser.8:471
+#, fuzzy
+#| msgid ""
+#| "Minimum priority for messages logged to syslog/journal and the console, "
+#| "respectively.  Values are I<trace>, I<debug>, I<info>, I<warn>, I<err>, "
+#| "and I<fatal>.  Messages with the priority set here or higher get printed "
+#| "to the respective medium.  Messages printed to stderr are not repeated on "
+#| "stdout.  That allows the local admin to control B<adduser>'s chattiness "
+#| "on the console and in the log independently, keeping probably confusing "
+#| "information to itself while still leaving helpful information in the log."
+msgid ""
+"Minimum priority for messages logged to syslog/journal and the console, "
+"respectively.  Values are I<trace>, I<debug>, I<info>, I<warn>, I<err>, and "
+"I<fatal>.  Messages with the priority set here or higher get printed to the "
+"respective medium.  Messages printed to stderr are not repeated on stdout.  "
+"That allows the local admin to control B<adduser>'s chattiness on the "
+"console and in the log independently, keeping probably confusing information "
+"to itself while still leaving helpful information in the log.  "
+"stdoutmsglevel, stderrmsglevel, and logmsglevel default to warn, warn, info, "
+"respectively."
+msgstr ""
+"Prioridade mínima para mensagens registadas no syslog/journal e a consola, "
+"respetivamente. Valores são I<trace>, I<debug>, I<info>, I<warn>, I<err>, e "
+"I<fatal>. As mensagens com a prioridade definida aqui ou superior são "
+"escritas na média respectiva. As mensagens escritas no stderr não são "
+"repetidas no stdout. Isso permite ao administrador local controla a "
+"tagarelice do B<adduser> na consola e no registo independentemente, deixando "
+"a informação provavelmente confusa para si enquanto deixa informação útil no "
+"registo."
+
+# type: TP
+#. type: TP
+#: ../adduser.8:471
 #, no-wrap
 msgid "B<-v> , B<--version>"
 msgstr "B<-v> , B<--version>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:435 ../deluser.8:224
+#: ../adduser.8:474 ../deluser.8:264
 msgid "Display version and copyright information."
 msgstr "Mostra informação de versão e copyright."
 
+#. type: SH
+#: ../adduser.8:475
+#, no-wrap
+msgid "LOGGING"
+msgstr ""
+
+#. type: Plain text
+#: ../adduser.8:479
+msgid ""
+"Adduser uses extensive and configurable logging to tailor its verbosity to "
+"the needs of the system administrator."
+msgstr ""
+
+#. type: Plain text
+#: ../adduser.8:491
+msgid ""
+"Every message that B<adduser> print has a priority value assigned by the "
+"authors.  This priority can not be changed at run time.  Available priority "
+"values are B<crit>, B<error>, B<warning>, B<info>, B<debug>, and B<trace>."
+msgstr ""
+
+#. type: Plain text
+#: ../adduser.8:494
+msgid "If you find that a message has the wrong priority, please file a bug."
+msgstr ""
+
+#. type: Plain text
+#: ../adduser.8:508
+msgid ""
+"Every time a message is generated, the code decides whether to print the "
+"message to standard output, standard error, or syslog.  This is mainly and "
+"independently controlled by the configuration settings B<STDOUTMSGLEVEL>, "
+"B<STDERRMSGLEVEL>, and B<LOGMSGLEVEL>.  For testing purposes, these settings "
+"can be overridden on the command line."
+msgstr ""
+
+#. type: Plain text
+#: ../adduser.8:513
+msgid ""
+"Only messages with a priority higher or equal to the respective message "
+"level are logged to the respective output medium.  A message that was "
+"written to standard error is not written a second time to standard output."
+msgstr ""
+
 # type: SH
 #. type: SH
-#: ../adduser.8:436
+#: ../adduser.8:514 ../deluser.8:272
 #, no-wrap
 msgid "EXIT VALUES"
 msgstr "VALORES DE SAÍDA"
 
 # type: TP
 #. type: TP
-#: ../adduser.8:438 ../deluser.8:225
+#: ../adduser.8:516
 #, no-wrap
 msgid "B<0>"
 msgstr "B<0>"
 
 #. type: Plain text
-#: ../adduser.8:447
+#: ../adduser.8:526
 msgid ""
 "Success: The user or group exists as specified.  This can have 2 causes: The "
 "user or group was created by this call to B<adduser> or the user or group "
 "was already present on the system as specified before B<adduser> was "
-"invoked.  If B<adduser --system> is invoked for a user already existing as a "
-"system user, it will also return 0."
+"invoked.  If B<adduser --system> is invoked for a user already existing with "
+"the requested or compatible attributes, it will also return 0."
 msgstr ""
 "Sucesso: O utilizador ou grupo existe como especificado. Isto pode ter 2 "
 "causas: O utilizador ou grupo foi criado por esta chamada ao B<adduser> ou o "
 "utilizador ou grupo já estava presente no sistema como especificado antes do "
 "B<adduser> ser invocado. Se for invocado B<adduser --system> para um "
-"utilizador já existente como um utilizador de sistema, irá também retornar 0."
+"utilizador já existente com os atributos requeridos ou compatíveis, irá "
+"também retornar 0."
 
-# type: TP
 #. type: TP
-#: ../adduser.8:447 ../deluser.8:228
+#: ../adduser.8:526
 #, no-wrap
-msgid "B<1>"
-msgstr "B<1>"
+msgid "B<11>"
+msgstr "B<11>"
 
 #. type: Plain text
-#: ../adduser.8:455
+#: ../adduser.8:529
+msgid "The object that B<adduser> was asked to create does already exist."
+msgstr "O objecto que foi pedido ao B<adduser> para criar já existe."
+
+#. type: TP
+#: ../adduser.8:529
+#, no-wrap
+msgid "B<12>"
+msgstr "B<12>"
+
+#. type: Plain text
+#: ../adduser.8:533
 msgid ""
-"Creating the non-system user or group failed because it was already "
-"present.  The username or groupname was rejected because of a mismatch with "
-"the configured regular expressions, see B<adduser.conf>(5).  B<adduser> has "
-"been aborted by a signal."
+"The object that B<adduser> or B<deluser> was asked to operate on does not "
+"exist."
 msgstr ""
-"A criação do utilizador ou grupo não-sistema falhou porque já estava "
-"presente. O nome de utilizador ou nome de grupo foi rejeitado devido a um "
-"desencontro com as expressões regulares configuradas, veja B<adduser."
-"conf>(5).  O B<adduser> foi abortado por um sinal."
+"O objecto que foi pedido ao B<adduser> ou B<deluser> para operar não existe."
+
+#. type: TP
+#: ../adduser.8:533
+#, no-wrap
+msgid "B<13>"
+msgstr "B<13>"
 
 #. type: Plain text
-#: ../adduser.8:460
+#: ../adduser.8:550
+msgid ""
+"The object that B<adduser> or B<deluser> was asked to operate on does ont "
+"have the properties that are required to complete the operation: A user (a "
+"group) that was requested to be created as a system user (group)  does "
+"already exist and is not a system user (group), or A user (group) that was "
+"requested to be created with a certain UID (GID)  does already exist and has "
+"a different UID (GID), or A system user (group) that was requested to be "
+"deleted does exist, but is not a system user (group)."
+msgstr ""
+"O objecto que foi pedido ao B<adduser> ou B<deluser> para operar não tem as "
+"propriedades que são requeridas para completar a operação: Um utilizador (um "
+"grupo) que foi requerido para ser criado como um utilizador (grupo) de "
+"sistema já existe e não é um utilizador (grupo) de sistema, ou Um utilizador "
+"(grupo) que foi requerido para ser criado com certo UID (GID) já existe e "
+"tem um UID (GID) diferente, ou Um utilizador (grupo) de sistema que foi "
+"requerido para ser apagado existe, mas não é um utilizador (grupo) de "
+"sistema."
+
+#. type: TP
+#: ../adduser.8:550
+#, no-wrap
+msgid "B<21>"
+msgstr "B<21>"
+
+#. type: Plain text
+#: ../adduser.8:554
+msgid ""
+"The UID (GID) that was explicitly requested for a new user (group)  is "
+"already in use."
+msgstr ""
+"O UID (GID) que foi explicitamente requerido para o novo utilizador (grupo) "
+"já está a ser usado."
+
+#. type: TP
+#: ../adduser.8:554
+#, no-wrap
+msgid "B<22>"
+msgstr "B<22>"
+
+#. type: Plain text
+#: ../adduser.8:557
+msgid "There is no available UID (GID) in the requested range."
+msgstr "Não existe nenhum UID (GID) disponível na gama pedida."
+
+#. type: TP
+#: ../adduser.8:557
+#, no-wrap
+msgid "B<23>"
+msgstr "B<23>"
+
+#. type: Plain text
+#: ../adduser.8:561
+msgid ""
+"There is no group with the requested GID for the primary group for a new "
+"user."
+msgstr ""
+"Não existe nenhum grupo com o GID requerido para o grupo primário para o "
+"novo utilizador."
+
+#. type: TP
+#: ../adduser.8:561
+#, no-wrap
+msgid "B<31>"
+msgstr "B<31>"
+
+#. type: Plain text
+#: ../adduser.8:565
+msgid ""
+"The chosen name for a new user or a new group does not conform to the "
+"selected naming rules."
+msgstr ""
+"O nome escolhido para o novo utilizador ou novo grupo não está em "
+"conformidade com as regras de nomeação selecionadas."
+
+#. type: TP
+#: ../adduser.8:565
+#, no-wrap
+msgid "B<32>"
+msgstr "B<32>"
+
+#. type: Plain text
+#: ../adduser.8:568
+msgid "The home directory of a new user must be an absolute path."
+msgstr ""
+"O directório home para um novo utilizador tem de ser um caminho absoluto."
+
+#. type: TP
+#: ../adduser.8:568
+#, no-wrap
+msgid "B<41>"
+msgstr "B<41>"
+
+#. type: Plain text
+#: ../adduser.8:571
+msgid "The group that was requested to be deleted is not empty."
+msgstr "O grupo que foi requerido para ser apagado não está vazio."
+
+#. type: TP
+#: ../adduser.8:571
+#, no-wrap
+msgid "B<42>"
+msgstr "B<42>"
+
+#. type: Plain text
+#: ../adduser.8:575
+msgid ""
+"The user that was requested to be removed from a group is not a member in "
+"the first place."
+msgstr ""
+"O utilizador que foi requerido para ser removido de um grupo não é membro "
+"desse grupo em primeiro lugar."
+
+#. type: TP
+#: ../adduser.8:575
+#, no-wrap
+msgid "B<43>"
+msgstr "B<43>"
+
+# type: Plain text
+#. type: Plain text
+#: ../adduser.8:580
+msgid ""
+"It is not possible to remove a user from its primary group, or no primary "
+"group selected for a new user by any method."
+msgstr ""
+"Não é possível remover um utilizador do seu grupo principal, ou nenhum grupo "
+"primário selecionado para um novo utilizador por nenhum método."
+
+#. type: TP
+#: ../adduser.8:580
+#, no-wrap
+msgid "B<51>"
+msgstr "B<51>"
+
+#. type: Plain text
+#: ../adduser.8:583
+msgid "Incorrect number or order of command line parameters detected."
+msgstr ""
+"Detectado número ou ordem de parâmetros de linha de comandos incorreta."
+
+#. type: TP
+#: ../adduser.8:583
+#, no-wrap
+msgid "B<52>"
+msgstr "B<52>"
+
+#. type: Plain text
+#: ../adduser.8:586
+msgid "Incompatible options set in configuration file."
+msgstr "Opções incompatíveis definidas no ficheiro de configuração."
+
+#. type: TP
+#: ../adduser.8:586
+#, no-wrap
+msgid "B<53>"
+msgstr "B<53>"
+
+#. type: Plain text
+#: ../adduser.8:589
+msgid "Mutually incompatible command line options detected."
+msgstr "Detetadas opções de linha de comandos incompatíveis mutuamente."
+
+#. type: TP
+#: ../adduser.8:589
+#, no-wrap
+msgid "B<54>"
+msgstr "B<54>"
+
+#. type: Plain text
+#: ../adduser.8:592
+msgid "B<adduser> and B<deluser> invoked as non-root and thus cannot work."
+msgstr ""
+"B<adduser> e B<deluser> invocados como não-root e assim não podem funcionar."
+
+#. type: TP
+#: ../adduser.8:592
+#, no-wrap
+msgid "B<55>"
+msgstr "B<55>"
+
+#. type: Plain text
+#: ../adduser.8:595
+msgid "B<deluser> will refuse to delete the I<root> account."
+msgstr "O B<deluser> irá recusar apagar a conta do I<root>."
+
+#. type: TP
+#: ../adduser.8:595
+#, no-wrap
+msgid "B<56>"
+msgstr "B<56>"
+
+#. type: Plain text
+#: ../adduser.8:599
+msgid ""
+"A function was requested that needs more packages to be installed.  See "
+"Recommends: and Suggests: of the adduser package."
+msgstr ""
+"Foi requerida uma função que precisa de mais pacotes instalados. Veja "
+"Recommends: e Suggests: do pacote adduser."
+
+#. type: TP
+#: ../adduser.8:599
+#, no-wrap
+msgid "B<61>"
+msgstr "B<61>"
+
+#. type: Plain text
+#: ../adduser.8:603
+msgid ""
+"Adduser was aborted for some reason and tried to roll back the changes that "
+"were done during execution."
+msgstr ""
+"O adduser foi abortado por alguma razão e tentou reverter as alterações que "
+"foram feitas durante a execução."
+
+#. type: TP
+#: ../adduser.8:603
+#, no-wrap
+msgid "B<62>"
+msgstr "B<62>"
+
+#. type: Plain text
+#: ../adduser.8:608
+msgid ""
+"Internal adduser error.  This should not happen.  Please try to reproduce "
+"the issue and file a bug report."
+msgstr ""
+"Erro interno do adduser. Isto não devia ter acontecido. Por favor tente "
+"reproduzir o problema e preencha um relatório de bug."
+
+#. type: TP
+#: ../adduser.8:608
+#, no-wrap
+msgid "B<71>"
+msgstr "B<71>"
+
+#. type: Plain text
+#: ../adduser.8:611
+msgid "Error creating and handling the lock."
+msgstr "Erro ao criar e manusear a tranca."
+
+#. type: TP
+#: ../adduser.8:611
+#, no-wrap
+msgid "B<72>"
+msgstr "B<72>"
+
+#. type: Plain text
+#: ../adduser.8:614
+msgid "Error accessing the configuration file(s)."
+msgstr "Erro ao aceder a ficheiro(s) de configuração."
+
+#. type: TP
+#: ../adduser.8:614
+#, no-wrap
+msgid "B<73>"
+msgstr "B<73>"
+
+#. type: Plain text
+#: ../adduser.8:617
+msgid "Error accessing a pool file."
+msgstr "Erro ao aceder a um ficheiro de pool."
+
+#. type: TP
+#: ../adduser.8:617
+#, no-wrap
+msgid "B<74>"
+msgstr "B<74>"
+
+#. type: Plain text
+#: ../adduser.8:620
+msgid "Error reading a pool file, syntax error in file."
+msgstr "Erro a ler um ficheiro pool, erro de sintaxe no ficheiro."
+
+#. type: TP
+#: ../adduser.8:620
+#, no-wrap
+msgid "B<75>"
+msgstr "B<75>"
+
+#. type: Plain text
+#: ../adduser.8:623
+msgid "Error accessing auxiliary files."
+msgstr "Erro ao aceder a ficheiros auxiliares."
+
+#. type: TP
+#: ../adduser.8:623
+#, no-wrap
+msgid "B<81>"
+msgstr "B<81>"
+
+#. type: Plain text
+#: ../adduser.8:627
+msgid ""
+"An executable that is needed by B<adduser> or B<deluser> cannot be found. "
+"Check your installation and dependencies."
+msgstr ""
+"Não pôde ser encontrado um executável preciso pelo B<adduser> ou B<deluser>. "
+"Verifique a sua instalação e dependências."
+
+#. type: TP
+#: ../adduser.8:627
+#, no-wrap
+msgid "B<82>"
+msgstr "B<82>"
+
+#. type: Plain text
+#: ../adduser.8:630
+msgid "Executing an external command returned some unexpected error."
+msgstr "A execução de um comando externo retornou algum erro inesperado."
+
+#. type: TP
+#: ../adduser.8:630
+#, no-wrap
+msgid "B<83>"
+msgstr "B<83>"
+
+#. type: Plain text
+#: ../adduser.8:633
+msgid "An external command was terminated with a signal."
+msgstr "Um comando externo foi terminado com um sinal."
+
+#. type: TP
+#: ../adduser.8:633
+#, no-wrap
+msgid "B<84>"
+msgstr "B<84>"
+
+#. type: Plain text
+#: ../adduser.8:636
+msgid "A syscall terminated with unexpected error."
+msgstr "Uma chamada de sistema (syscall) terminou com um erro inesperado."
+
+#. type: Plain text
+#: ../adduser.8:641
 msgid ""
 "Or for many other yet undocumented reasons which are printed to console "
 "then.  You may then consider to remove B<--quiet> to make B<adduser> more "
@@ -1180,24 +1766,24 @@ msgstr ""
 "B<adduser> mais detalhado."
 
 #. type: SH
-#: ../adduser.8:461 ../deluser.8:266
+#: ../adduser.8:642 ../deluser.8:276
 #, no-wrap
 msgid "SECURITY"
 msgstr "SEGURANÇA"
 
 #. type: Plain text
-#: ../adduser.8:473
+#: ../adduser.8:654
 msgid ""
 "B<adduser> needs root privileges and offers, via the B<--conf> command line "
-"option to use different configuration files.  Do not use B<sudo> or similar "
-"tools to give partial privileges to B<adduser> with restricted command line "
-"parameters.  This is easy to circumvent and might allow users to create "
-"arbitrary accounts.  If you want this, consider writing your own wrapper "
-"script and giving privileges to execute that script."
+"option to use different configuration files.  Do not use B<sudo>(8) or "
+"similar tools to give partial privileges to B<adduser> with restricted "
+"command line parameters.  This is easy to circumvent and might allow users "
+"to create arbitrary accounts.  If you want this, consider writing your own "
+"wrapper script and giving privileges to execute that script."
 msgstr ""
 "O B<adduser> precisa de privilégios de root e oferece via opção de linha de "
 "comandos B<--conf> a utilização de diferentes ficheiros de configuração. Não "
-"use o B<sudo> ou ferramentas semelhantes para dar privilégios parciais ao "
+"use o B<sudo>(8) ou ferramentas semelhantes para dar privilégios parciais ao "
 "B<adduser> com parâmetros de linha de comandos restritos. Isto é fácil de "
 "contornar e pode permitir que utilizadores criem contas arbitrárias. Se você "
 "deseja isto, consider escrever o seu próprio script envelope e dê "
@@ -1205,43 +1791,44 @@ msgstr ""
 
 # type: SH
 #. type: SH
-#: ../adduser.8:474 ../adduser.conf.5:262 ../deluser.8:279 ../deluser.conf.5:82
+#: ../adduser.8:655 ../adduser.conf.5:284 ../deluser.8:289 ../deluser.conf.5:82
 #, no-wrap
 msgid "FILES"
 msgstr "FICHEIROS"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:475 ../adduser.conf.5:264
+#: ../adduser.8:656 ../adduser.conf.5:286
 #, no-wrap
 msgid "I</etc/adduser.conf>"
 msgstr "I</etc/adduser.conf>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:478
-msgid "Default configuration file for B<adduser> and B<addgroup>"
-msgstr "Ficheiro de configuração predefinido para B<adduser> e B<addgroup>"
+#: ../adduser.8:659
+msgid "Default configuration file for B<adduser>(8) and B<addgroup>(8)"
+msgstr ""
+"Ficheiro de configuração predefinido para B<adduser>(8) e B<addgroup>(8)"
 
 #. type: TP
-#: ../adduser.8:478
+#: ../adduser.8:659
 #, no-wrap
 msgid "I</usr/local/sbin/adduser.local>"
 msgstr "I</usr/local/sbin/adduser.local>"
 
 #. type: Plain text
-#: ../adduser.8:482
+#: ../adduser.8:663
 msgid "Optional custom add-ons, see B<adduser.local>(8)"
 msgstr "Adições personalizadas opcionais, veja B<adduser.local>(8)"
 
 #. type: SH
-#: ../adduser.8:484 ../adduser.conf.5:193
+#: ../adduser.8:665 ../adduser.conf.5:205
 #, no-wrap
 msgid "NOTES"
 msgstr "NOTAS"
 
 #. type: Plain text
-#: ../adduser.8:511
+#: ../adduser.8:692
 msgid ""
 "Unfortunately, the term I<system account> suffers from double use in "
 "Debian.  It both means an account for the actual Debian system, "
@@ -1253,7 +1840,7 @@ msgid ""
 "distinguishment of I<dynamically allocated system users and groups> and "
 "I<dynamically allocated user accounts>, meaning in both cases special "
 "instances of I<system accounts>.  Care must be taken to not confuse this "
-"terminology.  Since B<adduser> and B<deluser> never address I<application "
+"terminology.  Since B<adduser> and B<deluser>(8) never address I<application "
 "accounts> and everything in this package concerns I<system accounts> here, "
 "the usage of the terms I<user account> and I<system account> is actually not "
 "ambiguous in the context of this package.  For clarity, this document uses "
@@ -1270,7 +1857,7 @@ msgstr ""
 "I<utilizadores e grupos de sistema alocados dinamicamente> e I<contas de "
 "utilizador alocadas dinamicamente>, significando am ambos os casos "
 "instâncias especiais de I<contas de sistema>. Tem de se tomar cuidado para "
-"não se confundir esta terminologia. Como B<adduser> e B<deluser> nunca se "
+"não se confundir esta terminologia. Como B<adduser> e B<deluser>(8) nunca se "
 "dirigem a I<contas de aplicação> e tudo neste pacote se refere aqui a "
 "I<contas de sistema>, o uso dos termos I<conta de utilizador> e I<conta de "
 "sistema> não é realmente ambígua no contexto deste pacote. Para clarificar, "
@@ -1279,7 +1866,7 @@ msgstr ""
 "serviço de directório."
 
 #. type: Plain text
-#: ../adduser.8:528
+#: ../adduser.8:709
 msgid ""
 "B<adduser> used to have the vision to be the universal front end to the "
 "various directory services for creation and deletion of regular and system "
@@ -1305,7 +1892,7 @@ msgstr ""
 "serviços de directório que precisam de suporte."
 
 #. type: Plain text
-#: ../adduser.8:532
+#: ../adduser.8:713
 msgid ""
 "B<adduser> will constrict itself to being a policy layer for the management "
 "of local system accounts, using the tools from the B<password> package for "
@@ -1316,13 +1903,13 @@ msgstr ""
 "B<password> para o trabalho real."
 
 #. type: SH
-#: ../adduser.8:533
+#: ../adduser.8:714
 #, no-wrap
 msgid "BUGS"
 msgstr "BUGS"
 
 #. type: Plain text
-#: ../adduser.8:537
+#: ../adduser.8:718
 msgid ""
 "Inconsistent use of terminology around the term I<system account> in docs "
 "and code is a bug.  Please report this and allow us to improve our docs."
@@ -1332,7 +1919,7 @@ msgstr ""
 "a nossa documentação."
 
 #. type: Plain text
-#: ../adduser.8:547
+#: ../adduser.8:728
 msgid ""
 "B<adduser> takes special attention to be directly usable in Debian "
 "maintainer scripts without conditional wrappers, error suppression and other "
@@ -1352,17 +1939,22 @@ msgstr ""
 
 # type: SH
 #. type: SH
-#: ../adduser.8:548 ../adduser.conf.5:264 ../deluser.8:288 ../deluser.conf.5:84
+#: ../adduser.8:729 ../adduser.conf.5:286 ../deluser.8:298 ../deluser.conf.5:84
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "VEJA TAMBÉM"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.8:554
+#: ../adduser.8:737
+#, fuzzy
+#| msgid ""
+#| "B<adduser.conf>(5), B<deluser>(8), B<groupadd>(8), B<useradd>(8), "
+#| "B<usermod>(8), Debian Policy 9.2.2."
 msgid ""
 "B<adduser.conf>(5), B<deluser>(8), B<groupadd>(8), B<useradd>(8), "
-"B<usermod>(8), Debian Policy 9.2.2."
+"B<usermod>(8), B</usr/share/doc/base-passwd/users-and-groups.html> on any "
+"Debian system, Debian Policy 9.2.2."
 msgstr ""
 "B<adduser.conf>(5), B<deluser>(8), B<groupadd>(8), B<useradd>(8), "
 "B<usermod>(8), Debian Policy 9.2.2."
@@ -1406,16 +1998,30 @@ msgstr ""
 msgid "The valid configuration options are:"
 msgstr "As opções de configuração válidas são:"
 
-# type: TP
 #. type: TP
 #: ../adduser.conf.5:32
+#, no-wrap
+msgid "B<STDERRMSGLEVEL ,  STDOUTMSGLEVEL , and  LOGMSGLEVEL>"
+msgstr "B<STDERRMSGLEVEL ,  STDOUTMSGLEVEL , e  LOGMSGLEVEL>"
+
+#. type: Plain text
+#: ../adduser.conf.5:38
+msgid ""
+"Minimum priority for messages logged to syslog/journal and the console, "
+"respectively. See B<LOGGING> in adduser(8).  Defaults to I<warn> for "
+"STDOUTMSGLEVEL and STDERRMSGLEVEL and I<info> for LOGMSGLEVEL."
+msgstr ""
+
+# type: TP
+#. type: TP
+#: ../adduser.conf.5:38
 #, no-wrap
 msgid "B<ADD_EXTRA_GROUPS>"
 msgstr "B<ADD_EXTRA_GROUPS>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:39
+#: ../adduser.conf.5:45
 msgid ""
 "Setting this to something other than 0 will cause B<adduser> to add newly "
 "created non-system users to the list of groups defined by B<EXTRA_GROUPS> "
@@ -1427,35 +2033,36 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:39
+#: ../adduser.conf.5:45
 #, no-wrap
 msgid "B<DIR_MODE>"
 msgstr "B<DIR_MODE>"
 
 #. type: Plain text
-#: ../adduser.conf.5:48
+#: ../adduser.conf.5:54
 msgid ""
 "The permissions mode for home directories of non-system users that are "
-"created by B<adduser>.  Defaults to I<0700>.  Note that there are potential "
-"configurations (such as /~user web services, or in-home mail delivery)  "
-"which will require changes to the default.  See also B<SYS_DIR_MODE>."
+"created by B<adduser>(8).  Defaults to I<0700>.  Note that there are "
+"potential configurations (such as /~user web services, or in-home mail "
+"delivery)  which will require changes to the default.  See also "
+"B<SYS_DIR_MODE>."
 msgstr ""
 "O modo de permissões para directórios home de utilizadores não-sistema que "
-"são criados pelo B<adduser>. A predefinição é I<0700>. Note que existem "
+"são criados pelo B<adduser>(8). A predefinição é I<0700>. Note que existem "
 "configurações potenciais (tais como serviços web /~user, ou entrega de mail "
 "em-home) que irão requerer alterações à predefinição. Veja também "
 "B<SYS_DIR_MODE>."
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:48
+#: ../adduser.conf.5:54
 #, no-wrap
 msgid "B<DHOME>"
 msgstr "B<DHOME>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:52
+#: ../adduser.conf.5:58
 msgid ""
 "The directory in which new home directories should be created.  Defaults to "
 "I</home>."
@@ -1465,14 +2072,14 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:52
+#: ../adduser.conf.5:58
 #, no-wrap
 msgid "B<DSHELL>"
 msgstr "B<DSHELL>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:56
+#: ../adduser.conf.5:62
 msgid ""
 "The login shell to be used for all new users.  Defaults to I</bin/bash>."
 msgstr ""
@@ -1481,14 +2088,14 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:56
+#: ../adduser.conf.5:62
 #, no-wrap
 msgid "B<EXTRA_GROUPS>"
 msgstr "B<EXTRA_GROUPS>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:61
+#: ../adduser.conf.5:67
 msgid ""
 "This is the space-separated list of groups that new non-system users will be "
 "added to.  Defaults to I<users>."
@@ -1498,14 +2105,14 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:61
+#: ../adduser.conf.5:67
 #, no-wrap
 msgid "B<FIRST_SYSTEM_GID  and  LAST_SYSTEM_GID>"
 msgstr "B<FIRST_SYSTEM_GID  e  LAST_SYSTEM_GID>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:66
+#: ../adduser.conf.5:72
 msgid ""
 "specify an inclusive range of GIDs from which GIDs for system groups can be "
 "dynamically allocated.  Defaults to I<100> - I<999>."
@@ -1516,14 +2123,14 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:66
+#: ../adduser.conf.5:72
 #, no-wrap
 msgid "B<FIRST_GID  and  LAST_GID>"
 msgstr "B<FIRST_GID  e  LAST_GID>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:71
+#: ../adduser.conf.5:77
 msgid ""
 "specify an inclusive range of GIDs from which GIDs for non-system groups can "
 "be dynamically allocated.  Defaults to I<1000> - I<59999>."
@@ -1534,14 +2141,14 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:71
+#: ../adduser.conf.5:77
 #, no-wrap
 msgid "B<FIRST_SYSTEM_UID  and  LAST_SYSTEM_UID>"
 msgstr "B<FIRST_SYSTEM_UID  e  LAST_SYSTEM_UID>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:79
+#: ../adduser.conf.5:85
 msgid ""
 "specify an inclusive range of UIDs from which UIDs for system users can be "
 "dynamically allocated.  Defaults to I<100> - I<999>.  Please note that "
@@ -1556,14 +2163,14 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:79
+#: ../adduser.conf.5:85
 #, no-wrap
 msgid "B<FIRST_UID  and  LAST_UID>"
 msgstr "B<FIRST_UID  e  LAST_UID>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:84
+#: ../adduser.conf.5:90
 msgid ""
 "specify an inclusive range of UIDs from which UIDs for non-system users can "
 "be dynamically allocated.  Defaults to I<1000> - I<59999>."
@@ -1574,26 +2181,26 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:84
+#: ../adduser.conf.5:90
 #, no-wrap
 msgid "B<GID_POOL>"
 msgstr "B<GID_POOL>"
 
 #. type: Plain text
-#: ../adduser.conf.5:87
+#: ../adduser.conf.5:93
 msgid "See B<UID_POOL>."
 msgstr "Veja B<UID_POOL>."
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:87
+#: ../adduser.conf.5:93
 #, no-wrap
 msgid "B<GROUPHOMES>"
 msgstr "B<GROUPHOMES>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:92
+#: ../adduser.conf.5:98
 msgid ""
 "If this is set to I<yes>, the home directories will be created as I</home/"
 "groupname/user>.  Defaults to I<no>. This option is B<deprecated> and will "
@@ -1605,46 +2212,46 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:92
+#: ../adduser.conf.5:98
 #, no-wrap
 msgid "B<LAST_GID>"
 msgstr "B<LAST_GID>"
 
 # type: TP
 #. type: TQ
-#: ../adduser.conf.5:94
+#: ../adduser.conf.5:100
 #, no-wrap
 msgid "B<LAST_SYSTEM_GID>"
 msgstr "B<LAST_SYSTEM_GID>"
 
 #. type: TQ
-#: ../adduser.conf.5:96
+#: ../adduser.conf.5:102
 #, no-wrap
 msgid "B<LAST_UID>"
 msgstr "B<LAST_UID>"
 
 # type: TP
 #. type: TQ
-#: ../adduser.conf.5:98
+#: ../adduser.conf.5:104
 #, no-wrap
 msgid "B<LAST_SYSTEM_UID>"
 msgstr "B<LAST_SYSTEM_UID>"
 
 #. type: Plain text
-#: ../adduser.conf.5:101
+#: ../adduser.conf.5:107
 msgid "See the B<FIRST_> variants of the option."
 msgstr "Veja as variantes B<FIRST_> da opção."
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:101
+#: ../adduser.conf.5:107
 #, no-wrap
 msgid "B<LETTERHOMES>"
 msgstr "B<LETTERHOMES>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:108
+#: ../adduser.conf.5:114
 msgid ""
 "If this is set to I<yes>, then the home directories created will have an "
 "extra directory inserted which is the first letter of the loginname.  For "
@@ -1658,40 +2265,48 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:108
+#: ../adduser.conf.5:114
 #, no-wrap
 msgid "B<NAME_REGEX>"
 msgstr "B<NAME_REGEX>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:119
+#: ../adduser.conf.5:125
+#, fuzzy
+#| msgid ""
+#| "Non-system user- and groupnames are checked against this regular "
+#| "expression.  If the name doesn't match this regexp, user and group "
+#| "creation in B<adduser>(8) is refused unless B<--allow-bad-names> is set.  "
+#| "With B<--allow-bad-names> set, weaker checks are performed.  Defaults to "
+#| "the most conservative I<^[a-z][-a-z0-9_]*$>.  See B<SYS_NAME_REGXEX> and "
+#| "B<Valid names>, below, for more information."
 msgid ""
 "Non-system user- and groupnames are checked against this regular "
 "expression.  If the name doesn't match this regexp, user and group creation "
-"in B<adduser> is refused unless --allow-bad-names is set.  With --allow-bad-"
-"names set, weaker checks are performed.  Defaults to the most conservative "
-"I<^[a-z][-a-z0-9_]*$>.  See B<SYS_NAME_REGXEX> and B<Valid names>, below, "
-"for more information."
+"in B<adduser>(8) is refused unless B<--allow-bad-names> is set.  With B<--"
+"allow-bad-names> set, weaker checks are performed.  Defaults to the most "
+"conservative I<^[a-z][-a-z0-9_]*$>.  See B<SYS_NAME_REGEX> and B<Valid "
+"names>, below, for more information."
 msgstr ""
 "Os nomes de utilizadores não-sistema e grupos são verificados contra esta "
 "expressão regular. Se o nome não condizer com esta expressão regular, a "
-"criação do utilizador e grupo no B<adduser> é recusada a menos que se defina "
-"--allow-bad-names. Com --allow-bad-names definido, são executadas "
-"verificações mais fracas. A predefinição é a mais conservadora I<^[a-z][-a-"
-"z0-9_]*$>.  Veja B<SYS_NAME_REGXEX> e B<Nomes válidos>, em baixo para mais "
-"informação."
+"criação do utilizador e grupo no B<adduser>(8) é recusada a menos que se "
+"defina B<--allow-bad-names>. Com B<--allow-bad-names> definido, são "
+"executadas verificações mais fracas. A predefinição é a mais conservadora "
+"I<^[a-z][-a-z0-9_]*$>.  Veja B<SYS_NAME_REGXEX> e B<Nomes válidos>, em baixo "
+"para mais informação."
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:119
+#: ../adduser.conf.5:125
 #, no-wrap
 msgid "B<QUOTAUSER>"
 msgstr "B<QUOTAUSER>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:125
+#: ../adduser.conf.5:131
 msgid ""
 "If set to a nonempty value, new users will have quotas copied from that user "
 "using I<edquota -p QUOTAUSER newuser>.  Defaults to I<the empty string>."
@@ -1700,38 +2315,59 @@ msgstr ""
 "copiadas a partir desse utilizador usando I<edquota -p QUOTAUSER novo-"
 "utilizador>. A predefinição é I<a string vazia>."
 
+#. type: TP
+#: ../adduser.conf.5:131
+#, fuzzy, no-wrap
+#| msgid "B<UID_POOL  and  GID_POOL>"
+msgid "B<RESERVE_UID_POOL  and  RESERVE_GID_POOL>"
+msgstr "B<UID_POOL  e  GID_POOL>"
+
+#. type: Plain text
+#: ../adduser.conf.5:137
+#, fuzzy
+#| msgid ""
+#| "specify a file or a directory containing UID and GID pool files.  See UID "
+#| "and GID POOLS in the NOTES section.  Both default to I<empty>."
+msgid ""
+"Controls whether the UID and GID values that are listed in the pool files "
+"are truly reserved.  See UID AND GID POOLS in the NOTES section.  Defaults "
+"to I<yes>."
+msgstr ""
+"especifica um ficheiro ou directório que contém ficheiros pool UID e GID. "
+"Veja UID e GID POOLS na secção NOTAS. Ambos são predefinidos para I<vazio>."
+
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:125
+#: ../adduser.conf.5:137
 #, no-wrap
 msgid "B<SETGID_HOME>"
 msgstr "B<SETGID_HOME>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:135
+#: ../adduser.conf.5:147
 msgid ""
 "If this is set to I<yes>, then home directories for users with their own "
 "group (B<USERGROUPS> = yes)  will have the set-group-ID bit set.  Note that "
 "this feature is B<deprecated> and will be removed in a future version of "
-"B<adduser>.  Please use B<DIR_MODE> instead.  Defaults to I<no>."
+"B<adduser>(8).  Please use B<DIR_MODE> instead.  Defaults to I<no>."
 msgstr ""
 "Se isto estiver definido para I<yes>, então os directórios home para "
 "utilizadores com o seu próprio grupo (B<USERGROUPS> = yes) irão ter o bit "
 "set-group-ID definido. Note que esta funcionalidade está B<descontinuada> e "
-"irá ser removida numa versão futura do B<adduser>. Por favor use B<DIR_MODE> "
-"em vez disto. A predefinição é I<no>."
+"irá ser removida numa versão futura do B<adduser>(8). Por favor use "
+"B<DIR_MODE> em vez disto. A predefinição é I<no>."
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:135
+#: ../adduser.conf.5:147
 #, no-wrap
 msgid "B<SKEL>"
 msgstr "B<SKEL>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:140
+#: ../adduser.conf.5:152
 msgid ""
 "The directory from which skeletal user configuration files will be copied.  "
 "Defaults to I</etc/skel>."
@@ -1741,18 +2377,18 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:140
+#: ../adduser.conf.5:152
 #, no-wrap
 msgid "B<SKEL_IGNORE_REGEX>"
 msgstr "B<SKEL_IGNORE_REGEX>"
 
 #. type: Plain text
-#: ../adduser.conf.5:147
+#: ../adduser.conf.5:159
 msgid ""
 "When populating the newly created home directory of a non-system user, files "
 "in SKEL matching this regex are not copied.  Defaults to to I<(.(dpkg|ucf)-"
 "(old|new|dist)$)>, the regular expression matching files left over from "
-"unmerged config files"
+"unmerged config files."
 msgstr ""
 "Ao povoar um directório home recentemente criado de um utilizador não-"
 "sistema, os ficheiros em SKEL que correspondem a este regex não são "
@@ -1762,75 +2398,79 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:147
+#: ../adduser.conf.5:159
 #, no-wrap
 msgid "B<SYS_DIR_MODE>"
 msgstr "B<SYS_DIR_MODE>"
 
 #. type: Plain text
-#: ../adduser.conf.5:156
+#: ../adduser.conf.5:168
 msgid ""
 "The permissions mode for home directories of system users that are created "
-"by B<adduser>.  Defaults to I<0755>.  Note that changing the default "
+"by B<adduser>(8).  Defaults to I<0755>.  Note that changing the default "
 "permissions for system users may cause some packages to behave unreliably, "
 "if the program relies on the default setting.  See also B<DIR_MODE>."
 msgstr ""
 "O modo de permissões para directórios home de utilizadores de sistema que "
-"são criados pelo B<adduser>. A predefinição é I<0755>. Note que alterar as "
-"permissões predefinidas para utilizadores de sistema pode fazer com que "
+"são criados pelo B<adduser>(8). A predefinição é I<0755>. Note que alterar "
+"as permissões predefinidas para utilizadores de sistema pode fazer com que "
 "alguns pacotes tenham comportamentos não confiáveis, se o programa depender "
 "das definições predefinidas. Veja também B<DIR_MODE>."
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:156
+#: ../adduser.conf.5:168
 #, no-wrap
 msgid "B<SYS_NAME_REGEX>"
 msgstr "B<SYS_NAME_REGEX>"
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:167
+#: ../adduser.conf.5:179
 msgid ""
 "System user- and groupnames are checked against this regular expression.  If "
 "the name doesn't match this regexp, system user and group creation in "
-"adduser is refused unless --allow-bad-names is set.  With --allow-bad-names "
-"set, weaker checks are performed.  Defaults to the most conservative I<^[a-"
-"z_][-a-z0-9_]*$>.  See B<NAME_REGEX>, above, and B<Valid names>, below, for "
-"more information."
+"adduser is refused unless B<--allow-bad-names> is set.  With B<--allow-bad-"
+"names> set, weaker checks are performed.  Defaults to the most conservative "
+"I<^[a-z_][-a-z0-9_]*$>.  See B<NAME_REGEX>, above, and B<Valid names>, "
+"below, for more information."
 msgstr ""
 "Os nomes de utilizadores de sistema e grupos são verificados contra esta "
 "expressão regular. Se o nome não condizer com esta expressão regular, a "
 "criação do utilizador de sistema e grupo no B é recusada a menos que se "
-"defina --allow-bad-names. Com --allow-bad-names definido, são executadas "
-"verificações mais fracas. A predefinição é a mais conservadora I<^[a-z_][-a-"
-"z0-9_]*$>.  Veja B<NAME_REGEX>, em cima, e B<Nomes válidos>, em baixo para "
-"mais informação."
+"defina B<--allow-bad-names>. Com B<--allow-bad-names> definido, são "
+"executadas verificações mais fracas. A predefinição é a mais conservadora "
+"I<^[a-z_][-a-z0-9_]*$>.  Veja B<NAME_REGEX>, em cima, e B<Nomes válidos>, em "
+"baixo para mais informação."
 
 #. type: TP
-#: ../adduser.conf.5:167
+#: ../adduser.conf.5:179
 #, no-wrap
 msgid "B<UID_POOL  and  GID_POOL>"
 msgstr "B<UID_POOL  e  GID_POOL>"
 
 #. type: Plain text
-#: ../adduser.conf.5:172
+#: ../adduser.conf.5:184
+#, fuzzy
+#| msgid ""
+#| "specify a file or a directory containing UID and GID pool files.  See UID "
+#| "and GID POOLS in the NOTES section.  Both default to I<empty>."
 msgid ""
 "specify a file or a directory containing UID and GID pool files.  See UID "
-"and GID POOLS in the NOTES section.  Both default to I<empty>."
+"AND GID POOLS in the NOTES section.  Both default to I<empty>."
 msgstr ""
 "especifica um ficheiro ou directório que contém ficheiros pool UID e GID. "
 "Veja UID e GID POOLS na secção NOTAS. Ambos são predefinidos para I<vazio>."
 
 # type: TP
 #. type: TP
-#: ../adduser.conf.5:172
+#: ../adduser.conf.5:184
 #, no-wrap
 msgid "B<USERGROUPS>"
 msgstr "B<USERGROUPS>"
 
 #. type: Plain text
-#: ../adduser.conf.5:177
+#: ../adduser.conf.5:189
 msgid ""
 "Specify whether each created non-system user will be given their own group "
 "to use.  Defaults to I<yes>."
@@ -1839,13 +2479,13 @@ msgstr ""
 "próprio grupo para usar. A predefinição é I<yes>."
 
 #. type: TP
-#: ../adduser.conf.5:177
+#: ../adduser.conf.5:189
 #, no-wrap
 msgid "B<USERS_GID  and  USERS_GROUP>"
 msgstr "B<USERS_GID  e  USERS_GROUP>"
 
 #. type: Plain text
-#: ../adduser.conf.5:193
+#: ../adduser.conf.5:205
 msgid ""
 "Defines the groupname or GID of the group all newly-created non-system users "
 "are placed into.  If B<USERGROUPS> is I<yes,> the group will be added as a "
@@ -1868,32 +2508,38 @@ msgstr ""
 "definir ambas variáveis mesmo que os valores sejam consistentes."
 
 #. type: SS
-#: ../adduser.conf.5:194
+#: ../adduser.conf.5:206
 #, no-wrap
 msgid "VALID NAMES"
 msgstr "NOMES VÁLIDOS"
 
 #. type: Plain text
-#: ../adduser.conf.5:204
+#: ../adduser.conf.5:216
 msgid ""
-"Historically, B<adduser> and B<addgroup> enforced conformity to IEEE Std "
-"1003.1-2001, which allows only the following characters to appear in group- "
-"and usernames: letters, digits, underscores, periods, at signs (@) and "
-"dashes.  The name may not start with a dash or @.  The \"$\" sign is allowed "
-"at the end of usernames to allow typical Samba machine accounts."
+"Historically, B<adduser>(8) and B<addgroup>(8) enforced conformity to IEEE "
+"Std 1003.1-2001, which allows only the following characters to appear in "
+"group- and usernames: letters, digits, underscores, periods, at signs (@) "
+"and dashes.  The name may not start with a dash or @.  The \"$\" sign is "
+"allowed at the end of usernames to allow typical Samba machine accounts."
 msgstr ""
-"Historicamente, o B<adduser> e o B<addgroup> reforçou conformidade com IEEE "
-"Std 1003.1-2001, o qual permite que apenas os seguintes caracteres apareçam "
-"nos nomes de grupos e utilizadores: letras, dígitos, underscores, pontos, e "
-"sinais (@) e traços. O nome não pode começar com um traço ou @. O sinal \"$"
-"\" é permitido no final dos nomes de utilizador para permitir as contas de "
-"máquina Samba típicas."
+"Historicamente, o B<adduser>(8) e o B<addgroup>(8) reforçou conformidade com "
+"IEEE Std 1003.1-2001, o qual permite que apenas os seguintes caracteres "
+"apareçam nos nomes de grupos e utilizadores: letras, dígitos, underscores, "
+"pontos, e sinais (@) e traços. O nome não pode começar com um traço ou @. O "
+"sinal \"$\" é permitido no final dos nomes de utilizador para permitir as "
+"contas de máquina Samba típicas."
 
 #. type: Plain text
-#: ../adduser.conf.5:210
+#: ../adduser.conf.5:222
+#, fuzzy
+#| msgid ""
+#| "The default settings for B<NAME_REGEX> and B<SYS_NAME_REGEX> allow "
+#| "usernames to contain lowercase letters and numbers, plus dash (-) and "
+#| "underscore (_); the name must begin with a letter (or an underscore for "
+#| "system users)."
 msgid ""
 "The default settings for B<NAME_REGEX> and B<SYS_NAME_REGEX> allow usernames "
-"to contain lowercase letters and numbers, plus dash (-) and underscore (_); "
+"to contain lowercase letters and digits, plus dash (-) and underscore (_); "
 "the name must begin with a letter (or an underscore for system users)."
 msgstr ""
 "As definições predefinidas para B<NAME_REGEX> e B<SYS_NAME_REGEX> permitem "
@@ -1902,20 +2548,20 @@ msgstr ""
 "para utilizadores de sistema)."
 
 #. type: Plain text
-#: ../adduser.conf.5:216
+#: ../adduser.conf.5:228
 msgid ""
 "The least restrictive policy, available by using the B<--allow-all-names> "
-"option, simply makes the same checks as B<useradd>: cannot start with a "
+"option, simply makes the same checks as B<useradd>(8): cannot start with a "
 "dash, plus sign, or tilde; and cannot contain a colon, comma, slash, or "
 "whitespace."
 msgstr ""
 "A política menos restritiva, disponível usando a opção B<--allow-all-names>, "
-"simplesmente faz as mesmas verificações que o B<useradd>: não pode começar "
-"com um traço, sinal mais, ou til, e não pode conter dois-pontos, vírgula, "
-"barra, ou espaço-em-branco."
+"simplesmente faz as mesmas verificações que o B<useradd>(8): não pode "
+"começar com um traço, sinal mais, ou til, e não pode conter dois-pontos, "
+"vírgula, barra, ou espaço-em-branco."
 
 #. type: Plain text
-#: ../adduser.conf.5:219
+#: ../adduser.conf.5:231
 msgid ""
 "This option can be used to create confusing or misleading names; use it with "
 "caution."
@@ -1924,7 +2570,7 @@ msgstr ""
 "cuidado a usa-la."
 
 #. type: Plain text
-#: ../adduser.conf.5:225
+#: ../adduser.conf.5:237
 msgid ""
 "Please note that regardless of the regular expressions used to evaluate the "
 "username, it may be a maximum of 32 bytes; this may be less than 32 visual "
@@ -1935,13 +2581,13 @@ msgstr ""
 "caracteres visuais quando se usa glifos de Unicode no nome de utilizador."
 
 #. type: SS
-#: ../adduser.conf.5:225
+#: ../adduser.conf.5:237
 #, no-wrap
 msgid "UID AND GID POOLS"
 msgstr "As POOLS UID e GID"
 
 #. type: Plain text
-#: ../adduser.conf.5:233
+#: ../adduser.conf.5:245
 msgid ""
 "Some installations desire that a non-system account gets preconfigured "
 "properties when it is generated.  Commonly, the local admin wants to make "
@@ -1955,7 +2601,7 @@ msgstr ""
 "em que exista."
 
 #. type: Plain text
-#: ../adduser.conf.5:241
+#: ../adduser.conf.5:253
 msgid ""
 "To enable this feature, define configuration variables B<UID_POOL> (for user "
 "accounts)  and/or B<GID_POOL> (for groups) in I</etc/adduser.conf> and "
@@ -1970,20 +2616,20 @@ msgstr ""
 "todos os ficheiros nomeados I<*.conf> nesse directório são considerados."
 
 #. type: Plain text
-#: ../adduser.conf.5:250
+#: ../adduser.conf.5:262
 msgid ""
-"The file format is similar to I</etc/passwdE<gt>>: Text lines, fields "
-"separated by a colon.  The values are username/groupname (mandatory), UID/"
-"GID (mandatory), comment field (optional, useful for user IDs only), home "
+"The file format is similar to I</etc/passwd>: Text lines, fields separated "
+"by a colon.  The values are username/groupname (mandatory), UID/GID "
+"(mandatory), comment field (optional, useful for user IDs only), home "
 "directory (ditto), shell (ditto)."
 msgstr ""
-"O formato do ficheiro é semelhante a I</etc/passwdE<gt>>: Linhas de texto, "
-"campos separados por dois-pontos. Os valores são nome-utilizador/nome-grupo "
+"O formato do ficheiro é semelhante a I</etc/passwd>: Linhas de texto, campos "
+"separados por dois-pontos. Os valores são nome-utilizador/nome-grupo "
 "(obrigatório), UID/GID (obrigatório), campo de comentário (opcional, útil "
 "apenas para IDs de utilizador), directório home (idem), shell (idem)."
 
 #. type: Plain text
-#: ../adduser.conf.5:253
+#: ../adduser.conf.5:265
 msgid ""
 "It is possible to use the same file/directory for B<UID_POOL> and "
 "B<GID_POOL>."
@@ -1991,22 +2637,34 @@ msgstr ""
 "É possível usar o mesmo ficheiro/directório para B<UID_POOL> e B<GID_POOL>."
 
 #. type: Plain text
-#: ../adduser.conf.5:261
+#: ../adduser.conf.5:273
 msgid ""
-"If an account / group is created, B<adduser> searches in all UID/GID pool "
+"If an account / group is created, B<adduser>(8) searches in all UID/GID pool "
 "files for a line matching the name of the newly created account and uses the "
 "data found there to initialize the new account instead of using the "
 "defaults.  Settings may be overridden from the command line."
 msgstr ""
-"Se uma conta / grupo for criado, o B<adduser> procura em todos os ficheiros "
-"pool UID/GID por uma linha que corresponda ao nome da conta nova criada e "
-"usa os dados encontrados lá para inicializar a nova conta em vez de usar as "
-"predefinições. As definições pode ser sobrepostas a partir da linha de "
-"comandos."
+"Se uma conta / grupo for criado, o B<adduser>(8) procura em todos os "
+"ficheiros pool UID/GID por uma linha que corresponda ao nome da conta nova "
+"criada e usa os dados encontrados lá para inicializar a nova conta em vez de "
+"usar as predefinições. As definições pode ser sobrepostas a partir da linha "
+"de comandos."
+
+#. type: Plain text
+#: ../adduser.conf.5:283
+msgid ""
+"In the default configuration, UID and GID values listed in the pool will be "
+"reserved and thus not be used by the normal UID and GID selection "
+"processes.  This is usually what you'd want.  With the B<RESERVE_UID_POOL> "
+"and B<RESERVE_GID_POOL> configuration options, you can switch this behavior "
+"off if you want pooled UIDs and GIDs used by normal accounts.  This might "
+"cause conflicts and cause your pool UIDs and GIDs to be used by accounts "
+"that are not in the pool."
+msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../adduser.conf.5:269
+#: ../adduser.conf.5:291
 msgid ""
 "B<deluser.conf>(5), B<addgroup>(8), B<adduser>(8), B<delgroup>(8), "
 "B<deluser>(8)"
@@ -2029,74 +2687,74 @@ msgstr "deluser, delgroup - remove um utilizador ou grupo do sistema"
 
 # type: TH
 #. type: SY
-#: ../deluser.8:17 ../deluser.8:29 ../deluser.8:42 ../deluser.8:59
-#: ../deluser.8:67 ../deluser.8:70
+#: ../deluser.8:17 ../deluser.8:33 ../deluser.8:50 ../deluser.8:76
+#: ../deluser.8:88 ../deluser.8:91
 #, no-wrap
 msgid "deluser"
 msgstr "deluser"
 
 # type: TP
 #. type: OP
-#: ../deluser.8:18 ../deluser.8:31
+#: ../deluser.8:18 ../deluser.8:35
 #, no-wrap
 msgid "--backup"
 msgstr "--backup"
 
 # type: TP
 #. type: OP
-#: ../deluser.8:19 ../deluser.8:32
+#: ../deluser.8:19 ../deluser.8:36
 #, no-wrap
 msgid "--backup-suffix"
 msgstr "--backup-suffix"
 
 #. type: OP
-#: ../deluser.8:19 ../deluser.8:32
+#: ../deluser.8:19 ../deluser.8:36
 #, no-wrap
 msgid "str"
 msgstr "str"
 
 # type: TP
 #. type: OP
-#: ../deluser.8:20 ../deluser.8:33
+#: ../deluser.8:20 ../deluser.8:37
 #, no-wrap
 msgid "--backup-to"
 msgstr "--backup-to"
 
 # type: TP
 #. type: OP
-#: ../deluser.8:23 ../deluser.8:36
+#: ../deluser.8:23 ../deluser.8:40
 #, no-wrap
 msgid "--remove-all-files"
 msgstr "--remove-all-files"
 
 # type: TP
 #. type: OP
-#: ../deluser.8:24 ../deluser.8:37
+#: ../deluser.8:24 ../deluser.8:41
 #, no-wrap
 msgid "--remove-home"
 msgstr "--remove-home"
 
 # type: TP
 #. type: OP
-#: ../deluser.8:30 ../deluser.8:51
+#: ../deluser.8:34 ../deluser.8:64
 #, no-wrap
 msgid "--system"
 msgstr "--system"
 
 #. type: OP
-#: ../deluser.8:46 ../deluser.8:54
+#: ../deluser.8:54 ../deluser.8:67
 #, no-wrap
 msgid "--only-if-empty"
 msgstr "--only-if-empty"
 
 #. type: SY
-#: ../deluser.8:50
+#: ../deluser.8:63
 #, no-wrap
 msgid "delgroup"
 msgstr "delgroup"
 
 #. type: Plain text
-#: ../deluser.8:78
+#: ../deluser.8:99
 msgid ""
 "B<deluser> and B<delgroup> remove users and groups from the system according "
 "to command line options and configuration information in I</etc/deluser."
@@ -2108,7 +2766,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:85
+#: ../deluser.8:106
 msgid ""
 "They are friendlier front ends to the B<userdel> and B<groupdel> programs, "
 "removing the home directory as option or even all files on the system owned "
@@ -2120,20 +2778,20 @@ msgstr ""
 "personalizado, e outras funcionalidades."
 
 #. type: Plain text
-#: ../deluser.8:90
+#: ../deluser.8:111
 msgid "B<deluser> and B<delgroup> can be run in one of three modes:"
 msgstr "B<deluser> e B<delgroup> podem ser executados em um de três modos:"
 
 # type: SS
 #. type: SS
-#: ../deluser.8:91
+#: ../deluser.8:112
 #, no-wrap
 msgid "Remove a user"
 msgstr "Remove um utilizador"
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:95
+#: ../deluser.8:116
 msgid ""
 "If called with one non-option argument and without the B<--group> option, "
 "B<deluser> will remove a non-system user."
@@ -2143,7 +2801,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:103
+#: ../deluser.8:124
 msgid ""
 "By default, B<deluser> will remove the user without removing the home "
 "directory, the mail spool or any other files on the system owned by the "
@@ -2157,7 +2815,7 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:111
+#: ../deluser.8:132
 msgid ""
 "The B<--remove-all-files> option removes all files on the system owned by "
 "the user.  Note that if you activate both options B<--remove-home> will have "
@@ -2172,35 +2830,40 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:116
+#: ../deluser.8:137
 msgid ""
 "If you want to backup all files before deleting them you can activate the "
 "B<--backup> option which will create a file I<username.tar(.gz|.bz2)> in the "
-"directory specified by the B<--backup-to> option"
+"directory specified by the B<--backup-to> option."
 msgstr ""
 "Se deseja salvaguardar todos os ficheiros antes de os apagar, pode activar a "
 "opção B<--backup> a qual irá criar um ficheiro I<nome-de-utilizador.tar(.gz|."
 "bz2)> no directório especificado pela opção B<--backup-to>."
 
 #. type: Plain text
-#: ../deluser.8:122
+#: ../deluser.8:143
+#, fuzzy
+#| msgid ""
+#| "By default, the backup archive is compressed with B<gzip>(1).  To change "
+#| "this, the B<--backup-suffix> option can be set to any suffix supported by "
+#| "B<tar --auto-compress> (e.g. .gz, .bz2, .xz)."
 msgid ""
-"By default, the backup archive is compressed with gzip.  To change this, the "
-"B<--backup-suffix> option can be set to any suffix supported by B<tar --auto-"
-"compress> (e.g. .gz, .bz2, .xz)."
+"By default, the backup archive is compressed with B<gzip>(1).  To change "
+"this, the B<--backup-suffix> option can be set to any suffix supported by "
+"B<tar --auto-compress> (e.g., .gz, .bz2, .xz)."
 msgstr ""
-"Por predefinição, o arquivo de salvaguarda é comprimido com gzip. Para mudar "
-"isto, a opção B<--backup-suffix> pode ser definida a qualquer sufixo "
+"Por predefinição, o arquivo de salvaguarda é comprimido com B<gzip>(1). Para "
+"mudar isto, a opção B<--backup-suffix> pode ser definida a qualquer sufixo "
 "suportado pelo B<tar --auto-compress> (ex. .gz, .bz2, .xz)."
 
 #. type: Plain text
-#: ../deluser.8:124
+#: ../deluser.8:145
 msgid "B<deluser> will refuse to remove the root account."
 msgstr "O B<deluser> irá recusar remover a conta do root."
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:135
+#: ../deluser.8:156
 msgid ""
 "If the B<--system> option is given on the command line, the delete operation "
 "is actually executed only if the user is a system user.  This avoids "
@@ -2218,13 +2881,13 @@ msgstr ""
 
 # type: SS
 #. type: SS
-#: ../deluser.8:136
+#: ../deluser.8:157
 #, no-wrap
 msgid "Remove a group"
 msgstr "Remover um grupo"
 
 #. type: Plain text
-#: ../deluser.8:143
+#: ../deluser.8:164
 msgid ""
 "If B<deluser> is called with the B<--group> option, or B<delgroup> is "
 "called, a group will be removed.  The primary group of an existing user "
@@ -2237,7 +2900,7 @@ msgstr ""
 "removido se ainda tiver algum membro."
 
 #. type: Plain text
-#: ../deluser.8:146
+#: ../deluser.8:167
 msgid ""
 "The B<--system> option adds the same functionality as for users, "
 "respectively."
@@ -2247,14 +2910,14 @@ msgstr ""
 
 # type: SS
 #. type: SS
-#: ../deluser.8:147
+#: ../deluser.8:168
 #, no-wrap
 msgid "Remove a user from a specific group"
 msgstr "Remover um utilizador de um grupo especifico"
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:150
+#: ../deluser.8:171
 msgid ""
 "If called with two non-option arguments, B<deluser> will remove a user from "
 "a specific group."
@@ -2263,7 +2926,7 @@ msgstr ""
 "utilizador de um grupo especifico."
 
 #. type: Plain text
-#: ../deluser.8:155
+#: ../deluser.8:176
 msgid ""
 "Different modes of B<deluser> allow different options.  If no valid modes "
 "are listed for a option, it is accepted in all modes."
@@ -2273,17 +2936,22 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../deluser.8:159
+#: ../deluser.8:180
 #, no-wrap
 msgid "B<--backup>"
 msgstr "B<--backup>"
 
 #. type: Plain text
-#: ../deluser.8:164
+#: ../deluser.8:185
+#, fuzzy
+#| msgid ""
+#| "Backup all files contained in the userhome and the mailspool file to a "
+#| "file named I<username.tar.bz2> or I<username.tar.gz>.  Valid Modes: "
+#| "B<deluser>, B<deluser --system>,"
 msgid ""
 "Backup all files contained in the userhome and the mailspool file to a file "
-"named I<username.tar.bz2> or I<username.tar.gz>.  Valid Modes: B<deluser>, "
-"B<deluser --system>,"
+"named I<username.tar.bz2> or I<username.tar.gz>.  Valid modes: B<deluser>, "
+"B<deluser --system>."
 msgstr ""
 "Faz backup de todos os ficheiros contidos na home do utilizador e o ficheiro "
 "mailspool para um ficheiro chamado I<username.tar.bz2> ou I<username.tar."
@@ -2291,17 +2959,22 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../deluser.8:164
+#: ../deluser.8:185
 #, no-wrap
 msgid "B<--backup-suffix >str"
 msgstr "B<--backup-suffix >str"
 
 #. type: Plain text
-#: ../deluser.8:170
+#: ../deluser.8:191
+#, fuzzy
+#| msgid ""
+#| "Select compression algorithm for a home directory backup.  Can be set to "
+#| "any suffix recognized by B<tar --auto-compress>.  Defaults to I<.gz>.  "
+#| "Valid Modes: B<deluser>, B<deluser --system>,"
 msgid ""
 "Select compression algorithm for a home directory backup.  Can be set to any "
 "suffix recognized by B<tar --auto-compress>.  Defaults to I<.gz>.  Valid "
-"Modes: B<deluser>, B<deluser --system>,"
+"modes: B<deluser>, B<deluser --system>."
 msgstr ""
 "Seleciona o algoritmo de compressão para um backup de directório home. Pode "
 "ser definido para qualquer sufixo reconhecido por B<tar --auto-compress>.  A "
@@ -2309,17 +2982,22 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../deluser.8:170
+#: ../deluser.8:191
 #, no-wrap
 msgid "B<--backup-to >I<dir>"
 msgstr "B<--backup-to >I<dir>"
 
 #. type: Plain text
-#: ../deluser.8:176
+#: ../deluser.8:197
+#, fuzzy
+#| msgid ""
+#| "Place the backup files not in the current directory but in I<dir>.  This "
+#| "implicitly sets B<--backup> also.  (defaulting to the current working "
+#| "directory).  Valid Modes: B<deluser>, B<deluser --system>,"
 msgid ""
 "Place the backup files not in the current directory but in I<dir>.  This "
-"implicitly sets B<--backup> also.  (defaulting to the current working "
-"directory).  Valid Modes: B<deluser>, B<deluser --system>,"
+"implicitly sets B<--backup> also.  Defaults to the current working "
+"directory.  Valid modes: B<deluser>, B<deluser --system>."
 msgstr ""
 "Coloca os ficheiros de backup não no directório actual mas em I<dir>. Isto "
 "implicitamente define também B<--backup>. (predefinido para o directório de "
@@ -2327,14 +3005,14 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../deluser.8:176
+#: ../deluser.8:197
 #, no-wrap
 msgid "B<--conf >I<file>"
 msgstr "B<--conf >I<ficheiro>"
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:181
+#: ../deluser.8:202
 msgid ""
 "Use I<file> instead of the default files I</etc/deluser.conf> and I</etc/"
 "adduser.conf>.  Multiple --conf options may be given."
@@ -2344,43 +3022,57 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:190
+#: ../deluser.8:212
+#, fuzzy
+#| msgid ""
+#| "Remove a group.  This is the default action if the program is invoked as "
+#| "I<delgroup>.  Valid Mode: B<deluser>."
 msgid ""
 "Remove a group.  This is the default action if the program is invoked as "
-"I<delgroup>.  Valid Mode: B<deluser>."
+"I<delgroup>.  Valid mode: B<deluser>."
 msgstr ""
 "Remove um grupo. Esta é a acção predefinida se o programa for invocado como "
 "I<delgroup>.  Modo Válido: B<deluser>."
 
 #. type: TP
-#: ../deluser.8:193
+#: ../deluser.8:215
 #, no-wrap
 msgid "B<--only-if-empty>"
 msgstr "B<--only-if-empty>"
 
 #. type: Plain text
-#: ../deluser.8:197
+#: ../deluser.8:219
+#, fuzzy
+#| msgid ""
+#| "Only remove if no members are left.  Valid Modes: B<deluser --group>, "
+#| "B<delgroup>,"
 msgid ""
-"Only remove if no members are left.  Valid Modes: B<deluser --group>, "
-"B<delgroup>,"
+"Only remove if no members are left.  Valid modes: B<deluser --group>, "
+"B<delgroup>."
 msgstr ""
 "Apenas remove se já não existir nenhum membro. Modos Válidos: B<deluser --"
 "group>, B<delgroup>,"
 
 # type: TP
 #. type: TP
-#: ../deluser.8:200
+#: ../deluser.8:223
 #, no-wrap
 msgid "B<--remove-all-files>"
 msgstr "B<--remove-all-files>"
 
 #. type: Plain text
-#: ../deluser.8:207
+#: ../deluser.8:230
+#, fuzzy
+#| msgid ""
+#| "Remove all files from the system owned by this user.  Note: --remove-home "
+#| "does not have an effect any more.  If B<--backup> is specified, the files "
+#| "are deleted after having performed the backup.  Valid Modes: B<deluser>, "
+#| "B<deluser --system>,"
 msgid ""
 "Remove all files from the system owned by this user.  Note: --remove-home "
 "does not have an effect any more.  If B<--backup> is specified, the files "
-"are deleted after having performed the backup.  Valid Modes: B<deluser>, "
-"B<deluser --system>,"
+"are deleted after having performed the backup.  Valid modes: B<deluser>, "
+"B<deluser --system>."
 msgstr ""
 "Remove todos os ficheiros do sistema cujo dono seja este utilizador. Nota: --"
 "remove-home não faz mais efeito. Se B<--backup> for especificado, os "
@@ -2389,17 +3081,22 @@ msgstr ""
 
 # type: TP
 #. type: TP
-#: ../deluser.8:207
+#: ../deluser.8:230
 #, no-wrap
 msgid "B<--remove-home>"
 msgstr "B<--remove-home>"
 
 #. type: Plain text
-#: ../deluser.8:213
+#: ../deluser.8:236
+#, fuzzy
+#| msgid ""
+#| "Remove the home directory of the user and its mailspool.  If B<--backup> "
+#| "is specified, the files are deleted after having performed the backup.  "
+#| "Valid Modes: B<deluser>, B<deluser --system>,"
 msgid ""
 "Remove the home directory of the user and its mailspool.  If B<--backup> is "
 "specified, the files are deleted after having performed the backup.  Valid "
-"Modes: B<deluser>, B<deluser --system>,"
+"modes: B<deluser>, B<deluser --system>."
 msgstr ""
 "Remove o directório home do utilizador e o seu mailspool. Se B<--backup> for "
 "especificado, os ficheiros são apagados após a execução do backup. Modos "
@@ -2407,160 +3104,108 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:218
+#: ../deluser.8:241
+#, fuzzy
+#| msgid ""
+#| "Only delete if user/group is a system user/group.  If the user does not "
+#| "exist, no error value is returned.  Valid Modes: B<deluser>, B<deluser --"
+#| "system>,"
 msgid ""
 "Only delete if user/group is a system user/group.  If the user does not "
-"exist, no error value is returned.  Valid Modes: B<deluser>, B<deluser --"
-"system>,"
+"exist, no error value is returned.  Valid modes: B<deluser>, B<deluser --"
+"system>."
 msgstr ""
 "Apenas apaga se utilizador/grupo for um utilizador/grupo de sistema. Se o "
 "utilizador não existir, nenhum valor de erro é devolvido. Modos Válidos: "
 "B<deluser>, B<deluser --system>,"
 
-# type: SH
+# type: TP
+#. type: TP
+#: ../deluser.8:245
+#, no-wrap
+msgid "B<--stdoutmsglevel>I< prio >"
+msgstr "B<--stdoutmsglevel>I< prio >"
+
+#. type: TQ
+#: ../deluser.8:247
+#, no-wrap
+msgid "B<--stderrmsglevel>I< prio >"
+msgstr "B<--stderrmsglevel>I< prio >"
+
+# type: TP
+#. type: TQ
+#: ../deluser.8:249
+#, no-wrap
+msgid "B<--logmsglevel>I< prio >"
+msgstr "B<--logmsglevel>I< prio >"
+
+#. type: Plain text
+#: ../deluser.8:261
+msgid ""
+"Minimum priority for messages logged to syslog/journal and the console, "
+"respectively.  Values are I<trace>, I<debug>, I<info>, I<warn>, I<err>, and "
+"I<fatal>.  Messages with the priority set here or higher get printed to the "
+"respective medium.  Messages printed to stderr are not repeated on stdout.  "
+"That allows the local admin to control B<adduser>'s chattiness on the "
+"console and in the log independently, keeping probably confusing information "
+"to itself while still leaving helpful information in the log."
+msgstr ""
+"Prioridade mínima para mensagens registadas no syslog/journal e a consola, "
+"respetivamente. Valores são I<trace>, I<debug>, I<info>, I<warn>, I<err>, e "
+"I<fatal>. As mensagens com a prioridade definida aqui ou superior são "
+"escritas na média respectiva. As mensagens escritas no stderr não são "
+"repetidas no stdout. Isso permite ao administrador local controla a "
+"tagarelice do B<adduser> na consola e no registo independentemente, deixando "
+"a informação provavelmente confusa para si enquanto deixa informação útil no "
+"registo."
+
 #. type: SH
-#: ../deluser.8:224
+#: ../deluser.8:265
 #, no-wrap
-msgid "RETURN VALUE"
-msgstr "VALORES DE RETORNO"
-
-# type: Plain text
-#. type: Plain text
-#: ../deluser.8:228
-msgid "Success: The action was successfully executed."
-msgstr "Sucesso: A acção foi executada com sucesso."
-
-# type: Plain text
-#. type: Plain text
-#: ../deluser.8:232
-msgid "The user to delete was not a system account.  No eaction was performed."
+msgid "LOGGING↲"
 msgstr ""
-"O utilizador a apagar não era uma conta de sistema. Nenhuma acção foi "
-"executada."
 
-# type: TP
-#. type: TP
-#: ../deluser.8:232
-#, no-wrap
-msgid "B<2>"
-msgstr "B<2>"
-
-# type: Plain text
 #. type: Plain text
-#: ../deluser.8:236
-msgid "There is no such user.  No action was performed."
-msgstr "Não existe tal utilizador. Nenhuma acção foi executada."
-
-# type: TP
-#. type: TP
-#: ../deluser.8:236
-#, no-wrap
-msgid "B<3>"
-msgstr "B<3>"
-
-# type: Plain text
-#. type: Plain text
-#: ../deluser.8:240
-msgid "There is no such group.  No action was performed."
-msgstr "Não existe tal grupo. Nenhuma acção foi executada."
-
-# type: TP
-#. type: TP
-#: ../deluser.8:240
-#, no-wrap
-msgid "B<4>"
-msgstr "B<4>"
-
-# type: Plain text
-#. type: Plain text
-#: ../deluser.8:244
-msgid "Internal error.  No action was performed."
-msgstr "Erro interno. Nenhuma acção foi executada."
-
-# type: TP
-#. type: TP
-#: ../deluser.8:244
-#, no-wrap
-msgid "B<5>"
-msgstr "B<5>"
-
-# type: Plain text
-#. type: Plain text
-#: ../deluser.8:248
-msgid "The group to delete is not empty.  No action was performed."
-msgstr "O grupo para apagar não está vazio. Nenhuma acção foi executada."
-
-# type: TP
-#. type: TP
-#: ../deluser.8:248
-#, no-wrap
-msgid "B<6>"
-msgstr "B<6>"
-
-# type: Plain text
-#. type: Plain text
-#: ../deluser.8:252
+#: ../deluser.8:269
 msgid ""
-"The user does not belong to the specified group.  No action was performed."
+"B<deluser> uses extensive and configurable logging to tailor its verbosity "
+"to the needs and wishes of the system administrator."
 msgstr ""
-"O utilizador não pertence ao grupo especificado. Nenhuma acção foi executada."
 
-# type: TP
-#. type: TP
-#: ../deluser.8:252
-#, no-wrap
-msgid "B<7>"
-msgstr "B<7>"
-
-# type: Plain text
 #. type: Plain text
-#: ../deluser.8:256
-msgid ""
-"You cannot remove a user from its primary group.  No action was performed."
+#: ../deluser.8:271
+msgid "This works similar to B<adduser>. See adduser(8) for all the details."
 msgstr ""
-"Não pode remover um utilizador do seu grupo principal. Nenhuma acção foi "
-"executada."
-
-#. type: TP
-#: ../deluser.8:256
-#, no-wrap
-msgid "B<8>"
-msgstr "B<8>"
 
 #. type: Plain text
-#: ../deluser.8:261
-msgid ""
-"The suggested package 'perl' is not installed.  This package is required to "
-"perform the requested actions.  No action was performed."
+#: ../deluser.8:275
+msgid "The exit values documented in adduser(8) also apply for B<deluser>."
 msgstr ""
-"O pacote sugerido 'perl' não está instalado. Este pacote é necessário para "
-"executar as acções requisitadas. Nenhuma acção foi executada."
-
-#. type: TP
-#: ../deluser.8:261
-#, no-wrap
-msgid "B<9>"
-msgstr "B<9>"
-
-# type: Plain text
-#. type: Plain text
-#: ../deluser.8:264
-msgid "The root account cannot be deleted. No action was performed."
-msgstr "A conta do root não pode ser apagada. Nenhuma acção foi executada."
+"Os valores de saída documentados em adduser(8) também se aplicam ao "
+"B<deluser>."
 
 #. type: Plain text
-#: ../deluser.8:278
+#: ../deluser.8:288
+#, fuzzy
+#| msgid ""
+#| "B<deluser> needs root privileges and offers, via the B<--conf> command "
+#| "line option to use different configuration files.  Do not use B<sudo>(8) "
+#| "or similar tools to give partial privileges to B<deluser> with restricted "
+#| "command line parameters.  This is easy to circumvent and might allow "
+#| "users to create arbitrary accounts.  If you want this, consider writing "
+#| "your own wrapper script and giving privileges to execute that script."
 msgid ""
 "B<deluser> needs root privileges and offers, via the B<--conf> command line "
-"option to use different configuration files.  Do not use B<sudo> or similar "
-"tools to give partial privileges to B<deluser> with restricted command line "
-"parameters.  This is easy to circumvent and might allow users to create "
-"arbitrary accounts.  If you want this, consider writing your own wrapper "
-"script and giving privileges to execute that script."
+"option to use different configuration files.  Do not use B<sudo>(8) or "
+"similar tools to give partial privileges to B<deluser> with restricted "
+"command line parameters.  This is easy to circumvent and might allow users "
+"to obtain privileges they are not supposed to have.  If you want this, "
+"consider writing your own wrapper script and giving privileges to execute "
+"that script."
 msgstr ""
 "O B<deluser> precisa de privilégios de root e oferece via opção de linha de "
 "comandos B<--conf> a utilização de diferentes ficheiros de configuração. Não "
-"use o B<sudo> ou ferramentas semelhantes para dar privilégios parciais ao "
+"use o B<sudo>(8) ou ferramentas semelhantes para dar privilégios parciais ao "
 "B<deluser> com parâmetros de linha de comandos restritos. Isto é fácil de "
 "contornar e pode permitir que utilizadores criem contas arbitrárias. Se você "
 "deseja isto, consider escrever o seu próprio script envelope e dê "
@@ -2568,28 +3213,28 @@ msgstr ""
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:282
+#: ../deluser.8:292
 msgid ""
-"I</etc/deluser.conf> Default configuration file for B<deluser> and "
-"B<delgroup>"
+"I</etc/deluser.conf> Default configuration file for B<deluser>(8) and "
+"B<delgroup>(8)"
 msgstr ""
-"I</etc/deluser.conf> Ficheiro de configuração predefinido para B<deluser> e "
-"B<delgroup>"
+"I</etc/deluser.conf> Ficheiro de configuração predefinido para B<deluser>(8) "
+"e B<delgroup>(8)"
 
 #. type: TP
-#: ../deluser.8:282
+#: ../deluser.8:292
 #, no-wrap
 msgid "I</usr/local/sbin/deluser.local>"
 msgstr "I</usr/local/sbin/deluser.local>"
 
 #. type: Plain text
-#: ../deluser.8:286
+#: ../deluser.8:296
 msgid "Optional custom add-ons, see B<deluser.local>(8)"
 msgstr "Adições personalizadas opcionais, veja B<deluser.local>(8)"
 
 # type: Plain text
 #. type: Plain text
-#: ../deluser.8:293
+#: ../deluser.8:303
 msgid ""
 "B<adduser>(8), B<deluser.conf>(5), B<deluser.local.conf>(8), B<groupdel>(8), "
 "B<userdel>(8)"
@@ -2631,14 +3276,19 @@ msgstr ""
 
 #. type: Plain text
 #: ../deluser.conf.5:31
+#, fuzzy
+#| msgid ""
+#| "B<deluser>(8) and B<delgroup>(8)  also read I</etc/adduser.conf>, see "
+#| "B<adduser.conf>(5); settings in I<deluser.conf> may overwrite settings "
+#| "made in I<adduser.conf>."
 msgid ""
-"B<deluser> and B<delgroup> also read I</etc/adduser.conf>, see B<adduser."
-"conf;> settings in I<deluser.conf> may overwrite settings made in I<adduser."
-"conf>."
+"B<deluser>(8) and B<delgroup>(8)  also read I</etc/adduser.conf>(5), see "
+"B<adduser.conf>(5); settings in I<deluser.conf> may overwrite settings made "
+"in I<adduser.conf>."
 msgstr ""
-"B<deluser>e B<delgroup> também leem I</etc/adduser.conf,> veja B<adduser."
-"conf;> as definições em I<deluser.conf> podem sobrepor as definições feitas "
-"em I<adduser.conf.>"
+"B<deluser>(8) e B<delgroup>(8) também leem I</etc/adduser.conf,> veja "
+"B<adduser.conf>(5); as definições em I<deluser.conf> podem sobrepor as "
+"definições feitas em I<adduser.conf.>"
 
 # type: TP
 #. type: TP
@@ -2731,7 +3381,7 @@ msgid ""
 "A list of regular expressions, space separated.  All files to be deleted in "
 "course of deleting the home directory or user-owned files elsewhere are "
 "checked against each of these regular expressions.  If a match is detected, "
-"the file is not deleted.  Default to a list of system directories, leaving "
+"the file is not deleted.  Defaults to a list of system directories, leaving "
 "only I</home>.  Therefore only files below I</home> belonging to that "
 "specific user are going to be deleted."
 msgstr ""
@@ -2807,6 +3457,147 @@ msgstr "I</etc/deluser.conf>"
 #: ../deluser.conf.5:87
 msgid "B<adduser.conf>(5), B<delgroup>(8), B<deluser>(8)"
 msgstr "B<adduser.conf>(5), B<delgroup>(8), B<deluser>(8)"
+
+#~ msgid ""
+#~ "Minimum priority for messages logged to syslog/journal and the console, "
+#~ "respectively.  Values are I<trace>, I<debug>, I<info>, I<warn>, I<err>, "
+#~ "and I<fatal>.  Messages with the priority set here or higher get printed "
+#~ "to the respective medium.  Messages printed to stderr are not repeated on "
+#~ "stdout.  That allows the local admin to control B<adduser>s chattiness on "
+#~ "the console and in the log independently, keeping probably confusing "
+#~ "information to itself while still leaving helpful information in the "
+#~ "log.  Defaults to I<info> for STDOUTMSGLEVEL and LOGMSGLEVEL and I<warn> "
+#~ "for STDERRMSGLEVEL."
+#~ msgstr ""
+#~ "Prioridade mínima para mensagens registadas no syslog/journal e a "
+#~ "consola, respetivamente. Valores são I<trace>, I<debug>, I<info>, "
+#~ "I<warn>, I<err>, e I<fatal>. As mensagens com a prioridade definida aqui "
+#~ "ou superior são escritas na média respectiva. As mensagens escritas no "
+#~ "stderr não são repetidas no stdout. Isso permite ao administrador local "
+#~ "controla a tagarelice do B<adduser> na consola e no registo "
+#~ "independentemente, deixando a informação provavelmente confusa para si "
+#~ "enquanto deixa informação útil no registo. Predefinido para I<info> para "
+#~ "STDOUTMSGLEVEL e LOGMSGLEVEL e I<warn> para STDERRMSGLEVEL."
+
+#~ msgid "Activate debugging code."
+#~ msgstr "Activa código de depuração."
+
+# type: Plain text
+#~ msgid "Suppress informational messages, only show warnings and errors."
+#~ msgstr "Suprime mensagens informativas, apenas mostra avisos e erros."
+
+#~ msgid "Be more verbose."
+#~ msgstr "Fica mais detalhado."
+
+# type: TP
+#, no-wrap
+#~ msgid "B<1>"
+#~ msgstr "B<1>"
+
+#~ msgid ""
+#~ "Creating the non-system user or group failed because it was already "
+#~ "present.  The username or groupname was rejected because of a mismatch "
+#~ "with the configured regular expressions, see B<adduser.conf>(5).  "
+#~ "B<adduser> has been aborted by a signal."
+#~ msgstr ""
+#~ "A criação do utilizador ou grupo não-sistema falhou porque já estava "
+#~ "presente. O nome de utilizador ou nome de grupo foi rejeitado devido a um "
+#~ "desencontro com as expressões regulares configuradas, veja B<adduser."
+#~ "conf>(5).  O B<adduser> foi abortado por um sinal."
+
+# type: SH
+#, no-wrap
+#~ msgid "RETURN VALUE"
+#~ msgstr "VALORES DE RETORNO"
+
+# type: Plain text
+#~ msgid "Success: The action was successfully executed."
+#~ msgstr "Sucesso: A acção foi executada com sucesso."
+
+# type: Plain text
+#~ msgid ""
+#~ "The user to delete was not a system account.  No action was performed."
+#~ msgstr ""
+#~ "O utilizador a apagar não era uma conta de sistema. Nenhuma acção foi "
+#~ "executada."
+
+# type: TP
+#, no-wrap
+#~ msgid "B<2>"
+#~ msgstr "B<2>"
+
+# type: Plain text
+#~ msgid "There is no such user.  No action was performed."
+#~ msgstr "Não existe tal utilizador. Nenhuma acção foi executada."
+
+# type: TP
+#, no-wrap
+#~ msgid "B<3>"
+#~ msgstr "B<3>"
+
+# type: Plain text
+#~ msgid "There is no such group.  No action was performed."
+#~ msgstr "Não existe tal grupo. Nenhuma acção foi executada."
+
+# type: TP
+#, no-wrap
+#~ msgid "B<4>"
+#~ msgstr "B<4>"
+
+# type: Plain text
+#~ msgid "Internal error.  No action was performed."
+#~ msgstr "Erro interno. Nenhuma acção foi executada."
+
+# type: TP
+#, no-wrap
+#~ msgid "B<5>"
+#~ msgstr "B<5>"
+
+# type: Plain text
+#~ msgid "The group to delete is not empty.  No action was performed."
+#~ msgstr "O grupo para apagar não está vazio. Nenhuma acção foi executada."
+
+# type: TP
+#, no-wrap
+#~ msgid "B<6>"
+#~ msgstr "B<6>"
+
+# type: Plain text
+#~ msgid ""
+#~ "The user does not belong to the specified group.  No action was performed."
+#~ msgstr ""
+#~ "O utilizador não pertence ao grupo especificado. Nenhuma acção foi "
+#~ "executada."
+
+# type: TP
+#, no-wrap
+#~ msgid "B<7>"
+#~ msgstr "B<7>"
+
+#, no-wrap
+#~ msgid "B<8>"
+#~ msgstr "B<8>"
+
+#~ msgid ""
+#~ "The suggested package 'perl' is not installed.  This package is required "
+#~ "to perform the requested actions.  No action was performed."
+#~ msgstr ""
+#~ "O pacote sugerido 'perl' não está instalado. Este pacote é necessário "
+#~ "para executar as acções requisitadas. Nenhuma acção foi executada."
+
+#, no-wrap
+#~ msgid "B<9>"
+#~ msgstr "B<9>"
+
+# type: Plain text
+#~ msgid "The root account cannot be deleted. No action was performed."
+#~ msgstr "A conta do root não pode ser apagada. Nenhuma acção foi executada."
+
+# type: TP
+#, no-wrap
+#~| msgid "B<--conf FILE>"
+#~ msgid "B<--conf>I< FILE >"
+#~ msgstr "B<--conf>I< FICHEIRO >"
 
 # type: TH
 #, no-wrap

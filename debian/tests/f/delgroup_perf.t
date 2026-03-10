@@ -85,9 +85,20 @@ close($fp); close($fs); close($fg);
 
 #     ### ironically, our own tools are far too slow for this :)
 #     #
-#     # system('/usr/sbin/adduser','--quiet','--comment="x"','--no-create-home', '--disabled-password', $username);
-#     # system('/usr/sbin/addgroup', '--quiet', $groupname);
-#     # system('/usr/sbin/adduser', '--quiet', "dgpu_$_", $groupname) for (1..$_);
+#     # system('/usr/sbin/adduser',
+#     #        '--stdoutmsglevel=error', '--stderrmsglevel=error',
+#     #        '--comment="x"',
+#     #        '--no-create-home',
+#     #        '--disabled-password',
+#     #        $username);
+#     # system('/usr/sbin/addgroup',
+#     #        '--stdoutmsglevel=error', '--stderrmsglevel=error',
+#     #        $groupname);
+#     # system('/usr/sbin/adduser',
+#     #        '--stdoutmsglevel=error', '--stderrmsglevel=error',
+#     #        "dgpu_$_",
+#     #        $groupname)
+#     #        for (1..$_);
 #     # system("/usr/sbin/groupmod", "-a", "-U", "dgpu_$_", $groupname) for (1..$_);
 #     #
 #     ##### then again, so is useradd :D
@@ -126,7 +137,9 @@ my @groups = (3, int($size / 3), int($size * 2 / 3), $size - 2);
 for (@groups) {
     $secs = time();
     my $groupname = "dgpg_$_";
-    assert_command_success('/usr/sbin/delgroup', '--quiet', $groupname);
+    assert_command_success('/usr/sbin/delgroup',
+        '--stdoutmsglevel=error', '--stderrmsglevel=error',
+        $groupname);
     $secs = (time() - $secs) || 1;
     ok($secs < $groupdel_secs, "delgroup $groupname took ${secs}s (< $groupdel_secs).");
 }
@@ -140,3 +153,4 @@ for (@groups) {
     ok($secs < $groupdel_secs, "groupdel $groupname took ${secs}s (< $groupdel_secs).");
 }
 
+# vim: tabstop=4 shiftwidth=4 expandtab

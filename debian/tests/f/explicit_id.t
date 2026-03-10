@@ -8,7 +8,7 @@ use warnings;
 
 use AdduserTestsCommon;
 
-my $quiet="--quiet";
+my @quiet=("--stdoutmsglevel=error", '--stderrmsglevel=error');
 
 my @testsysuid;
 my @testsysgid;
@@ -76,7 +76,7 @@ my $uid;
 # create empty system group with set gid
 my $test1="mygroup1";
 $gid=pop(@testsysgid);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
      '--system', '--gid', $gid, $test1);
 assert_group_exists($test1);
 assert_gid_exists($gid);
@@ -86,7 +86,7 @@ assert_group_gid_exists($test1, $gid);
 # create empty group with set gid
 my $test2="mygroup2";
 $gid=pop(@testgid);
-assert_command_success('/usr/sbin/addgroup', $quiet,
+assert_command_success('/usr/sbin/addgroup', @quiet,
     '--gid', $gid, $test2);
 assert_group_exists($test2);
 assert_gid_exists($gid);
@@ -96,7 +96,7 @@ assert_group_gid_exists($test2, $gid);
 # create system user with set uid
 my $test3="myuser3";
 $uid=pop(@testsysuid);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--system', '--uid', $uid, $test3);
 assert_user_exists($test3);
 assert_uid_exists($uid);
@@ -106,7 +106,7 @@ assert_user_uid_exists($test3, $uid);
 # create user with set uid
 my $test4="myuser4";
 $uid=pop(@testuid);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--no-create-home',
     '--comment', '""', '--disabled-password',
     '--ingroup', $test1,
@@ -118,7 +118,7 @@ assert_user_uid_exists($test4, $uid);
 # create user in non existing group
 my $test5="myuser5";
 $uid=pop(@testuid);
-assert_command_failure_silent('/usr/sbin/adduser', $quiet,
+assert_command_failure_silent('/usr/sbin/adduser', @quiet,
     '--no-create-home',
     '--ingroup', "does-not-exist",
     '--comment', '""', '--disabled-password',
@@ -129,7 +129,7 @@ assert_group_does_not_exist($test5);
 # create user with set uid, allowing group creation
 my $test6="myuser6";
 $uid=pop(@testuid);
-assert_command_success('/usr/sbin/adduser', $quiet,
+assert_command_success('/usr/sbin/adduser', @quiet,
     '--no-create-home',
     '--comment', '""', '--disabled-password',
     '--uid', $uid, $test6);

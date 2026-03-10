@@ -25,10 +25,6 @@ if (!defined (getgrnam($groupname))) {
 	  print "failed\n  $cmd returned an errorcode != 0 ($error)\n";
 	  exit $error;
 	}
-        if ($output !~ /^Adding group `addusertest\d+' \(GID \d+\) ...\nDone\.\n$/) {
-          print "failed\n  $cmd returned unexpected output ($output)\n";
-	  exit 1;
-	}
 	assert(check_group_exist ($groupname));
 
 	print "ok\n";
@@ -39,11 +35,11 @@ if (!defined (getgrnam($groupname))) {
 print "Testing (9.2) $cmd... ";
 $output=`$cmd 2>&1`;
 $error = ($?>>8);
-if ($error ne 1) {
-  print "failed\n  $cmd returned an errorcode != 1 ($error)\n";
+if ($error ne 11) {
+  print "failed\n  $cmd returned an errorcode != 11 ($error)\n";
   exit 1;
 }
-if ($output !~ /^addgroup: The group `addusertest\d+' already exists\.\n$/ ) {
+if ($output !~ /^fatal: The group `addusertest\d+' already exists\.\n$/ ) {
   print "failed\n  $cmd returned unexpected output ($output)\n";
   exit 1;
 }
@@ -56,11 +52,11 @@ $cmd = "addgroup --system $groupname";
 print "Testing (9.3) $cmd... ";
 $output=`$cmd 2>&1`;
 $error = ($?>>8);
-if ($error ne 1) {
-  print "failed\n  $cmd returned an errorcode != 1 ($error)\n";
+if ($error ne 13) {
+  print "failed\n  $cmd returned an errorcode != 13 ($error)\n";
   exit $error;
 }
-if ($output !~ /^addgroup: The group `addusertest\d+' already exists and is not a system group. Exiting.$/ ) {
+if ($output !~ /^err: The group `addusertest\d+' already exists and is not a system group. Exiting.$/ ) {
   print "failed\n  $cmd returned unexpected output ($output)\n";
   exit 1;
 }
@@ -76,10 +72,6 @@ if (!defined (getgrnam($sysgroupname))) {
 	if ($error) {
 	  print "failed\n  $cmd returned an errorcode != 0 ($error)\n";
 	  exit $error;
-	}
-        if ($output !~ /^Adding group `addusertest\d+' \(GID \d+\) ...\nDone\.\n$/ ) {
-	  print "failed\n  $cmd returned unexpected output ($output)\n";
-	  exit 1;
 	}
 	assert(check_group_exist ($sysgroupname));
 
@@ -97,7 +89,7 @@ if ($error) {
   print "failed\n  $cmd returned an errorcode != 0 ($error)\n";
   exit $error;
 }
-if ($output !~ /^addgroup: The group `addusertest\d+' already exists as a system group\. Exiting\.\n$/ ) {
+if ($output !~ /^warn: The group `addusertest\d+' already exists as a system group\. Exiting\.\n$/ ) {
   print "failed\n  $cmd returned unexpected output ($output)\n";
   exit 1;
 }
@@ -110,11 +102,11 @@ $cmd = "addgroup $sysgroupname";
 print "Testing (9.6) $cmd... ";
 $output=`$cmd 2>&1`;
 $error = ($?>>8);
-if ($error ne 1) {
-  print "failed\n  $cmd returned an errorcode != 1 ($error)\n";
+if ($error ne 11) {
+  print "failed\n  $cmd returned an errorcode != 11 ($error)\n";
   exit 1;
 }
-if ($output !~ /^addgroup: The group `addusertest\d+' already exists\.$/ ) {
+if ($output !~ /^fatal: The group `addusertest\d+' already exists\.$/ ) {
   print "failed\n  $cmd returned unexpected output ($output)\n";
   exit 1;
 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: adduser 3.115\n"
 "Report-Msgid-Bugs-To: adduser@packages.debian.org\n"
-"POT-Creation-Date: 2022-12-28 08:34+0100\n"
+"POT-Creation-Date: 2023-06-09 12:08+0200\n"
 "PO-Revision-Date: 2016-06-17 18:21+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <debian-l10n-basque@lists.debian.org>\n"
@@ -18,375 +18,387 @@ msgstr ""
 "X-Generator: Lokalize 2.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#. everyone can issue "--help" and "--version", but only root can go on
-#: ../adduser:161
-msgid "Only root may add a user or group to the system.\n"
+#: ../adduser:190
+msgid "Only root may add a user or group to the system."
 msgstr ""
 "root erabiltzaileak bakarrik gehitu ditzake talde edo erabiltzaileak "
-"sistemari\n"
+"sistemari"
 
-#: ../adduser:191 ../deluser:145
-msgid "Only one or two names allowed.\n"
-msgstr "Izen bat edo bi bakarrik onartzen dira.\n"
+#: ../adduser:227 ../deluser:176
+msgid "Only one or two names allowed."
+msgstr "Izen bat edo bi bakarrik onartzen dira."
 
-#: ../adduser:197
-msgid "Specify only one name in this mode.\n"
-msgstr "Zehaztu izen bat bakarrik modu honetan.\n"
+#: ../adduser:234
+msgid "Specify only one name in this mode."
+msgstr "Zehaztu izen bat bakarrik modu honetan."
 
-#: ../adduser:200
-msgid "addgroup with two arguments is an unspecified operation.\n"
+#: ../adduser:238
+msgid "addgroup with two arguments is an unspecified operation."
 msgstr ""
 
-#: ../adduser:224
-msgid "The --group, --ingroup, and --gid options are mutually exclusive.\n"
-msgstr "--group, --ingroup, eta --gid aukerak ezin dira batera erabili.\n"
+#: ../adduser:263
+msgid "The --group, --ingroup, and --gid options are mutually exclusive."
+msgstr "--group, --ingroup, eta --gid aukerak ezin dira batera erabili."
 
-#: ../adduser:229
-msgid "The home dir must be an absolute path.\n"
-msgstr "Karpeta nagusia bide-izen absolutua izan behar da.\n"
+#: ../adduser:269
+msgid "The home dir must be an absolute path."
+msgstr "Karpeta nagusia bide-izen absolutua izan behar da."
 
-#: ../adduser:233
+#: ../adduser:275
+#, fuzzy, perl-format
+#| msgid "Warning: The home dir %s you specified already exists."
+msgid "The home dir %s you specified already exists.\n"
+msgstr "Abisua: ezarri duzun %s karpeta nagusia badago lehendik ere."
+
+#: ../adduser:278
+#, fuzzy, perl-format
+#| msgid "Warning: The home dir %s you specified can't be accessed: %s"
+msgid "The home dir %s you specified can't be accessed: %s\n"
+msgstr "Abisua: ezarri duzun %s karpeta nagusia ezin da atzitu: %s."
+
+#: ../adduser:347
 #, perl-format
-msgid "Warning: The home dir %s you specified already exists.\n"
-msgstr "Abisua: ezarri duzun %s karpeta nagusia badago lehendik ere.\n"
+msgid "The group `%s' already exists as a system group. Exiting."
+msgstr "'%s' taldea badago lehendik ere sistemako talde gisa. Irteten."
 
-#: ../adduser:235
+#: ../adduser:352
 #, perl-format
-msgid "Warning: The home dir %s you specified can't be accessed: %s\n"
-msgstr "Abisua: ezarri duzun %s karpeta nagusia ezin da atzitu: %s.\n"
-
-#: ../adduser:305
-#, perl-format
-msgid "The group `%s' already exists as a system group. Exiting.\n"
-msgstr "'%s' taldea badago lehendik ere sistemako talde gisa. Irteten.\n"
-
-#: ../adduser:310
-#, perl-format
-msgid "The group `%s' already exists and is not a system group. Exiting.\n"
+msgid "The group `%s' already exists and is not a system group. Exiting."
 msgstr ""
-"'%s' taldea badago lehendik ere eta ez da sistemako talde bat. Irteten.\n"
+"'%s' taldea badago lehendik ere eta ez da sistemako talde bat. Irteten."
 
-#: ../adduser:315
+#: ../adduser:357
 #, perl-format
-msgid "The group `%s' already exists, but has a different GID. Exiting.\n"
+msgid "The group `%s' already exists, but has a different GID. Exiting."
 msgstr ""
-"'%s' taldea badago lehendik ere, baina GID desberdin bat du. Irteten.\n"
+"'%s' taldea badago lehendik ere, baina GID desberdin bat du. Irteten."
 
-#: ../adduser:320 ../adduser:354
+#: ../adduser:362 ../adduser:399
 #, perl-format
-msgid "The GID `%s' is already in use.\n"
-msgstr "'%s' GIDa dagoeneko erabilita dago.\n"
+msgid "The GID `%s' is already in use."
+msgstr "'%s' GIDa dagoeneko erabilita dago."
 
-#: ../adduser:330
-#, perl-format
-msgid ""
-"No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID).\n"
+#: ../adduser:373
+#, fuzzy, perl-format
+#| msgid ""
+#| "No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID).\n"
+msgid "No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID)."
 msgstr ""
 "Ez dago GID erabilgarririk %d-%d barrutian (LEHEN_SIS_GID - AZKEN_SIS_GID).\n"
 
-#: ../adduser:331 ../adduser:372
+#: ../adduser:375 ../adduser:418
 #, perl-format
-msgid "The group `%s' was not created.\n"
-msgstr "'%s' taldea ez da sortu.\n"
+msgid "The group `%s' was not created."
+msgstr "'%s' taldea ez da sortu."
 
-#: ../adduser:336 ../adduser:376
+#: ../adduser:381 ../adduser:423
 #, perl-format
-msgid "Adding group `%s' (GID %d) ...\n"
-msgstr "'%s' (%d GIDa) taldea gehitzen...\n"
+msgid "Adding group `%s' (GID %d) ..."
+msgstr "'%s' (%d GIDa) taldea gehitzen..."
 
-#: ../adduser:340 ../adduser:380 ../adduser:404 ../deluser:366 ../deluser:400
-#: ../deluser:440
-msgid "Done.\n"
-msgstr "Eginda.\n"
-
-#: ../adduser:351 ../adduser:991
+#: ../adduser:395 ../adduser:1081
 #, perl-format
-msgid "The group `%s' already exists.\n"
-msgstr "'%s' taldea badago lehendik ere.\n"
+msgid "The group `%s' already exists."
+msgstr "'%s' taldea badago lehendik ere."
 
-#: ../adduser:371
+#: ../adduser:416
 #, perl-format
-msgid "No GID is available in the range %d-%d (FIRST_GID - LAST_GID).\n"
-msgstr "Ez dago GID erabilgarririk %d-%d barrutian (LEHEN_GID - AZKEN_GID).\n"
+msgid "No GID is available in the range %d-%d (FIRST_GID - LAST_GID)."
+msgstr "Ez dago GID erabilgarririk %d-%d barrutian (LEHEN_GID - AZKEN_GID)."
 
-#: ../adduser:390 ../deluser:235 ../deluser:408
+#: ../adduser:437 ../deluser:266
 #, perl-format
-msgid "The user `%s' does not exist.\n"
-msgstr "'%s' erabiltzailea ez dago.\n"
+msgid "The user `%s' does not exist."
+msgstr "'%s' erabiltzailea ez dago."
 
-#: ../adduser:391 ../adduser:784 ../adduser:997 ../deluser:373 ../deluser:411
+#: ../adduser:441 ../adduser:857 ../adduser:1091 ../deluser:408 ../deluser:411
 #, perl-format
-msgid "The group `%s' does not exist.\n"
-msgstr "'%s' taldea ez dago.\n"
+msgid "The group `%s' does not exist."
+msgstr "'%s' taldea ez dago."
 
-#: ../adduser:394 ../adduser:788
+#: ../adduser:446 ../adduser:861
 #, perl-format
-msgid "The user `%s' is already a member of `%s'.\n"
-msgstr "'%s' erabiltzailea dagoeneko '%s' taldeko kide da.\n"
+msgid "The user `%s' is already a member of `%s'."
+msgstr "'%s' erabiltzailea dagoeneko '%s' taldeko kide da."
 
-#: ../adduser:398 ../adduser:794
+#: ../adduser:450 ../adduser:867
 #, perl-format
-msgid "Adding user `%s' to group `%s' ...\n"
-msgstr "'%s' erabiltzailea '%s' taldeari gehitzen...\n"
+msgid "Adding user `%s' to group `%s' ..."
+msgstr "'%s' erabiltzailea '%s' taldeari gehitzen..."
 
-#: ../adduser:418
-#, perl-format
-msgid "The system user `%s' already exists. Exiting.\n"
-msgstr "Sistemako '%s' erabiltzailea badago lehendik ere. Irteten.\n"
-
-#: ../adduser:421
+#: ../adduser:469
 #, fuzzy, perl-format
-#| msgid "The user `%s' already exists, and is not a system user.\n"
-msgid "The user `%s' already exists, but is not a system user. Exiting.\n"
+#| msgid "The system user `%s' already exists. Exiting."
+msgid "The system user `%s' already exists. Exiting.\n"
+msgstr "Sistemako '%s' erabiltzailea badago lehendik ere. Irteten."
+
+#: ../adduser:472
+#, fuzzy, perl-format
+#| msgid "The user `%s' already exists, and is not a system user."
+msgid "The user `%s' already exists, but is not a system user. Exiting."
 msgstr ""
 "'%s' erabiltzailea badago lehendik ere, eta ez da sistemako erabiltzaile "
 "bat.\n"
 
-#: ../adduser:425
+#: ../adduser:476
 #, perl-format
-msgid "The user `%s' already exists with a different UID. Exiting.\n"
-msgstr "'%s' erabiltzailea bestelako UID batekin dago. Irteten.\n"
+msgid "The user `%s' already exists with a different UID. Exiting."
+msgstr "'%s' erabiltzailea bestelako UID batekin dago. Irteten."
 
-#: ../adduser:439
-#, perl-format
+#: ../adduser:490
+#, fuzzy, perl-format
+#| msgid ""
+#| "No UID/GID pair is available in the range %d-%d (FIRST_SYS_UID - "
+#| "LAST_SYS_UID).\n"
 msgid ""
 "No UID/GID pair is available in the range %d-%d (FIRST_SYS_UID - "
-"LAST_SYS_UID).\n"
+"LAST_SYS_UID)."
 msgstr ""
 "Ez dago UID/GID bikote erabilgarririk %d-%d barrutian (LEHEN_SIS_UID - "
 "AZKEN_SIS_UID).\n"
 
-#: ../adduser:440 ../adduser:453 ../adduser:523 ../adduser:635 ../adduser:640
+#: ../adduser:493 ../adduser:509 ../adduser:591 ../adduser:705 ../adduser:711
 #, perl-format
-msgid "The user `%s' was not created.\n"
-msgstr "'%s' erabiltzailea ez da sortu.\n"
+msgid "The user `%s' was not created."
+msgstr "'%s' erabiltzailea ez da sortu."
 
-#: ../adduser:452
-#, perl-format
-msgid ""
-"No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID).\n"
+#: ../adduser:506
+#, fuzzy, perl-format
+#| msgid ""
+#| "No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID).\n"
+msgid "No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID)."
 msgstr ""
 "Ez dago UID erabilgarririk %d-%d barrutian (LEHEN_SIS_UID - AZKEN_SIS_UID).\n"
 
-#: ../adduser:457 ../adduser:463
+#: ../adduser:517 ../adduser:529
 #, fuzzy
 #| msgid "Internal error"
-msgid "Internal error\n"
+msgid "Internal error"
 msgstr "Barneko errorea"
 
-#: ../adduser:465
+#: ../adduser:533
 #, perl-format
-msgid "Adding system user `%s' (UID %d) ...\n"
-msgstr "'%s' sistemako erabiltzailea gehitzen (%d UIDa)...\n"
+msgid "Adding system user `%s' (UID %d) ..."
+msgstr "'%s' sistemako erabiltzailea gehitzen (%d UIDa)..."
 
-#: ../adduser:469
+#: ../adduser:537
 #, perl-format
-msgid "Adding new group `%s' (GID %d) ...\n"
-msgstr "'%s' talde berria gehitzen (%d GIDa) ...\n"
+msgid "Adding new group `%s' (GID %d) ..."
+msgstr "'%s' talde berria gehitzen (%d GIDa) ..."
 
-#: ../adduser:475
+#: ../adduser:543
 #, perl-format
-msgid "Adding new user `%s' (UID %d) with group `%s' ...\n"
-msgstr "'%s' erabiltzaile berria (%d UIDa) '%s' taldearekin gehitzen...\n"
+msgid "Adding new user `%s' (UID %d) with group `%s' ..."
+msgstr "'%s' erabiltzaile berria (%d UIDa) '%s' taldearekin gehitzen..."
 
-#: ../adduser:522
+#: ../adduser:590
 msgid ""
-"USERS_GID and USERS_GROUP both given in configuration. This is an error.\n"
+"USERS_GID and USERS_GROUP both given in configuration. This is an error."
 msgstr ""
 
-#: ../adduser:611
+#: ../adduser:681
 #, perl-format
-msgid "Adding user `%s' ...\n"
-msgstr "'%s' erabiltzailea gehitzen...\n"
+msgid "Adding user `%s' ..."
+msgstr "'%s' erabiltzailea gehitzen..."
 
-#: ../adduser:634
-#, perl-format
-msgid ""
-"No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+#: ../adduser:704
+#, fuzzy, perl-format
+#| msgid ""
+#| "No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+msgid "No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID)."
 msgstr ""
 "Ez dago UID/GID bikote erabilgarririk %d-%d barrutian (LEHEN_UID - "
 "AZKEN_UID).\n"
 
-#: ../adduser:639
+#: ../adduser:710
 msgid ""
 "USERGROUPS=no, USER_GID=-1 and USERS_GROUP empty. A user needs a primary "
-"group!\n"
+"group!"
 msgstr ""
 
-#: ../adduser:678
-msgid "Internal error interpreting parameter combination\n"
+#: ../adduser:750
+msgid "Internal error interpreting parameter combination"
 msgstr ""
 
-#: ../adduser:687
+#: ../adduser:760
 #, perl-format
-msgid "Adding new group `%s' (%d) ...\n"
-msgstr "'%s' (%d) talde berria gehitzen...\n"
+msgid "Adding new group `%s' (%d) ..."
+msgstr "'%s' (%d) talde berria gehitzen..."
 
-#: ../adduser:690
+#: ../adduser:763
 #, fuzzy, perl-format
-#| msgid "Adding new group `%s' (GID %d) ...\n"
-msgid "Adding new group `%s' (new group ID) ...\n"
-msgstr "'%s' talde berria gehitzen (%d GIDa) ...\n"
+#| msgid "Adding new group `%s' (GID %d) ..."
+msgid "Adding new group `%s' (new group ID) ..."
+msgstr "'%s' talde berria gehitzen (%d GIDa) ..."
 
-#: ../adduser:700
+#: ../adduser:766
+#, perl-format
+msgid "new group '%s' created with GID %d"
+msgstr ""
+
+#: ../adduser:773
 #, fuzzy, perl-format
-#| msgid "Adding new user `%s' (%d) with group `%s' ...\n"
-msgid "Adding new user `%s' (%d) with group `%s (%d)' ...\n"
-msgstr "'%s' (%d) erabiltzaile berria '%s' taldearekin gehitzen...\n"
+#| msgid "Adding new user `%s' (%d) with group `%s' ..."
+msgid "Adding new user `%s' (%d) with group `%s (%d)' ..."
+msgstr "'%s' (%d) erabiltzaile berria '%s' taldearekin gehitzen..."
 
 #. hm, error, should we break now?
-#: ../adduser:728
-msgid "Permission denied\n"
-msgstr "Baimena ukatuta\n"
+#: ../adduser:802
+msgid "Permission denied"
+msgstr "Baimena ukatuta"
 
-#: ../adduser:729
-msgid "invalid combination of options\n"
-msgstr "aukeren konbinazioa baliogabea\n"
+#: ../adduser:803
+msgid "invalid combination of options"
+msgstr "aukeren konbinazioa baliogabea"
 
-#: ../adduser:730
-msgid "unexpected failure, nothing done\n"
-msgstr "hustekabeko hutsegitea, ez da ezer egin\n"
+#: ../adduser:804
+msgid "unexpected failure, nothing done"
+msgstr "hustekabeko hutsegitea, ez da ezer egin"
 
-#: ../adduser:731
-msgid "unexpected failure, passwd file missing\n"
-msgstr "hustekabeko hutsegitea, pasahitzen fitxategia falta da\n"
+#: ../adduser:805
+msgid "unexpected failure, passwd file missing"
+msgstr "hustekabeko hutsegitea, pasahitzen fitxategia falta da"
 
-#: ../adduser:732
-msgid "passwd file busy, try again\n"
-msgstr "pasahitzen fitxategia lanpetuta, saiatu berriro\n"
+#: ../adduser:806
+msgid "passwd file busy, try again"
+msgstr "pasahitzen fitxategia lanpetuta, saiatu berriro"
 
-#: ../adduser:733
-msgid "invalid argument to option\n"
-msgstr "aukeraren argumentua baliogabea\n"
+#: ../adduser:807
+msgid "invalid argument to option"
+msgstr "aukeraren argumentua baliogabea"
 
-#: ../adduser:739
+#: ../adduser:813
 msgid "Try again? [y/N] "
 msgstr "Saiatu berriro? [b/E] "
 
-#: ../adduser:765
+#: ../adduser:839
 msgid "Is the information correct? [Y/n] "
 msgstr "Informazioa zuzena da? [B/e] "
 
-#: ../adduser:779
+#: ../adduser:853
 #, fuzzy, perl-format
-#| msgid "Adding new user `%s' to extra groups ...\n"
-msgid "Adding new user `%s' to supplemental / extra groups `%s' ...\n"
-msgstr "'%s' erabiltzaile berria talde gehigarriei gehitzen...\n"
+#| msgid "Adding new user `%s' to extra groups ..."
+msgid "Adding new user `%s' to supplemental / extra groups `%s' ..."
+msgstr "'%s' erabiltzaile berria talde gehigarriei gehitzen..."
 
-#: ../adduser:805
+#: ../adduser:877
 #, perl-format
-msgid "Setting quota for user `%s' to values of user `%s' ...\n"
+msgid "Setting quota for user `%s' to values of user `%s' ..."
 msgstr ""
-"'%s' erabiltzailearen kuota '%s' erabiltzailearen balioetara ezartzen...\n"
+"'%s' erabiltzailearen kuota '%s' erabiltzailearen balioetara ezartzen..."
 
-#: ../adduser:843
+#: ../adduser:915
 #, fuzzy, perl-format
-#| msgid "Not creating home directory `%s'.\n"
-msgid "Not creating `%s'.\n"
-msgstr "Ez da '%s' karpeta nagusia sortuko.\n"
+#| msgid "Not creating home directory `%s'."
+msgid "Not creating `%s'."
+msgstr "Ez da '%s' karpeta nagusia sortuko."
 
-#: ../adduser:846
+#: ../adduser:917
 #, perl-format
-msgid "Not creating home directory `%s'.\n"
-msgstr "Ez da '%s' karpeta nagusia sortuko.\n"
+msgid "Not creating home directory `%s'."
+msgstr "Ez da '%s' karpeta nagusia sortuko."
 
-#: ../adduser:849
+#: ../adduser:919
 #, fuzzy, perl-format
-#| msgid "The home directory `%s' already exists.  Not copying from `%s'.\n"
-msgid "The home directory `%s' already exists.  Not touching this directory.\n"
+#| msgid "The home directory `%s' already exists.  Not copying from `%s'."
+msgid "The home directory `%s' already exists.  Not touching this directory."
 msgstr ""
 "'%s' karpeta nagusia badago lehendik ere. Ez da '%s'(e)tik kopiatuko.\n"
 
-#: ../adduser:855
-#, perl-format
+#: ../adduser:925
+#, fuzzy, perl-format
+#| msgid ""
+#| "Warning: The home directory `%s' does not belong to the user you are "
+#| "currently creating.\n"
 msgid ""
 "Warning: The home directory `%s' does not belong to the user you are "
-"currently creating.\n"
+"currently creating."
 msgstr ""
 "Abisua: '%s' karpeta nagusia ez da unean sortzen ari zaren "
 "erabiltzailearena.\n"
 
-#: ../adduser:859
+#: ../adduser:928
 #, perl-format
-msgid "Creating home directory `%s' ...\n"
-msgstr "'%s' karpeta nagusia sortzen...\n"
+msgid "Creating home directory `%s' ..."
+msgstr "'%s' karpeta nagusia sortzen..."
 
-#: ../adduser:861
+#: ../adduser:931
 #, perl-format
-msgid "Couldn't create home directory `%s': %s.\n"
-msgstr "Ezin izan da '%s' karpeta nagusia sortu: %s.\n"
+msgid "Couldn't create home directory `%s': %s."
+msgstr "Ezin izan da '%s' karpeta nagusia sortu: %s."
 
-#: ../adduser:869
+#: ../adduser:945
 #, perl-format
-msgid "Copying files from `%s' ...\n"
-msgstr "'%s'(e)tik fitxategiak kopiatzen...\n"
+msgid "Copying files from `%s' ..."
+msgstr "'%s'(e)tik fitxategiak kopiatzen..."
 
-#: ../adduser:871
+#: ../adduser:948
 #, perl-format
-msgid "fork for `find' failed: %s\n"
-msgstr "huts egin du 'find' sardetzean: %s\n"
+msgid "fork for `find' failed: %s"
+msgstr "huts egin du 'find' sardetzean: %s"
 
-#: ../adduser:980
+#: ../adduser:1065
 #, perl-format
-msgid "The user `%s' already exists, and is not a system user.\n"
+msgid "The user `%s' already exists, and is not a system user."
 msgstr ""
 "'%s' erabiltzailea badago lehendik ere, eta ez da sistemako erabiltzaile "
-"bat.\n"
+"bat."
 
-#: ../adduser:982
+#: ../adduser:1068
 #, perl-format
-msgid "The user `%s' already exists.\n"
-msgstr "'%s' erabiltzailea badago lehendik ere.\n"
+msgid "The user `%s' already exists."
+msgstr "'%s' erabiltzailea badago lehendik ere."
 
-#: ../adduser:985
+#: ../adduser:1073
 #, perl-format
-msgid "The UID %d is already in use.\n"
-msgstr "%d UIDa dagoeneko erabilita dago.\n"
+msgid "The UID %d is already in use."
+msgstr "%d UIDa dagoeneko erabilita dago."
 
-#: ../adduser:993
+#: ../adduser:1085
 #, perl-format
-msgid "The GID %d is already in use.\n"
-msgstr "%d GIDa dagoeneko erabilita dago.\n"
+msgid "The GID %d is already in use."
+msgstr "%d GIDa dagoeneko erabilita dago."
 
-#: ../adduser:999
+#: ../adduser:1095
 #, perl-format
-msgid "The GID %d does not exist.\n"
-msgstr "%d GIDa ez dago.\n"
+msgid "The GID %d does not exist."
+msgstr "%d GIDa ez dago."
 
-#: ../adduser:1043
-#, perl-format
-msgid ""
-"Cannot deal with %s.\n"
-"It is not a dir, file, or symlink.\n"
+#: ../adduser:1162
+#, fuzzy, perl-format
+#| msgid ""
+#| "Cannot deal with %s.\n"
+#| "It is not a dir, file, or symlink.\n"
+msgid "%s/%s is neither a dir, file, nor a symlink."
 msgstr ""
 "Ezin da %s tratatu.\n"
 "Hau ez da direktorio, fitxategi edo esteka sinboliko bat.\n"
 
 #. this check cannot be turned off
-#: ../adduser:1069
+#: ../adduser:1196
 msgid ""
 "To avoid ambiguity with numerical UIDs, usernames which\n"
-"            consist of only digits are not allowed.\n"
+"            consist of only digits are not allowed."
 msgstr ""
 
 #. this check cannot be turned off
-#: ../adduser:1076
+#: ../adduser:1203
 msgid ""
 "Usernames must be no more than 32 bytes in length;\n"
 "            note that if you are using Unicode characters, the character\n"
-"            limit will be less than 32.\n"
+"            limit will be less than 32."
 msgstr ""
 
 #. this check cannot be turned off
-#: ../adduser:1084
+#: ../adduser:1211
 msgid ""
 "To avoid problems, the username must not start with a\n"
 "            dash, plus sign, or tilde, and it must not contain any of the\n"
 "            following: colon, comma, slash, or any whitespace characters\n"
-"            including spaces, tabs, and newlines.\n"
+"            including spaces, tabs, and newlines."
 msgstr ""
 
-#: ../adduser:1094
+#: ../adduser:1221
 #, fuzzy
 #| msgid ""
 #| "%s: To avoid problems, the username should consist only of\n"
@@ -402,7 +414,7 @@ msgid ""
 "            compatibility with Samba machine accounts, $ is also supported\n"
 "            at the end of the username.  (Use the `--allow-all-names' "
 "option\n"
-"            to bypass this restriction.)\n"
+"            to bypass this restriction.)"
 msgstr ""
 "%s: arazoak saihesteko, erabiltzaile-izena letrak, zenbakiak,\n"
 "azpimarra eta marratxoz soilik osatuta egon daiteke, eta ezin da\n"
@@ -410,11 +422,11 @@ msgstr ""
 "Samba sistemarekin bateragarritasuna mantentzeko\n"
 "'$' ere onartzen da erabiltzaile-izenaren amaieran\n"
 
-#: ../adduser:1104
-msgid "Allowing use of questionable username.\n"
-msgstr "Segurtasun urriko erabiltzaile-izenak gaitzen.\n"
+#: ../adduser:1231
+msgid "Allowing use of questionable username."
+msgstr "Segurtasun urriko erabiltzaile-izenak gaitzen."
 
-#: ../adduser:1106
+#: ../adduser:1233
 #, fuzzy, perl-format
 #| msgid ""
 #| "%s: Please enter a username matching the regular expression configured\n"
@@ -424,59 +436,55 @@ msgid ""
 "Please enter a username matching the regular expression\n"
 "            configured via the %s configuration variable.  Use the\n"
 "            `--allow-bad-names' option to relax this check or reconfigure\n"
-"            %s in configuration.\n"
+"            %s in configuration."
 msgstr ""
 "%s: idatzi NAME_REGEX konfigurazioko aldagaian ezarritako adierazpen\n"
 "erregularra betetzen duen erabiltzaile-izen bat. Erabili '--force-badname'\n"
 "aukera hau zabaltzeko edo NAME_REGEX birkonfiguratzeko.\n"
 
-#: ../adduser:1127
-#, perl-format
-msgid "Selecting UID from range %d to %d ...\n"
-msgstr "UIDa hautatzen %d - %d barrutitik...\n"
-
-#: ../adduser:1150
-#, perl-format
-msgid "Selecting GID from range %d to %d ...\n"
-msgstr "GIDa hautatzen %d - %d barrutitik...\n"
-
-#: ../adduser:1174
+#: ../adduser:1254
 #, fuzzy, perl-format
-#| msgid "Selecting UID from range %d to %d ...\n"
-msgid "Selecting UID/GID from range %d to %d ...\n"
-msgstr "UIDa hautatzen %d - %d barrutitik...\n"
+#| msgid "Selecting UID from range %d to %d ..."
+msgid "Selecting UID from range %d to %d ...\n"
+msgstr "UIDa hautatzen %d - %d barrutitik..."
 
-#: ../adduser:1215
+#: ../adduser:1277
 #, perl-format
-msgid "Stopped: %s\n"
-msgstr "Geldituta: %s\n"
+msgid "Selecting GID from range %d to %d ..."
+msgstr "GIDa hautatzen %d - %d barrutitik..."
 
-#: ../adduser:1217
-#, perl-format
-msgid "Removing directory `%s' ...\n"
-msgstr "'%s' direktorioa kentzen...\n"
+#: ../adduser:1301
+#, fuzzy, perl-format
+#| msgid "Selecting UID from range %d to %d ..."
+msgid "Selecting UID/GID from range %d to %d ..."
+msgstr "UIDa hautatzen %d - %d barrutitik..."
 
-#: ../adduser:1221 ../deluser:358
+#: ../adduser:1342
 #, perl-format
-msgid "Removing user `%s' ...\n"
-msgstr "'%s' erabiltzailea kentzen...\n"
+msgid "Removing directory `%s' ..."
+msgstr "'%s' direktorioa kentzen..."
+
+#: ../adduser:1346 ../deluser:393
+#, perl-format
+msgid "Removing user `%s' ..."
+msgstr "'%s' erabiltzailea kentzen..."
 
 #. groupdel will error out if there are users left that
 #. have $group as primary group. We are not checking this
 #. ourself since this would mean enumerating all users.
-#: ../adduser:1225 ../deluser:395
+#: ../adduser:1350 ../deluser:435
 #, perl-format
-msgid "Removing group `%s' ...\n"
-msgstr "'%s' taldea kentzen...\n"
+msgid "Removing group `%s' ..."
+msgstr "'%s' taldea kentzen..."
 
 #. Translators: the variable %s is INT, QUIT, or HUP.
 #. Please do not insert a space character between SIG and %s.
-#: ../adduser:1235
+#: ../adduser:1360
 #, perl-format
-msgid "Caught a SIG%s.\n"
-msgstr "SIG%s seinalea jaso da.\n"
+msgid "Caught a SIG%s."
+msgstr "SIG%s seinalea jaso da."
 
-#: ../adduser:1240
+#: ../adduser:1366
 #, perl-format
 msgid ""
 "adduser version %s\n"
@@ -485,7 +493,7 @@ msgstr ""
 "adduser %s bertsioa\n"
 "\n"
 
-#: ../adduser:1241
+#: ../adduser:1367
 msgid ""
 "Adds a user or group to the system.\n"
 "\n"
@@ -494,7 +502,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../adduser:1247 ../deluser:460
+#: ../adduser:1373 ../deluser:495
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -516,7 +524,7 @@ msgstr ""
 "MERKATURATZEKO edo HELBURU PARTIKULARRETARAKO ERABILTZEKO.\n"
 "Argibide gehiago nahi izanez gero, ikus GNU Lizentzia Publiko Orokorra.\n"
 
-#: ../adduser:1261
+#: ../adduser:1387
 msgid ""
 "adduser [--uid id] [--firstuid id] [--lastuid id]\n"
 "        [--gid id] [--firstgid id] [--lastgid id] [--ingroup group]\n"
@@ -555,148 +563,150 @@ msgid ""
 "   Add an existing user to an existing group\n"
 msgstr ""
 
-#. everyone can issue "--help" and "--version", but only root can go on
-#: ../deluser:107
-msgid "Only root may remove a user or group from the system.\n"
+#: ../deluser:125
+msgid "Only root may remove a user or group from the system."
 msgstr ""
 "Soilik root erabiltzaileak ezaba ditzake taldeak eta erabiltzaileak "
-"sistematik.\n"
+"sistematik."
 
-#: ../deluser:128
-msgid "No options allowed after names.\n"
-msgstr "Ez da izenen ondoren aukerarik onartzen.\n"
+#: ../deluser:158
+msgid "No options allowed after names."
+msgstr "Ez da izenen ondoren aukerarik onartzen."
 
-#: ../deluser:136
+#: ../deluser:167
 msgid "Enter a group name to remove: "
 msgstr "Idatzi talde-izena kentzeko: "
 
-#: ../deluser:138
+#: ../deluser:169
 msgid "Enter a user name to remove: "
 msgstr "Idatzi erabiltzaile-izena kentzeko: "
 
-#: ../deluser:180
+#: ../deluser:212
+#, fuzzy
+#| msgid ""
+#| "In order to use the --remove-home, --remove-all-files, and --backup "
+#| "features,\n"
+#| "you need to install the `perl' package. To accomplish that, run\n"
+#| "apt-get install perl.\n"
 msgid ""
 "In order to use the --remove-home, --remove-all-files, and --backup "
-"features,\n"
-"you need to install the `perl' package. To accomplish that, run\n"
-"apt-get install perl.\n"
+"features, you need to install the `perl' package. To accomplish that, run "
+"apt-get install perl."
 msgstr ""
 "'perl' paketea instalatu behar da --remove-home, --remove-all-files,\n"
 "eta --backup aukerak erabiltzeko. Horretarako, exekutatu honako komandoa:\n"
 "apt-get install perl\n"
 
-#: ../deluser:225
+#: ../deluser:256
 #, perl-format
-msgid "The user `%s' is not a system user. Exiting.\n"
-msgstr "'%s' erabiltzailea ez da sistemako erabiltzailea. Irteten.\n"
+msgid "The user `%s' is not a system user. Exiting."
+msgstr "'%s' erabiltzailea ez da sistemako erabiltzailea. Irteten."
 
-#: ../deluser:229
+#: ../deluser:260
 #, perl-format
-msgid "The user `%s' does not exist, but --system was given. Exiting.\n"
+msgid "The user `%s' does not exist, but --system was given. Exiting."
 msgstr ""
-"'%s' erabiltzailea ez da existitzen, baina --system eman da. Irteten.\n"
+"'%s' erabiltzailea ez da existitzen, baina --system eman da. Irteten."
 
-#: ../deluser:240
-msgid "WARNING: You are just about to delete the root account (uid 0)\n"
-msgstr "ABISUA: root kontua (0 UIDa) ezabatzera zoaz\n"
-
-#: ../deluser:241
+#: ../deluser:272
 msgid ""
-"Usually this is never required as it may render the whole system unusable\n"
-msgstr ""
-"Normalean hau ez zen inoiz egin beharko, sistema osoa erabilezin utziko "
-"baitu\n"
-
-#: ../deluser:242
-#, fuzzy
-#| msgid "If you really want this, call deluser with parameter --force\n"
-msgid ""
-"If you really want this, call deluser with parameter --no-preserve-root\n"
-msgstr "Ziur bazaude, deitu 'deluser' komandoari '--force' aukerarekin\n"
-
-#: ../deluser:243
-msgid "Stopping now without having performed any action\n"
-msgstr "Inolako ekintzarik landu gabe gelditzen\n"
-
-#: ../deluser:254
-msgid "Looking for files to backup/remove ...\n"
-msgstr "Babeskopiak egiteko edo ezabatzeko fitxategiak bilatzen...\n"
-
-#: ../deluser:258
-#, perl-format
-msgid "failed to open /proc/mounts: %s\n"
+"WARNING: You are just about to delete the root account (uid 0). Usually this "
+"is never required as it may render the whole system unusable. If you really "
+"want this, call deluser with parameter --no-preserve-root. Stopping now "
+"without having performed any action"
 msgstr ""
 
-#: ../deluser:268
+#: ../deluser:283
+msgid "Looking for files to backup/remove ..."
+msgstr "Babeskopiak egiteko edo ezabatzeko fitxategiak bilatzen..."
+
+#: ../deluser:288
 #, perl-format
-msgid "failed to close /proc/mounts: %s\n"
+msgid "failed to open /proc/mounts: %s"
 msgstr ""
 
-#: ../deluser:291
+#: ../deluser:301
 #, perl-format
-msgid "Not backing up/removing `%s', it is a mount point.\n"
-msgstr ""
-"Ez da '%s'(r)en babeskopiarik/ezabatzerik egingo, muntatze puntu bat da.\n"
-
-#: ../deluser:298
-#, perl-format
-msgid "Not backing up/removing `%s', it matches %s.\n"
-msgstr ""
-"Ez da '%s'(r)en babeskopiarik/ezabatzerik egingo, %s(r)ekin bat dator.\n"
-
-#: ../deluser:312
-#, perl-format
-msgid "Cannot handle special file %s\n"
-msgstr "Ezin da %s fitxategi berezia kudeatu\n"
-
-#: ../deluser:320
-#, perl-format
-msgid "Backing up files to be removed to %s ...\n"
-msgstr "Ezabatuko diren fitxategien babeskopia %s(e)n egiten...\n"
-
-#: ../deluser:339
-msgid "Removing files ...\n"
-msgstr "Fitxategiak ezabatzen...\n"
-
-#: ../deluser:348
-msgid "Removing crontab ...\n"
-msgstr "crontab kentzen...\n"
-
-#: ../deluser:354
-#, perl-format
-msgid "`%s' not executed. Skipping crontab removal. Package `cron' required.\n"
+msgid "failed to close /proc/mounts: %s"
 msgstr ""
 
-#: ../deluser:380
+#: ../deluser:326
 #, perl-format
-msgid "getgrnam `%s' failed. This shouldn't happen.\n"
-msgstr "huts egin du getgrnam '%s' funtzioak. Hau ez zen gertatu beharko.\n"
+msgid "Not backing up/removing `%s', it is a mount point."
+msgstr ""
+"Ez da '%s'(r)en babeskopiarik/ezabatzerik egingo, muntatze puntu bat da."
 
-#: ../deluser:385
+#: ../deluser:333
 #, perl-format
-msgid "The group `%s' is not a system group. Exiting.\n"
-msgstr "'%s' taldea ez da sistemako talde bat. Irteten.\n"
+msgid "Not backing up/removing `%s', it matches %s."
+msgstr ""
+"Ez da '%s'(r)en babeskopiarik/ezabatzerik egingo, %s(r)ekin bat dator."
+
+#: ../deluser:347
+#, perl-format
+msgid "Cannot handle special file %s"
+msgstr "Ezin da %s fitxategi berezia kudeatu"
+
+#: ../deluser:355
+#, perl-format
+msgid "Backing up files to be removed to %s ..."
+msgstr "Ezabatuko diren fitxategien babeskopia %s(e)n egiten..."
+
+#: ../deluser:374
+msgid "Removing files ..."
+msgstr "Fitxategiak ezabatzen..."
+
+#: ../deluser:383
+msgid "Removing crontab ..."
+msgstr "crontab kentzen..."
 
 #: ../deluser:389
 #, perl-format
-msgid "The group `%s' is not empty!\n"
-msgstr "'%s' taldea ez dago hutsik!\n"
+msgid "`%s' not executed. Skipping crontab removal. Package `cron' required."
+msgstr ""
 
-#: ../deluser:414
-msgid "You may not remove the user from their primary group.\n"
-msgstr "Ez zenuke erabiltzailea bere talde nagusitik ezabatu behar.\n"
-
-#: ../deluser:431
+#: ../deluser:418
 #, perl-format
-msgid "The user `%s' is not a member of group `%s'.\n"
-msgstr "'%s' erabiltzailea ez da '%s' taldeko kide.\n"
+msgid "getgrnam `%s' failed. This shouldn't happen."
+msgstr "huts egin du getgrnam '%s' funtzioak. Hau ez zen gertatu beharko."
 
-#: ../deluser:434
+#: ../deluser:424
 #, perl-format
-msgid "Removing user `%s' from group `%s' ...\n"
-msgstr "'%s' erabiltzailea '%s' taldetik kentzen...\n"
+msgid "The group `%s' is not a system group. Exiting."
+msgstr "'%s' taldea ez da sistemako talde bat. Irteten."
 
-#: ../deluser:453
+#: ../deluser:428
+#, perl-format
+msgid "The group `%s' is not empty!"
+msgstr "'%s' taldea ez dago hutsik!"
+
+#: ../deluser:447
+#, fuzzy, perl-format
+#| msgid "The user `%s' does not exist."
+msgid "The user `%s' does not exist.\n"
+msgstr "'%s' erabiltzailea ez dago."
+
+#: ../deluser:451
+#, fuzzy, perl-format
+#| msgid "The group `%s' does not exist."
+msgid "The group `%s' does not exist.\n"
+msgstr "'%s' taldea ez dago."
+
+#: ../deluser:455
+msgid "You may not remove the user from their primary group."
+msgstr "Ez zenuke erabiltzailea bere talde nagusitik ezabatu behar."
+
+#: ../deluser:473
+#, perl-format
+msgid "The user `%s' is not a member of group `%s'."
+msgstr "'%s' erabiltzailea ez da '%s' taldeko kide."
+
+#: ../deluser:477
+#, perl-format
+msgid "Removing user `%s' from group `%s' ..."
+msgstr "'%s' erabiltzailea '%s' taldetik kentzen..."
+
+#: ../deluser:488
 #, perl-format
 msgid ""
 "deluser version %s\n"
@@ -705,7 +715,7 @@ msgstr ""
 "deluser %s bertsioa\n"
 "\n"
 
-#: ../deluser:454
+#: ../deluser:489
 msgid ""
 "Removes users and groups from the system.\n"
 "\n"
@@ -714,7 +724,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../deluser:474
+#: ../deluser:509
 msgid ""
 "deluser [--system] [--remove-home] [--remove-all-files] [--backup]\n"
 "        [--backup-to dir] [--backup-suffix str] [--conf file]\n"
@@ -733,101 +743,161 @@ msgid ""
 msgstr ""
 
 #. compressor recognized, not available
-#: ../deluser:512 ../deluser:522
+#: ../deluser:547 ../deluser:557
 #, perl-format
-msgid "Backup suffix %s unavailable, using gzip.\n"
+msgid "Backup suffix %s unavailable, using gzip."
 msgstr ""
 
-#: ../AdduserCommon.pm:46 ../AdduserCommon.pm:52
+#: ../AdduserCommon.pm:77
 #, perl-format
-msgid "%s: %s"
-msgstr "%s: %s"
+msgid "`%s' does not exist. Using defaults."
+msgstr "'%s' ez dago. Lehenespenak erabiltzen."
 
-#: ../AdduserCommon.pm:71
+#: ../AdduserCommon.pm:83
 #, perl-format
-msgid "`%s' does not exist. Using defaults.\n"
-msgstr "'%s' ez dago. Lehenespenak erabiltzen.\n"
+msgid "cannot open configuration file %s: `%s'\n"
+msgstr ""
 
-#: ../AdduserCommon.pm:81 ../AdduserCommon.pm:136 ../AdduserCommon.pm:149
+#: ../AdduserCommon.pm:91 ../AdduserCommon.pm:155 ../AdduserCommon.pm:168
 #, perl-format
-msgid "Couldn't parse `%s', line %d.\n"
-msgstr "Ezin izan da '%s' analizatu, %d. lerroa.\n"
+msgid "Couldn't parse `%s', line %d."
+msgstr "Ezin izan da '%s' analizatu, %d. lerroa."
 
-#: ../AdduserCommon.pm:86
+#: ../AdduserCommon.pm:96
 #, perl-format
-msgid "Unknown variable `%s' at `%s', line %d.\n"
-msgstr "'%s' aldagaia ezezaguna '%s'(e)ko %d. lerroan.\n"
+msgid "Unknown variable `%s' at `%s', line %d."
+msgstr "'%s' aldagaia ezezaguna '%s'(e)ko %d. lerroan."
 
-#: ../AdduserCommon.pm:111
+#: ../AdduserCommon.pm:122
 #, fuzzy, perl-format
-#| msgid "Not creating home directory `%s'.\n"
+#| msgid "Not creating home directory `%s'."
 msgid "Cannot read directory `%s'"
-msgstr "Ez da '%s' karpeta nagusia sortuko.\n"
+msgstr "Ez da '%s' karpeta nagusia sortuko."
 
-#: ../AdduserCommon.pm:124
+#: ../AdduserCommon.pm:137
 #, fuzzy, perl-format
-#| msgid "The user `%s' does not exist.\n"
-msgid "`%s' does not exist.\n"
-msgstr "'%s' erabiltzailea ez dago.\n"
+#| msgid "The user `%s' does not exist."
+msgid "`%s' does not exist."
+msgstr "'%s' erabiltzailea ez dago."
 
-#: ../AdduserCommon.pm:156
+#: ../AdduserCommon.pm:142
+#, fuzzy, perl-format
+#| msgid "Cannot handle special file %s"
+msgid "Cannot open pool file %s: `%s'"
+msgstr "Ezin da %s fitxategi berezia kudeatu"
+
+#: ../AdduserCommon.pm:175
 #, perl-format
-msgid "Illegal pool type `%s' reading `%s'.\n"
+msgid "Illegal pool type `%s' reading `%s'."
 msgstr ""
 
-#: ../AdduserCommon.pm:159
+#: ../AdduserCommon.pm:179
 #, fuzzy, perl-format
-#| msgid "Unknown variable `%s' at `%s', line %d.\n"
-msgid "Duplicate name `%s' at `%s', line %d.\n"
-msgstr "'%s' aldagaia ezezaguna '%s'(e)ko %d. lerroan.\n"
+#| msgid "Unknown variable `%s' at `%s', line %d."
+msgid "Duplicate name `%s' at `%s', line %d."
+msgstr "'%s' aldagaia ezezaguna '%s'(e)ko %d. lerroan."
 
-#: ../AdduserCommon.pm:162
+#: ../AdduserCommon.pm:183
 #, fuzzy, perl-format
-#| msgid "Unknown variable `%s' at `%s', line %d.\n"
-msgid "Duplicate ID `%s' at `%s', line %d.\n"
-msgstr "'%s' aldagaia ezezaguna '%s'(e)ko %d. lerroan.\n"
+#| msgid "Unknown variable `%s' at `%s', line %d."
+msgid "Duplicate ID `%s' at `%s', line %d."
+msgstr "'%s' aldagaia ezezaguna '%s'(e)ko %d. lerroan."
 
-#: ../AdduserCommon.pm:212
+#: ../AdduserCommon.pm:213
 #, perl-format
-msgid "`%s' returned error code %d. Exiting.\n"
-msgstr "'%s'(e)k %d errore-kodea itzuli du. Irteten.\n"
+msgid "`%s' returned error code %d. Exiting."
+msgstr "'%s'(e)k %d errore-kodea itzuli du. Irteten."
 
-#: ../AdduserCommon.pm:214
+#: ../AdduserCommon.pm:216
 #, perl-format
-msgid "`%s' exited from signal %d. Exiting.\n"
-msgstr "'%s' %d seinalearekin irten da. Irteten.\n"
+msgid "`%s' exited from signal %d. Exiting."
+msgstr "'%s' %d seinalearekin irten da. Irteten."
 
 #: ../AdduserCommon.pm:227
 #, perl-format
-msgid "`%s' failed to execute. %s. Continuing.\n"
+msgid "`%s' failed to execute. %s. Continuing."
 msgstr ""
 
 #: ../AdduserCommon.pm:229
 #, fuzzy, perl-format
-#| msgid "`%s' exited from signal %d. Exiting.\n"
-msgid "`%s' killed by signal %d. Continuing.\n"
-msgstr "'%s' %d seinalearekin irten da. Irteten.\n"
+#| msgid "`%s' exited from signal %d. Exiting."
+msgid "`%s' killed by signal %d. Continuing."
+msgstr "'%s' %d seinalearekin irten da. Irteten."
 
 #: ../AdduserCommon.pm:231
 #, perl-format
-msgid "`%s' failed with status %d. Continuing.\n"
+msgid "`%s' failed with status %d. Continuing."
 msgstr ""
 
-#: ../AdduserCommon.pm:269
+#: ../AdduserCommon.pm:270
 #, perl-format
-msgid "Could not find program named `%s' in $PATH.\n"
-msgstr "Ezin izan da '%s' izeneko programarik aurkitu $PATH bide-izenean.\n"
+msgid "Could not find program named `%s' in $PATH."
+msgstr "Ezin izan da '%s' izeneko programarik aurkitu $PATH bide-izenean."
 
-#: ../AdduserCommon.pm:341
+#: ../AdduserCommon.pm:343
+#, perl-format
+msgid "could not open lock file %s!"
+msgstr ""
+
+#: ../AdduserCommon.pm:349
 msgid "Could not obtain exclusive lock, please try again shortly!"
 msgstr ""
 
-#: ../AdduserCommon.pm:343
-msgid "Waiting for lock to become available...\n"
+#: ../AdduserCommon.pm:352
+msgid "Waiting for lock to become available..."
 msgstr ""
 
+#: ../AdduserCommon.pm:359
 #, perl-format
-#~ msgid "No UID is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+msgid "could not seek - %s!"
+msgstr ""
+
+#: ../AdduserCommon.pm:368
+msgid "could not find lock file!"
+msgstr ""
+
+#: ../AdduserCommon.pm:373
+#, perl-format
+msgid "could not unlock file %s: %s"
+msgstr ""
+
+#: ../AdduserCommon.pm:378
+#, perl-format
+msgid "could not close lock file %s: %s"
+msgstr ""
+
+#~ msgid "Done."
+#~ msgstr "Eginda."
+
+#, perl-format
+#~ msgid "Stopped: %s"
+#~ msgstr "Geldituta: %s"
+
+#~ msgid "WARNING: You are just about to delete the root account (uid 0)"
+#~ msgstr "ABISUA: root kontua (0 UIDa) ezabatzera zoaz"
+
+#~ msgid ""
+#~ "Usually this is never required as it may render the whole system "
+#~ "unusable\n"
+#~ msgstr ""
+#~ "Normalean hau ez zen inoiz egin beharko, sistema osoa erabilezin utziko "
+#~ "baitu\n"
+
+#, fuzzy
+#~| msgid "If you really want this, call deluser with parameter --force"
+#~ msgid ""
+#~ "If you really want this, call deluser with parameter --no-preserve-root\n"
+#~ msgstr "Ziur bazaude, deitu 'deluser' komandoari '--force' aukerarekin"
+
+#~ msgid "Stopping now without having performed any action"
+#~ msgstr "Inolako ekintzarik landu gabe gelditzen"
+
+#, perl-format
+#~ msgid "%s: %s"
+#~ msgstr "%s: %s"
+
+#, perl-format
+#~ msgid "No UID is available in the range %d-%d (FIRST_UID - LAST_UID)."
 #~ msgstr ""
 #~ "Ez dago UID erabilgarririk %d-%d barrutian (LEHEN_UID - AZKEN_UID).\n"
 
@@ -958,19 +1028,19 @@ msgstr ""
 #~ "\n"
 
 #, perl-format
-#~ msgid "fork for `mount' to parse mount points failed: %s\n"
-#~ msgstr "huts egin du 'mount' sardetzean muntai-puntuak aztertzeko: %s\n"
+#~ msgid "fork for `mount' to parse mount points failed: %s"
+#~ msgstr "huts egin du 'mount' sardetzean muntai-puntuak aztertzeko: %s"
 
 #, perl-format
-#~ msgid "pipe of command `mount' could not be closed: %s\n"
-#~ msgstr "ezin izan da 'mount' komandoaren tutua itxi: %s\n"
+#~ msgid "pipe of command `mount' could not be closed: %s"
+#~ msgstr "ezin izan da 'mount' komandoaren tutua itxi: %s"
 
 #, perl-format
-#~ msgid "`%s' still has `%s' as their primary group!\n"
-#~ msgstr "'%s'(e)k '%s' talde nagusi bezala du!\n"
+#~ msgid "`%s' still has `%s' as their primary group!"
+#~ msgstr "'%s'(e)k '%s' talde nagusi bezala du!"
 
-#~ msgid "Removes users and groups from the system.\n"
-#~ msgstr "Sistematik erabiltzaile eta taldeak kentzen ditu.\n"
+#~ msgid "Removes users and groups from the system."
+#~ msgstr "Sistematik erabiltzaile eta taldeak kentzen ditu."
 
 #~ msgid ""
 #~ "Copyright (C) 2000 Roland Bauerschmidt <roland@copyleft.de>\n"
@@ -1091,5 +1161,5 @@ msgstr ""
 #~ "\n"
 
 #, perl-format
-#~ msgid "The user `%s' already exists. Exiting.\n"
-#~ msgstr "'%s' erabiltzailea badago lehendik ere, Irteten.\n"
+#~ msgid "The user `%s' already exists. Exiting."
+#~ msgstr "'%s' erabiltzailea badago lehendik ere, Irteten."

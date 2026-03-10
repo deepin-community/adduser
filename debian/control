@@ -3,7 +3,7 @@ Section: admin
 Priority: important
 Maintainer: Debian Adduser Developers <adduser@packages.debian.org>
 Uploaders: Marc Haber <mh+debian-packages@zugschlus.de>
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Build-Depends: debhelper-compat (= 13), po4a
 Build-Depends-Indep: gettext
 Rules-Requires-Root: no

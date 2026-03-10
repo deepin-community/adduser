@@ -30,7 +30,8 @@ for (100..999) {
 assert_user_does_not_exist('foo');
 assert_path_does_not_exist('/nonexistent');
 
-assert_command_success('/usr/sbin/adduser', '--quiet',
+assert_command_success('/usr/sbin/adduser',
+	'--stdoutmsglevel=error', '--stderrmsglevel=error',
 	'--system',
        	'foo');
 assert_user_exists('foo');
@@ -50,11 +51,14 @@ assert_user_has_disabled_password('foo');
 # Ref: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1004710
 assert_path_does_not_exist('/var/mail/foo');
 
-$uid++;
+while (defined(getpwuid($uid))) {
+    $uid++;
+}
 assert_user_does_not_exist('foo2');
 assert_path_does_not_exist('/nonexistent');
 
-assert_command_success('/usr/sbin/adduser', '--quiet',
+assert_command_success('/usr/sbin/adduser',
+	'--stdoutmsglevel=error', '--stderrmsglevel=error',
 	'--system',
 	'--shell', '/bin/sh',
 	'foo2');
@@ -74,3 +78,5 @@ assert_user_has_disabled_password('foo2');
 
 # Ref: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1004710
 assert_path_does_not_exist('/var/mail/foo2');
+
+# vim: tabstop=4 shiftwidth=4 expandtab

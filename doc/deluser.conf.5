@@ -23,11 +23,11 @@ Double or single quotes are allowed around the value,
 as is whitespace around the equals sign.
 Comment lines must have a hash sign (#) in the first column.
 .PP
-\fBdeluser\fR and \fBdelgroup\fR
-also read \fI/etc/adduser.conf\fR, see
-.BR adduser.conf;
+\fBdeluser\fR(8) and \fBdelgroup\fR(8)
+also read \fI/etc/adduser.conf\fR(5), see
+.BR adduser.conf (5);
 settings in \fIdeluser.conf\fR may overwrite settings made in
-\fIadduser.conf\fR.
+\fIadduser.conf\fP.
 .PP
 The valid configuration options are:
 .TP
@@ -62,7 +62,7 @@ All files to be deleted in course of deleting the home directory or
 user-owned files elsewhere are checked against
 each of these regular expressions.
 If a match is detected, the file is not deleted.
-Default to a list of system directories, leaving only \fI/home\fR.
+Defaults to a list of system directories, leaving only \fI/home\fR.
 Therefore only files below \fI/home\fR belonging
 to that specific user are going to be deleted.
 .TP

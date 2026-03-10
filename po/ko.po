@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: adduser 3.37\n"
 "Report-Msgid-Bugs-To: adduser@packages.debian.org\n"
-"POT-Creation-Date: 2022-12-28 08:34+0100\n"
+"POT-Creation-Date: 2023-06-09 12:08+0200\n"
 "PO-Revision-Date: 2016-06-17 18:26+0200\n"
 "Last-Translator: Eungkyu Song <eungkyu@sparcs.org>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -16,356 +16,350 @@ msgstr ""
 "Content-Type: text/plain; charset=EUC-KR\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. everyone can issue "--help" and "--version", but only root can go on
-#: ../adduser:161
-msgid "Only root may add a user or group to the system.\n"
-msgstr "루트만이 사용자나 그룹을 시스템에 추가할 수 있습니다.\n"
+#: ../adduser:190
+msgid "Only root may add a user or group to the system."
+msgstr "루트만이 사용자나 그룹을 시스템에 추가할 수 있습니다."
 
-#: ../adduser:191 ../deluser:145
-msgid "Only one or two names allowed.\n"
+#: ../adduser:227 ../deluser:176
+msgid "Only one or two names allowed."
 msgstr ""
 
-#: ../adduser:197
-msgid "Specify only one name in this mode.\n"
-msgstr "이 경우에는 한 개의 이름만 지정할 수 있습니다.\n"
+#: ../adduser:234
+msgid "Specify only one name in this mode."
+msgstr "이 경우에는 한 개의 이름만 지정할 수 있습니다."
 
-#: ../adduser:200
-msgid "addgroup with two arguments is an unspecified operation.\n"
+#: ../adduser:238
+msgid "addgroup with two arguments is an unspecified operation."
 msgstr ""
 
-#: ../adduser:224
-msgid "The --group, --ingroup, and --gid options are mutually exclusive.\n"
+#: ../adduser:263
+msgid "The --group, --ingroup, and --gid options are mutually exclusive."
 msgstr ""
-"--group, --ingroup, 그리고 --gid 옵션은 한 번에 한 개만 쓸 수 있습니다.\n"
+"--group, --ingroup, 그리고 --gid 옵션은 한 번에 한 개만 쓸 수 있습니다."
 
-#: ../adduser:229
-msgid "The home dir must be an absolute path.\n"
-msgstr "홈 디렉토리는 절대 경로를 써야 합니다.\n"
+#: ../adduser:269
+msgid "The home dir must be an absolute path."
+msgstr "홈 디렉토리는 절대 경로를 써야 합니다."
 
-#: ../adduser:233
+#: ../adduser:275
 #, fuzzy, perl-format
-msgid "Warning: The home dir %s you specified already exists.\n"
+msgid "The home dir %s you specified already exists.\n"
 msgstr "경고: 지정한 홈 디렉토리가 이미 존재합니다.\n"
 
-#: ../adduser:235
+#: ../adduser:278
 #, fuzzy, perl-format
-msgid "Warning: The home dir %s you specified can't be accessed: %s\n"
+msgid "The home dir %s you specified can't be accessed: %s\n"
 msgstr "경고: 지정한 홈 디렉토리가 이미 존재합니다.\n"
 
-#: ../adduser:305
+#: ../adduser:347
 #, fuzzy, perl-format
-msgid "The group `%s' already exists as a system group. Exiting.\n"
+msgid "The group `%s' already exists as a system group. Exiting."
 msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
-#: ../adduser:310
+#: ../adduser:352
 #, fuzzy, perl-format
-msgid "The group `%s' already exists and is not a system group. Exiting.\n"
+msgid "The group `%s' already exists and is not a system group. Exiting."
 msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
-#: ../adduser:315
+#: ../adduser:357
 #, fuzzy, perl-format
-msgid "The group `%s' already exists, but has a different GID. Exiting.\n"
+msgid "The group `%s' already exists, but has a different GID. Exiting."
 msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
-#: ../adduser:320 ../adduser:354
+#: ../adduser:362 ../adduser:399
 #, fuzzy, perl-format
-msgid "The GID `%s' is already in use.\n"
+msgid "The GID `%s' is already in use."
 msgstr "`%s' GID는 이미 사용중입니다.\n"
 
 # (FIXME) 이렇게 쓰면 안 되지..
-#: ../adduser:330
+#: ../adduser:373
 #, fuzzy, perl-format
-msgid ""
-"No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID).\n"
+msgid "No GID is available in the range %d-%d (FIRST_SYS_GID - LAST_SYS_GID)."
 msgstr "범위 내에 쓸 수 있는 GID가 없습니다 "
 
-#: ../adduser:331 ../adduser:372
+#: ../adduser:375 ../adduser:418
 #, perl-format
-msgid "The group `%s' was not created.\n"
-msgstr "`%s' 그룹이 만들어지지 않았습니다.\n"
+msgid "The group `%s' was not created."
+msgstr "`%s' 그룹이 만들어지지 않았습니다."
 
-#: ../adduser:336 ../adduser:376
+#: ../adduser:381 ../adduser:423
 #, fuzzy, perl-format
-msgid "Adding group `%s' (GID %d) ...\n"
+msgid "Adding group `%s' (GID %d) ..."
 msgstr "그룹 %s (%s) 추가...\n"
 
-#: ../adduser:340 ../adduser:380 ../adduser:404 ../deluser:366 ../deluser:400
-#: ../deluser:440
-msgid "Done.\n"
-msgstr "완료.\n"
-
-#: ../adduser:351 ../adduser:991
+#: ../adduser:395 ../adduser:1081
 #, perl-format
-msgid "The group `%s' already exists.\n"
-msgstr "`%s' 그룹은 이미 존재합니다.\n"
+msgid "The group `%s' already exists."
+msgstr "`%s' 그룹은 이미 존재합니다."
 
 # (FIXME) 이렇게 쓰면 안 되지..
-#: ../adduser:371
+#: ../adduser:416
 #, fuzzy, perl-format
-msgid "No GID is available in the range %d-%d (FIRST_GID - LAST_GID).\n"
+msgid "No GID is available in the range %d-%d (FIRST_GID - LAST_GID)."
 msgstr "범위 내에 쓸 수 있는 GID가 없습니다 "
 
-#: ../adduser:390 ../deluser:235 ../deluser:408
+#: ../adduser:437 ../deluser:266
 #, perl-format
-msgid "The user `%s' does not exist.\n"
-msgstr "`%s' 사용자가 없습니다.\n"
+msgid "The user `%s' does not exist."
+msgstr "`%s' 사용자가 없습니다."
 
-#: ../adduser:391 ../adduser:784 ../adduser:997 ../deluser:373 ../deluser:411
+#: ../adduser:441 ../adduser:857 ../adduser:1091 ../deluser:408 ../deluser:411
 #, perl-format
-msgid "The group `%s' does not exist.\n"
-msgstr "`%s' 그룹이 없습니다.\n"
+msgid "The group `%s' does not exist."
+msgstr "`%s' 그룹이 없습니다."
 
-#: ../adduser:394 ../adduser:788
+#: ../adduser:446 ../adduser:861
 #, perl-format
-msgid "The user `%s' is already a member of `%s'.\n"
-msgstr "`%s' 사용자는 이미 %s의 일원입니다.\n"
+msgid "The user `%s' is already a member of `%s'."
+msgstr "`%s' 사용자는 이미 %s의 일원입니다."
 
-#: ../adduser:398 ../adduser:794
+#: ../adduser:450 ../adduser:867
 #, fuzzy, perl-format
-msgid "Adding user `%s' to group `%s' ...\n"
+msgid "Adding user `%s' to group `%s' ..."
 msgstr "%s 사용자를 %s 그룹에 추가...\n"
 
-#: ../adduser:418
+#: ../adduser:469
 #, fuzzy, perl-format
 msgid "The system user `%s' already exists. Exiting.\n"
 msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
-#: ../adduser:421
+#: ../adduser:472
 #, fuzzy, perl-format
-msgid "The user `%s' already exists, but is not a system user. Exiting.\n"
+msgid "The user `%s' already exists, but is not a system user. Exiting."
 msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
-#: ../adduser:425
+#: ../adduser:476
 #, fuzzy, perl-format
-msgid "The user `%s' already exists with a different UID. Exiting.\n"
+msgid "The user `%s' already exists with a different UID. Exiting."
 msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
 # (FIXME) 이렇게 쓰면 안 되지..
-#: ../adduser:439
+#: ../adduser:490
 #, fuzzy, perl-format
 msgid ""
 "No UID/GID pair is available in the range %d-%d (FIRST_SYS_UID - "
-"LAST_SYS_UID).\n"
+"LAST_SYS_UID)."
 msgstr "범위 내에 쓸 수 있는 UID/GID 쌍이 없습니다 "
 
-#: ../adduser:440 ../adduser:453 ../adduser:523 ../adduser:635 ../adduser:640
+#: ../adduser:493 ../adduser:509 ../adduser:591 ../adduser:705 ../adduser:711
 #, perl-format
-msgid "The user `%s' was not created.\n"
-msgstr "`%s' 사용자가 만들어지지 않았습니다.\n"
+msgid "The user `%s' was not created."
+msgstr "`%s' 사용자가 만들어지지 않았습니다."
 
 # (FIXME) 이렇게 쓰면 안 되지..
-#: ../adduser:452
+#: ../adduser:506
 #, fuzzy, perl-format
-msgid ""
-"No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID).\n"
+msgid "No UID is available in the range %d-%d (FIRST_SYS_UID - LAST_SYS_UID)."
 msgstr "범위 내에 쓸 수 있는 UID가 없습니다 "
 
-#: ../adduser:457 ../adduser:463
+#: ../adduser:517 ../adduser:529
 #, fuzzy
 #| msgid "Internal error"
-msgid "Internal error\n"
+msgid "Internal error"
 msgstr "내부 오류"
 
-#: ../adduser:465
+#: ../adduser:533
 #, fuzzy, perl-format
-msgid "Adding system user `%s' (UID %d) ...\n"
+msgid "Adding system user `%s' (UID %d) ..."
 msgstr "시스템 사용자 %s 추가...\n"
 
-#: ../adduser:469
+#: ../adduser:537
 #, fuzzy, perl-format
-msgid "Adding new group `%s' (GID %d) ...\n"
+msgid "Adding new group `%s' (GID %d) ..."
 msgstr "새 그룹 %s (%s) 추가.\n"
 
-#: ../adduser:475
+#: ../adduser:543
 #, fuzzy, perl-format
-msgid "Adding new user `%s' (UID %d) with group `%s' ...\n"
+msgid "Adding new user `%s' (UID %d) with group `%s' ..."
 msgstr "새로운 사용자 %s (%s) 을(를) 그룹 %s로(으로) 추가합니다.\n"
 
-#: ../adduser:522
+#: ../adduser:590
 msgid ""
-"USERS_GID and USERS_GROUP both given in configuration. This is an error.\n"
+"USERS_GID and USERS_GROUP both given in configuration. This is an error."
 msgstr ""
 
-#: ../adduser:611
+#: ../adduser:681
 #, fuzzy, perl-format
-msgid "Adding user `%s' ...\n"
+msgid "Adding user `%s' ..."
 msgstr "사용자 %s 추가...\n"
 
 # (FIXME) 이렇게 쓰면 안 되지..
-#: ../adduser:634
+#: ../adduser:704
 #, fuzzy, perl-format
-msgid ""
-"No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+msgid "No UID/GID pair is available in the range %d-%d (FIRST_UID - LAST_UID)."
 msgstr "범위 내에 쓸 수 있는 UID/GID 쌍이 없습니다 "
 
-#: ../adduser:639
+#: ../adduser:710
 msgid ""
 "USERGROUPS=no, USER_GID=-1 and USERS_GROUP empty. A user needs a primary "
-"group!\n"
+"group!"
 msgstr ""
 
-#: ../adduser:678
-msgid "Internal error interpreting parameter combination\n"
+#: ../adduser:750
+msgid "Internal error interpreting parameter combination"
 msgstr ""
 
-#: ../adduser:687
+#: ../adduser:760
 #, fuzzy, perl-format
-msgid "Adding new group `%s' (%d) ...\n"
+msgid "Adding new group `%s' (%d) ..."
 msgstr "새 그룹 %s (%s) 추가.\n"
 
-#: ../adduser:690
+#: ../adduser:763
 #, fuzzy, perl-format
-msgid "Adding new group `%s' (new group ID) ...\n"
+msgid "Adding new group `%s' (new group ID) ..."
 msgstr "새 그룹 %s (%s) 추가.\n"
 
-#: ../adduser:700
+#: ../adduser:766
+#, perl-format
+msgid "new group '%s' created with GID %d"
+msgstr ""
+
+#: ../adduser:773
 #, fuzzy, perl-format
-msgid "Adding new user `%s' (%d) with group `%s (%d)' ...\n"
+msgid "Adding new user `%s' (%d) with group `%s (%d)' ..."
 msgstr "새로운 사용자 %s (%s) 을(를) 그룹 %s로(으로) 추가합니다.\n"
 
 #. hm, error, should we break now?
-#: ../adduser:728
-msgid "Permission denied\n"
+#: ../adduser:802
+msgid "Permission denied"
 msgstr ""
 
-#: ../adduser:729
-msgid "invalid combination of options\n"
+#: ../adduser:803
+msgid "invalid combination of options"
 msgstr ""
 
-#: ../adduser:730
-msgid "unexpected failure, nothing done\n"
+#: ../adduser:804
+msgid "unexpected failure, nothing done"
 msgstr ""
 
-#: ../adduser:731
-msgid "unexpected failure, passwd file missing\n"
+#: ../adduser:805
+msgid "unexpected failure, passwd file missing"
 msgstr ""
 
-#: ../adduser:732
-msgid "passwd file busy, try again\n"
+#: ../adduser:806
+msgid "passwd file busy, try again"
 msgstr ""
 
-#: ../adduser:733
-msgid "invalid argument to option\n"
+#: ../adduser:807
+msgid "invalid argument to option"
 msgstr ""
 
-#: ../adduser:739
+#: ../adduser:813
 msgid "Try again? [y/N] "
 msgstr ""
 
-#: ../adduser:765
+#: ../adduser:839
 #, fuzzy
 msgid "Is the information correct? [Y/n] "
 msgstr "이 정보가 맞습니까? [y/N] "
 
-#: ../adduser:779
+#: ../adduser:853
 #, fuzzy, perl-format
-msgid "Adding new user `%s' to supplemental / extra groups `%s' ...\n"
+msgid "Adding new user `%s' to supplemental / extra groups `%s' ..."
 msgstr "새로운 사용자 %s (%s) 을(를) 그룹 %s로(으로) 추가합니다.\n"
 
-#: ../adduser:805
+#: ../adduser:877
 #, fuzzy, perl-format
-msgid "Setting quota for user `%s' to values of user `%s' ...\n"
+msgid "Setting quota for user `%s' to values of user `%s' ..."
 msgstr "%s 사용자를 %s 그룹에 추가...\n"
 
-#: ../adduser:843
+#: ../adduser:915
 #, fuzzy, perl-format
-msgid "Not creating `%s'.\n"
+msgid "Not creating `%s'."
 msgstr "홈 디렉토리를 만들지 않습니다.\n"
 
-#: ../adduser:846
+#: ../adduser:917
 #, fuzzy, perl-format
-msgid "Not creating home directory `%s'.\n"
+msgid "Not creating home directory `%s'."
 msgstr "홈 디렉토리를 만들지 않습니다.\n"
 
-#: ../adduser:849
+#: ../adduser:919
 #, fuzzy, perl-format
-msgid "The home directory `%s' already exists.  Not touching this directory.\n"
+msgid "The home directory `%s' already exists.  Not touching this directory."
 msgstr "홈 디렉토리 %s이(가) 이미 존재합니다.  %s에서 복사하지 않습니다\n"
 
-#: ../adduser:855
+#: ../adduser:925
 #, perl-format
 msgid ""
 "Warning: The home directory `%s' does not belong to the user you are "
-"currently creating.\n"
+"currently creating."
 msgstr ""
 
-#: ../adduser:859
+#: ../adduser:928
 #, fuzzy, perl-format
-msgid "Creating home directory `%s' ...\n"
+msgid "Creating home directory `%s' ..."
 msgstr "홈 디렉토리 %s 을(를) 만듭니다.\n"
 
-#: ../adduser:861
+#: ../adduser:931
 #, fuzzy, perl-format
-msgid "Couldn't create home directory `%s': %s.\n"
+msgid "Couldn't create home directory `%s': %s."
 msgstr "홈 디렉토리를 만들지 않습니다.\n"
 
-#: ../adduser:869
+#: ../adduser:945
 #, fuzzy, perl-format
-msgid "Copying files from `%s' ...\n"
+msgid "Copying files from `%s' ..."
 msgstr "%s에서 파일 복사\n"
 
-#: ../adduser:871
+#: ../adduser:948
 #, perl-format
-msgid "fork for `find' failed: %s\n"
+msgid "fork for `find' failed: %s"
 msgstr ""
 
-#: ../adduser:980
+#: ../adduser:1065
 #, fuzzy, perl-format
-msgid "The user `%s' already exists, and is not a system user.\n"
+msgid "The user `%s' already exists, and is not a system user."
 msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
-#: ../adduser:982
+#: ../adduser:1068
 #, fuzzy, perl-format
-msgid "The user `%s' already exists.\n"
+msgid "The user `%s' already exists."
 msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
-#: ../adduser:985
+#: ../adduser:1073
 #, fuzzy, perl-format
-msgid "The UID %d is already in use.\n"
+msgid "The UID %d is already in use."
 msgstr "`%s' GID는 이미 사용중입니다.\n"
 
-#: ../adduser:993
+#: ../adduser:1085
 #, fuzzy, perl-format
-msgid "The GID %d is already in use.\n"
+msgid "The GID %d is already in use."
 msgstr "`%s' GID는 이미 사용중입니다.\n"
 
-#: ../adduser:999
+#: ../adduser:1095
 #, fuzzy, perl-format
-msgid "The GID %d does not exist.\n"
+msgid "The GID %d does not exist."
 msgstr "`%s' 사용자가 없습니다.\n"
 
-#: ../adduser:1043
+#: ../adduser:1162
 #, perl-format
-msgid ""
-"Cannot deal with %s.\n"
-"It is not a dir, file, or symlink.\n"
+msgid "%s/%s is neither a dir, file, nor a symlink."
 msgstr ""
 
 #. this check cannot be turned off
-#: ../adduser:1069
+#: ../adduser:1196
 msgid ""
 "To avoid ambiguity with numerical UIDs, usernames which\n"
-"            consist of only digits are not allowed.\n"
+"            consist of only digits are not allowed."
 msgstr ""
 
 #. this check cannot be turned off
-#: ../adduser:1076
+#: ../adduser:1203
 msgid ""
 "Usernames must be no more than 32 bytes in length;\n"
 "            note that if you are using Unicode characters, the character\n"
-"            limit will be less than 32.\n"
+"            limit will be less than 32."
 msgstr ""
 
 #. this check cannot be turned off
-#: ../adduser:1084
+#: ../adduser:1211
 msgid ""
 "To avoid problems, the username must not start with a\n"
 "            dash, plus sign, or tilde, and it must not contain any of the\n"
 "            following: colon, comma, slash, or any whitespace characters\n"
-"            including spaces, tabs, and newlines.\n"
+"            including spaces, tabs, and newlines."
 msgstr ""
 
-#: ../adduser:1094
+#: ../adduser:1221
 msgid ""
 "To avoid problems, the username should consist only of\n"
 "            letters, digits, underscores, periods, at signs and dashes, and\n"
@@ -373,75 +367,70 @@ msgid ""
 "            compatibility with Samba machine accounts, $ is also supported\n"
 "            at the end of the username.  (Use the `--allow-all-names' "
 "option\n"
-"            to bypass this restriction.)\n"
+"            to bypass this restriction.)"
 msgstr ""
 
-#: ../adduser:1104
-msgid "Allowing use of questionable username.\n"
+#: ../adduser:1231
+msgid "Allowing use of questionable username."
 msgstr ""
 
-#: ../adduser:1106
+#: ../adduser:1233
 #, perl-format
 msgid ""
 "Please enter a username matching the regular expression\n"
 "            configured via the %s configuration variable.  Use the\n"
 "            `--allow-bad-names' option to relax this check or reconfigure\n"
-"            %s in configuration.\n"
+"            %s in configuration."
 msgstr ""
 
-#: ../adduser:1127
+#: ../adduser:1254
 #, fuzzy, perl-format
 msgid "Selecting UID from range %d to %d ...\n"
 msgstr "%s에서 디스크 제한을 설정합니다.\n"
 
-#: ../adduser:1150
+#: ../adduser:1277
 #, fuzzy, perl-format
-msgid "Selecting GID from range %d to %d ...\n"
+msgid "Selecting GID from range %d to %d ..."
 msgstr "%s에서 디스크 제한을 설정합니다.\n"
 
-#: ../adduser:1174
+#: ../adduser:1301
 #, fuzzy, perl-format
-msgid "Selecting UID/GID from range %d to %d ...\n"
+msgid "Selecting UID/GID from range %d to %d ..."
 msgstr "%s에서 디스크 제한을 설정합니다.\n"
 
-#: ../adduser:1215
-#, perl-format
-msgid "Stopped: %s\n"
-msgstr ""
-
-#: ../adduser:1217
+#: ../adduser:1342
 #, fuzzy, perl-format
-msgid "Removing directory `%s' ...\n"
+msgid "Removing directory `%s' ..."
 msgstr "홈 디렉토리 %s 을(를) 만듭니다.\n"
 
-#: ../adduser:1221 ../deluser:358
+#: ../adduser:1346 ../deluser:393
 #, fuzzy, perl-format
-msgid "Removing user `%s' ...\n"
+msgid "Removing user `%s' ..."
 msgstr "사용자 %s 추가...\n"
 
 #. groupdel will error out if there are users left that
 #. have $group as primary group. We are not checking this
 #. ourself since this would mean enumerating all users.
-#: ../adduser:1225 ../deluser:395
+#: ../adduser:1350 ../deluser:435
 #, fuzzy, perl-format
-msgid "Removing group `%s' ...\n"
+msgid "Removing group `%s' ..."
 msgstr "그룹 %s (%s) 추가...\n"
 
 #. Translators: the variable %s is INT, QUIT, or HUP.
 #. Please do not insert a space character between SIG and %s.
-#: ../adduser:1235
+#: ../adduser:1360
 #, perl-format
-msgid "Caught a SIG%s.\n"
+msgid "Caught a SIG%s."
 msgstr ""
 
-#: ../adduser:1240
+#: ../adduser:1366
 #, perl-format
 msgid ""
 "adduser version %s\n"
 "\n"
 msgstr ""
 
-#: ../adduser:1241
+#: ../adduser:1367
 msgid ""
 "Adds a user or group to the system.\n"
 "\n"
@@ -450,7 +439,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../adduser:1247 ../deluser:460
+#: ../adduser:1373 ../deluser:495
 msgid ""
 "This program is free software; you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -463,7 +452,7 @@ msgid ""
 "General Public License, /usr/share/common-licenses/GPL, for more details.\n"
 msgstr ""
 
-#: ../adduser:1261
+#: ../adduser:1387
 msgid ""
 "adduser [--uid id] [--firstuid id] [--lastuid id]\n"
 "        [--gid id] [--firstgid id] [--lastgid id] [--ingroup group]\n"
@@ -502,148 +491,148 @@ msgid ""
 "   Add an existing user to an existing group\n"
 msgstr ""
 
-#. everyone can issue "--help" and "--version", but only root can go on
-#: ../deluser:107
+#: ../deluser:125
 #, fuzzy
-msgid "Only root may remove a user or group from the system.\n"
+msgid "Only root may remove a user or group from the system."
 msgstr "루트만이 사용자나 그룹을 시스템에 추가할 수 있습니다.\n"
 
-#: ../deluser:128
-msgid "No options allowed after names.\n"
-msgstr "이름 다음에 옵션을 쓸 수 없습니다.\n"
+#: ../deluser:158
+msgid "No options allowed after names."
+msgstr "이름 다음에 옵션을 쓸 수 없습니다."
 
-#: ../deluser:136
+#: ../deluser:167
 #, fuzzy
 msgid "Enter a group name to remove: "
 msgstr "추가할 사용자명을 입력하세요: "
 
-#: ../deluser:138
+#: ../deluser:169
 #, fuzzy
 msgid "Enter a user name to remove: "
 msgstr "추가할 사용자명을 입력하세요: "
 
-#: ../deluser:180
+#: ../deluser:212
 msgid ""
 "In order to use the --remove-home, --remove-all-files, and --backup "
-"features,\n"
-"you need to install the `perl' package. To accomplish that, run\n"
-"apt-get install perl.\n"
+"features, you need to install the `perl' package. To accomplish that, run "
+"apt-get install perl."
 msgstr ""
 
-#: ../deluser:225
+#: ../deluser:256
 #, fuzzy, perl-format
-msgid "The user `%s' is not a system user. Exiting.\n"
+msgid "The user `%s' is not a system user. Exiting."
 msgstr "`%s' 사용자는 이미 %s의 일원입니다.\n"
 
-#: ../deluser:229
+#: ../deluser:260
 #, fuzzy, perl-format
-msgid "The user `%s' does not exist, but --system was given. Exiting.\n"
+msgid "The user `%s' does not exist, but --system was given. Exiting."
 msgstr "`%s' 사용자가 없습니다.\n"
 
-#: ../deluser:240
-msgid "WARNING: You are just about to delete the root account (uid 0)\n"
-msgstr ""
-
-#: ../deluser:241
+#: ../deluser:272
 msgid ""
-"Usually this is never required as it may render the whole system unusable\n"
+"WARNING: You are just about to delete the root account (uid 0). Usually this "
+"is never required as it may render the whole system unusable. If you really "
+"want this, call deluser with parameter --no-preserve-root. Stopping now "
+"without having performed any action"
 msgstr ""
 
-#: ../deluser:242
-msgid ""
-"If you really want this, call deluser with parameter --no-preserve-root\n"
+#: ../deluser:283
+msgid "Looking for files to backup/remove ..."
 msgstr ""
 
-#: ../deluser:243
-msgid "Stopping now without having performed any action\n"
-msgstr ""
-
-#: ../deluser:254
-msgid "Looking for files to backup/remove ...\n"
-msgstr ""
-
-#: ../deluser:258
+#: ../deluser:288
 #, perl-format
-msgid "failed to open /proc/mounts: %s\n"
+msgid "failed to open /proc/mounts: %s"
 msgstr ""
 
-#: ../deluser:268
+#: ../deluser:301
 #, perl-format
-msgid "failed to close /proc/mounts: %s\n"
+msgid "failed to close /proc/mounts: %s"
 msgstr ""
 
-#: ../deluser:291
+#: ../deluser:326
 #, perl-format
-msgid "Not backing up/removing `%s', it is a mount point.\n"
+msgid "Not backing up/removing `%s', it is a mount point."
 msgstr ""
 
-#: ../deluser:298
+#: ../deluser:333
 #, perl-format
-msgid "Not backing up/removing `%s', it matches %s.\n"
+msgid "Not backing up/removing `%s', it matches %s."
 msgstr ""
 
-#: ../deluser:312
+#: ../deluser:347
 #, perl-format
-msgid "Cannot handle special file %s\n"
+msgid "Cannot handle special file %s"
 msgstr ""
 
-#: ../deluser:320
+#: ../deluser:355
 #, perl-format
-msgid "Backing up files to be removed to %s ...\n"
+msgid "Backing up files to be removed to %s ..."
 msgstr ""
 
-#: ../deluser:339
+#: ../deluser:374
 #, fuzzy
-msgid "Removing files ...\n"
+msgid "Removing files ..."
 msgstr "사용자 %s 추가...\n"
 
-#: ../deluser:348
+#: ../deluser:383
 #, fuzzy
-msgid "Removing crontab ...\n"
+msgid "Removing crontab ..."
 msgstr "그룹 %s (%s) 추가...\n"
 
-#: ../deluser:354
-#, perl-format
-msgid "`%s' not executed. Skipping crontab removal. Package `cron' required.\n"
-msgstr ""
-
-#: ../deluser:380
-#, perl-format
-msgid "getgrnam `%s' failed. This shouldn't happen.\n"
-msgstr ""
-
-#: ../deluser:385
-#, fuzzy, perl-format
-msgid "The group `%s' is not a system group. Exiting.\n"
-msgstr "`%s' 그룹이 없습니다.\n"
-
 #: ../deluser:389
-#, fuzzy, perl-format
-msgid "The group `%s' is not empty!\n"
-msgstr "`%s' 그룹이 없습니다.\n"
-
-#: ../deluser:414
-msgid "You may not remove the user from their primary group.\n"
+#, perl-format
+msgid "`%s' not executed. Skipping crontab removal. Package `cron' required."
 msgstr ""
 
-#: ../deluser:431
+#: ../deluser:418
+#, perl-format
+msgid "getgrnam `%s' failed. This shouldn't happen."
+msgstr ""
+
+#: ../deluser:424
 #, fuzzy, perl-format
-msgid "The user `%s' is not a member of group `%s'.\n"
+msgid "The group `%s' is not a system group. Exiting."
+msgstr "`%s' 그룹이 없습니다.\n"
+
+#: ../deluser:428
+#, fuzzy, perl-format
+msgid "The group `%s' is not empty!"
+msgstr "`%s' 그룹이 없습니다.\n"
+
+#: ../deluser:447
+#, fuzzy, perl-format
+#| msgid "The user `%s' does not exist."
+msgid "The user `%s' does not exist.\n"
+msgstr "`%s' 사용자가 없습니다.\n"
+
+#: ../deluser:451
+#, fuzzy, perl-format
+#| msgid "The group `%s' does not exist."
+msgid "The group `%s' does not exist.\n"
+msgstr "`%s' 그룹이 없습니다.\n"
+
+#: ../deluser:455
+msgid "You may not remove the user from their primary group."
+msgstr ""
+
+#: ../deluser:473
+#, fuzzy, perl-format
+msgid "The user `%s' is not a member of group `%s'."
 msgstr "`%s' 사용자는 이미 %s의 일원입니다.\n"
 
-#: ../deluser:434
+#: ../deluser:477
 #, fuzzy, perl-format
-msgid "Removing user `%s' from group `%s' ...\n"
+msgid "Removing user `%s' from group `%s' ..."
 msgstr "%s 사용자를 %s 그룹에 추가...\n"
 
-#: ../deluser:453
+#: ../deluser:488
 #, perl-format
 msgid ""
 "deluser version %s\n"
 "\n"
 msgstr ""
 
-#: ../deluser:454
+#: ../deluser:489
 msgid ""
 "Removes users and groups from the system.\n"
 "\n"
@@ -652,7 +641,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../deluser:474
+#: ../deluser:509
 msgid ""
 "deluser [--system] [--remove-home] [--remove-all-files] [--backup]\n"
 "        [--backup-to dir] [--backup-suffix str] [--conf file]\n"
@@ -671,136 +660,168 @@ msgid ""
 msgstr ""
 
 #. compressor recognized, not available
-#: ../deluser:512 ../deluser:522
+#: ../deluser:547 ../deluser:557
 #, perl-format
-msgid "Backup suffix %s unavailable, using gzip.\n"
+msgid "Backup suffix %s unavailable, using gzip."
 msgstr ""
 
-#: ../AdduserCommon.pm:46 ../AdduserCommon.pm:52
-#, perl-format
-msgid "%s: %s"
-msgstr ""
-
-#: ../AdduserCommon.pm:71
+#: ../AdduserCommon.pm:77
 #, fuzzy, perl-format
-msgid "`%s' does not exist. Using defaults.\n"
+msgid "`%s' does not exist. Using defaults."
 msgstr "`%s'이(가) 없습니다.\n"
 
-#: ../AdduserCommon.pm:81 ../AdduserCommon.pm:136 ../AdduserCommon.pm:149
+#: ../AdduserCommon.pm:83
 #, perl-format
-msgid "Couldn't parse `%s', line %d.\n"
+msgid "cannot open configuration file %s: `%s'\n"
 msgstr ""
 
-#: ../AdduserCommon.pm:86
+#: ../AdduserCommon.pm:91 ../AdduserCommon.pm:155 ../AdduserCommon.pm:168
+#, perl-format
+msgid "Couldn't parse `%s', line %d."
+msgstr ""
+
+#: ../AdduserCommon.pm:96
 #, fuzzy, perl-format
-msgid "Unknown variable `%s' at `%s', line %d.\n"
+msgid "Unknown variable `%s' at `%s', line %d."
 msgstr "알 수 없는 인자 `%s'.\n"
 
-#: ../AdduserCommon.pm:111
+#: ../AdduserCommon.pm:122
 #, fuzzy, perl-format
 msgid "Cannot read directory `%s'"
 msgstr "홈 디렉토리를 만들지 않습니다.\n"
 
-#: ../AdduserCommon.pm:124
+#: ../AdduserCommon.pm:137
 #, perl-format
-msgid "`%s' does not exist.\n"
-msgstr "`%s'이(가) 없습니다.\n"
+msgid "`%s' does not exist."
+msgstr "`%s'이(가) 없습니다."
 
-#: ../AdduserCommon.pm:156
+#: ../AdduserCommon.pm:142
 #, perl-format
-msgid "Illegal pool type `%s' reading `%s'.\n"
+msgid "Cannot open pool file %s: `%s'"
 msgstr ""
 
-#: ../AdduserCommon.pm:159
-#, fuzzy, perl-format
-msgid "Duplicate name `%s' at `%s', line %d.\n"
-msgstr "알 수 없는 인자 `%s'.\n"
-
-#: ../AdduserCommon.pm:162
-#, fuzzy, perl-format
-msgid "Duplicate ID `%s' at `%s', line %d.\n"
-msgstr "알 수 없는 인자 `%s'.\n"
-
-#: ../AdduserCommon.pm:212
+#: ../AdduserCommon.pm:175
 #, perl-format
-msgid "`%s' returned error code %d. Exiting.\n"
+msgid "Illegal pool type `%s' reading `%s'."
 msgstr ""
 
-#: ../AdduserCommon.pm:214
+#: ../AdduserCommon.pm:179
+#, fuzzy, perl-format
+msgid "Duplicate name `%s' at `%s', line %d."
+msgstr "알 수 없는 인자 `%s'.\n"
+
+#: ../AdduserCommon.pm:183
+#, fuzzy, perl-format
+msgid "Duplicate ID `%s' at `%s', line %d."
+msgstr "알 수 없는 인자 `%s'.\n"
+
+#: ../AdduserCommon.pm:213
 #, perl-format
-msgid "`%s' exited from signal %d. Exiting.\n"
+msgid "`%s' returned error code %d. Exiting."
+msgstr ""
+
+#: ../AdduserCommon.pm:216
+#, perl-format
+msgid "`%s' exited from signal %d. Exiting."
 msgstr ""
 
 #: ../AdduserCommon.pm:227
 #, perl-format
-msgid "`%s' failed to execute. %s. Continuing.\n"
+msgid "`%s' failed to execute. %s. Continuing."
 msgstr ""
 
 #: ../AdduserCommon.pm:229
 #, perl-format
-msgid "`%s' killed by signal %d. Continuing.\n"
+msgid "`%s' killed by signal %d. Continuing."
 msgstr ""
 
 #: ../AdduserCommon.pm:231
 #, perl-format
-msgid "`%s' failed with status %d. Continuing.\n"
+msgid "`%s' failed with status %d. Continuing."
 msgstr ""
 
-#: ../AdduserCommon.pm:269
+#: ../AdduserCommon.pm:270
 #, perl-format
-msgid "Could not find program named `%s' in $PATH.\n"
-msgstr ""
-
-#: ../AdduserCommon.pm:341
-msgid "Could not obtain exclusive lock, please try again shortly!"
+msgid "Could not find program named `%s' in $PATH."
 msgstr ""
 
 #: ../AdduserCommon.pm:343
-msgid "Waiting for lock to become available...\n"
+#, perl-format
+msgid "could not open lock file %s!"
 msgstr ""
+
+#: ../AdduserCommon.pm:349
+msgid "Could not obtain exclusive lock, please try again shortly!"
+msgstr ""
+
+#: ../AdduserCommon.pm:352
+msgid "Waiting for lock to become available..."
+msgstr ""
+
+#: ../AdduserCommon.pm:359
+#, perl-format
+msgid "could not seek - %s!"
+msgstr ""
+
+#: ../AdduserCommon.pm:368
+msgid "could not find lock file!"
+msgstr ""
+
+#: ../AdduserCommon.pm:373
+#, perl-format
+msgid "could not unlock file %s: %s"
+msgstr ""
+
+#: ../AdduserCommon.pm:378
+#, perl-format
+msgid "could not close lock file %s: %s"
+msgstr ""
+
+#~ msgid "Done."
+#~ msgstr "완료.\n"
 
 # (FIXME) 이렇게 쓰면 안 되지..
 #, fuzzy, perl-format
-#~ msgid "No UID is available in the range %d-%d (FIRST_UID - LAST_UID).\n"
+#~ msgid "No UID is available in the range %d-%d (FIRST_UID - LAST_UID)."
 #~ msgstr "범위 내에 쓸 수 있는 UID가 없습니다 "
 
 #, fuzzy
-#~ msgid "Removes users and groups from the system.\n"
+#~ msgid "Removes users and groups from the system."
 #~ msgstr "루트만이 사용자나 그룹을 시스템에 추가할 수 있습니다.\n"
 
 #, fuzzy, perl-format
-#~ msgid "The user `%s' already exists. Exiting.\n"
+#~ msgid "The user `%s' already exists. Exiting."
 #~ msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
 #, fuzzy
-#~ msgid "Warning: The home dir you specified does not exist.\n"
+#~ msgid "Warning: The home dir you specified does not exist."
 #~ msgstr "경고: 지정한 홈 디렉토리가 이미 존재합니다.\n"
 
 #, fuzzy
-#~ msgid "The group `%s' already exists and is not a system group.\n"
+#~ msgid "The group `%s' already exists and is not a system group."
 #~ msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
 #, fuzzy
-#~ msgid "Adding group `%s' (GID %s) ...\n"
+#~ msgid "Adding group `%s' (GID %s) ..."
 #~ msgstr "그룹 %s (%s) 추가...\n"
 
-#~ msgid "Setting quota from `%s'.\n"
+#~ msgid "Setting quota from `%s'."
 #~ msgstr "%s에서 디스크 제한을 설정합니다.\n"
 
 #, fuzzy
-#~ msgid "Selecting uid from range %s to %s.\n"
+#~ msgid "Selecting uid from range %s to %s."
 #~ msgstr "%s에서 디스크 제한을 설정합니다.\n"
 
 #, fuzzy
-#~ msgid "Removing user `%s'.\n"
+#~ msgid "Removing user `%s'."
 #~ msgstr "사용자 %s 추가...\n"
 
 #, fuzzy
-#~ msgid "Removing group `%s'.\n"
+#~ msgid "Removing group `%s'."
 #~ msgstr "그룹 %s (%s) 추가...\n"
 
 #, fuzzy
-#~ msgid "done.\n"
+#~ msgid "done."
 #~ msgstr "완료.\n"
 
 #, fuzzy
@@ -814,68 +835,68 @@ msgstr ""
 #~ msgid "Enter a username to add: "
 #~ msgstr "추가할 사용자명을 입력하세요: "
 
-#~ msgid "I need a name to add.\n"
+#~ msgid "I need a name to add."
 #~ msgstr "추가할 이름이 필요합니다.\n"
 
-#~ msgid "No more than two names.\n"
+#~ msgid "No more than two names."
 #~ msgstr "두 개 이상의 이름을 쓸 수 없습니다.\n"
 
 #, fuzzy
-#~ msgid "No name to remove given.\n"
+#~ msgid "No name to remove given."
 #~ msgstr "추가할 이름이 필요합니다.\n"
 
-#~ msgid "--ingroup requires an argument.\n"
+#~ msgid "--ingroup requires an argument."
 #~ msgstr "--ingroup은 인자가 필요합니다.\n"
 
-#~ msgid "--home requires an argument.\n"
+#~ msgid "--home requires an argument."
 #~ msgstr "--home은 인자가 필요합니다.\n"
 
 #, fuzzy
-#~ msgid "--gecos requires an argument.\n"
+#~ msgid "--gecos requires an argument."
 #~ msgstr "--conf는 인자가 필요합니다.\n"
 
 #, fuzzy
-#~ msgid "--shell requires an argument.\n"
+#~ msgid "--shell requires an argument."
 #~ msgstr "--home은 인자가 필요합니다.\n"
 
-#~ msgid "--uid requires a numeric argument.\n"
+#~ msgid "--uid requires a numeric argument."
 #~ msgstr "--uid에는 숫자로 된 인자를 써야 합니다.\n"
 
 #, fuzzy
-#~ msgid "--firstuid requires a numeric argument.\n"
+#~ msgid "--firstuid requires a numeric argument."
 #~ msgstr "--uid에는 숫자로 된 인자를 써야 합니다.\n"
 
 #, fuzzy
-#~ msgid "--lastuid requires a numeric argument.\n"
+#~ msgid "--lastuid requires a numeric argument."
 #~ msgstr "--uid에는 숫자로 된 인자를 써야 합니다.\n"
 
-#~ msgid "--gid requires a numeric argument.\n"
+#~ msgid "--gid requires a numeric argument."
 #~ msgstr "--gid에는 숫자로 된 인자를 써야 합니다.\n"
 
-#~ msgid "--conf requires an argument.\n"
+#~ msgid "--conf requires an argument."
 #~ msgstr "--conf는 인자가 필요합니다.\n"
 
-#~ msgid "Unknown argument `%s'.\n"
+#~ msgid "Unknown argument `%s'."
 #~ msgstr "알 수 없는 인자 `%s'.\n"
 
 #, fuzzy
-#~ msgid "User %s does already exist. Exiting...\n"
+#~ msgid "User %s does already exist. Exiting..."
 #~ msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
-#~ msgid "Home directory `%s' already exists.\n"
+#~ msgid "Home directory `%s' already exists."
 #~ msgstr "홈 디렉토리 %s이(가) 이미 존재합니다.\n"
 
 #, fuzzy
-#~ msgid "The UID `%s' already exists.\n"
+#~ msgid "The UID `%s' already exists."
 #~ msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
 #, fuzzy
-#~ msgid "The GID `%s' already exists.\n"
+#~ msgid "The GID `%s' already exists."
 #~ msgstr "`%s' 그룹은 이미 존재합니다.\n"
 
 #, fuzzy
-#~ msgid "Adding new group %s (%d).\n"
+#~ msgid "Adding new group %s (%d)."
 #~ msgstr "새 그룹 %s (%s) 추가.\n"
 
-#~ msgid "Adding new group $new_name ($new_gid).\n"
+#~ msgid "Adding new group $new_name ($new_gid)."
 #~ msgstr "새 그룹 $new_name ($new_gid) 을(를) 추가합니다.\n"

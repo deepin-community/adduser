@@ -14,10 +14,15 @@ END {
 }
 
 assert_user_does_not_exist('foo');
-assert_command_success('/usr/sbin/adduser', '--quiet', '--system', 'foo');
+assert_command_success('/usr/sbin/adduser',
+    '--stdoutmsglevel=error', '--stderrmsglevel=error',
+    '--system',
+    'foo');
 assert_user_exists('foo');
 
-my $output = `/usr/sbin/deluser --quiet foo 2>&1`;
-is($output, '', 'option "--quiet" silences deluser output under normal use');
+my $output = `/usr/sbin/deluser --stdoutmsglevel=error --stderrmsglevel=error foo 2>&1`;
+is($output, '', 'option "--stdoutmsglevel=error" silences deluser output under normal use');
 
 assert_user_does_not_exist('foo');
+
+# vim: tabstop=4 shiftwidth=4 expandtab
