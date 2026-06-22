@@ -1,11 +1,10 @@
-package Debian::AdduserRetvalues 3.138;
-use 5.32.0;
-use strict;
-use warnings;
+package Debian::AdduserRetvalues 3.139;
+use 5.36.0;
+use utf8;
 
 # Adduser definitions of return values
 #
-# Copyright (C) 2023 Marc Haber <mh+debian-packages@zugschlus.de>
+# Copyright (C) 2024-2025 Marc Haber <mh+debian-packages@zugschlus.de>
 #
 # License: GPL-2+
 
@@ -23,6 +22,7 @@ use vars qw(@EXPORT $VAR1);
     'RET_NO_PRIMARY_GID',
     'RET_INVALID_CHARS_IN_NAME',
     'RET_INVALID_HOME_DIRECTORY',
+    'RET_INVALID_NAME_FROM_USERADD',
     'RET_GROUP_NOT_EMPTY',
     'RET_USER_NOT_IN_GROUP',
     'RET_NO_PRIMARY_GROUP',
@@ -63,6 +63,7 @@ use constant RET_NO_PRIMARY_GID => 23; # requested primary GID does not exist
 
 use constant RET_INVALID_CHARS_IN_NAME => 31; # the provided name contains invalid characters
 use constant RET_INVALID_HOME_DIRECTORY => 32; # the provided name contains invalid characters
+use constant RET_INVALID_NAME_FROM_USERADD => 32; # useradd returned 19 "invalid user or group name"
 
 # group membership errors
 

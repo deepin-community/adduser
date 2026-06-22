@@ -1,13 +1,12 @@
-package Debian::AdduserLogging 3.138;
-use 5.32.0;
-use strict;
-use warnings;
+package Debian::AdduserLogging 3.139;
+use 5.36.0;
+use utf8;
 
 # Adduser logging Subroutines
 #
 # Subroutines shared by the "adduser" and "deluser" utilities.
 #
-# Copyright (C) 2023 Marc Haber <mh+debian-packages@zugschlus.de>
+# Copyright (C) 2024-2025 Marc Haber <mh+debian-packages@zugschlus.de>
 #
 # License: GPL-2+
 
@@ -22,14 +21,16 @@ sub progname {
 
 BEGIN {
     local $ENV{PERL_DL_NONLAZY}=1;
-    # we need to use eval expression form here, perl cookbook 12.2.3
-    eval " use Locale::gettext; "; ## no critic
+    eval {
+        require Locale::gettext;
+        Locale::gettext->import(qw(gettext textdomain LC_MESSAGES));
+    };
     if ($@) {
         *gettext = sub { shift };
         *textdomain = sub { "" };
         *LC_MESSAGES = sub { 5 };
     } else {
-        textdomain(progname());
+        Locale::gettext::textdomain("adduser");
     }
 }
 
@@ -114,7 +115,7 @@ sub logmsglevel {
 sub check_sys_admin {
     # this checks for SYS_ADMIN privilege, see #1074567
     return $has_sys_admin if defined $has_sys_admin;
-    open my $fh, '<', '/proc/self/status' or die "Can't open /proc/self/status: $!";
+    open my $fh, '<', '/proc/self/status' or return 0;
 
     while (my $line = <$fh>) {
         if ($line =~ /^CapEff:\s+[0-9a-fA-F]{10}([0-9a-fA-F]+)/) {
@@ -145,8 +146,12 @@ sub log_to_syslog {
     my $utprio = $1;
     $loggerparms =~ /([-\sa-zA-Z0-9]*)/;
     my $utloggerparms = $1;
-    $data =~ /([-\s()\]\[{}?*+#\.:,;!"$%&\/=a-zA-Z0-9]*)/;
-    my $utdata = $1;
+    my $utdata="";
+    # note that the two regexps are differnt in [^ and [
+    $data =~ s/[^-`'\s()\]\[{}?*+#\.:,;!"$%&\/=a-zA-Z0-9]/_/g;
+    if ($data =~ /^([-`'\s()\]\[{}?*+#\.:,;!"$%&\/=a-zA-Z0-9]+)$/) {
+        $utdata = $1;
+    }
     my @command= ("logger",
         $logger_id_option,
         "--tag=". progname(),

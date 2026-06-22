@@ -2,7 +2,7 @@
 .\"            1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
 .\"            1997-1999 Guy Maor
 .\"            2000-2003 Roland Bauerschmidt <rb@debian.org>
-.\"            2004-2022 Marc Haber <mh+debian-packages@zugschlus.de
+.\"            2004-2025 Marc Haber <mh+debian-packages@zugschlus.de
 .\"            2005-2009 Jörg Hoh <joerg@joerghoh.de
 .\"            2006-2011 Stephen Gran <sgran@debian.org>
 .\"            2011 Justin B Rye <jbr@edlug.org.uk>
@@ -121,12 +121,14 @@ adduser, addgroup \- add or manipulate users or groups
 \fBadduser\fP and \fBaddgroup\fP add users and groups to the system
 according to command line options
 and configuration information in \fI/etc/adduser.conf\fP.
-They are friendlier front ends to the low level tools like
+They are more Debian specific front ends to the
 \fBuseradd\fP, \fBgroupadd\fP and \fBusermod\fP programs,
-by default choosing Debian policy conformant UID and GID values,
-creating a home directory with skeletal configuration,
-running a custom script,
-and other features.
+which are more distribution agnostic.
+\fBadduser\fP and \fBaddgroup\fP
+by default choose Debian policy conformant UID and GID values,
+create a home directory with skeletal configuration,
+run a custom script,
+and have other features.
 .PP
 \fBadduser\fP and \fBaddgroup\fP are intended as a policy layer,
 making it easier for package maintainers and local administrators
@@ -149,10 +151,10 @@ For a full list and explanations of all options,
 see the OPTIONS section.
 .PP
 \fBadduser\fP and \fBaddgroup\fP can be run in one of five modes:
-.SS "Add a normal user"
+.SS "Add a regular (non-system) user"
 If called with one non-option argument and
 without the \fB\-\-system\fP or \fB\-\-group\fP options,
-\fBadduser\fP will add a normal user,
+\fBadduser\fP will add a regular user,
 that means a
 \fIdynamically allocated user account\fP
 in the sense of Debian Policy.
@@ -188,7 +190,7 @@ The interaction between
 is explained in detail in
 .BR adduser.conf (5).
 .PP
-The new user's primary groups can also be overridden
+The new user's primary group can also be overridden
 from the command line
 with the \fB\-\-gid\fP or \fB\-\-ingroup\fP options
 to set the group by id or name,
@@ -226,10 +228,10 @@ from the range specified by
 in the configuration file.
 This can be overridden with the \fB\-\-uid\fP option.
 .PP
-By default, system users are placed in the \fBnogroup\fP group.
-To place the new system user in an already existing group,
+By default, system users are assigned \fBnogroup\fP as primary group.
+To assign an already existing group as primary group,
 use the \fB\-\-gid\fP or \fB\-\-ingroup\fP options.
-If the \fB\-\-group\fP is given
+If the \fB\-\-group\fP option is given
 and the identically named group does not already exist,
 it is created with the same ID.
 .PP
@@ -239,13 +241,25 @@ is \fI\%/nonexistent\fP.
 This directory should never exist on any Debian system,
 and \fBadduser\fP will never create it automatically.
 .PP
+If a home directory is specified with the \fB\-\-home\fP option,
+and the directory does already exist
+(for example, if the package ships with files in that directory),
+\fBadduser\fP silently does not set the owner of the directory
+to the newly created user.
+Setting the owner might override a decision of the local admin,
+and reporting the fact would break \fBadduser\fP's silence
+during package installation.
+If you use \fBadduser \-\-home\fP in your package's maintainer scripts,
+you might want to issue an explicit recursive \fBchown\fP for the
+home directory after the call to \fBadduser\fP.
+.PP
 Unless a shell is explicitly set with the \fB\-\-shell\fP option,
 the new system user will have the shell set to
 \fI/usr/sbin/nologin\fP.
 \fBadduser \-\-system\fP does not set a password for the new account.
 Skeletal configuration files are not copied.
 .PP
-Other options will behave as for the creation of a normal user.
+Other options will behave as for the creation of a regular user.
 The files referenced by \fBUID_POOL\fP and \fBGID_POOL\fP are also honored.
 
 .SS "Add a group"
@@ -259,7 +273,8 @@ A
 often abbreviated as \fIsystem group\fP
 in the context of the \fBadduser\fP package,
 will be created
-if \fBadduser\fP is called with the \fB\-\-system\fP option.
+if \fBadduser \-\-group\fP or \fBaddgroup\fP
+are called with the \fB\-\-system\fP option.
 .PP
 A GID will be chosen from the respective range specified for GIDs
 in the configuration file
@@ -296,17 +311,15 @@ Valid modes: \fBadduser\fP, \fBadduser \-\-system\fP.
 .TP
 .B \-\-allow\-all\-names
 Allow any user- and groupname which is supported by the underlying
-\fBuseradd\fP(8), including names containing non-ASCII characters.
-See VALID NAMES in
-.BR adduser.conf (5).
+\fBuseradd\fP(8).
+See VALID NAMES below.
 Valid modes: \fBadduser\fP, \fBadduser \-\-system\fP,
 \fBaddgroup\fP, \fBaddgroup \-\-system\fP.
 .TP
 .B \-\-allow\-bad\-names
 Disable \fBNAME_REGEX\fP and \fBSYS_NAME_REGEX\fP check of names.
 Only a weaker check for validity of the name is applied.
-See VALID NAMES in
-.BR adduser.conf (5).
+See VALID NAMES below.
 Valid modes: \fBadduser\fP, \fBadduser \-\-system\fP,
 \fBaddgroup\fP, \fBaddgroup \-\-system\fP.
 .TP
@@ -324,7 +337,8 @@ Use \fIfile\fP instead of \fI/etc/adduser.conf\fP.
 Multiple \fB\-\-conf\fR options can be given.
 .TP
 .B \-\-debug
-Synonymous to --stdoutmsglevel=debug.
+Synonymous to
+.B \-\-stdoutmsglevel=debug.
 Deprecated.
 .TP
 .B \-\-disabled\-login
@@ -424,7 +438,8 @@ for initializing the new user's home directory.
 Valid modes: \fBadduser\fP, \fBadduser \-\-system\fP.
 .TP
 .B \-\-quiet
-Synonymous to \-\-stdoutmsglevel=warn.
+Synonymous to
+.B \-\-stdoutmsglevel=warn.
 Deprecated.
 .TP
 .BI \-\-shell " shell"
@@ -448,7 +463,8 @@ Force the new userid to be the given number.
 Valid modes: \fBadduser\fP, \fBadduser \-\-system\fP.
 .TP
 .B \-\-verbose
-Synonymous to \-\-stdoutmsglevel=info.
+Synonymous to
+.B \-\-stdoutmsglevel=info.
 Deprecated.
 .TP
 .BI \-\-stdoutmsglevel  " prio"
@@ -472,12 +488,39 @@ respectively.
 .BR \-v " , " \-\-version
 Display version and copyright information.
 
+.SH VALID NAMES
+Historically,
+\fBadduser\fP(8) and \fBaddgroup\fP(8) enforced
+conformity to IEEE Std 1003.1-2001,
+which allows only the following characters to appear
+in group- and usernames:
+letters, digits, underscores, periods, at signs (@) and dashes.
+The name may not start with a dash or @.
+The "$" sign is allowed at the end of usernames
+to allow typical Samba machine accounts.
+.PP
+The default settings for \fBNAME_REGEX\fP and \fBSYS_NAME_REGEX\fP
+allow usernames to contain letters and digits,
+plus dash (\-) and underscore (_);
+the name must begin with a letter
+(or an underscore for system users).
+.PP
+The least restrictive policy,
+available by using the \fB\-\-allow-all-names\fP option,
+simply makes the same checks as \fBuseradd\fP(8).
+Please note that useradd's checks have become quite a bit more restrictive
+in Debian 13.
+.PP
+Changing the default behavior can be used to create
+confusing or misleading names; use with caution.
+
 .SH LOGGING
 
-Adduser uses extensive and configurable logging to tailor its verbosity to
+.B Adduser
+uses extensive and configurable logging to tailor its verbosity to
 the needs of the system administrator.
 
-Every message that \fBadduser\fR print has a priority value
+Every message that \fBadduser\fR prints has a priority value
 assigned by the authors.
 This priority can not be changed at run time.
 Available priority values are
@@ -533,19 +576,19 @@ does not exist.
 .TP
 .B 13
 The object that \fBadduser\fP or \fBdeluser\fP was asked to operate on
-does ont have the properties
+does not have the properties
 that are required to complete the operation:
 A user (a group) that was requested to be created
 as a system user (group)
 does already exist and
 is not a system user (group),
 or
-A user (group) that was requested to be created
+a user (group) that was requested to be created
 with a certain UID (GID)
 does already exist and
 has a different UID (GID),
 or
-A system user (group) that was requested to be deleted
+a system user (group) that was requested to be deleted
 does exist, but is not a system user (group).
 .TP
 .B 21
@@ -565,6 +608,11 @@ the selected naming rules.
 .TP
 .B 32
 The home directory of a new user must be an absolute path.
+.TP
+.B 33
+useradd returned exit code 19 "invalid user or group name".
+That means the user or group name chosen does not fit useradd's restrictions
+and adduser cannot create the user.
 .TP
 .B 41
 The group that was requested to be deleted is not empty.
@@ -598,11 +646,14 @@ A function was requested that needs more packages to be installed.
 See Recommends: and Suggests: of the adduser package.
 .TP
 .B 61
-Adduser was aborted for some reason and
+.B Adduser
+was aborted for some reason and
 tried to roll back the changes that were done during execution.
 .TP
 .B 62
-Internal adduser error.
+Internal
+.B adduser
+error.
 This should not happen.
 Please try to reproduce the issue and file a bug report.
 .TP
@@ -636,7 +687,7 @@ A syscall terminated with unexpected error.
 .PP
 Or for many other yet undocumented reasons which
 are printed to console then.
-You may then consider to remove \fB\-\-quiet\fP
+You may then consider to increase a log level
 to make \fBadduser\fP more verbose.
 
 .SH SECURITY
@@ -709,7 +760,7 @@ the plethora of directory services that need support.
 .PP
 \fBadduser\fP will constrict itself to being a policy layer
 for the management of local system accounts,
-using the tools from the \fBpassword\fP package for the actual work.
+using the tools from the \fBpasswd\fP package for the actual work.
 
 .SH BUGS
 Inconsistent use of terminology around the term \fIsystem account\fP
@@ -734,4 +785,8 @@ to file bugs against the \fBadduser\fP package in this case.
 .BR usermod (8),
 .BR /usr/share/doc/base-passwd/users-and-groups.html
 on any Debian system,
-Debian Policy 9.2.2.
+Debian Policy 9.2.2,
+RFC8264 "PRECIS Framework: Preparation, Enforcement, and Comparison of
+Internationalized Strings in Application Protocols",
+RFC8265 "PRECIS Representing Usernames and Passwords",
+https://wiki.debian.org/UserAccounts.

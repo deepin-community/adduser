@@ -1,19 +1,18 @@
-package Debian::AdduserCommon 3.138;
-use 5.32.0;
-use strict;
-use warnings;
+package Debian::AdduserCommon 3.139;
+use 5.36.0;
+use utf8;
 
 # Subroutines shared by the "adduser" and "deluser" utilities.
 #
 # Copyright (C) 2000-2004 Roland Bauerschmidt <rb@debian.org>
-#               2005-2023 Marc Haber <mh+debian-packages@zugschlus.de>
-#               2023 Guillem Jover <guillem@debian.org>
-#               2021-2022 Jason Franklin <jason@oneway.dev>
-#               2022 Matt Barry <matt@hazelmollusk.org>
+#               2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
+#               2005-2009 Joerg Hoh <joerg@joerghoh.de>
+#               2006-2008 Stephen Gran <sgran@debian.org>
 #               2016 Nis Martensen <nis.martensen@web.de>
 #               2016 Afif Elghraoui <afif@debian.org>
-#               2005-2009 Joerg Hoh <joerg@joerghoh.de>
-#               2008 Stephen Gran <sgran@debian.org>
+#               2021-2022 Jason Franklin <jason@oneway.dev>
+#               2022 Matt Barry <matt@hazelmollusk.org>
+#               2023 Guillem Jover <guillem@debian.org>
 #
 # Someo of the subroutines here are adopted from Debian's
 # original "adduser" program.
@@ -28,28 +27,52 @@ use warnings;
 use parent qw(Exporter);
 
 use Fcntl qw(:flock SEEK_END);
+my $codeset;
 
-use Debian::AdduserLogging 3.138;
-use Debian::AdduserRetvalues 3.138;
+use Debian::AdduserLogging 3.139;
+use Debian::AdduserRetvalues 3.139;
 BEGIN {
-    if ( Debian::AdduserLogging->VERSION != version->declare('3.138') ||
-         Debian::AdduserRetvalues->VERSION != version->declare('3.138') ) {
+    if ( Debian::AdduserLogging->VERSION != version->declare('3.139') ||
+         Debian::AdduserRetvalues->VERSION != version->declare('3.139') ) {
            die "wrong module version in adduser, check your packaging or path";
+    }
+    local $ENV{PERL_DL_NONLAZY}=1;
+    eval {
+        require Encode;
+        Encode->import(qw(encode decode));
+    };
+    if ($@) {
+        *encode = sub { return $_[1]; };
+        *decode = sub { return $_[1]; };
+    }
+    $codeset="US-ASCII";
+    eval {
+        require I18N::Langinfo;
+        I18N::Langinfo->import(qw(langinfo CODESET YESEXPR NOEXPR));
+        $codeset = I18N::Langinfo->CODESET;
+    };
+    if ($@) {
+        *langinfo = sub { return shift; };
+        *YESEXPR  = sub { "^[yY]" };
+        *NOEXPR   = sub { "^[nN]" };
     }
 }
 
 use vars qw(@EXPORT $VAR1);
+my $charset = langinfo($codeset);
 
 BEGIN {
     local $ENV{PERL_DL_NONLAZY}=1;
-    # we need to use eval expression form here, perl cookbok 12.2.3
-    eval " use Locale::gettext; "; ## no critic
+    eval {
+        require Locale::gettext;
+        Locale::gettext->import(qw(gettext textdomain LC_MESSAGES));
+    };
     if ($@) {
         *gettext = sub { shift };
         *textdomain = sub { "" };
         *LC_MESSAGES = sub { 5 };
     } else {
-        textdomain("adduser");
+        Locale::gettext::textdomain("adduser");
     }
 }
 
@@ -57,19 +80,25 @@ my $lockfile;
 my $lockfile_path = '/run/adduser';
 
 use constant {
-    filenamere => qr/[-_\.+!\$%&()\]\[;0-9a-zA-Z]*/,
-    simplefilenamere => qr/[-_\.0-9a-zA-Z]*/,
-    pathre => qr/[-_\.+!\$%&()\]\[;0-9a-zA-Z\/{}>*'@]*/,
-    simplepathre => qr/[-_\.0-9a-zA-Z\/]*/,
-    commentre => qr/["-_\.+!\$%&()\]\[;0-9a-zA-Z\/ ]*/,
+    filenamere => qr/[-_\.+!\$%&()\]\[;0-9a-zA-Z]+/,
+    simplefilenamere => qr/[-_\.0-9a-zA-Z]+/,
+    pathre => qr/[- \p{Graph}_\.+!\$%&()\]\[;0-9a-zA-Z\/{}>*'@]+/,
+    simplepathre => qr/[-_\$\.0-9a-zA-Z\/]+/,
+    commentre => qr/[-"_\.+!\$%&()\]\[;\/'’ A-Za-z0-9ß\x{a1}-\x{ac}\x{ae}-\x{ff}\p{L}\p{Nd}\p{Zs}]*/,
     numberre => qr/[0-9]+/,
-    namere => qr/[^-+~:,\s\/][^:,\s\/]*/,
+    namere => qr/^([^-+~:,\s\/][^:,\s\/]*)$/aa,
+    anynamere => qr/^([^-+~:,\s\/][^:,\s\/]*)$/aa,
+    def_name_regex => qr/^[a-zA-Z][a-zA-Z0-9_-]*\$?$/aa,
+    def_sys_name_regex => qr/^[a-zA-Z_][a-zA-Z0-9_-]*\$?$/aa,
+    def_ieee_name_regex => qr/^[a-zA-Z0-9_.][a-zA-Z0-9_.-]*\$?$/aa,
+    def_min_regex => qr(^[^-+~:,\s/][^:,\s/]*$)aa,
 };
 
 @EXPORT = (
     'get_group_members',
     'read_config',
     'read_pool',
+    'systemcall_useradd',
     'systemcall',
     'systemcall_or_warn',
     'systemcall_silent',
@@ -77,15 +106,22 @@ use constant {
     'acquire_lock',
     'release_lock',
     'sanitize_string',
+    'egetgrnam',
+    'egetpwnam',
     'preseed_config',
     'which',
-    'namere',
     "filenamere",
     "simplefilenamere",
     "pathre",
     "simplepathre",
     "commentre",
     "numberre",
+    'namere',
+    'anynamere',
+    'def_name_regex',
+    'def_sys_name_regex',
+    'def_ieee_name_regex',
+    'def_min_regex',
 );
 
 sub sanitize_string {
@@ -94,13 +130,33 @@ sub sanitize_string {
     # Set a default pattern to allow alphanumeric characters,
     # spaces, and underscores.
     $pattern //= qr/[a-zA-Z0-9 _]*/;
+    log_trace("sanitize_string %s against %s", $input, $pattern);
 
-    # If the input matches the pattern, extract and return the untainted value.
+    # If the input matches the pattern,
+    # extract and return the untainted value.
     if ($input =~ qr/^($pattern)$/ ) {
+        log_trace("sanitize_string returning %s", "$1");
         return $1;  # $1 is the captured, untainted portion of the string.
     } else {
-        die "Input $input contains invalid characters and could not be untainted.";
+        #die "invalid characters in $input";
+        # this sometimes hangs the perl interpreter, see #1104726
+        die "invalid characters in input string, see trace output for more details";
     }
+}
+
+
+sub egetgrnam {
+    my ($name) = @_;
+    log_trace("egetgrnam called with %s", $name);
+    $name = encode($charset, $name);
+    return getgrnam($name);
+}
+
+sub egetpwnam {
+    my ($name) = @_;
+    log_trace("egetpwnam called with %s", $name);
+    $name = encode($charset, $name);
+    return getpwnam($name);
 }
 
 # parse the configuration file
@@ -124,6 +180,7 @@ sub read_config {
     }
     while (<$conffh>) {
         chomp;
+        $_ = decode($charset, $_);
         next if /^#/ || /^\s*$/;
 
         log_trace("read from config file: %s", $_);
@@ -162,6 +219,7 @@ sub read_pool {
     my %ids = ();
     my %new;
 
+    $pool_file = decode($charset, $pool_file);
     if (-d $pool_file) {
         my $dir;
         unless( opendir( $dir, $pool_file) ) {
@@ -190,6 +248,7 @@ sub read_pool {
     }
     while (<$pool>) {
         chomp;
+        $_ = decode($charset, $_);
         next if /^#/ || /^\s*$/;
 
         my $new;
@@ -211,7 +270,7 @@ sub read_pool {
                 $comment = sanitize_string($comment, commentre);
             }
             if( defined $home ) {
-                $home = sanitize_string($home, pathre);
+                $home = sanitize_string($home, simplepathre);
             }
             if( defined $shell ) {
                 $shell = sanitize_string($shell, simplepathre);
@@ -263,43 +322,77 @@ sub get_group_members
 
     my @members;
 
-    foreach my $member (split(/ /, (getgrnam($group))[3])) {
-        push(@members, $member) if defined(getpwnam($member));
+    foreach my $member (split(/ /, (egetgrnam($group))[3])) {
+        push(@members, $member) if defined(egetpwnam($member));
     }
 
     return @members;
 }
 
+sub systemcall_useradd {
+    my $name_check_level = shift;
+    my $command = join(' ', @_);
+    my $ret;
+    log_debug( "executing systemcall_useradd (%s): %s", $name_check_level, $command );
+    $ret = system(@_);
+    if ($ret != 0) {
+        my $exitcode = $ret>>8;
+        if ($exitcode != 0) {
+            if ($exitcode == 19 ) {
+                # we should never get here. It is our expectation that we catch
+                # an invalid user name before useradd gets to reject it. So
+                # we consider getting here a bug in our regexps. We can safely
+                # bomb out here.
+                if( $name_check_level == 2 ) {
+                    log_warn( mtx("`%s' refused the given user name, but --allow-all-names is given. Continueing."), $command );
+                    return( RET_INVALID_NAME_FROM_USERADD );
+                } else {
+                    log_err( mtx("`%s' refused the given user name. This is a bug in adduser. Please file a bug report."), $command );
+                    exit( RET_INVALID_NAME_FROM_USERADD ); 
+                };
+            } else {
+                log_fatal( mtx("`%s' returned error code %d. Exiting."), $command, $exitcode );
+                exit( RET_SYSTEMCALL_ERROR );
+            }
+        }
+        log_fatal( mtx("`%s' exited from signal %d. Exiting."), $command, $ret&127 );
+        exit( RET_SYSTEMCALL_SIGNAL );
+    }
+}
+
 sub systemcall {
-    my $c = join(' ', @_);
-    log_debug( "$c" );
+    my $command = join(' ', @_);
+    log_debug( "executing systemcall: %s", $command );
     if (system(@_)) {
         if ($?>>8) {
-            log_fatal( mtx("`%s' returned error code %d. Exiting."), $c, $?>>8 );
+            log_fatal( mtx("`%s' returned error code %d. Exiting."), $command, $?>>8 );
             exit( RET_SYSTEMCALL_ERROR );
         }
-        log_fatal( mtx("`%s' exited from signal %d. Exiting."), $c, $?&127 );
+        log_fatal( mtx("`%s' exited from signal %d. Exiting."), $command, $?&127 );
         exit( RET_SYSTEMCALL_SIGNAL );
     }
 }
 
 sub systemcall_or_warn {
     my $command = join(' ', @_);
-    log_debug( "executing systemcall: %s", $command );
+    log_debug( "executing systemcall_or_warn: %s", $command );
     system(@_);
+    my $ret = $?;
 
-    if ($? == -1) {
+    if ($ret == -1) {
         log_warn( mtx("`%s' failed to execute. %s. Continuing."), $command, $! );
     } elsif ($? & 127) {
-        log_warn( mtx("`%s' killed by signal %d. Continuing."), $command, ($? & 127) );
+        log_warn( mtx("`%s' killed by signal %d. Continuing."), $command, ($ret & 127) );
     } elsif ($? >> 8) {
-        log_warn( mtx("`%s' failed with status %d. Continuing."), $command, ($? >> 8) );
+        log_warn( mtx("`%s' failed with status %d. Continuing."), $command, ($ret >> 8) );
     }
 
-    return $?;
+    return $ret;
 }
 
 sub systemcall_silent {
+    my $command = join(' ', @_);
+    log_debug( "executing systemcall_silent: %s", $command );
     my $pid = fork();
 
     if( !defined($pid) ) {
@@ -320,7 +413,7 @@ sub systemcall_silent {
 
 sub systemcall_silent_error {
     my $command = join(' ', @_);
-    log_debug( "$command" );
+    log_debug( "executing systemcall_silent_error: %s", $command );
     my $output = `$command >/dev/null 2>&1`;
     return $?;
 }
@@ -375,8 +468,8 @@ sub preseed_config {
         sys_dir_mode => "0755",
         setgid_home => "no",
         no_del_paths => "^/bin\$ ^/boot\$ ^/dev\$ ^/etc\$ ^/initrd ^/lib ^/lost+found\$ ^/media\$ ^/mnt\$ ^/opt\$ ^/proc\$ ^/root\$ ^/run\$ ^/sbin\$ ^/srv\$ ^/sys\$ ^/tmp\$ ^/usr\$ ^/var\$ ^/vmlinu",
-        name_regex     => "^[a-z][a-z0-9_-]*\\\$?\$",
-        sys_name_regex => "^[a-z_][a-z0-9_-]*\\\$?\$",
+        name_regex     => def_name_regex,
+        sys_name_regex => def_sys_name_regex,
         exclude_fstypes => "(proc|sysfs|usbfs|devpts|devtmpfs|devfs|afs)",
         skel_ignore_regex => "\.(dpkg|ucf)-(old|new|dist)\$",
         extra_groups => "users",
@@ -399,7 +492,7 @@ sub preseed_config {
 
     # Read the configuration files
     foreach( @$conflistref ) {
-        my $configfile = sanitize_string($_, pathre);
+        my $configfile = sanitize_string($_, simplepathre);
         log_debug( "read configuration file %s\n", $configfile );
         read_config($configfile ,$configref);
     }

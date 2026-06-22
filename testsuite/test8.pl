@@ -64,7 +64,7 @@ if (defined (getpwnam($username))) {
    print "ok\n";
 }
 
-$cmd = "deluser --remove-home $username";
+$cmd = "deluser $username";
 if (defined (getpwnam($username))) {
 	print "Testing $cmd... ";
 	`$cmd`;
@@ -75,6 +75,7 @@ if (defined (getpwnam($username))) {
 	}
 	assert(check_user_not_exist ($username));
 	print "ok\n";
+	`rm -rf /home/$username`;
 }
 
 $cmd = "delgroup $newgroup";
