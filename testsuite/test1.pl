@@ -27,7 +27,7 @@ if (!defined (getpwnam($username))) {
 	print "ok\n";
 }
 
-$cmd = "deluser --remove-home $username";
+$cmd = "deluser $username";
 if (defined (getpwnam($username))) {
   	my $homedir = (getpwnam($username))[7];
 	print "Testing $cmd... ";

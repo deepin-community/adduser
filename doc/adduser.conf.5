@@ -1,6 +1,6 @@
 .\" Copyright: 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
 .\"            2000-2003 Roland Bauerschmidt <rb@debian.org>
-.\"            2004-2022 Marc Haber <mh+debian-packages@zugschlus.de>
+.\"            2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
 .\"            2006-2008 Stephen Gran <sgran@debian.org>
 .\"            2007 Jörg Hoh <joerg@joerghoh.de>
 .\"            2016 Afif Elghraoui <afif@debian.org>
@@ -48,7 +48,7 @@ The permissions mode for home directories of non-system users
 that are created by \fBadduser\fP(8).
 Defaults to \fI0700\fP.
 Note that there are potential configurations
-(such as /~user web services, or in-home mail delivery)
+(such as ~/user web services, or in-home mail delivery)
 which will require changes to the default.
 See also \fBSYS_DIR_MODE\fP.
 .TP
@@ -96,13 +96,13 @@ If this is set to \fIyes\fP,
 the home directories will be created as \fI/home/groupname/user\fP.
 Defaults to \fIno\fP. This option is \fBdeprecated\fP and will be removed.
 .TP
-.B LAST_GID
-.TQ
 .B LAST_SYSTEM_GID
 .TQ
-.B LAST_UID
+.B LAST_GID
 .TQ
 .B LAST_SYSTEM_UID
+.TQ
+.B LAST_UID
 See the \fBFIRST_\fP variants of the option.
 .TP
 .B LETTERHOMES
@@ -119,7 +119,7 @@ user and group creation in \fBadduser\fR(8) is refused
 unless \fB\-\-allow\-bad\-names\fR is set.
 With \fB\-\-allow\-bad\-names\fR set,
 weaker checks are performed.
-Defaults to the most conservative \fI^[a\-z][\-a\-z0\-9_]*$\fP.
+Defaults to the most conservative \fI^[a\-zA\-Z][a\-zA\-Z0\-9_\-]*\\$?$\fP.
 See \fBSYS_NAME_REGEX\fP and \fBValid names\fP,
 below, for more information.
 .TP
@@ -173,7 +173,7 @@ system user and group creation in adduser is refused
 unless \fB\-\-allow\-bad\-names\fP is set.
 With \fB\-\-allow\-bad\-names\fP set,
 weaker checks are performed.
-Defaults to the most conservative \fI^[a\-z_][\-a\-z0\-9_]*$\fP.
+Defaults to the most conservative \fI^[a\-zA\-Z_][a\-zA\-Z0\-9_\-]*\\$?$\fP.
 See \fBNAME_REGEX\fP, above, and \fBValid names\fP,
 below, for more information.
 .TP
@@ -203,37 +203,6 @@ it's defined statically by the \fIbase-passwd\fP package.
 It is a configuration error to define both variables
 even if the values are consistent.
 .SH NOTES
-.SS VALID NAMES
-Historically,
-\fBadduser\fP(8) and \fBaddgroup\fP(8) enforced
-conformity to IEEE Std 1003.1-2001,
-which allows only the following characters to appear
-in group- and usernames:
-letters, digits, underscores, periods, at signs (@) and dashes.
-The name may not start with a dash or @.
-The "$" sign is allowed at the end of usernames
-to allow typical Samba machine accounts.
-.PP
-The default settings for \fBNAME_REGEX\fP and \fBSYS_NAME_REGEX\fP
-allow usernames to contain lowercase letters and digits,
-plus dash (\-) and underscore (_);
-the name must begin with a letter
-(or an underscore for system users).
-.PP
-The least restrictive policy,
-available by using the \fB\-\-allow-all-names\fP option,
-simply makes the same checks as \fBuseradd\fP(8):
-cannot start with a dash, plus sign, or tilde;
-and cannot contain a colon, comma, slash, or whitespace.
-.PP
-This option can be used to create confusing or misleading names;
-use it with caution.
-.PP
-Please note that regardless of
-the regular expressions used to evaluate the username,
-it may be a maximum of 32 bytes;
-this may be less than 32 visual characters
-when using Unicode glyphs in the username.
 .SS UID AND GID POOLS
 Some installations desire that a non-system account
 gets preconfigured properties when it is generated.
@@ -277,7 +246,7 @@ selection processes.
 This is usually what you'd want.
 With the \fBRESERVE_UID_POOL\fR and \fBRESERVE_GID_POOL\fR configuration
 options, you can switch this behavior off if you want pooled UIDs and GIDs
-used by normal accounts.
+used by regular accounts.
 This might cause conflicts and cause your pool UIDs and GIDs to be used
 by accounts that are not in the pool.
 

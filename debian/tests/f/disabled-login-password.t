@@ -6,68 +6,82 @@ use warnings;
 
 use AdduserTestsCommon;
 
+my $name1='ausdlp1';
+my $name2='ausdlp2';
+my $name3='ausdlp3';
+my $name4='ausdlp4';
 
 END {
-    remove_tree('/home/foo');
-    remove_tree('/var/mail/foo');
+    remove_tree("/home/$name1");
+    remove_tree("/var/mail/$name1");
+    remove_tree("/home/$name2");
+    remove_tree("/var/mail/$name2");
 }
 
 my $uid;
 
 # --- disabled-login
-assert_user_does_not_exist('disabledlogin');
+assert_user_does_not_exist($name1);
 
-assert_command_success('/usr/sbin/adduser',
+assert_command_success(
+    '/usr/sbin/adduser',
     '--stdoutmsglevel=error', '--stderrmsglevel=error',
     '--disabled-login',
     '--comment', '',
-    'disabledlogin');
-assert_user_exists('disabledlogin');
+    $name1
+);
+assert_user_exists($name1);
 
-assert_user_has_login_shell('disabledlogin', '/usr/sbin/nologin');
-assert_user_has_disabled_password('disabledlogin');
+assert_user_has_login_shell($name1, '/usr/sbin/nologin');
+assert_user_has_disabled_password($name1);
 
 # --- disabled-login with explicit shell
 
-assert_user_does_not_exist('disabledlogins');
+assert_user_does_not_exist($name2);
 
-assert_command_success('/usr/sbin/adduser',
+assert_command_success(
+    '/usr/sbin/adduser',
     '--stdoutmsglevel=error', '--stderrmsglevel=error',
     '--disabled-login',
     '--comment', '',
     '--shell', '/bin/sh',
-    'disabledlogins');
-assert_user_exists('disabledlogins');
+    $name2
+);
+assert_user_exists($name2);
 
-assert_user_has_login_shell('disabledlogins', '/bin/sh');
-assert_user_has_disabled_password('disabledlogins');
+assert_user_has_login_shell($name2, '/bin/sh');
+assert_user_has_disabled_password($name2);
 
 # --- disabled-password
-assert_user_does_not_exist('disabledpassword');
+assert_user_does_not_exist($name3);
 
-assert_command_success('/usr/sbin/adduser',
+assert_command_success(
+    '/usr/sbin/adduser',
     '--stdoutmsglevel=error', '--stderrmsglevel=error',
     '--disabled-password',
     '--comment', '',
-    'disabledpassword');
-assert_user_exists('disabledpassword');
+    $name3
+);
+assert_user_exists($name3);
 
-assert_user_has_login_shell('disabledpassword', '/bin/bash');
-assert_user_has_disabled_password('disabledpassword');
+assert_user_has_login_shell($name3, '/bin/bash');
+assert_user_has_disabled_password($name3);
 
 # --- disabled-password with explicit shell
 
-assert_user_does_not_exist('disabledpasswords');
+assert_user_does_not_exist($name4);
 
-assert_command_success('/usr/sbin/adduser',
+assert_command_success(
+    '/usr/sbin/adduser',
     '--stdoutmsglevel=error', '--stderrmsglevel=error',
     '--disabled-password',
     '--comment', '',
     '--shell', '/bin/bash',
-    'disabledpasswords');
-assert_user_exists('disabledpasswords');
+    $name4
+);
+assert_user_exists($name4);
 
-assert_user_has_login_shell('disabledpasswords', '/bin/bash');
-assert_user_has_disabled_password('disabledpasswords');
+assert_user_has_login_shell($name4, '/bin/bash');
+assert_user_has_disabled_password($name4);
 
 # vim: tabstop=4 shiftwidth=4 expandtab

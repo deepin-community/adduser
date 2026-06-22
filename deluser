@@ -2,12 +2,12 @@
 
 
 # Copyright (C) 2000-2003 Roland Bauerschmidt <rb@debian.org>
-#               2005-2024 Marc Haber <mh+debian-packages@zugschlus.de>
-#               2021-2022 Jason Franklin <jason@oneway.dev>
-#               2022 Matt Barry <matt@hazelmollusk.org>
-#               2016 Afif Elghraoui <afif@debian.org>
+#               2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
 #               2005-2009 Joerg Hoh <joerg@joerghoh.de>
 #               2006-2011 Stephen Gran <sgran@debian.org>
+#               2016 Afif Elghraoui <afif@debian.org>
+#               2021-2022 Jason Franklin <jason@oneway.dev>
+#               2022 Matt Barry <matt@hazelmollusk.org>
 #
 # Original adduser:
 # Copyright (C) 1997-1999 Guy Maor <maor@debian.org>
@@ -20,58 +20,82 @@
 #
 # License: GPL-2+
 
-use 5.32.0;
-use strict;
-use warnings;
+use 5.36.0;
+use utf8;
 
 use Getopt::Long;
 
-use Debian::AdduserCommon 3.138;
-use Debian::AdduserLogging 3.138;
-use Debian::AdduserRetvalues 3.138;
+use Debian::AdduserCommon 3.139;
+use Debian::AdduserLogging 3.139;
+use Debian::AdduserRetvalues 3.139;
 BEGIN {
-    if ( Debian::AdduserCommon->VERSION != version->declare('3.138') ||
-         Debian::AdduserLogging->VERSION != version->declare('3.138') ||
-         Debian::AdduserRetvalues->VERSION != version->declare('3.138') ) {
+    if ( Debian::AdduserCommon->VERSION != version->declare('3.139') ||
+         Debian::AdduserLogging->VERSION != version->declare('3.139') ||
+         Debian::AdduserRetvalues->VERSION != version->declare('3.139') ) {
            die "wrong module version in adduser, check your packaging or path";
     }
 }
 
 my $version = "DVERSION";
-$ENV{"PATH"} = sanitize_string( $ENV{"PATH"}, qr/[-_a-zA-Z0-9_:.\/]*/ );
+my $encode_loaded;
+my $codeset;
 
 my $install_more_packages;
 
 BEGIN {
     local $ENV{PERL_DL_NONLAZY}=1;
-    # we need to disable perlcritic here since this construct
-    # needs experession form eval, see perl cookbook 12.2.3
-    eval "use File::Find;"; ## no critic
+    eval {
+        require File::Find;
+    };
     if ($@) {
       $install_more_packages = 1;
     }
-    #no warnings "File::Find";
-    eval "use File::Temp;"; ## no critic
+    eval {
+       require File::Temp;
+    };
     if ($@) {
-      $install_more_packages = 1;
+        $install_more_packages = 1;
+    };
+    eval {
+        require Encode;
+        Encode->import(qw(encode decode));
+    };
+    $encode_loaded = 1;
+    if ($@) {
+        $encode_loaded = 0;
+        *encode = sub { return $_[1]; };
+        *decode = sub { return $_[1]; };
+    }
+    $codeset = "US-ASCII";
+    eval {
+        require I18N::Langinfo;
+        I18N::Langinfo->import(qw(langinfo CODESET YESEXPR NOEXPR));
+        $codeset = I18N::Langinfo->CODESET;
+    };
+    if ($@) {
+        *langinfo = sub { return shift; };
+        *YESEXPR  = sub { "^[yY]" };
+        *NOEXPR   = sub { "^[nN]" };
     }
 }
 
 
 BEGIN {
-    # we need to disable perlcritic here since this construct
-    # needs experession form eval, see perl cookbook 12.2.3
-    ## no critic
-    eval "
+    eval {
         require POSIX;
-        import POSIX qw(setlocale);
-    ";
-    ## use critic
+        POSIX->import(qw(setlocale));
+    };
     if ($@) {
         *setlocale = sub { return 1 };
     } else {
         setlocale(&POSIX::LC_MESSAGES, "");
     }
+}
+
+my $charset = langinfo($codeset);
+if ($encode_loaded) {
+    binmode(STDOUT, ":encoding($charset)");
+    binmode(STDERR, ":encoding($charset)");
 }
 
 our $action;
@@ -113,7 +137,7 @@ GetOptions (
 if (!@configfiles) {
     @defaults = ("/etc/adduser.conf", "/etc/deluser.conf");
 } else {
-    @defaults = (@configfiles);
+    @defaults = decode($charset, $_) for @configfiles;
 }
 
 # make sure that message levels apply for reading configuration
@@ -132,6 +156,14 @@ set_msglevel( $stderrmsglevel, $stdoutmsglevel, $logmsglevel );
 ##########################################################
 
 preseed_config (\@defaults,\%config);
+
+# explicitly set PATH, because super (1) cleans up the path and makes deluser unusable;
+# this is also a good idea for sudo (which doesn't clean up)
+$ENV{"PATH"}="/bin:/usr/bin:/sbin:/usr/sbin";
+$ENV{"IFS"}=" \t\n";
+$ENV{"ENV"}=undef;
+$ENV{"BASH_ENV"}=undef;
+$ENV{"CDPATH"}=undef;
 
 # everyone can issue "--help" and "--version", but only root can go on
 if( $> != 0) {
@@ -157,19 +189,14 @@ if( defined $verbose ) {
 # detect the operation mode
 $action = $0 =~ /delgroup$/ ? "delgroup" : "deluser";
 
-log_trace("action $action");
-
-# explicitly set PATH, because super (1) cleans up the path and makes deluser unusable;
-# this is also a good idea for sudo (which doesn't clean up)
-$ENV{"PATH"}="/bin:/usr/bin:/sbin:/usr/sbin";
-$ENV{"IFS"}=" \t\n";
-
 ############################
 # checks related to @names #
 ############################
 
 while (defined(my $arg = shift(@ARGV))) {
-  if (defined($names[0]) && $arg =~ /^--/) {
+    $arg = decode($charset, $arg);
+    log_trace("process names %s", $arg);
+    if (defined($names[0]) && $arg =~ /^--/) {
         log_fatal( mtx("No options allowed after names.") );
         exit( RET_INVALID_CALL );
     } else {                    # it's a username
@@ -195,6 +222,8 @@ if(@names == 2) {      # must be deluserfromgroup
     }
 }
 
+log_trace("action $action");
+
 undef(@names);
 
 # TODO: map this to log levels
@@ -202,29 +231,20 @@ $ENV{"VERBOSE"} = $verbose;
 $ENV{"DEBUG"}   = $verbose;
 
 foreach(keys(%pconfig)) {
-    $config{$_} = $pconfig{$_} if ($pconfig{$_});
+    $config{$_} = decode($charset, $pconfig{$_}) if ($pconfig{$_});
 }
 
-if (($config{remove_home} || $config{remove_all_files} || $config{backup}) && ($install_more_packages)) {
-    log_fatal( mtx("In order to use the --remove-home, --remove-all-files, and --backup features, you need to install the `perl' package. To accomplish that, run apt-get install perl.") );
-    exit( RET_MORE_PACKAGES );
-}
-
-
-my ($pw_uid, $pw_gid, $pw_homedir, $gr_gid, $maingroup);
+my ($name, $passwd, $pw_uid, $pw_gid, $quota, $comment, $gcos, $pw_homedir, $shell, $expire, $maingroup);
 
 if(defined($user)) {
-    my @passwd = getpwnam($user);
-    $pw_uid = $passwd[2];
-    $pw_gid = $passwd[3];
-    $pw_homedir = $passwd[7];
+    ($name, $passwd, $pw_uid, $pw_gid, $quota, $comment, $gcos, $pw_homedir, $shell, $expire) = egetpwnam(encode($charset, $user));
+    $pw_homedir = encode($charset, $pw_homedir);
 
-    $maingroup = $pw_gid ? getgrgid($pw_gid) : "";
+    $maingroup = $pw_gid ? decode($charset, getgrgid($pw_gid)) : "";
 }
+log_trace("from getpwnam: pw_homedir %s, maingroup %s", $pw_homedir, $maingroup);
 if(defined($group)) {
-    #($gr_name,$gr_passwd,$gr_gid,$gr_members) = getgrnam($group);
-    my @group = getgrnam($group);
-    $gr_gid = $group[2];
+    my ($name, $passwd, $uid, $gr_gid, $quota, $comment, $gcos, $dir, $shell, $expire) = egetgrnam(encode($charset, $group));
 }
 
 # arguments are processed:
@@ -241,13 +261,21 @@ if(defined($group)) {
 
 
 if($action eq "deluser") {
-    my($dummy1,$dummy2,$uid);
+    my($name, $passwd, ,$uid, $rest);
 
     # Don't allow a non-system user to be deleted when --system is given
     # Also, "user does not exist" is only a warning with --system, but an
     # error without --system.
     if( $config{"system"} ) {
-        if( ($dummy1,$dummy2,$uid) = getpwnam($user) ) {
+        if (($config{remove_home} || $config{remove_all_files} || $config{backup}) && ($install_more_packages)) {
+            log_warn( mtx("In order to use the --remove-home, --remove-all-files, and --backup features, you need to install the `perl' package. To accomplish that, run apt-get install perl.") );
+            $config{remove_home}=undef;
+            $config{remove_all_files}=undef;
+            $config{backup}=undef;
+            $config{backup_to}=undef;
+        }
+
+        if( ($name, $passwd, $uid, $rest) = egetpwnam(encode($charset, $user)) ) {
             if ( ($uid < $config{"first_system_uid"} ||
                 $uid > $config{"last_system_uid" } ) ) {
                 log_warn( mtx("The user `%s' is not a system user. Exiting."), $user);
@@ -256,6 +284,11 @@ if($action eq "deluser") {
         } else {
             log_info( mtx("The user `%s' does not exist, but --system was given. Exiting."), $user);
             exit( RET_OK );
+        }
+    } else {
+        if (($config{remove_home} || $config{remove_all_files} || $config{backup}) && ($install_more_packages)) {
+            log_fatal( mtx("In order to use the --remove-home, --remove-all-files, and --backup features, you need to install the `perl' package. To accomplish that, run apt-get install perl.") );
+            exit( RET_MORE_PACKAGES );
         }
     }
 
@@ -273,10 +306,12 @@ if($action eq "deluser") {
     # consistency check
     # if --backup-to is specified, --backup should be set too
     if ($pconfig{"backup_to"}) {
+        log_trace("backup_to is set, setting backup as well");
         $config{"backup"} = 1;
     }
 
     if($config{"remove_home"} || $config{"remove_all_files"}) {
+        log_trace( mtx("remove_home or remove_all_files beginning") );
         log_info( mtx("Looking for files to backup/remove ...") );
         my @mountpoints;
         my $exclude_fstypes = $config{"exclude_fstypes"};
@@ -321,7 +356,7 @@ if($action eq "deluser") {
             sub find_match {
                 my ($dev,$ino,$mode,$nlink,$uid,$gid) = lstat;
                 log_trace("find_match %s", $_);
-                my $name = sanitize_string( $File::Find::name, simplepathre );
+                my $name = sanitize_string( decode($charset, $File::Find::name), pathre );
                 log_trace("find_match sanitized %s", $name);
                 foreach my $mount (@mountpoints) {
                     if( $name eq $mount ) {
@@ -337,7 +372,7 @@ if($action eq "deluser") {
                       return;
                     }
                 }
-                log_trace("uid %s, pw_uid %s", $uid, $pw_uid);
+                log_trace("name %s, uid %s, pw_uid %s", $name, $uid, $pw_uid);
                 (defined($uid) && ($uid == $pw_uid)) &&
                     (
                         (-f $name && push(@files, $name)) ||
@@ -346,7 +381,6 @@ if($action eq "deluser") {
                         (-S $name && push(@files, $name)) ||
                         (-p $name && push(@files, $name))
                 );
-                log_trace("names: %s", $#names);
                 if ( -b $name || -c $name ) {
                     log_warn( mtx("Cannot handle special file %s"), $name );
                 }
@@ -355,9 +389,10 @@ if($action eq "deluser") {
             File::Find::find({wanted => \&find_match, untaint => 1, no_chdir => 1}, '/');
         }
 
+        log_trace("%d files in list to backup/remove", scalar(@files) );
         if($config{"backup"} && (@files)) {
-            log_info( mtx("Backing up files to be removed to %s ..."), $config{"backup_to"} );
-            my $filesfile = new File::Temp(TEMPLATE=>"deluser.XXXXX", DIR=>"/tmp");
+            log_info( mtx("Backing up %d files to be removed to %s ..."), scalar(@files), $config{"backup_to"} );
+            my $filesfile = File::Temp->new(TEMPLATE=>"deluser.XXXXX", DIR=>"/tmp");
             my $filesfilename = $filesfile->filename;
             my $backup_name = sanitize_string( $config{"backup_to"} . "/$user.tar", simplepathre );
             log_trace("filesfilename %s, backup_to %s", $filesfilename, $config{"backup_to"});
@@ -371,7 +406,7 @@ if($action eq "deluser") {
             $backup_name .= $config{'backup_suffix'};
             $backup_name = sanitize_string( $backup_name, simplepathre );
             log_debug( "backup_name = %s", $backup_name );
-            &systemcall($tar, "--directory", "/", "--auto-compress", "-cf", $backup_name, "--files-from", $filesfilename);
+            systemcall($tar, "--directory", "/", "--auto-compress", "-cf", $backup_name, "--files-from", $filesfilename);
             chmod 0600, $backup_name;
             my $rootid = 0;
             chown $rootid, $rootid, $backup_name;
@@ -390,20 +425,25 @@ if($action eq "deluser") {
     if (-x '/usr/bin/crontab') {
         log_info( mtx("Removing crontab ...") );
 
-        if (&systemcall_silent('/usr/bin/crontab', '-u', $user, '-l') == 0) {
-            &systemcall_or_warn('/usr/bin/crontab', '-u', $user, '-r');
+        if (systemcall_silent('/usr/bin/crontab', '-u', $user, '-l') == 0) {
+            systemcall_or_warn('/usr/bin/crontab', '-u', $user, '-r');
         }
     } else {
-        log_warn( mtx("`%s' not executed. Skipping crontab removal. Package `cron' required."),
+        if ($config{'system'}) {
+            log_info( mtx("`%s' not executed. Skipping crontab removal. Package `cron' required."),
             '/usr/bin/crontab' );
+        } else {
+            log_warn( mtx("`%s' not executed. Skipping crontab removal. Package `cron' required."),
+            '/usr/bin/crontab' );
+        }
     }
 
     log_info( mtx("Removing user `%s' ..."), $user);
     acquire_lock();
-    &systemcall('/usr/sbin/userdel', $user);
+    systemcall('/usr/sbin/userdel', $user);
     release_lock();
 
-    &systemcall('/usr/local/sbin/deluser.local', $user, $pw_uid,
+    systemcall('/usr/local/sbin/deluser.local', $user, $pw_uid,
         $pw_gid, $pw_homedir) if (-x "/usr/local/sbin/deluser.local");
 
     exit( RET_OK );
@@ -422,7 +462,7 @@ if ($action eq 'delgroup') {
     }
 
     my($dummy,$gid,$members);
-    unless( (($dummy, $dummy, $gid, $members ) = getgrnam($group)) ) {
+    unless( (($dummy, $dummy, $gid, $members ) = egetgrnam($group)) ) {
         log_fatal( mtx("getgrnam `%s' failed: %s. This shouldn't happen."), $group, $! );
         exit( RET_SYSTEM_ERROR );
     }
@@ -443,7 +483,7 @@ if ($action eq 'delgroup') {
     log_info( mtx("Removing group `%s' ..."), $group );
     my $groupdel = &which('groupdel');
     acquire_lock();
-    &systemcall($groupdel,$group);
+    systemcall($groupdel,$group);
     release_lock();
     exit 0;
 }
@@ -485,7 +525,7 @@ if($action eq 'deluserfromgroup')
     log_info( mtx("Removing user `%s' from group `%s' ..."), $user, $group );
 
     acquire_lock();
-    &systemcall('/usr/bin/gpasswd', '-M', join(',', @members), $group);
+    systemcall('/usr/bin/gpasswd', '-M', join(',', @members), $group);
     release_lock();
 }
 
@@ -518,7 +558,7 @@ sub usage {
         [--backup-to dir] [--backup-suffix str] [--conf file]
         [--quiet] [--verbose] [--debug] user
 
-  remove a normal user from the system
+  remove a regular user from the system
 
 deluser --group [--system] [--only-if-empty] [--conf file] [--quiet]
         [--verbose] [--debug] group
@@ -537,12 +577,12 @@ sub usage_error {
 
 sub exist_user {
     my $exist_user = shift;
-    return(defined getpwnam($exist_user));
+    return(defined egetpwnam($exist_user));
 }
 
 sub exist_group {
     my $exist_group = shift;
-    return(defined getgrnam($exist_group));
+    return(defined egetgrnam($exist_group));
 }
 
 sub check_backup_suffix {
@@ -556,7 +596,7 @@ sub check_backup_suffix {
     }
     my $filename = '/tmp/deluser-check.tar';
     my $testfile = 'usr/sbin/deluser';
-    &systemcall_silent_error($tar, '--auto-compress', '--directory', '/', '-cf', $filename.$suffix, $testfile);
+    systemcall_silent_error($tar, '--auto-compress', '--directory', '/', '-cf', $filename.$suffix, $testfile);
 
     if ($?) {
         # compressor recognized, not available
@@ -564,7 +604,7 @@ sub check_backup_suffix {
         $suffix = '.gz';
     } else {
         # no error, check if compressed
-        &systemcall_silent($tar, '--directory', '/', '-cf', $filename, $testfile);
+        systemcall_silent($tar, '--directory', '/', '-cf', $filename, $testfile);
 
         my @zstat = stat($filename.$suffix);
         my @ustat = stat($filename);

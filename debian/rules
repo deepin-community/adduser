@@ -11,14 +11,11 @@ cversion = $(shell echo $(DEB_VERSION_UPSTREAM) | sed 's/\([[:digit:].]*\).*/\1/
 
 override_dh_auto_build:
 	# generate man pages
-	cd doc/po4a && po4a --keep 95 --previous po4a.conf
+	cd doc/po4a && po4a --keep 60 --previous po4a.conf
 
 override_dh_auto_clean:
-	cd doc/po4a && po4a --keep 95 --previous --rm-translations po4a.conf
+	cd doc/po4a && po4a --keep 60 --previous --rm-translations po4a.conf
 	rm -f po/*.mo
-
-override_dh_auto_install:
-	$(MAKE) -C po install DESTDIR=`pwd`/debian/adduser
 
 override_dh_install:
 	dh_install

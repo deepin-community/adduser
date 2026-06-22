@@ -12,7 +12,7 @@ fi
 
 cp /etc/passwd $PASSWD_BAK
 
-for a in off on; do
+for a in on; do
   for i in ./test*.pl ; do
     if ! shadowconfig $a > /dev/null; then
       echo "shadowconfig $a failed"
