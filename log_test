@@ -7,7 +7,7 @@ use Debian::AdduserLogging;
 set_msglevel( "error", "warn", "info");
 
 my $message = "this is the message";
-log_trace("mtest trace message: %s", "foo");
+log_trace("mtest trace message: %s", "test string");
 log_debug("mtest debug message");
 log_info("mtest info message");
 log_warn("mtest warn message");

@@ -137,6 +137,16 @@ sub check_homedir_exist {
 }
 
 
+sub check_dir_exist {
+  my ($dir) = @_;
+  if (! -d $dir) {
+    print "check_dir_exist: $dir does not exist\n";
+    return 1;
+  }
+  return 0;
+}
+
+
 sub check_homedir_not_exist {
   my ($homedir) = @_;
   if ( -d $homedir) {
@@ -151,6 +161,13 @@ sub check_user_homedir_eq {
   my $userdir = (getpwnam($username))[7];
 
   return ($userdir eq $dir) ? 0 : 1;
+}
+
+sub check_user_comment {
+  my ($username, $comment) = @_;
+  my $usercomment = (getpwnam($username))[6];
+
+  return ($usercomment eq $comment) ? 0 : 1;
 }
 
 sub check_user_homedir_not_exist {

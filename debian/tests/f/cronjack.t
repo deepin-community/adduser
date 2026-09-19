@@ -15,7 +15,7 @@ END {
     remove_tree('/home/bob');
 }
 
-assert_command_success('/usr/sbin/useradd', '--badname', '-d', '/home/bob', '-m', 'bob;>/hacked');
+assert_command_success('sh', '-c', q{/usr/sbin/useradd --badname -d /home/bob -m 'bob;>/hacked' 2>/dev/null});
 
 assert_path_does_not_exist('/hacked');
 

@@ -1,3 +1,209 @@
+adduser (3.152) unstable; urgency=medium
+
+  * only do very basic sanitization for comment.
+    Thanks to Pascal Hambourg, Luca Boccassi and others.
+    (Closes: #1104738, #1101678)
+  * work around #1104726 in perl
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 06 May 2025 20:25:46 +0200
+
+adduser (3.151) unstable; urgency=medium
+
+  * update Romanian manual page translation.
+    Thanks to Remus-Gabriel Chelu (Closes: #1101518)
+  * Update German manual page translation.
+    Thanks to Helge Kreutzmann (Closes: #1101523)
+  * fix commentre, it accidentally allowed "-_ (" to _)
+  * update Brazilian Portuguese program translation.
+    Thanks to Adriano Rafael Gomes (Closes: #1101702)
+  * Update portuguese man page translation.
+    Thanks to Américo Monteiro (Closes: #1103635)
+  * update dutch man page translation.
+    Thanks to Frans Spiesschaert (Closes: #1104314)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Fri, 02 May 2025 14:39:56 +0200
+
+adduser (3.150) unstable; urgency=medium
+
+  * unset $ENV{CDPATH}.
+    Thanks to John Darrah
+  * update Brazilian Portuguese man page translation.
+    Thanks to Paulo Henrique de Lima Santana (phls) (Closes: #1101390)
+  * use require instead of use, to allow running without perl-modules.
+    Thanks to Samuel Thibault (Closes: #1101454)
+  * improve autopkgtests
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Fri, 28 Mar 2025 14:21:07 +0100
+
+adduser (3.149) unstable; urgency=medium
+
+  * sort find output in skel.t
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Sat, 22 Mar 2025 10:40:54 +0100
+
+adduser (3.148) unstable; urgency=medium
+
+  * more improvement of output in skel.t
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Sat, 22 Mar 2025 06:51:53 +0100
+
+adduser (3.147) unstable; urgency=medium
+
+  * update German manual page translation.
+    Thanks to Helge Kreutzmann (Closes: #1100936)
+  * Update Romanian man page translation.
+    Thanks to Remus-Gabriel Chelu (Closes: #1100956)
+  * extend skel test to give output if it fails.
+  * Standards-Version: 4.7.2 (no changes necessary)↲
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Fri, 21 Mar 2025 15:13:30 +0100
+
+adduser (3.146) unstable; urgency=medium
+
+  [ Marc Haber ]
+  * explicitly unset BASH_ENV.
+    Thanks to James Trocknell (Closes: #1100023)
+  * make adduser --system --home silent if directory exists (Closes: #1100032)
+  * don't truncate log messages in sanitizing.
+    Thanks to Andrew Sayers (Closes: #1100707)
+  * Better docs regarding adduser --system --home
+  * update debian/copyright
+  * update translation helper scripts
+    Thanks to Maytham Alsudany
+  * Update POT and PO files for program translations
+  * Update POT file for manpage translations
+  * Update Romanian program translation.
+    Thanks to Remus-Gabriel Chelu (Closes: #1100600)
+  * Update Dutch program and man page translation.
+    Thanks to Frans Spiesschaert (Closes: #1100585, #1100586)
+  * Update Galician program translation.
+    Thanks to Parodper
+  * Update Czech program translation.
+    Thanks to Miroslav Kure (Closes: #1099934)
+  * Add Basque program translation.
+    Thanks to Iñaki Larrañaga Murgoitio
+  * Update Japanese program translation.
+    Thanks to Sadaharu Wakisaka
+  * Update French program and man page translations.
+    Thanks to Jean-Paul Guillonneau (Closes: #1100089)
+  * Update Russian program translation.
+    Thanks to Yuri Kozlov (Closes: #1100500)
+  * Update Brasilian Portuguese man page translation.
+    Thanks to Paulo Henrique de Lima Santana (Closes: #1100552)
+  * Update German man page translation.
+    Thanks to Helge Kreutzmann (Closes: #1100555)
+
+  [ Grzegorz Kuczynski ]
+  * Edit pl.po (translate and fix some format)
+
+  [ Carles Pina i Estany ]
+  * Update Catalan translation
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Thu, 20 Mar 2025 14:21:26 +0100
+
+adduser (3.145) unstable; urgency=medium
+
+  [ Marc Haber ]
+  * reduce perl requirements to 5.36 (bookworm) for upgrades
+  * fix a mismatch check in existing_user_status [Matt Barry]
+  * re-work explicit --uid tests (Closes: #1099647)
+  * fix misdetection of non-system accounts as system accounts
+  * add lots of more test cases (Closes: #1099570)
+  * get rid of "foo" user name in some of the tests, streamline tests
+  * Update German program translation.
+    Thanks to Helge Kreutzmann (Closes: #1099678)
+  * Update Polish program translation.
+    Thanks to Grzegorz Kuczyński
+  * Update Japanese program translation.
+    Thanks to Sadaharu Wakisaka
+  * Update German program translation.
+    Thanks to Helge Kreutzmann (Closes: #1099678)
+  * Update Portuguese program translation.
+    Thanks to Américo Monteiro (Closes: #1099771)
+
+  [ Tianyu Chen ]
+  * Update Simplified Chinese program translation.
+    Thanks to Tianyu Chen
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Sat, 08 Mar 2025 15:28:02 +0100
+
+adduser (3.144) unstable; urgency=medium
+
+  [ Matt Barry ]
+  * Clean up system account logic.
+    Thanks to Michael Musenbrock and Vincent Lefevre
+    (Closes: #1099470, #1099477)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 04 Mar 2025 20:57:13 +0100
+
+adduser (3.143) unstable; urgency=medium
+
+  [ Marc Haber ]
+  * Standards-Version: 4.7.1 (no changes neceessary)
+  * unset $ENV{"ENV"}
+    Thanks to Dan Jacobson (Closes: #1099089)
+  * Update Portuguese translation for adduser's manpage.
+    Thanks to Américo Monteiro <a_monteiro@gmx.com> (Closes: #1099344)
+  * don't issue warnings for --home /nonexistent.
+    Thanks to Sven Joachim (Closes: #1099073)
+  * allow adding system accounts to system groups (Closes: #1099397)
+
+  [ Matt Barry ]
+  * refactor existing_*_ok (Closes: #1098922)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Mon, 03 Mar 2025 19:38:23 +0100
+
+adduser (3.142) unstable; urgency=medium
+
+  * assume CAP_SYS_ADMIN not present if /proc not accessible.
+    Thanks to Chris Hofstaedtler (Closes: #1098711)
+  * Salsa CI: Add extra test to validate that 'adduser' can be used.
+    Also update salsa-ci.yml template to latest version to have more
+    comments and link to docs inline. Thanks to Otto Kekäläinen
+  * sanitize target string coming from readlink()
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Tue, 25 Feb 2025 09:59:47 +0100
+
+adduser (3.141) unstable; urgency=medium
+
+  * add new autopktest to check adduser basic functionality.
+  * README: Document adduser behavior in minimal chroots
+  * call textdomain fully qualified. Import function explicitly.
+    Thanks to Yuri Konotopov, Christian Weeks (Closes: #1098692, #1098690)
+  * only set binmode if Encode is loaded in deluser
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Sat, 22 Feb 2025 22:11:35 +0100
+
+adduser (3.140) unstable; urgency=medium
+
+  * update Brazilian Portuguese manpage translation.
+    Thanks to Paulo Henrique de Lima Santana (Closes: #1094210)
+  * Update Dutch program translation.
+    Thanks to Frans Spiesschaert (Closes: #1094496)
+  * Update Dutch manpage translation.
+    Thanks to Frans Spiesschaert (Closes: #1094497)
+  * Add login to test Dependencies
+  * allow adduser to run without Encode and I18N::Langinfo installed.
+    Thanks to Yves-Alexis Perez, Bastian Germann (Closes: #1098508)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Sat, 22 Feb 2025 07:56:20 +0100
+
+adduser (3.139) unstable; urgency=medium
+
+
+  * improve code rubustness regarding Unicode
+  * adapt default regular expressions to new useradd behavior
+  * explicitly catch and handle useradd's "invalid user name" exit code
+  * more documentation regarding PRECIS Framework
+  * more tests against invalid / unwanted user names
+  * modernize things
+  * update German translation of man page.
+    Thanks to Helge Kreutzmann
+  * Formatting improvements to manual pages.
+    Thanks to Helge Kreutzmann (Closes: 1087703)
+
+ -- Marc Haber <mh+debian-packages@zugschlus.de>  Thu, 20 Feb 2025 22:01:57 +0100
+
 adduser (3.138) experimental; urgency=medium
 
   * experimental upload because of so many changes.

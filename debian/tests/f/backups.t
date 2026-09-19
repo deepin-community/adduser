@@ -7,8 +7,10 @@ use warnings;
 
 use AdduserTestsCommon;
 
+my $name="ausbackup";
+
 END {
-    remove_tree('/var/mail/foo');
+    remove_tree("/var/mail/$name");
 }
 
 test_suffix('gz', 'gzip');
@@ -21,34 +23,38 @@ sub test_suffix {
     my ($suffix, $program) = @_;
     my ($archive, $file_list);
 
-    assert_user_does_not_exist('foo');
-    assert_command_success('/usr/sbin/adduser',
+    assert_user_does_not_exist($name);
+    assert_command_success(
+        '/usr/sbin/adduser',
 	    '--stdoutmsglevel=error', '--stderrmsglevel=error',
 	    '--system',
-	    '--home', '/home/foo',
-	    'foo');
-    assert_user_exists('foo');
+	    '--home', "/home/$name",
+	    $name
+    );
+    assert_user_exists($name);
 
-    open (FH, '>', '/home/foo/test.txt');
+    open (FH, '>', "/home/$name/test.txt");
     print FH 'created by adduser/backups.t';
     close (FH);
 
-    assert_command_success_silent('/usr/sbin/deluser',
+    assert_command_success_silent(
+        '/usr/sbin/deluser',
 	    '--stdoutmsglevel=error', '--stderrmsglevel=error',
 	    '--remove-home',
 	    '--backup-to', '/tmp',
 	    '--backup-suffix', $suffix,
-	    'foo');
-    assert_user_does_not_exist('foo');
+	    $name
+    );
+    assert_user_does_not_exist($name);
 
-    $archive = '/tmp/foo.tar.'.((&which($program, 1)) ? $suffix : 'gz');
+    $archive = "/tmp/$name.tar.".((&which($program, 1)) ? $suffix : 'gz');
     assert_path_exists($archive);
     assert_path_has_ownership($archive, 'root:root');
     assert_path_has_mode($archive, "0600");
 
     $file_list = `tar tf $archive 2>/dev/null`;
     ok($? == 0, "archive $archive ($suffix) listing successful");
-    ok($file_list =~ qr{home/foo/test.txt}, 'archive contents are correct');
+    ok($file_list =~ qr{home/$name/test.txt}, 'archive contents are correct');
 
     unlink($archive);
 }

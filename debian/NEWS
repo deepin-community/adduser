@@ -98,7 +98,7 @@ adduser (3.123) unstable; urgency=medium
   for SYS_DIR_MODE is still 0755.
 
   Note that the default for DIR_MODE is a change from historical defaults,
-  which were more permissive for normal user home directories.
+  which were more permissive for regular user home directories.
   Adjustments may need to be made for setups like public_html
   web content, or in-homedir mail configurations.
 

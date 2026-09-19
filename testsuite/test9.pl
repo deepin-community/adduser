@@ -89,13 +89,9 @@ if ($error) {
   print "failed\n  $cmd returned an errorcode != 0 ($error)\n";
   exit $error;
 }
-if ($output !~ /^warn: The group `addusertest\d+' already exists as a system group\. Exiting\.\n$/ ) {
-  print "failed\n  $cmd returned unexpected output ($output)\n";
-  exit 1;
-}
 print "ok\n";
 
-# now testing whether adding the group again (as a normal group)
+# now testing whether adding the group again (as a regular group)
 # fails as it should
 
 $cmd = "addgroup $sysgroupname";

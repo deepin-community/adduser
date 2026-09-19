@@ -1,3 +1,5 @@
+This document was last touched in Februar 2025.
+
 adduser in Debian
 =================
 
@@ -35,6 +37,45 @@ repeated in this README file.
 
 
 
+Deprecation warnings
+--------------------
+The following features, options, and other things are deprecated and
+might vanish in the next release:
+- the GROUPHOMES, LETTERHOMES, SETGID_HOME  configuration options
+- the --add_extra_groups spelling of the --add-extra-groups option
+- the --gecos alias for the --comment option
+- the --debug alias for the --stdoutmsglevel=debug option
+- the --quiet alias for the --stdoutmsglevel=warn option
+- the --verbose alias for the --stdoutmsglevel=info option
+- the --force-badname and --allow-badname aliases for the
+  --allow-bad-names option
+
+
+
+Removed features
+----------------
+The following features, options, and other things were removed in one of
+the last releases:
+- interactivity
+- debconf
+- support for directory services such as NIS and LDAP
+
+
+
+Adduser in minimal chroots
+--------------------------
+Adduser tries hard not to introduce dependencies that are not strictly
+necessary. Especially it tries not to depend on full perl. Encode,
+I18N::Langingo and Locale::gettext are pulled in in eval constructs and
+the imported symbols replaced by no-op dummys if the require fails.
+
+This should not affect normal systems as they usually have a full perl
+installed, but minimal chroots are frequently used in QA scenarios might
+be affected. Please report misbehavior you might see in situations where
+libperl is not installed as a bug.
+
+
+
 Usage in maintainer scripts
 ---------------------------
 The reference to create users and groups related to packages is
@@ -59,10 +100,10 @@ even log in as your user and configure it appropriately.
 
 Adduser's logging subsystem has been re-worked since the release of
 Debian 12. Adduser should now be silent especially in maintainer scripts
-if everthing regarding the new user is reasonably correct. If you want
-report of what adduser does, please consider changing the log levels in
-/etc/adduser.conf. You can set different log levels for the system log,
-for standard output and standard error.
+if everything regarding the new user is reasonably correct. If you want
+adduser to report what it does, please consider changing the log levels
+in /etc/adduser.conf. You can set different log levels for the system
+log, for standard output and standard error.
 
 It might be advisable to not delete your users on purge of your package
 since there might still be files belonging to the user. Instead, lock
@@ -105,24 +146,25 @@ find an explanation to only give these limited choices in debconf. To
 be consistent, we would have to add many more questions. This does not
 seem to be a realistic endeavor given the available personpower.
 
-Consequently, debconf support was removed complete, making
+Consequently, debconf support was removed completely, making
 /etc/adduser.conf a regular dpkg-conffile.
 
 We might be willing to reintroduce more elaborate debconf support in the
 future if somebody volunteers to write the code, documentation and
 tests, and to actually maintain it for the foreseeable future. Please
-get in touch with the adduser team if you're willing to help.
+get in touch with the adduser team if you're willing to help and join
+the team.
 
 
 
 Why not declarative?
 --------------------
-Adduser is intended to be used in maintainer scripts. While there are
+Adduser is intended to be used in maintainer scripts. There are
 approaches in Debian to move more and more functionality away from
-maintainer scripts to a more declarative approach. The current form of
-adduser is used in hundreds of packages.
+maintainer scripts to a more declarative approach. However, the current
+form of adduser is used in hundreds of packages.
 
-It is fine to use a more declarative approach to define system users in
+It is fine to use the declarative approach to define system users in
 Debian packages. There is nothing that forces package maintainers to use
 adduser to create their package-related users. The packages dh-sysuser,
 opensysusers, and systemd-sysusers already offer a declarative approach
@@ -140,11 +182,10 @@ allowing adduser to be used to create users in a directory service such
 as NIS, NIS+ and LDAP, for more than two decades. It is not realistic to
 expect this to happen any time soon.
 
-For the time being, any support to have adduser write to directory
-services that might still exist in the code is official deprecated. An
-arbitrary server in an organization that uses a directory service is
-unlikely to have enough privileges to write to a directory service
-anyway.
+Adduser does not support writing to directory services. The only
+interface to any user database is the use of the tools that the passwd
+package offers. Please file a bug if you find any code that still tries
+to support directory services. We might have forgotten to remove it.
 
 It might be possible, to add the desired support via an adduser.local
 hook. If you need more hooks to locally implement what you need, let us
@@ -154,7 +195,8 @@ might be implemented in the nearer future.
 We might be willing to reintroduce support for directory services in the
 future if somebody volunteers to write the code, documentation and
 tests, and to actually maintain it for the foreseeable future. Please
-get in touch with the adduser team if you're willing to help.
+get in touch with the adduser team if you're willing to help and join
+the team.
 
 
 
@@ -179,29 +221,31 @@ has oscillated back and forth in adduser multiple times since the 1990s,
 because both ways to set this bit by default have advantages and
 disadvantages.  After a preliminary request for comment (see
 https://lists.debian.org/debian-devel/2022/03/msg00098.html), the
-default value for DIR_MODE was changed to 2700 in Debian 12.  Sadly,
-though the technical reasoning for NOT setting the bit did largely not
-survive the last two decades, some use cases that we were not fully
-aware of were adversely impacted by this change.
+default value for DIR_MODE was eventually changed to 2700 at some point.
+Sadly, the technical reasoning for NOT setting the bit did largely not
+survive the last two decades. However, some use cases that we were not
+fully aware of were adversely impacted by this change.
 
 Promptly, #1014901 was filed, requesting that DIR_MODE be changed to
 0700, effectively causing home directories of non-system users to be
-created without the setgid bit. The biggest point in the reasoning is that
-having the setgid bit set will need special measures to keep the home
-directory's group ownership from propagating to file system images,
+created without the setgid bit. The biggest point in the reasoning is
+that having the setgid bit set will need special measures to keep the
+home directory's group ownership from propagating to file system images,
 chroots, and archives, causing wrong file ownership/permissions in those
-entities, which in turn might propagate to different systems and cause
-security-related effects there.  The bug report gives instructions to
-reproduce the behavior.
+collections of files, which in turn might propagate to different systems
+and cause security-related effects there. The bug report gives
+instructions to reproduce the behavior.
 
-System administrators who run multi-user environments which require
-shared workspaces have tools at their disposal to change the default
-behavior as their individual needs require, and likely are aware of how
-to work around any issues that arise as part of that configuration; it
-is also very possible that such systems may be managed using
-configuration management software. In an age of general purpose use on
-one end, and single purpose containers on the other, this is unlikely to
-be the majority of newly installed systems.
+System administrators who run multi-user environments might appreciate
+the sgid bit set on home directories since this makes it easier to
+manage file ownership in collaborative environments such as shared
+workspaces. Those administrators have tools at their disposal to change
+the default behavior as their individual needs require, and likely are
+aware of how to work around any issues that arise as part of that
+configuration. It is also very possible that such systems may be managed
+using configuration management software. In an age of general purpose
+use on one end, and single purpose containers on the other, this is
+unlikely to be the majority of newly installed systems.
 
 So what remains is the decision to provide a sane default for a system
 that is installed by an end-user, who may not understand or be aware of
@@ -218,7 +262,7 @@ flipping the default for the setgid bit one last time to the value we
 had for the majority of Debian's existence period. With this change,
 Debian is re-joining ranks again with ALL other major Linux
 distributions, none of which setting the setgid bit on home directories
-to 1 (research done in July 2022).
+to 1 (research done in July 2022, prove us wrong today if you want to).
 
 This primarily affects the one user that can be created in the Installer
 before there is any possibility to configure adduser. Those users will
@@ -236,12 +280,24 @@ discussion period.
 
 
 
+UTF-8 User Names
+----------------
+It used to be possible to create UTF-8 encoded user names with adduser
+and passwd. While you have possibly considered this a feeature, it never
+was intended to be a feature, just an accident. Debian had a discussion
+about UTF-8 user names in November 2024, while shadow/passwd upstream
+decided to explicitly disallow non-ASCII characters in user names. This
+version of adduser follows along, so UTF-8 encoded user names cannot be
+created any more with adduser. It never fully worked anyway, and
+introuced some nasty side effects, possibly security relevant. So you
+might want to revisit any non-ASCII user names you have ever created.
+
+
+
 Security
 --------
-We habe beem working on adduser being able to run with the -T switch
-set. This has made it impossible to test for strange unicode characters.
-If you know how to write a perl regexp that includes possibly all
-printable unicode characters, please file a bug and help us.
+Adduser now runs with perl in tainted mode. This has introduced a
+significant raise in security.
 
 
 
@@ -249,7 +305,8 @@ Rewrite
 -------
 adduser needs a rewrite. The code base was started in the 1990s and
 this fact can easily be seen. The introduction of our test suite has
-made changes to adduser much easier, but the code is still 25 years old.
+made changes to adduser much easier, but the code is still more than 25
+years old.
 
 We support any effort for a rewrite, but we strongly believe that this
 should be done in a dedicated project with a new name, such as
@@ -287,6 +344,18 @@ fast-forward merge.
 adduser should be coded according to the style suggestions given in
 perldoc perlstyle. Indentation should be in increments of four
 characters per level, using spaces, not tabs.
+
+
+
+More Docs?
+----------
+See:
+  * RFC8264 "PRECIS Framework: Preparation, Enforcement, and Comparison of
+             Internationalized Strings in Application Protocols"
+  * RFC8265 "PRECIS Representing Usernames and Passwords"
+  * https://systemd.io/USER_NAMES/
+  * https://wiki.debian.org/UserAccounts
+  * https://wiki.debian.org/Unicode
 
 
 

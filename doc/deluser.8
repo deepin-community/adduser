@@ -2,7 +2,7 @@
 .\"            1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
 .\"            1997-1999 Guy Maor
 .\"            2000-2003 Roland Bauerschmidt <rb@debian.org>
-.\"            2004-2022 Marc Haber <mh+debian-packages@zugschlus.de>
+.\"            2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
 .\"            2006-2009 Jörg Hoh <joerg@joerghoh.de>
 .\"            2011 Justin B Rye <jbr@edlug.org.uk>
 .\"            2016 Helge Kreutzmann <debian@helgefjell.de>
@@ -97,12 +97,13 @@ from the system according to command line options
 and configuration information in
 \fI/etc/deluser.conf\fP and \fI/etc/adduser.conf\fP.
 .PP
-They are friendlier front ends to the
+They are more Debian specific front ends to the
 \fBuserdel\fP and \fBgroupdel\fP programs,
-removing the home directory as option
+which are more distribution agnostic.
+\fBdeluser\fP and \fBdelgroup\fP can remove the home directory as option
 or even all files on the system owned by the user to be removed,
-running a custom script,
-and other features.
+run a custom script,
+and have other features.
 .PP
 For a full list and explanations of all options,
 see the OPTIONS section.
@@ -139,7 +140,7 @@ By default,
 the backup archive is compressed with \fBgzip\fP(1).
 To change this,
 the \fB\-\-backup\-suffix\fP option can be set
-to any suffix supported by \fBtar \-\-auto\-compress\fP (e.g., .gz, .bz2, .xz).
+to any suffix supported by \fBtar \-\-auto\-compress\fP.
 .PP
 \fBdeluser\fP will refuse to remove the root account.
 .PP
@@ -201,7 +202,8 @@ Use \fIfile\fP instead of the default files
 Multiple \-\-conf options may be given.
 .TP
 .B \-\-debug
-Synonymous to \-\-stdoutmsglevel=debug.
+Synonymous to
+.B \-\-stdoutmsglevel=debug.
 Deprecated.
 .TP
 .B \-\-group
@@ -218,7 +220,8 @@ Only remove if no members are left.
 Valid modes: \fBdeluser \-\-group\fP, \fBdelgroup\fP.
 .TP
 .B \-\-quiet
-Synonymous to \-\-stdoutmsglevel=warn.
+Synonymous to
+.B \-\-stdoutmsglevel=warn.
 Deprecated.
 .TP
 .B \-\-remove\-all\-files
@@ -240,14 +243,15 @@ If the user does not exist, no error value is returned.
 Valid modes: \fBdeluser\fP, \fBdeluser \-\-system\fP.
 .TP
 .B \-\-verbose
-Synonymous to \-\-stdoutmsglevel=info.
+Synonymous to
+.B \-\-stdoutmsglevel=info.
 Deprecated.
 .TP
-.BI \-\-stdoutmsglevel  " prio "
+.BI \-\-stdoutmsglevel  " prio"
 .TQ
-.BI \-\-stderrmsglevel  " prio "
+.BI \-\-stderrmsglevel  " prio"
 .TQ
-.BI \-\-logmsglevel  " prio "
+.BI \-\-logmsglevel  " prio"
 Minimum priority for messages logged to syslog/journal and the console,
 respectively.
 Values are
@@ -267,7 +271,7 @@ Display version and copyright information.
 \fBdeluser\fR uses extensive and configurable logging to tailor its verbosity
 to the needs and wishes of the system administrator.
 
-This works similar to \fBadduser\fR. See adduser(8) for all the details.
+This works similar to \fBadduser\fR. See \fBadduser\fR(8) for all the details.
 
 .SH EXIT VALUES
 

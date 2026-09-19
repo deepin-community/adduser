@@ -1,7 +1,9 @@
 PO4A-HEADER:mode=after;position=^\.SH "VOIR AUSSI";beginboundary=^\.SH
 .SH TRADUCTION
-Ce document est une traduction, réalisée par Nicolas FRANÇOIS le
-29 octobre 2004.
+Ce document est une traduction réalisée par Christophe Sauthier
+<christophe@sauthier.com>(2002), reprise avec po4a par Nicolas FRANÇOIS
+(2004-2008) et mise à jour par David Prévot <david@tilapin.org> (2010) et
+Jean-Paul Guillonneau <guillonneau.jeanpaul@free.fr> (2016-2025).
 
 L'équipe de traduction a fait le maximum pour réaliser une adaptation
 française de qualité.

@@ -3,7 +3,7 @@ Section: admin
 Priority: important
 Maintainer: Debian Adduser Developers <adduser@packages.debian.org>
 Uploaders: Marc Haber <mh+debian-packages@zugschlus.de>
-Standards-Version: 4.7.0
+Standards-Version: 4.7.2
 Build-Depends: debhelper-compat (= 13), po4a
 Build-Depends-Indep: gettext
 Rules-Requires-Root: no
@@ -14,7 +14,7 @@ Package: adduser
 Architecture: all
 Multi-Arch: foreign
 Pre-Depends: ${misc:Pre-Depends}
-Depends: passwd, ${misc:Depends}
+Depends: passwd (>= 1:4.17.2-5), ${misc:Depends}
 Suggests: liblocale-gettext-perl, perl, cron, quota
 Description: add and remove users and groups
  This package includes the 'adduser' and 'deluser' commands for creating

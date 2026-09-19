@@ -13,7 +13,7 @@ Copyright: 1994 Debian Association, Inc.
            2005-2009 Joerg Hoh <joerg@joerghoh.de>
            2006-2011 Stephen Gran <sgran@debian.org>
            2001-2016 John Zaitseff
-           2004-2023 Marc Haber <mh+debian-packages@zugschlus.de>
+           2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
            2021-2023 Jason Franklin <jason@oneway.dev>
            2022 Matt Barry <matt@hazelmollusk.org>
 License: GPL-2+
@@ -24,68 +24,75 @@ Copyright: 1999-2016 John Zaitseff
            2016 Dr. Helge Kreutzmann <debian@helgefjell.de>
 License: GPL-2+
 
-Files: deluser
-Copyright: 2000-2003 Roland Bauerschmidt <rb@debian.org>
-           1996-1999 Guy Maor <maor@debian.org>
-           1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
-           1995 Ian A. Murdock <imurdock@debian.org>
-           2016 Afif Elghraoui <afif@debian.org>
-           2006-2011 Stephen Gran <sgran@debian.org>
-           2005-2009 Jörg Hoh <joerg@joerghoh.de>
-           2004-2023 Marc Haber <mh+debian-packages@zugschlus.de>
-           2021-2022 Jason Franklin <jason@oneway.dev>
-           2022 Matt Barry <matt@hazelmollusk.org>
-License: GPL-2+
-
 Files: adduser
 Copyright: 1994 Debian Association, Inc.
-           2000-2004 Roland Bauerschmidt <rb@debian.org>
-           1997-1999 Guy Maor <maor@debian.org>
            1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
            1995 Ian A. Murdock <imurdock@debian.org>
+           1997-1999 Guy Maor <maor@debian.org>
+           2000-2004 Roland Bauerschmidt <rb@debian.org>
+           2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
+           2005-2009 Jörg Hoh <joerg@joerghoh.de>
+           2006-2011 Stephen Gran <sgran@debian.org>
            2016 Dr. Helge Kreutzmann <debian@helgefjell.de>
            2016-2017 Afif Elghraoui <afif@debian.org>
-           2006-2011 Stephen Gran <sgran@debian.org>
+           2021-2022 Jason Franklin <jason@oneway.dev>
+           2022 Matt Barry <matt@hazelmollusk.org>
+           2022 Benjamin Drung <benjamin.drung@canonical.com>
+           2023 Guillem Jover <guillem@debian.org>
+License: GPL-2+
+
+Files: deluser
+Copyright: 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
+           1995 Ian A. Murdock <imurdock@debian.org>
+           1997-1999 Guy Maor <maor@debian.org>
+           2000-2003 Roland Bauerschmidt <rb@debian.org>
+           2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
            2005-2009 Jörg Hoh <joerg@joerghoh.de>
-           2004-2023 Marc Haber <mh+debian-packages@zugschlus.de>
+           2006-2011 Stephen Gran <sgran@debian.org>
+           2016 Afif Elghraoui <afif@debian.org>
            2021-2022 Jason Franklin <jason@oneway.dev>
            2022 Matt Barry <matt@hazelmollusk.org>
 License: GPL-2+
 
 Files: AdduserCommon.pm
-Copyright: 2000 Roland Bauerschmidt <rb@debian.org>
-           1997-1999 Guy Maor <maor@debian.org>
-           1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
+Copyright: 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
            1995 Ian A. Murdock <imurdock@debian.org>
-           2021-2022 Jason Franklin <jason@oneway.dev>
-           2016 Nis Martensen <nis.martensen@web.de>
-           2016 Afif Elghraoui <afif@debian.org>
+           1997-1999 Guy Maor <maor@debian.org>
+           2000-2004 Roland Bauerschmidt <rb@debian.org>
+           2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
            2005-2009 Jörg Hoh <joerg@joerghoh.de>
            2006-2008 Stephen Gran <sgran@debian.org>
-           2004-2023 Marc Haber <mh+debian-packages@zugschlus.de>
+           2016 Nis Martensen <nis.martensen@web.de>
+           2016 Afif Elghraoui <afif@debian.org>
            2021-2022 Jason Franklin <jason@oneway.dev>
            2022 Matt Barry <matt@hazelmollusk.org>
+           2023 Guillem Jover <guillem@debian.org>
+License: GPL-2+
+
+Files: AdduserLogging.pm AdduserRetvalues.pm
+Copyright: 2024-2025 Marc Haber <mh+debian-packages@zugschlus.de>
 License: GPL-2+
 
 Files: doc/adduser.conf.5
 Copyright: 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
            2000-2003 Roland Bauerschmidt <rb@debian.org>
-           2004-2023 Marc Haber <mh+debian-packages@zugschlus.de>
+           2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
            2006-2008 Stephen Gran <sgran@debian.org>
            2007 Jörg Hoh <joerg@joerghoh.de>
            2016 Afif Elghraoui <afif@debian.org>
-           2016, 2023 Dr. Helge Kreutzmann <debian@helgefjell.de>
+           2016, 2023, 2024 Dr. Helge Kreutzmann <debian@helgefjell.de>
            2021 Jason Franklin <jason@oneway.dev>
            2022 Matt Barry <matt@hazelmollusk.org>
+           2024 Luca <luca.mo@tiscali.it>
 License: GPL-2+
 
 Files: doc/deluser.conf.5
 Copyright: 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
            2000-2003 Roland Bauerschmidt <rb@debian.org>
-           2004-2023 Marc Haber <mh+debian-packages@zugschlus.de>
+           2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
            2006-2007 Jörg Hoh <joerg@joerghoh.de>
            2011 Stephen Gran <sgran@debian.org>
-           2016, 2023 Dr. Helge Kreutzmann <debian@helgefjell.de>
+           2016, 2023, 2024 Dr. Helge Kreutzmann <debian@helgefjell.de>
            2021 Jason Franklin <jason@oneway.dev>
            2022 Matt Barry <matt@hazelmollusk.org>
 License: GPL-2+
@@ -95,10 +102,10 @@ Copyright: 1994 Ian A. Murdock <imurdock@debian.org>
            1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
            1997-1999 Guy Maor
            2000-2003 Roland Bauerschmidt <rb@debian.org>
-           2004-2023 Marc Haber <mh+debian-packages@zugschlus.de>
+           2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
            2006-2009 Jörg Hoh <joerg@joerghoh.de>
            2011 Justin B Rye <jbr@edlug.org.uk>
-           2016, 2023 Dr. Helge Kreutzmann <debian@helgefjell.de>
+           2016, 2023, 2024 Dr. Helge Kreutzmann <debian@helgefjell.de>
            2021-2022 Jason Franklin <jason@oneway.dev>
 License: GPL-2+
 
@@ -107,29 +114,38 @@ Copyright: 1994 Ian A. Murdock <imurdock@debian.org>
            1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
            1997-1999 Guy Maor
            2000-2003 Roland Bauerschmidt <rb@debian.org>
-           2004-2023 Marc Haber <mh+debian-packages@zugschlus.de>
+           2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
            2005-2009 Jörg Hoh <joerg@joerghoh.de>
            2006-2011 Stephen Gran <sgran@debian.org>
            2011 Justin B Rye <jbr@edlug.org.uk>
+           2011 Vincent McIntyre <vincent.mcintyre@csiro.au>
            2016 Afif Elghraoui <afif@debian.org>
-           2016, 2023 Dr. Helge Kreutzmann <debian@helgefjell.de>
+           2016, 2023, 2024  Dr. Helge Kreutzmann <debian@helgefjell.de>
            2021-2022 Jason Franklin <jason@oneway.dev>
            2022 Matt Barry <matt@hazelmollusk.org>
            2022 Akbarkhon Variskhanov <akbarkhon.variskhanov@gmail.com>
+           2023 Colin Watson <cjwatson@debian.org>
 License: GPL-2+
 
 Files: doc/adduser.local.8
-Copyright: 2023 Marc Haber <mh+debian-packages@zugschlus.de>
+Copyright: 2022-2025 Marc Haber <mh+debian-packages@zugschlus.de>
 License: GPL-2+
 
 Files: po/adduser.pot doc/po4a/po/adduser.pot
-Copyright: 20032-2004 Roland Bauerschmidt <rb@debian.org>
-           2011 Stephen Gran <sgran@debian.org>
+Copyright: 1994 Debian Association, Inc.
+           1995 Ian A. Murdock <imurdock@debian.org>
+           1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
+           1997-1999 Guy Maor <maor@debian.org>
+           2000-2004 Roland Bauerschmidt <rb@debian.org>
+           2004-2025 Marc Haber <mh+debian-packages@zugschlus.de>
+           2005-2009 Jörg Hoh <joerg@joerghoh.de>
+           2006-2011 Stephen Gran <sgran@debian.org>
+           2016-2017 Afif Elghraoui <afif@debian.org>
            2016, 2023 Dr. Helge Kreutzmann <debian@helgefjell.de>
-           2016 Afif Elghraoui <afif@debian.org>
-           2005-2023 Marc Haber <mh+debian-packages@zugschlus.de>
+           2016 Nis Martensen <nis.martensen@web.de>
            2021-2022 Jason Franklin <jason@oneway.dev>
            2022 Matt Barry <matt@hazelmollusk.org>
+           2023 Guillem Jover <guillem@debian.org>
 License: GPL-2+
 
 Files: po/ca.po
@@ -333,6 +349,15 @@ License: GPL-2+
 
 Files: doc/po4a/translator_german.add
 Copyright: 2023 Dr. Helge Kreutzmann <debian@helgefjell.de>
+License: GPL-2+
+
+Files: debian/tests/*
+Copyright: 2016 Afif Elghraoui <afif@debian.org>
+           2023 Alexandre Detiste <alexandre.detiste@gmail.com>
+           2022-2023 Jason Franklin <jason@oneway.dev>
+           2022-2025 Marc Haber <mh+debian-packages@zugschlus.de>
+           2023 Mateus Rodrigues de Morais <mateus.morais@canonical.com>
+           2022 Matt Barry <matt@hazelmollusk.org>
 License: GPL-2+
 
 License: GPL-2+
